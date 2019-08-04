@@ -1,0 +1,40 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>Student Life</title>
+{% endblock %}
+
+{% block header %}
+<H1>Student Life</H1>
+<p>This is the student life page</p>
+{% endblock %}
+
+{% block main %}
+<div class="features-boxed">
+    <div class="container">
+        <div class="row justify-content-center features">
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-trophy icon"></i>
+                    <h3 class="name">Clubs and Societies</h3>
+                    <p class="description"><br>St John’s has a wealth of clubs and societies to explore and be a part
+                        of<br></p><a class="learn-more" href="/studentlife/clubsandsocieties">Let's play »</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-cutlery icon"></i>
+                    <h3 class="name">Facilities</h3>
+                    <p class="description"><br>From the buttery to the gun dungeon. We're here to make sure you don't
+                        miss a thing.<br></p><a class="learn-more" href="/studentlife/facilities">Let's cook »</a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-4 item">
+                <div class="box"><i class="fa fa-book icon"></i>
+                    <h3 class="name">Glossary</h3>
+                    <p class="description"><br>What is a DoS? When is one allowed to jouez? How is that? All this and
+                        more.<br></p><a class="learn-more" href="/studentlife/glossary">Let's talk »</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

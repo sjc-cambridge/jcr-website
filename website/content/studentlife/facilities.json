@@ -1,0 +1,32 @@
+[
+    {
+        "area": "First Court",
+        "facilities": [
+            {
+                "imageName": "President.jpg",
+                "heading": "Old Music Room",
+                "description": "Banter"
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Old Music Room",
+                "description": "Banter"
+            }
+        ]
+    },
+    {
+        "area": "Second Court",
+        "facilities": [
+            {
+                "imageName": "President.jpg",
+                "heading": "The JCR",
+                "description": "Oh Yes"
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "The Bar",
+                "description": "Why Denny Why"
+            }
+        ]
+    }
+]

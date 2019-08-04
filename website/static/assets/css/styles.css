@@ -1,0 +1,24 @@
+.dropdown, .dropleft, .dropright, .dropup {
+}
+
+#navcol-1 {
+  align-items: end;
+}
+
+@media (min-width: 576px) {
+  .clean-block .block-heading h1, .clean-block .block-heading h2, .clean-block .block-heading h3 {
+    font-size: large;
+  }
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: none;
+}
+
+.navbar.navbar-light.navbar-expand-lg {
+  background-color: transparent;
+}
+
+.nav-item.dropdown.dropdown-menu-right {
+}
+

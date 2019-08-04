@@ -1,0 +1,51 @@
+<!--
+    {
+        imageName: string
+        heading: string
+        description: string
+    }
+-->
+
+{% macro left(obj) -%}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm col-lg-4">
+                        <img class="img-fluid mr-3" src="{{'/static/assets/img/' + obj.imageName}}">
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <h4>{{obj.heading}}</h4>
+                        {% for paragraph in obj.description.split("\n") %}
+                        <p>{{paragraph}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}
+
+{% macro right(obj) -%}
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 col-lg-8">
+                        <h4>{{obj.heading}}</h4>
+                        {% for paragraph in obj.description.split("\n") %}
+                        <p>{{paragraph}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4 col-sm col-lg-4">
+                        <img class="img-fluid mr-3" src="{{'/static/assets/img/' + obj.imageName}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}
