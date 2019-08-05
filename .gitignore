@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+
+.vscode/
+*.bsdesign
+*.bsdesign.tmp
