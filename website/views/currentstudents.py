@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
 from website.config import auth_decorator
 
-currentstudents = Blueprint('currentstudents', __name__, template_folder='templates',static_folder='templates')
+currentstudents = Blueprint('currentstudents', __name__)
 
 @auth_decorator
 @currentstudents.route("/currentstudents")

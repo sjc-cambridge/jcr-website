@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, Blueprint, url_for
 from website.config import auth_decorator
 
-freshers = Blueprint('freshers', __name__,template_folder='templates',static_folder='templates')
+freshers = Blueprint('freshers', __name__)
 
 @freshers.route("/freshers")
 @freshers.route("/freshers/home")

@@ -12,7 +12,7 @@ class Request(flask.Request):
                         'jfc43.user.srcf.net',}
 
 def create_site():
-    app = Flask(__name__, static_folder='assets')
+    app = Flask(__name__, static_folder='templates/assets')
     app.request_class = Request
     app.config["SECRET_KEY"] = os.urandom(16)
     app.register_blueprint(main)
