@@ -8,7 +8,7 @@ from website.views.freshers import freshers
 from website.views.studentlife import student_routes
 
 class Request(flask.Request):
-    trusted_hosts = {'127.0.0.1', 'jfc43.user.srcf.net',}
+    trusted_hosts = {'127.0.0.1', 'jfc43.user.srcf.net'}
 
 def create_site():
     app = Flask(__name__, static_folder='templates/assets')
