@@ -13,4 +13,4 @@ def jcr_routing(pagename):
 
 @yourjcr.route('/yourjcr/<pagename>/')
 def jcr_routing2(pagename):
-    return redirect('/yourjcr/{}'.format(pagename))
+    return redirect(url_for('/yourjcr/{}'.format(pagename)))

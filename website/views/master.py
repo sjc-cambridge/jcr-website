@@ -11,25 +11,30 @@ def home():
 @main.route("/login")
 @main.route("/login/")
 def login():
-    return redirect("/")
+    print(url_for("main.home"))
+    return redirect(url_for("main.home"))
 
 @main.route("/logout")
-@main.route("/logout/")
 def logout():
     auth_decorator.logout()
-    return redirect("/")
+    print(url_for("main.home"))
+    return redirect(url_for("main.home"))
 
 def access_denied(e):
-    return redirect("/401")
+    print(url_for("main.error401"))
+    return redirect(url_for("main.error401"))
 
 def forbidden(e):
-    return redirect("/403")
+    print(url_for("main.error403"))
+    return redirect(url_for("main.error403"))
 
 def page_not_found(e):
-    return redirect("/404")
+    print(url_for("main.error404"))
+    return redirect(url_for("main.error404"))
 
 def server_overload(e):
-    return redirect("/500")
+    print(url_for("main.error500"))
+    return redirect(url_for("main.error500"))
 
 @main.route("/401")
 def error401():
