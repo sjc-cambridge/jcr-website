@@ -7,13 +7,15 @@ main = Blueprint('main', __name__)
 @main.route("/home")
 def home():
     print(url_for("main.error500"))
+    print('Getting here')
     print(url_for("main.error500", _external=True))
     return render_template("index.html", a=auth_decorator)
 
 @main.route("/login")
 @main.route("/login/")
 def login():
-    print(url_for("main.home"))
+    print('LOGIN')
+    print(url_for("main.home", _external=True))
     return redirect(url_for("main.home", _external=True))
 
 @main.route("/logout")
