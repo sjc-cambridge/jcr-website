@@ -5,6 +5,7 @@ main = Blueprint('main', __name__)
 
 @main.route("/")
 @main.route("/home")
+@auth_decorator
 def home():
     print(url_for("main.error500"))
     print('Getting here')
