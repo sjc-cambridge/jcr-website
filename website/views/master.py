@@ -12,14 +12,13 @@ def home():
     return render_template("index.html", a=auth_decorator)
 
 @main.route("/login")
-@main.route("/login/")
-def login():
+def login_route():
     print('LOGIN')
     print(url_for("main.home", _external=True))
     return redirect(url_for("main.home", _external=True))
 
 @main.route("/logout")
-def logout():
+def logout_route():
     auth_decorator.logout()
     print(url_for("main.home",_external=True))
     return redirect(url_for("main.home", _external=True))
