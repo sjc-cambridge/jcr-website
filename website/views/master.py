@@ -36,7 +36,7 @@ def page_not_found(e):
 
 def server_overload(e):
     print(url_for("main.error500", _external=True))
-    return redirect(url_for("main.error500"), _external=True))
+    return redirect(url_for("main.error500", _external=True))
 
 @main.route("/401")
 def error401():
