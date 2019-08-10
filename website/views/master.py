@@ -15,7 +15,8 @@ def home():
 def login_route():
     print('LOGIN')
     print(url_for("main.home", _external=True))
-    return redirect(url_for("main.home", _external=True))
+    return render_template("index.html", a=auth_decorator)
+    #return redirect(url_for("main.home", _external=True))
 
 @main.route("/logout")
 def logout_route():
