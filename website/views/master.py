@@ -9,12 +9,10 @@ def home():
     return render_template("index.html", a=auth_decorator)
 
 @main.route("/login/")
-@auth_decorator
 def login():
     return redirect(url_for("main.home"))
 
 @main.route("/logout/")
-@auth_decorator
 def logout():
     auth_decorator.logout()
     return redirect(url_for("main.home"))
