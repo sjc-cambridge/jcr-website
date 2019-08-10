@@ -8,26 +8,28 @@ main = Blueprint('main', __name__)
 def home():
     return render_template("index.html", a=auth_decorator)
 
+@main.route("/login")
 @main.route("/login/")
 def login():
-    return redirect(url_for("main.home"))
+    return redirect("/")
 
+@main.route("/logout")
 @main.route("/logout/")
 def logout():
     auth_decorator.logout()
-    return redirect(url_for("main.home"))
+    return redirect("/")
 
 def access_denied(e):
-    return redirect(url_for("main.error401"))
+    return redirect("/401")
 
 def forbidden(e):
-    return redirect(url_for("main.error403"))
+    return redirect("/403")
 
 def page_not_found(e):
-    return redirect(url_for("main.error404"))
+    return redirect("/404")
 
 def server_overload(e):
-    return redirect(url_for("main.error500"))
+    return redirect("/500")
 
 @main.route("/401")
 def error401():
