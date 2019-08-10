@@ -8,7 +8,7 @@ from website.views.freshers import freshers
 from website.views.studentlife import student_routes
 
 class Request(flask.Request):
-    trusted_hosts = {'127.0.0.1', 'jfc43.user.srcf.net', 'localhost'}
+    trusted_hosts = {'jfc43.user.srcf.net'}
 
 class CustomProxyFix(object):
 
