@@ -5,6 +5,7 @@ currentstudents = Blueprint('currentstudents', __name__)
 
 
 @currentstudents.route("/currentstudents")
+@currentstudents.route("/currentstudents/")
 @currentstudents.route("/currentstudents/home")
 @auth_decorator
 def current_home():
