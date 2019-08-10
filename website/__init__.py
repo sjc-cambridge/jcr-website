@@ -15,12 +15,12 @@ def create_site():
     app.request_class = Request
     app.config["SECRET_KEY"] = os.urandom(16)
     app.register_blueprint(main)
-    app.register_error_handler(401, access_denied)
-    app.register_error_handler(403, forbidden)
-    app.register_error_handler(404, page_not_found)
-    app.register_error_handler(500, server_overload)
     app.register_blueprint(currentstudents)
     app.register_blueprint(freshers)
     app.register_blueprint(yourjcr)
     app.register_blueprint(student_routes)
+    app.register_error_handler(401, access_denied)
+    app.register_error_handler(403, forbidden)
+    app.register_error_handler(404, page_not_found)
+    app.register_error_handler(500, server_overload)
     return app
