@@ -6,9 +6,6 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    print(url_for("main.error500"))
-    print('Getting here')
-    print(url_for("main.error500", _external=True))
     return render_template("index.html", a=auth_decorator)
 
 @main.route("/login")

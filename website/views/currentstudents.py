@@ -3,7 +3,6 @@ from website.config import auth_decorator
 
 currentstudents = Blueprint('currentstudents', __name__)
 
-
 @currentstudents.route("/currentstudents")
 @currentstudents.route("/currentstudents/")
 @currentstudents.route("/currentstudents/home")

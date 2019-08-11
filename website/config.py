@@ -39,6 +39,7 @@ class Committee(dict):
 
 
 JCR = Committee("committee.txt")
+'''
 print(JCR)
 print(JCR['PRESIDENT']['name'])
-print(JCR['COMPUTING']['name'])
+print(JCR['COMPUTING']['name'])'''

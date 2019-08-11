@@ -6,11 +6,10 @@ from website.views.currentstudents import currentstudents
 from website.views.yourjcr import yourjcr
 from website.views.freshers import freshers
 from website.views.studentlife import student_routes
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 class Request(flask.Request):
     trusted_hosts = {'jfc43.user.srcf.net', 'localhost'}
-
-from werkzeug.middleware.proxy_fix import ProxyFix
 
 def create_site():
     app = Flask(__name__, static_folder='templates/assets')
