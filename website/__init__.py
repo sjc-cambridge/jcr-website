@@ -12,23 +12,10 @@ class Request(flask.Request):
 
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-
-class CustomProxyFix(object):
-
-    def __init__(self, app):
-        self.app = app
-
-    def __call__(self, environ, start_response):
-        host = environ.get('HTTP_X_FHOST', '')
-        if host:
-            environ['HTTP_HOST'] = host
-        return self.app(environ, start_response)
-
 def create_site():
     app = Flask(__name__, static_folder='templates/assets')
     app.request_class = Request
     app.config["SECRET_KEY"] = os.urandom(16)
-    #app.wsgi_app = CustomProxyFix(app.wsgi_app)
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
     app.register_blueprint(main)
     app.register_blueprint(currentstudents)
