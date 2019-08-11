@@ -57,7 +57,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1031;
   display: none;
 }
@@ -207,11 +207,6 @@ span {
   }
 }
 
-#navbarheading {
-  overflow-x: hidden;
-  padding-top: 120px;
-}
-
 @media (min-width: 992px) {
   #sidebar {
     width: 500px;
@@ -259,5 +254,9 @@ span {
   #sidebar ul li a {
     padding: 10px 35px 10px;
   }
+}
+
+#sublink {
+  font-size: 18px;
 }
 
