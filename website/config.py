@@ -26,8 +26,9 @@ class Committee(dict):
         self.lines = self.text_file.readlines()
         for line in self.lines:
             line = line.split('\n')[0]
-            role, names, crsids = line.split(' ')
-            names = names.split('/') # Split any co presidents!!
+            print(line.split(' '))
+            role, names, crsids = [str for str in line.split(' ') if str is not '']
+            names = names.split('/') # Split co presidents and welfare.
             crsids = crsids.split('/')
             names = ' & '.join(names)
             crsids = ' & '.join(crsids)
@@ -64,4 +65,5 @@ JCR = Committee("committee.txt")
 print(JCR)
 print(JCR['PRESIDENT']['name'])
 print(JCR['COMPUTING']['name'])
+
 #print(JCR.email_member('Function for emailing members','COMPUTING')) # Pls don't spam meh

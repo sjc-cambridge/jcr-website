@@ -1,5 +1,5 @@
 PRESIDENT Anusha/Ollie aa2004/ojrb2
-VP Nina nn304
+VICEPRESIDENT Nina nn304
 ACADEMIC Dani dv292
 ACCESS Imy iaa32
 COMPUTING Jonathan jfc43
@@ -10,8 +10,7 @@ FACILITIES Tim tgmd2
 SECRETARY Martin mml54
 SERVICES George geal2
 TREASURER Nick np481
-WELFARE_M Alex am2686
-WELFARE_F Amara aom32
+WELFARE Alex/Amara am2686/am2686
 BME Yash ya279
 INTERNATIONALS Sophie msm60
 LGBTQ Laurence alv36
