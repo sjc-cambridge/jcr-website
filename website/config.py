@@ -3,6 +3,7 @@ import ucam_webauth.raven
 import ucam_webauth.raven.flask_glue
 import os
 import pickle
+import smtplib
 
 script_dir = os.path.dirname(__file__)
 
@@ -16,10 +17,8 @@ auth_decorator = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
 
 
 class Committee(dict):
-    ''' TODO: Dictionary keys are role emails @sjcjcr.com,
-     could have email to all methods etc.
-     Could also edit .forward file from this.
-    '''
+    '''To do: edit .forward function.
+        Send PDF minutes, maybe have separate Committee Flask app? (committee.sjcjcr.com)'''
     def __init__(self, committee_text_file, *args):
         dict.__init__(self, args)
         self.path = os.path.join(script_dir, committee_text_file)
@@ -37,9 +36,32 @@ class Committee(dict):
             self[role]['crsid']=crsids
         self.text_file.close()
 
+    def email_member(self, input_message, committee_role):
+        self.email_people(input_message, [committee_role])
+        return f"Emailed {self[committee_role]['name']}"
+
+    def email_all(self, input_message):
+        return self.email_people(input_message, self.keys())
+
+    def email_people(self, input_message, committee_roles):
+        committee_emails = [role + '@sjcjcr.com' for role in committee_roles]
+        recipients_string = ", ".join(committee_emails)
+        gmail_user = 'sjcjcrmisc@gmail.com'
+        gmail_pwd = '***REMOVED***'  # One-off password, not re-usable
+        smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
+        smtpserver.ehlo()
+        smtpserver.starttls()
+        smtpserver.login(gmail_user, gmail_pwd)
+        header = 'To:' + recipients_string + '\n' + 'From: ' + gmail_user + '\n' + 'Subject:EmailTest \n'
+        input_message = input_message
+        msg = header + input_message
+        smtpserver.sendmail(gmail_user, committee_emails, msg)
+        smtpserver.close()
+        return "Emailed JCR Committee"
+
 
 JCR = Committee("committee.txt")
-'''
 print(JCR)
 print(JCR['PRESIDENT']['name'])
-print(JCR['COMPUTING']['name'])'''
+print(JCR['COMPUTING']['name'])
+#print(JCR.email_member('Function for emailing members','COMPUTING')) # Pls don't spam meh
