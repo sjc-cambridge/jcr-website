@@ -39,7 +39,7 @@ class Committee(dict):
 
     def email_member(self, input_message, committee_role):
         self.email_people(input_message, [committee_role])
-        return f"Emailed {self[committee_role]['name']}"
+        return "Emailed {}".format(self[committee_role]['name'])
 
     def email_all(self, input_message):
         return self.email_people(input_message, self.keys())
