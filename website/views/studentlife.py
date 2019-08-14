@@ -11,7 +11,7 @@ def student_home():
 
 @student_routes.route('/studentlife/<pagename>')
 def student_routing(pagename):
-    return render_template("freshers/{}.html".format(pagename), a=auth_decorator)
+    return render_template("studentlife/{}.html".format(pagename), a=auth_decorator)
 
 
 @student_routes.route('/studentlife/<pagename>/')

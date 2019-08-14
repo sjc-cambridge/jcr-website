@@ -93,3 +93,9 @@
   text-decoration: none!important;
 }
 
+@media (max-width: 350px) {
+  .headershrink {
+    font-size: 36px;
+  }
+}
+
