@@ -6,7 +6,7 @@ yourjcr= Blueprint('yourjcr', __name__)
 @yourjcr.route("/yourjcr")
 @yourjcr.route("/yourjcr/")
 def jcr_home():
-    return render_template("yourjcr/index.html", a=auth_decorator)
+    return render_template("yourjcr/home.html", a=auth_decorator)
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
