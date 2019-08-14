@@ -3,6 +3,7 @@ from website.config import auth_decorator
 
 yourjcr= Blueprint('yourjcr', __name__)
 
+@yourjcr.route("/yourjcr")
 @yourjcr.route("/yourjcr/")
 def jcr_home():
     return render_template("yourjcr/index.html", a=auth_decorator)
