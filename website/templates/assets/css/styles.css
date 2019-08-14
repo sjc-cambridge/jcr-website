@@ -46,7 +46,7 @@
 }
 
 #colbutton:hover {
-  background-color: #f1f1f1;
+  background-color: #f1f1f1!important;
 }
 
 #footer {
@@ -75,5 +75,21 @@
 .navbar.navbar-light.navbar-expand.fixed-top.scrolled {
   background-color: #5a87c2;
   transition: background-color 500ms linear;
+}
+
+#decoratedbox {
+  /*padding: 15px;*/
+  padding-top: 20px;
+  background-color: #f8f8f8;
+  border-radius: 25px!important;
+}
+
+#backlink {
+  font-size: 24px;
+}
+
+#textlink:hover {
+  /*color: white!important;*/
+  text-decoration: none!important;
 }
 

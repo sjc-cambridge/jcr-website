@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="/assets/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="/assets/css/JohnianHeader.css">
     <link rel="stylesheet" href="/assets/css/JohnianNavbar.css">
@@ -31,16 +32,18 @@
                 <h2></h2>
             </div>
             <ul>
-                <li><span style="width: 100%;"><div class="btn-group" role="group" id="yourjcr" style="width: 100%;"><a class="btn btn-primary text-left pull-right" role="button" id="b1" href="/yourjcr/home" style="width: 80%;"><i class="fa fa-user"></i>&nbsp;Your JCR</a><button class="btn btn-primary collapsed" id="b2" data-toggle="collapse" data-target="#yourjcrmenu" aria-controls="yourjcrmenu" aria-expanded="false" style="width: 20%;"><i class="fa fa-caret-down"></i></button></div></span>
+                <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/yourjcr/home"><i class="fa fa-user"></i>&nbsp;Your JCR</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#yourjcrmenu" aria-expanded="false" aria-controls="yourjcrmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                     <ul
                         class="list-unstyled collapse" id="yourjcrmenu" aria-expanded="false">
-                        <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
-                        <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
-                        <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
-                        <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
+                        <li id="sublink"> <a href="/yourjcr/committee"><i class="fa fa-group"></i>&nbsp; Committee</a></li>
+                        <li id="sublink"> <a href="/yourjcr/academicaffairs"><i class="fa fa-book"></i>&nbsp; Academic Affairs</a></li>
+                        <li id="sublink"> <a href="/yourjcr/access"><i class="fa fa-key"></i>&nbsp; Access</a></li>
+                        <li id="sublink"> <a href="/yourjcr/consentjohns"><i class="fa fa-intersex"></i>&nbsp; Consent John's</a></li>
+                        <li id="sublink"> <a href="/yourjcr/ents"><i class="fas fa-glass-cheers"></i>&nbsp; Ents</a></li>
+                        <li id="sublink"> </li>
             </ul>
             </li>
-            <li><span style="width: 100%;"><div class="btn-group" role="group" id="yourjcr" style="width: 100%;"><a class="btn btn-primary text-left pull-right" role="button" id="b1" style="width: 80%;" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp;Student Life</a><button class="btn btn-primary collapsed" id="b2" data-toggle="collapse" data-target="#slifemenu" aria-controls="slifemenu" aria-expanded="false" style="width: 20%;"><i class="fa fa-caret-down"></i></button></div></span>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp; Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
                     class="list-unstyled collapse" id="slifemenu" aria-expanded="false">
                     <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
@@ -49,7 +52,7 @@
                     <li id="sublink"> <a href="#"><i class="fa fa-link"></i> Link</a></li>
                     </ul>
             </li>
-            <li><span style="width: 100%;"><div class="btn-group" role="group" id="yourjcr" style="width: 100%;"><a class="btn btn-primary text-left pull-right" role="button" id="b1" href="/freshers/home" style="width: 80%;"><i class="fa fa-user"></i>&nbsp;Freshers</a><button class="btn btn-primary collapsed" id="b2" data-toggle="collapse" data-target="#freshersmenu" aria-controls="freshersmenu" aria-expanded="false" style="width: 20%;"><i class="fa fa-caret-down"></i></button></div></span>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/freshers/home"><i class="fa fa-user"></i>&nbsp; Freshers</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#freshersmenu" aria-expanded="false" aria-controls="freshersmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
                     class="list-unstyled collapse" id="freshersmenu" aria-expanded="false">
                     <li id="sublink"> <a href="/freshers/yourfirstday"><i class="fa fa-info-circle"></i>&nbsp; Your First Day</a></li>
@@ -59,7 +62,7 @@
                     <li id="sublink"> <a href="/freshers/glossary"><i class="fa fa-question"></i>&nbsp; Glossary of Terms</a></li>
                     </ul>
             </li>
-            <li><span style="width: 100%;"><div class="btn-group" role="group" id="yourjcr" style="width: 100%;"><a class="btn btn-primary text-left pull-right" role="button" id="b1" href="/currentstudents/home" style="width: 80%;"><i class="fa fa-user"></i>&nbsp;Current Students</a><button class="btn btn-primary collapsed" id="b2" data-toggle="collapse" data-target="#cstudentsmenu" aria-controls="cstudentsmenu" aria-expanded="false" style="width: 20%;"><i class="fa fa-caret-down"></i></button></div></span>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/currentstudents/home"><i class="fa fa-user"></i>&nbsp; Current Students</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#cstudentsmenu" aria-expanded="false" aria-controls="cstudentsmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
                     class="list-unstyled collapse" id="cstudentsmenu" aria-expanded="false">
                     <li id="sublink"> <a href="/currentstudents/welfare"><i class="fa fa-star"></i>&nbsp; Welfare Supplies</a></li>
@@ -71,11 +74,11 @@
         </div>
     </div>
     <nav class="navbar navbar-light navbar-expand fixed-top">
-        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;">ST JOHN'S JCR</a>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <div class="btn-group ml-auto" role="group"><a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login" style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;"><i class="fas fa-crow"></i>&nbsp; Login</a>
+        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST JOHN'S JCR</a>
+            <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
+                <div class="btn-group ml-auto" role="group"><a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login" style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;"><i class="fas fa-crow"></i>&nbsp; Login</a>
                     <button
-                        class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button" style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;"><i class="fa fa-navicon"></i>&nbsp;Menu</button>
+                        class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button" style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;"><i class="fa fa-navicon"></i>&nbsp;Menu</button>
                 </div>
             </div>
         </div>
@@ -88,41 +91,59 @@
         </div>
     </section>
     <main id="main">
-        <section data-aos="fade-up" data-aos-duration="500" class="clean-block about-us" style="padding: 0px 0px;">
-            <div class="container" style="padding: 0px 0px;">
-                <p class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">You will be able to arrive in college from 8am-4pm** on XXX and YYY for international and home students respectively. You will go to the reception centre to sign in (details below) and you will then go back to your car to unload your luggage.<br></p>
-                <p
-                    class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">That evening, you will be welcomed to the College by the Master, Senior Tutor and the JCR President, before meeting your tutor and Director of &nbsp;Studies (DoS) and have your first experience of fine dining in our beloved Hogwarts-esque
-                    hall!&nbsp;<br></p>
-                    <p class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">The JCR committee will all be wearing stash&nbsp;with our names on, so look out for us! We’ll be here to help&nbsp;you find your way around and answer any questions.<br></p>
+        <section class="clean-block about-us" style="padding: 0px 0px;">
+            <div class="container border rounded" id="decoratedbox">
+                <h2 class="text-center" style="padding: 10px;">Getting here</h2>
+                <p class="text-justify" style="padding: 5px 0px;">However you get into central Cambridge, approach John’s from the back, the entrance is on Northampton Street, next to St. John´s Chophouse.<br></p>
+                <p class="text-justify" style="padding: 5px 0px;">If there’s space, you can park in Cripps Car Park for a short time to unload your stuff, but for longer-term stay, you’ll have to park in the playing fields car park on the other side of Queen’s Road (there will be signs!)<br></p>
             </div>
         </section>
-        <div class="jumbotron" data-aos="fade-up" data-aos-duration="600" style="background-image: url(&quot;/assets/img/110614_16574.jpg&quot;);background-size: cover;background-repeat: no-repeat;filter: brightness(100%);background-position: center;margin: 0px 10px;margin-bottom: 0px;padding: 10px;border-radius: 20px;">
-            <div class="container" style="background-color: rgba(254,241,241,0.8);padding: 10px 10px;">
-                <h6 class="text-truncate text-center" style="padding: 5px;font-size: 32px;">Getting here</h6>
-                <p>However you get into central Cambridge, approach John’s from the back, the entrance is on Northampton Street, next to St. John´s Chophouse. If there’s space, you can park in Cripps Car Park for a short time to unload your stuff, but for
-                    longer-term stay, you’ll have to park in the playing fields car park on the other side of Queen’s Road (there will be signs!)</p>
+        <section style="padding-top: 20px;">
+            <div class="container">
+                <h6 class="text-center" style="padding: 5px;font-size: 32px;">Arriving</h6>
+                <div class="row d-xl-flex justify-content-xl-center">
+                    <div class="col d-xl-flex flex-column justify-content-xl-start align-items-xl-center" style="padding: 15px;min-width: 250px;">
+                        <p class="text-justify">You will be able to arrive in college from 8am-4pm** on XXX and YYY for international and home students respectively. You will go to the reception centre to sign in (details below) and you will then go back to your car to unload
+                            your luggage.</p>
+                        <p class="text-justify">That evening, you will be welcomed to the College by the Master, Senior Tutor and the JCR President, before meeting your tutor and Director of &nbsp;Studies (DoS) and have your first experience of fine dining in our beloved Hogwarts-esque
+                            hall!&nbsp;</p>
+                        <p class="text-justify">The JCR committee will all be wearing stash&nbsp;with our names on, so look out for us! We’ll be here to help&nbsp;you find your way around and answer any questions.</p>
+                    </div>
+                    <div class="col text-center d-sm-flex d-xl-flex justify-content-sm-center align-items-sm-center justify-content-xl-center align-items-xl-center col-lg-4 col-xs-12 col-md-12 col-sm-12 col-xl-5" style="padding: 15px;min-width: 250px;">
+                        <figure class="figure text-center"><img class="figure-img" src="/assets/img/110614_16574.jpg" style="width: 100%;min-width: 100%;">
+                            <figcaption class="figure-caption text-center" style="width: 100%;">The Bridge of Sighs: you can expect to cross it a fair number of times in your first few days here...</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
-        </div>
-        <section data-aos="fade-up" data-aos-duration="500" class="clean-block about-us" style="padding: 0px 0px;">
-            <div class="container" style="padding: 0px 0px;">
-                <h2 class="text-center text-info" style="padding: 15px;">Signing In</h2>
-                <p class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">As soon as you arrive, you need to go to the Palmerston Room in the Fisher Building (next to the Cripps building – see the college map below) and sign your tenancy agreement, pick up your key and college card, as well as various important
+        </section>
+        <section data-aos="fade-up" data-aos-duration="500" class="clean-block about-us" style="padding: 0px 0px;padding-top: 20px;">
+            <div class="container" id="decoratedbox" style="padding: 15px;">
+                <h2 class="text-center" style="padding: 10px;">Signing In</h2>
+                <p class="text-justify" style="/*width: 90%;*//*margin-left: 5%;*//*max-width: 90%;*//*min-width: 70%;*/padding: 5px 0px;/*margin-right: 5%;*/">As soon as you arrive, you need to go to the Palmerston Room in the Fisher Building (next to the Cripps building – see the college map below) and sign your tenancy agreement, pick up your key and college card, as well as various important
                     pieces of paper.&nbsp;<br></p>
-                <p class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">The JCR committee will be there, handing out&nbsp;your Freshers Week timetable and wristband. This wristband will be your&nbsp;pass for many important events over the course of the week – do not cut&nbsp;it off before 9th October!<br></p>
-                <p
-                    class="text-center" style="width: 90%;margin-left: 5%;max-width: 90%;min-width: 70%;padding: 5px 0px;margin-right: 5%;line-height: 16px;">&nbsp;You can then start the arduous process of unloading the car; trolleys will be available in the Car Park. Sign them out with the resident porter (make sure you return them, too!). You’ll also be able to register your bike with College
-                    (if you have one).<br></p>
+                <p class="text-justify" style="/*width: 90%;*//*margin-left: 5%;*//*max-width: 90%;*//*min-width: 70%;*/padding: 5px 0px;/*margin-right: 5%;*/">The JCR committee will be there, handing out&nbsp;your Freshers Week timetable and wristband. This wristband will be your&nbsp;pass for many important events over the course of the week – do not cut&nbsp;it off before 9th October!<br></p>
             </div>
         </section>
-        <div class="jumbotron" data-aos="fade-up" data-aos-duration="600" style="background-image: url(&quot;/assets/img/_AT_1180.jpg&quot;);background-size: cover;background-repeat: no-repeat;filter: brightness(100%);background-position: center;padding: 10px;margin: 0px 10px;border-radius: 20px;">
-            <div class="container" style="background-color: rgba(254,241,241,0.8);padding: 10px 10px;">
+        <section data-aos="fade-up" data-aos-duration="700" style="padding-top: 20px;">
+            <div class="container">
                 <h6 class="text-center" style="padding: 5px;font-size: 32px;">The rest of the day</h6>
-                <p class="text-center">Once you’ve finished unpacking, wander across College to your pigeon-hole (by the main gate in first court) to check your post. The JCR (in 2nd Court)&nbsp;will be open all day, along with the JCR committee to answer any questions you
-                    might have.</p>
-                <p class="text-center">After dining in Hall that evening there will be Fresher staircase parties and JCR-led nights out.... CONFIRM WITH NINA</p>
+                <div class="row">
+                    <div class="col" style="padding: 15px;">
+                        <p class="text-justify">You can then start the arduous process of unloading the car; trolleys will be available in the Car Park. Sign them out with the resident porter (make sure you return them, too!). You’ll also be able to register your bike with College
+                            (if you have one).</p>
+                        <p class="text-justify">Once you’ve finished unpacking, wander across College to your pigeon-hole (by the main gate in first court) to check your post. The JCR (in 2nd Court)&nbsp;will be open all day, along with the JCR committee to answer any questions
+                            you might have.</p>
+                        <p class="text-justify">After dining in Hall that evening there will be Fresher staircase parties and JCR-led nights out.... CONFIRM WITH NINA</p>
+                    </div>
+                    <div class="col text-center d-md-flex d-xl-flex justify-content-md-center align-items-md-center justify-content-xl-center align-items-xl-center col-sm-12 col-md-6 col-lg-6 col-xl-5" style="padding: 15px;">
+                        <figure class="figure"><img class="figure-img" src="/assets/img/DSC_0785.JPG" style="max-height: 300px;">
+                            <figcaption class="figure-caption">St. John's Great Gate, you can check your post through the door on the right!</figcaption>
+                        </figure>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
     <footer class="page-footer dark" style="background-color: rgb(255,255,255);">
         <div class="container" style="padding-top: 10px;padding-bottom: 30px;">

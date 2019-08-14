@@ -57,9 +57,10 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.75);
   z-index: 1031;
   display: none;
+  overflow-y: scroll;
 }
 
 #sidebar .sidebar-header {
@@ -68,15 +69,11 @@
   min-height: 65px;
   text-align: left;
   background-color: rgb(90,135,194);
+  overflow-y: scroll;
 }
 
 .sidebar-header h1, .sidebar-header h2, .sidebar-header h3, .sidebar-header h4, .sidebar-header h5 {
   margin: 0;
-}
-
-#sidebar > *:not(.sidebar-header):not(ul):not(.full-width) {
-  max-width: 230px;
-  margin-left: 15px;
 }
 
 #sidebar > ul {
@@ -85,38 +82,21 @@
 }
 
 #sidebar ul li a {
-  padding: 10px 20px 10px;
+  padding: 10px 10px 10px;
   color: #fff;
   display: block;
   text-decoration: none;
   background: rgba(0,0,0,.1);
-  margin-bottom: 1px;
+  /*margin-bottom: 1px;*/
+  overflow-y: scroll;
 }
 
 #sidebar ul li a:hover, #sidebar ul li.active > a, #sidebar a[aria-expanded="true"] {
   background: rgba(0,0,0,.2);
 }
 
-#sidebar a[data-toggle="collapse"] {
-  position: relative;
-}
-
-#sidebar a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-  content: '\e259';
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: calc(50% - 6px);
-  font-family: 'Glyphicons Halflings';
-  font-size: 0.6em;
-}
-
-#sidebar a[aria-expanded="true"]::before {
-  content: '\e560';
-}
-
 #sidebar ul ul a {
-  padding-left: 30px;
+  padding-left: 20px;
   background: rgba(255,255,255,.1);
 }
 
@@ -164,6 +144,7 @@
 #b1 {
   background: rgba(59,153,224,0.3);
   border: none;
+  font-size: 16px;
 }
 
 #b2 {
@@ -209,14 +190,14 @@ span {
 
 @media (min-width: 992px) {
   #sidebar {
-    width: 500px;
+    width: 350px;
   }
 }
 
 @media (min-width: 992px) {
   #b1 {
-    font-size: 30px;
-    /*padding-left: 30px;*/
+    font-size: 20px;
+    /*padding-left: 20px;*/
   }
 }
 
@@ -242,21 +223,50 @@ span {
   }
 }
 
-#textlink:hover {
-  color: white;
-}
-
 #colbutton {
   background-color: #f5f5f5;
 }
 
 @media (min-width: 992px) {
-  #sidebar ul li a {
-    padding: 10px 35px 10px;
+  #sublink {
+    font-size: 16px!important;
   }
 }
 
 #sublink {
-  font-size: 18px;
+  font-size: 14px;
+}
+
+.menuname {
+  width: 80%;
+  background-color: rgba(59,153,224,0.3)!important;
+  font-size: 16px;
+  padding-left: 20px!important;
+  /*margin: 10px;*/
+}
+
+.menudropdown {
+  width: 20%;
+  background-color: rgba(59,153,224,0.4)!important;
+  padding: 0px;
+  margin: 0px;
+}
+
+.menuname:hover {
+  background-color: rgba(59,153,224,0.5)!important;
+}
+
+.menudropdown:hover {
+  background-color: rgba(59,153,224,0.5)!important;
+}
+
+.menuwrapper {
+  margin: 0px!important;
+}
+
+@media (min-width: 992px) {
+  .menuname {
+    font-size: 20px;
+  }
 }
 

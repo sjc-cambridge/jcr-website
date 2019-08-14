@@ -5,12 +5,21 @@ yourjcr= Blueprint('yourjcr', __name__)
 
 @yourjcr.route("/yourjcr/")
 def jcr_home():
-    return render_template("yourjcr/home.html", a=auth_decorator)
+    return render_template("yourjcr/index.html", a=auth_decorator)
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
-    return render_template("yourjcr/home.html", a=auth_decorator)
+    return render_template("yourjcr/{}.html".format(pagename), a=auth_decorator)
 
 @yourjcr.route('/yourjcr/<pagename>/')
 def jcr_routing2(pagename):
     return redirect(url_for('/yourjcr/{}'.format(pagename)))
+
+
+@yourjcr.route('/yourjcr/committee/<pagename>')
+def jcr_committee_routing(pagename):
+    return render_template("yourjcr/committee/{}.html".format(pagename), a=auth_decorator)
+
+@yourjcr.route('/yourjcr/committee/<pagename>/')
+def jcr_committee_routing2(pagename):
+    return redirect(url_for('/yourjcr/committee/{}'.format(pagename)))
