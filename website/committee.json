@@ -1,0 +1,121 @@
+
+{
+  "president":
+    {
+        "co1":
+            {
+              "name": "Anusha Ashok",
+              "crsid": "aa2004"
+            },
+        "co2":
+            {
+              "name": "Ollie Barnard",
+              "crsid": "ojrb2"
+            },
+        "bio":""
+    },
+    "vicepresident":
+      {
+        "name": "Nina Newhouse",
+        "crsid": "nn304",
+        "bio": ""
+      },
+    "academic":
+      {
+        "name": "Dani Vijayakumar",
+        "crsid": "dv292",
+        "bio":""
+      },
+    "access":
+      {
+         "name": "Imy Arden-Jones",
+         "crsid": "iaa32",
+         "bio":""
+      },
+    "computing":
+      {
+        "name": "Jonathan Carter",
+        "crsid": "jfc43",
+        "bio":""
+      },
+    "ents":
+      {
+        "name": "Lawrence Tray",
+        "crsid": "lpt30",
+        "bio":""
+      },
+    "ethical":
+      {
+         "name": "Anna Stevenson",
+         "crsid": "ars59",
+         "bio":""
+      },
+    "equalops":
+      {
+         "name": "David Quist",
+         "crsid": "dq220",
+         "bio":""
+      },
+    "facilities":
+      {
+        "name": "Tim d'Aboville",
+        "crsid": "tgmd2",
+        "bio":""
+      },
+    "secretary":
+      {
+        "name": "Martin Limback-Stokin",
+        "crsid": "mml54",
+        "bio":""
+      },
+    "services":
+      {
+         "name": "George Lodge",
+         "crsid": "geal2",
+         "bio":""
+      },
+    "welfare":
+      {
+        "mnb": {
+                "name": "Alex Mercer",
+                "crsid": "am2686",
+                "bio": ""
+                },
+        "fnb": {
+                "name": "Amara Mulliner",
+                "crsid": "aom32",
+                "bio":""
+                }
+      },
+    "bme":
+      {
+        "name": "Yash Agarwal",
+        "crsid": "ya279",
+        "bio":""
+      },
+    "internationals":
+      {
+         "name": "Sophie Michalski",
+         "crsid": "msm60",
+         "bio":""
+      },
+    "lgbtq":
+      {
+        "name": "Laurence van Someren",
+        "crsid": "np481",
+        "bio":""
+      },
+    "disabilities":
+      {
+         "name": "Becca Gutteridge",
+         "crsid": "rg603",
+         "bio":""
+      },
+    "women":
+      {
+        "name": "Anastasia Blamey",
+        "crsid": "ab2555",
+        "bio":""
+      }
+
+}
