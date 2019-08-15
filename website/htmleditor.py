@@ -2,9 +2,11 @@ from bs4 import BeautifulSoup
 import os
 import pathlib
 
+
 class HTMLParser:
     """
-    Class can be used to parse html files, snipping out important bits e.g. mains.
+    Class can be used to parse html files, snipping out important bits e.g. mains
+    and stitching jinja in.
     """
     def __init__(self, path):
         """Open specified file and initialise reserved words and IDs.
@@ -44,13 +46,13 @@ class HTMLParser:
         self.current_5chars = str(self.prev3_character)+str(self.prev2_character)+str(self.previous_character)+str(self.current_character)+str(self.next_character)
 
     def get_main_start(self):
-        """Translate the next sequence of characters into a symbol."""
+        """Find start of main."""
         while self.current_5chars != '<main':
             self.update_characters()
         return self.char_no
 
     def get_main_end(self):
-        """Translate the next sequence of characters into a symbol."""
+        """Find end of main."""
         while self.current_5chars != '/main':
             self.update_characters()
         return self.char_no
@@ -59,34 +61,53 @@ class HTMLParser:
         """Stip HTML to leave contents of main behind"""
         start_ind = self.get_main_start()
         end_ind = self.get_main_end()
-        #snipped_html = """"""
-        snipped_html = html_scanner.text_file[start_ind-5:end_ind+1]
+        snipped_html = """{% block main %}\n"""
+        snipped_html += self.text_file[start_ind-5:end_ind+1]
+        snipped_html += """\n{% endblock %}"""
         snipped_html = snipped_html.replace('\\n', ' ')
         snipped_html = BeautifulSoup(snipped_html, 'html.parser')
 
         snipped_html= snipped_html.prettify('utf-8')
-        print(snipped_html)
         with open(self.path,'wb') as html_file:
             html_file.write(snipped_html)
 
         return 'Snipped {}'.format(self.path)
 
+
+def file_recurse(func, directory_path, exceptions):
+    '''Function for recursively operating on all files in a directory w/ exceptions.
+    '''
+    path = pathlib.Path(directory_path)
+    for filepath_obj in path.iterdir():
+        filepath = str(filepath_obj)
+        print(filepath)
+        if filepath_obj.is_file():
+            if filepath not in exceptions:
+                func(filepath)
+            else:
+                pass
+        else:
+            path2 = pathlib.Path(filepath)
+            file_recurse(func, path2, exceptions)
+    return
+
+exceptions_list = []
+
+def assets_finder(filepath):
+    '''Check if file is static content'''
+    if 'assets' in filepath:
+        exceptions_list.append(filepath)
+    else:
+        return None
+
+def chop_main(filepath):
+    html_scanner = HTMLParser(filepath)
+    html_scanner.strip_main()
+
 curr_dir = os.path.dirname(__file__)
 
-path = pathlib.Path(os.path.join(curr_dir,'templates2'))
+templates_path = os.path.join(curr_dir,'templates2')
 
-'''Act on all files within top directory and next level
-    (avoiding static content at level 3!)'''
+file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
 
-for entry in path.iterdir():
-    if entry.is_file():
-        print(entry)
-        html_scanner = HTMLParser(str(entry))
-        html_scanner.strip_main()
-    else:
-        path2 = pathlib.Path(entry)
-        for entry2 in path2.iterdir():
-            if entry2.is_file():
-                print(entry2)
-                html_scanner = HTMLParser(str(entry2))
-                html_scanner.strip_main()
+file_recurse(chop_main, templates_path, exceptions_list)  # Jinja stitching with exceptions
