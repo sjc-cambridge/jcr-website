@@ -23,39 +23,13 @@ class HTMLParser:
         with open(path, encoding="utf-8") as html_file:
             self.text_file = html_file.read()
 
-
-    def reset_file(self):
-        """Return text file pointer to start."""
-        self.text_file.seek(0)
-        self.char_no = 1
-
-    def read_character(self):
-        """Read next character.
-        """
-        character = self.text_file[self.char_no]
-        self.char_no +=1
-        return character
-
-    def update_characters(self):
-        """Cyclic update of characters that are being kept track of."""
-        self.prev3_character = self.prev2_character
-        self.prev2_character = self.previous_character
-        self.previous_character = self.current_character
-        self.current_character = self.next_character
-        self.next_character = self.read_character()
-        self.current_5chars = str(self.prev3_character)+str(self.prev2_character)+str(self.previous_character)+str(self.current_character)+str(self.next_character)
-
     def get_main_start(self):
-        """Find start of main."""
-        while self.current_5chars != '<main':
-            self.update_characters()
-        return self.char_no
+        """Find end of main."""
+        return self.text_file.find('<main') + 5
 
     def get_main_end(self):
         """Find end of main."""
-        while self.current_5chars != '/main':
-            self.update_characters()
-        return self.char_no
+        return self.text_file.find('/main>') +5
 
     def strip_main(self):
         """Stip HTML to leave contents of main behind"""
@@ -107,6 +81,7 @@ def chop_main(filepath):
 curr_dir = os.path.dirname(__file__)
 
 templates_path = os.path.join(curr_dir,'templates2')
+
 
 file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
 
