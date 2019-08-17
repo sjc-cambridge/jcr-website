@@ -9,47 +9,36 @@ class HTMLParser:
     and stitching jinja in.
     """
     def __init__(self, path):
-        """Open specified file and initialise reserved words and IDs.
-        Initialise grammar, comment start/end strings.
-        """
         self.path = path
-        self.next_character = ""
-        self.current_character = ""
-        self.previous_character = ""
-        self.prev2_character = ""
-        self.prev3_character = ""
-        self.current_5chars = ""
-        self.char_no = 1
         with open(path, encoding="utf-8") as html_file:
             self.text_file = html_file.read()
 
     def get_main_start(self):
         """Find end of main."""
-        return self.text_file.find('<main') + 5
+        return self.text_file.find('<main')
 
     def get_main_end(self):
         """Find end of main."""
-        return self.text_file.find('/main>') +5
+        return self.text_file.find('/main>') + 6
 
     def strip_main(self):
-        """Stip HTML to leave contents of main behind"""
+        """Stip HTML to leave contents main behind, add jinja main syntax."""
         start_ind = self.get_main_start()
         end_ind = self.get_main_end()
         snipped_html = """{% block main %}\n"""
-        snipped_html += self.text_file[start_ind-5:end_ind+1]
+        snipped_html += self.text_file[start_ind:end_ind]
         snipped_html += """\n{% endblock %}"""
-        snipped_html = snipped_html.replace('\\n', ' ')
-        snipped_html = BeautifulSoup(snipped_html, 'html.parser')
-
-        snipped_html= snipped_html.prettify('utf-8')
+        snipped_html = snipped_html.replace('\\n', ' ')  # Remove newline chars
+        snipped_html = BeautifulSoup(snipped_html, 'html.parser')  # Prettify HTML
+        snipped_html= snipped_html.prettify('utf-8') # Re-encode HTML
         with open(self.path,'wb') as html_file:
-            html_file.write(snipped_html)
-
+            html_file.write(snipped_html)  # Write HTML
         return 'Snipped {}'.format(self.path)
 
 
 def file_recurse(func, directory_path, exceptions):
-    '''Function for recursively operating on all files in a directory w/ exceptions.
+    '''Function for recursively operating on all files
+        in a directory w/ exceptions.
     '''
     path = pathlib.Path(directory_path)
     for filepath_obj in path.iterdir():
