@@ -10,8 +10,27 @@ class HTMLParser:
     """
     def __init__(self, path):
         self.path = path
-        with open(path, encoding="utf-8") as html_file:
+        self.extension = "{% extends 'shared/_layout.j2.html' %}\n\n"
+        self.title = "{% block title %}\n"
+        self.header = "{% block header %}\n"
+        self.edited_html = ""
+        self.snipped_main = "{% block main %}\n"
+        with open(self.path, encoding="utf-8") as html_file:
             self.text_file = html_file.read()
+
+    def make_title(self):
+        self.title += "St. John's College JCR"
+        self.title += "\n{% endblock %}\n\n"
+
+    def make_header(self):
+        with open(self.path) as html_file:
+            soup = BeautifulSoup(self.text_file, 'html.parser')
+            heading = soup.find(id='pageheading')
+            paragraph = soup.find(id='pageparagraph')
+            for element in [heading, paragraph]:
+                if element:
+                    self.header += f"{element}\n"
+            self.header += "{% endblock %}\n\n"
 
     def get_main_start(self):
         """Find end of main."""
@@ -25,14 +44,22 @@ class HTMLParser:
         """Stip HTML to leave contents main behind, add jinja main syntax."""
         start_ind = self.get_main_start()
         end_ind = self.get_main_end()
-        snipped_html = """{% block main %}\n"""
-        snipped_html += self.text_file[start_ind:end_ind]
-        snipped_html += """\n{% endblock %}"""
-        snipped_html = snipped_html.replace('\\n', ' ')  # Remove newline chars
-        snipped_html = BeautifulSoup(snipped_html, 'html.parser')  # Prettify HTML
-        snipped_html= snipped_html.prettify('utf-8') # Re-encode HTML
+        self.snipped_main += self.text_file[start_ind:end_ind]
+        self.snipped_main += """\n{% endblock %}"""
+
+    def modify_template(self):
+        self.make_title()
+        self.make_header()
+        self.strip_main()
+        self.edited_html += self.extension
+        self.edited_html += self.title
+        self.edited_html += self.header
+        self.edited_html += self.snipped_main
+        self.edited_html = self.edited_html.replace('\\n', ' ')
+        self.edited_html = BeautifulSoup(self.edited_html, 'html.parser')
+        self.edited_html = self.edited_html.prettify('utf-8')
         with open(self.path,'wb') as html_file:
-            html_file.write(snipped_html)  # Write HTML
+            html_file.write(self.edited_html)  # Write HTML
         return 'Snipped {}'.format(self.path)
 
 
@@ -65,7 +92,7 @@ def assets_finder(filepath):
 
 def chop_main(filepath):
     html_scanner = HTMLParser(filepath)
-    html_scanner.strip_main()
+    html_scanner.modify_template()
 
 curr_dir = os.path.dirname(__file__)
 

@@ -1,219 +1,216 @@
-{% block main %}
-<main id="main">
- <div class="container d-flex justify-content-xl-center align-items-xl-center">
-  <section>
-   <p class="text-center">
-   </p>
-   <div class="row justify-content-around" style="margin: 0px 0px;max-width: 1400px;padding: 10px;">
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       All college rooms contain:
-       <br/>
-      </p>
-      <ul>
-       <li>
-        A bed, mattress (&amp; mattress protector), duvet, 2 pillows
-       </li>
-       <li>
-        Desk, chair(s), wardrobe
-       </li>
-       <li>
-        Fridge, hob (in the kitchen!)
-        <br/>
-       </li>
-       <li>
-        Pin board fixed to the wall
-        <br/>
-       </li>
-      </ul>
-     </section>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>JCRweb_master</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,400i,500,500i,600,600i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="/assets/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+    <link rel="stylesheet" href="/assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="/assets/css/JohnianHeader.css">
+    <link rel="stylesheet" href="/assets/css/JohnianNavbar.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+<title>St. John's College JCR</title>
+</head>
+
+<body>
+    <div>
+        <div class="overlay"></div>
+        <div id="sidebar" class="sidebar-right" style="background-color: rgba(118,187,239,0.17);">
+            <div class="sidebar-header">
+                <div id="close-sidebar"><i class="fa fa-chevron-left" id="closemenu"></i></div>
+                <h2></h2>
+            </div>
+            <ul>
+                <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/yourjcr/home"><i class="fa fa-user"></i>&nbsp;Your JCR</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#yourjcrmenu" aria-expanded="false" aria-controls="yourjcrmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                    <ul
+                        class="list-unstyled collapse" id="yourjcrmenu" aria-expanded="false">
+                        <li id="sublink"> <a href="/yourjcr/committee"><i class="fa fa-group"></i>&nbsp; Committee</a></li>
+                        <li id="sublink"> <a href="/yourjcr/academicaffairs"><i class="fa fa-book"></i>&nbsp; Academic Affairs</a></li>
+                        <li id="sublink"> <a href="/yourjcr/access"><i class="fa fa-key"></i>&nbsp; Access</a></li>
+                        <li id="sublink"> <a href="/yourjcr/consentjohns"><i class="fa fa-intersex"></i>&nbsp; Consent John's</a></li>
+                        <li id="sublink"> <a href="/yourjcr/ents"><i class="fas fa-glass-cheers"></i>&nbsp; Ents</a></li>
+                        <li id="sublink"> </li>
+            </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp; Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="slifemenu" aria-expanded="false">
+                    <li id="sublink"> <a href="#"><i class="fa fa-mortar-board"></i>&nbsp; Life in Cambridge</a></li>
+                    <li id="sublink"> <a href="#"><i class="fa fa-soccer-ball-o"></i>&nbsp; Clubs &amp; Societies</a></li>
+                    <li id="sublink"> <a href="#"><i class="fa fa-university"></i>&nbsp; Facilities</a></li>
+                    <li id="sublink"> </li>
+                    </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/freshers/home"><i class="fa fa-user"></i>&nbsp; Freshers</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#freshersmenu" aria-expanded="false" aria-controls="freshersmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="freshersmenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/freshers/yourfirstday"><i class="fa fa-info-circle"></i>&nbsp; Your First Day</a></li>
+                    <li id="sublink"> <a href="/freshers/whattobring"><i class="fa fa-suitcase"></i> What to bring</a></li>
+                    <li id="sublink"> <a href="/freshers/vpwelcome"><i class="fa fa-star"></i> Welcome from the VP</a></li>
+                    <li id="sublink"> <a href="/freshers/usefulcontacts"><i class="fas fa-link"></i> Useful Contacts</a></li>
+                    <li id="sublink"> <a href="/freshers/glossary"><i class="fa fa-question"></i>&nbsp; Glossary of Terms</a></li>
+                    </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/currentstudents/home"><i class="fa fa-user"></i>&nbsp; Current Students</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#cstudentsmenu" aria-expanded="false" aria-controls="cstudentsmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="cstudentsmenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/currentstudents/welfare"><i class="fa fa-star"></i>&nbsp; Welfare Supplies</a></li>
+                    <li id="sublink"> <a href="/currentstudents/feedback"><i class="fa fa-wpforms"></i>&nbsp; Facilities Feedback</a></li>
+                    <li id="sublink"> <a href="/currentstudents/elections"><i class="fa fa-info-circle"></i>&nbsp; JCR Elections</a></li>
+                    </ul>
+            </li>
+            </ul>
+        </div>
     </div>
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       Some college rooms contain:
-       <br/>
-      </p>
-      <ul>
-       <li>
-        Toaster, kettle, microwave (every Cripps kitchen contains these, but those in Chapel &amp; North Court tend not to. Remember though that Chapel &amp; North Court rooms usually share kitchens between 2 people,  so it
-                                    might be worth waiting before you know what the other person’s buying)
-       </li>
-       <li>
-        Desk lamp
-       </li>
-       <li>
-        Reading lamp
-       </li>
-      </ul>
-      <p class="text-center">
-       (and so you may want to hold off buying these until you get here)
-       <br/>
-      </p>
-     </section>
-    </div>
-   </div>
-   <div class="row justify-content-around" style="margin: 0px 0px;padding: 10px;max-width: 1400px;background-color: #f8f8f8;">
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       College rooms do
-       <strong>
-        <span style="text-decoration: underline;">
-         not
-        </span>
-       </strong>
-       contain (and so you should bring):
-       <br/>
-      </p>
-      <ul>
-       <li>
-        Duvet cover, pillowcases, bedsheets
-       </li>
-       <li>
-        Hangers for your wardrobe
-        <br/>
-       </li>
-       <li>
-        Towels
-        <br/>
-       </li>
-       <li>
-        Extension leads
-        <br/>
-       </li>
-       <li>
-        Mixed selection of cutlery, crockery and kitchen utensils. Plates, bowls, glasses, mugs, knives (inc. a sharp
-        <br/>
-        knife), forks, spoons, tin opener, bottle opener, saucepan, frying pan, grater, colander…
-        <br/>
-       </li>
-       <li>
-        Alarm clock or loud smartphone with alarm – I can absolutely assure you won’t be making any 9 o’clock lectures otherwise!
-        <br/>
-       </li>
-      </ul>
-     </section>
-    </div>
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       When you get here, we’d recommend buying:
-       <br/>
-      </p>
-      <ul>
-       <li>
-        Stationery (i.e. paper, pens, pencils etc) – the Rymans on Sidney Street does good NUS discounts
-       </li>
-       <li>
-        Washing up liquid &amp; tea towels
-       </li>
-       <li>
-        Shower gel, shampoo, conditioner, deoderant, toothpaste etc
-       </li>
-       <li>
-        Basic medications (e.g. paracetamol, ibuprofen, flu relief etc)
-       </li>
-       <li>
-        Washing tablets/powder
-       </li>
-       <li>
-        Basic foodstuffs such as cereal, milk, tea, coffee etc
-       </li>
-      </ul>
-     </section>
-    </div>
-   </div>
-   <div class="row justify-content-around" style="margin: 0px 0px;padding: 10px;max-width: 1400px;">
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       Things you might want to wait and see about:
-       <br/>
-      </p>
-      <ul>
-       <li>
-        A printer. There are relatively cheap printing options in the library. You can even set your laptop up to print to the library printer without leaving your room.
-       </li>
-       <li>
-        We’d recommend
-        <strong>
-         <span style="text-decoration: underline;">
-          NOT
-         </span>
-        </strong>
-        buying Microsoft Office before you get here. You can get a
-        <a href="http://www.uis.cam.ac.uk/initiatives/ees/office-365-proplus/office365-personal">
-         free version
-        </a>
-        of
-                                    the latest Office from the University Computing Service, so buying it in advance could end up being a bit of a waste of money
-        <br/>
-       </li>
-       <li>
-        Rugs/cushions/lamps and other ‘stuff’. It’s so much easier to buy these sorts of things once you get here and can really assess what you want for your room.
-        <br/>
-       </li>
-       <li>
-        Posters and decorative items (there’s a Picture Rental scheme in the first week). The college does have a rule though that blu (or white) tac, selotape and other adhesives cannot be used on any painted surfaces – so if
-                                    you want to hang items around other parts of the room, you are only permitted to use adhesive picture hanging strips.
-        <br/>
-       </li>
-       <li>
-        Black-tie evening wear – you’re very unlikely to want anything very formal during Freshers’ Week, so you’ll probably only need these from the second term onwards!
-        <br/>
-       </li>
-      </ul>
-     </section>
-    </div>
-    <div class="col" style="min-width: 300px;">
-     <section class="text-left" style="max-width: 600px;">
-      <p class="text-center" style="font-weight: bold;">
-       Other things to consider:
-       <br/>
-      </p>
-      <ul>
-       <li>
-        The majority of students bring a laptop, it’s recommended although not essential. The College computer rooms are well-stocked and accessible 24/7! If you do buy a laptop, it’s worth getting it within a month of term starting,
-                                    as you can then claim back half of the cost on the
-        <a href="https://www.joh.cam.ac.uk/learning-and-research-fund">
-         Learning and Research fund
-        </a>
-        .
-       </li>
-       <li>
-        Similarly, a lot of people arrive with a bike, but there are plenty of bike shops and second hand sales that will take place in Cambridge (especially during Freshers’ Week!)
-       </li>
-       <li>
-        Gowns are available for purchase when you sign in for the first time, but are also available from Ryder &amp; Amies and Ede &amp; Ravenscroft. The latter sells slightly more expensive ones, though realistically the quality
-                                    is around about the same.
-       </li>
-       <li>
-        A form of identification (such as a driving licence or passport) is extremely useful
-       </li>
-       <li>
-        UK plug adaptors for EU/ international students.
-       </li>
-      </ul>
-     </section>
-    </div>
-   </div>
-   <section class="text-left" style="background-color: #f8f8f8;padding: 15px;">
-    <p class="text-center" style="font-weight: bold;">
-     Storage:
-     <br/>
-    </p>
-    <p style="width: 100%;">
-     Thanks to the 9 month room license at St John’s, most students are able to retain access to their rooms over the Christmas and Spring vacations so, unlike many other Colleges, there is no need to clear any belongings from rooms between
-                        terms. However, students must vacate their rooms during the long vacation (summer).
-    </p>
-    <p style="width: 100%;">
-     Students are able to apply for storage, to leave some belongings in college storage for free over summer, with priority given to overseas students and those living far from Cambridge. You’ll get an email about this at the end of the
-                        year to explain the process. So, do remember, what comes to Cambridge or what you acquire during the year while you are here will almost definitely have to leave again at the end of the academic year!
-    </p>
-   </section>
-  </section>
- </div>
-</main>
-{% endblock %}
+    <nav class="navbar navbar-light navbar-expand fixed-top">
+        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST JOHN'S JCR</a>
+            <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
+                <div class="btn-group ml-auto" role="group"><a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login" style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;"><i class="fas fa-crow"></i>&nbsp; Login</a>
+                    <button
+                        class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button" style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;"><i class="fa fa-navicon"></i>&nbsp;Menu</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="navbarheading" class="clean-block features" style="background-position: center;background-size: cover;background-repeat: no-repeat;filter: brightness(100%) contrast(100%) saturate(100%);padding-bottom: 0px;width: 100%;background-image: url(&quot;/assets/img/110614.jpg&quot;);">
+        <div class="container class=&quot;col-sm col-md-10 col-lg-10&quot;" style="padding: 0px;">
+            <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+                <h1 class="text-center" id="pageheading">What to bring</h1>
+                <p class="text-center" id="pageparagraph" style="margin: 0px;">There are all sorts of lists floating about which outline what is and isn’t worth taking to uni. Because provisions vary between different universities (and in the case of Cambridge even between different colleges) we’ve put our own one
+                    together to help guide you.</p>
+            </div>
+        </div>
+    </section>
+    <main id="main">
+        <div class="container d-flex justify-content-xl-center align-items-xl-center">
+            <section>
+                <p class="text-center"></p>
+                <div class="row justify-content-around" style="margin: 0px 0px;max-width: 1400px;padding: 10px;">
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">All college rooms contain:<br></p>
+                            <ul>
+                                <li>A bed, mattress (&amp; mattress protector), duvet, 2 pillows</li>
+                                <li>Desk, chair(s), wardrobe</li>
+                                <li>Fridge, hob (in the kitchen!)<br></li>
+                                <li>Pin board fixed to the wall<br></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">Some college rooms contain:<br></p>
+                            <ul>
+                                <li>Toaster, kettle, microwave (every Cripps kitchen contains these, but those in Chapel &amp; North Court tend not to. Remember though that Chapel &amp; North Court rooms usually share kitchens between 2 people, &nbsp;so it
+                                    might be worth waiting before you know what the other person’s buying)</li>
+                                <li>Desk lamp</li>
+                                <li>Reading lamp</li>
+                            </ul>
+                            <p class="text-center">(and so you may want to hold off buying these until you get here)<br></p>
+                        </section>
+                    </div>
+                </div>
+                <div class="row justify-content-around" style="margin: 0px 0px;padding: 10px;max-width: 1400px;background-color: #f8f8f8;">
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">College rooms do <strong><span style="text-decoration: underline;">not</span></strong> contain (and so you should bring):<br></p>
+                            <ul>
+                                <li>Duvet cover, pillowcases, bedsheets</li>
+                                <li>Hangers for your wardrobe<br></li>
+                                <li>Towels<br></li>
+                                <li>Extension leads<br></li>
+                                <li>Mixed selection of cutlery, crockery and kitchen utensils.&nbsp;Plates, bowls, glasses, mugs, knives (inc. a sharp&nbsp;<br>knife), forks, spoons, tin opener, bottle opener, saucepan, frying pan,&nbsp;grater, colander…<br></li>
+                                <li>Alarm clock or loud smartphone with alarm – I can absolutely assure you won’t be making any 9 o’clock lectures otherwise!<br></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">When you get here, we’d recommend buying:<br></p>
+                            <ul>
+                                <li>Stationery (i.e. paper, pens, pencils etc) – the Rymans on Sidney Street does good NUS discounts</li>
+                                <li>Washing up liquid &amp; tea towels</li>
+                                <li>Shower gel, shampoo, conditioner, deoderant, toothpaste etc</li>
+                                <li>Basic medications (e.g. paracetamol, ibuprofen, flu relief etc)</li>
+                                <li>Washing tablets/powder</li>
+                                <li>Basic foodstuffs such as cereal, milk, tea, coffee etc</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div class="row justify-content-around" style="margin: 0px 0px;padding: 10px;max-width: 1400px;">
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">Things you might want to wait and see about:<br></p>
+                            <ul>
+                                <li>A printer. There are relatively cheap printing options in the library. You can even set your laptop up to print to the library printer without leaving your room.</li>
+                                <li>We’d recommend <strong><span style="text-decoration: underline;">NOT</span></strong> buying Microsoft Office before you get here. You can get a <a href="http://www.uis.cam.ac.uk/initiatives/ees/office-365-proplus/office365-personal">free version</a>&nbsp;of
+                                    the latest Office from the University Computing Service, so buying it in advance could end up being a bit of a waste of money<br></li>
+                                <li>Rugs/cushions/lamps and other ‘stuff’. It’s so much easier to buy these sorts of things once you get here and can really assess what you want for your room.<br></li>
+                                <li>Posters and decorative items (there’s a Picture Rental scheme in the first week). The college does have a rule though that blu (or white) tac, selotape and other adhesives cannot be used on any painted surfaces – so if
+                                    you want to hang items around other parts of the room, you are only permitted to use adhesive picture hanging strips.<br></li>
+                                <li>Black-tie evening wear – you’re very unlikely to want anything very formal during Freshers’ Week, so you’ll probably only need these from the second term onwards!&nbsp;<br></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col" style="min-width: 300px;">
+                        <section class="text-left" style="max-width: 600px;">
+                            <p class="text-center" style="font-weight: bold;">Other things to consider:<br></p>
+                            <ul>
+                                <li>The majority of students bring a laptop, it’s recommended although not essential. The College computer rooms are well-stocked and accessible 24/7! If you do buy a laptop, it’s worth getting it within a month of term starting,
+                                    as you can then claim back half of the cost on the <a href="https://www.joh.cam.ac.uk/learning-and-research-fund">Learning and Research fund</a>.</li>
+                                <li>Similarly, a lot of people arrive with a bike, but there are plenty of bike shops and second hand sales that will take place in Cambridge (especially during Freshers’ Week!)</li>
+                                <li>Gowns are available for purchase when you sign in for the first time, but are also available from Ryder &amp; Amies and Ede &amp; Ravenscroft. The latter sells slightly more expensive ones, though realistically the quality
+                                    is around about the same.</li>
+                                <li>A form of identification (such as a driving licence or passport) is extremely useful</li>
+                                <li>UK plug adaptors for EU/ international students.</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <section class="text-left" style="background-color: #f8f8f8;padding: 15px;">
+                    <p class="text-center" style="font-weight: bold;">Storage:<br></p>
+                    <p style="width: 100%;">Thanks to the 9 month room license at St John’s, most students are able to retain access to their rooms over the Christmas and Spring vacations so, unlike many other Colleges, there is no need to clear any belongings from rooms between
+                        terms. However, students must vacate their rooms during the long vacation (summer).</p>
+                    <p style="width: 100%;">Students are able to apply for storage, to leave some belongings in college storage for free over summer, with priority given to overseas students and those living far from Cambridge. You’ll get an email about this at the end of the
+                        year to explain the process. So, do remember, what comes to Cambridge or what you acquire during the year while you are here will almost definitely have to leave again at the end of the academic year!</p>
+                </section>
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer dark" style="background-color: rgb(255,255,255);">
+        <div class="container">
+            <div class="row">
+                <div class="col text-right align-self-center" data-aos="fade-right"><a href="https://www.facebook.com/stjohnscollegejcr"><i class="fa fa-facebook-square" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+                <div class="col text-center" data-aos="fade"><a class="stretched-link" href="https://www.instagram.com/stjohnsjcr/"><i class="fa fa-instagram" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+                <div class="col text-left" data-aos="fade-left"><a href="#"><i class="fa fa-snapchat-ghost" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© St. John's JCR Committee 2019</p>
+        </div>
+    </footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="/assets/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+    <script src="/assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="/assets/js/navbartransition.js"></script>
+</body>
+
+</html>
