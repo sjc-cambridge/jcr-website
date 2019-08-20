@@ -12,7 +12,6 @@ def home():
 @auth_decorator
 def login_route():
     return_url = request.args.get('redirect')
-    print(return_url)
     if return_url:
         return redirect(return_url)
     else:

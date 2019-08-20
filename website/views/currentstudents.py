@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, send_file
+import os
 from website.config import auth_decorator
+from website.contentmanager import get_minutes
 
 currentstudents = Blueprint('currentstudents', __name__)
 
@@ -11,6 +13,13 @@ def current_home():
     user_crsid = auth_decorator.principal
     return render_template("currentstudents/home.j2.html", a=auth_decorator, current_page="/currentstudents")
 
+@auth_decorator
+@currentstudents.route("/currentstudents/minutes/<filename>")
+def return_minutes(filename):
+    try:
+        return get_minutes(filename)
+    except Exception as e:
+        return str(e)
 
 @currentstudents.route('/currentstudents/<pagename>')
 @auth_decorator
