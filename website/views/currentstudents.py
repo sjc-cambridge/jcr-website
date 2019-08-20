@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, send_file
 import os
 from website.config import auth_decorator
-from website.contentmanager import get_minutes
+from website.contentmanager import get_minutes, get_transparencydoc
 
 currentstudents = Blueprint('currentstudents', __name__)
 
@@ -18,6 +18,14 @@ def current_home():
 def return_minutes(filename):
     try:
         return get_minutes(filename)
+    except Exception as e:
+        return str(e)
+
+@auth_decorator
+@currentstudents.route("/currentstudents/transparency")
+def return_transparencydoc():
+    try:
+        return get_transparencydoc()
     except Exception as e:
         return str(e)
 
