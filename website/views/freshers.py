@@ -10,7 +10,8 @@ def freshers_home():
 
 @freshers.route('/freshers/<pagename>')
 def freshers_routing(pagename):
-    return render_template("freshers/{}.html".format(pagename), a=auth_decorator)
+    return render_template(f"freshers/{pagename}.html".format(pagename),
+                                a=auth_decorator, current_page ="/freshers/{}".format(pagename))
 
 
 @freshers.route('/freshers/<pagename>/')

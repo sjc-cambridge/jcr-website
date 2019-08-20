@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, request
 from website.config import auth_decorator
 
 main = Blueprint('main', __name__)
@@ -6,12 +6,17 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.html", a=auth_decorator)
+    return render_template("index.html", a=auth_decorator, current_page="/")
 
 @main.route("/login")
 @auth_decorator
 def login_route():
-    return redirect(url_for("main.home"))
+    return_url = request.args.get('redirect')
+    print(return_url)
+    if return_url:
+        return redirect(return_url)
+    else:
+        return redirect(url_for("main.home"))
 
 @main.route("/logout")
 def logout_route():

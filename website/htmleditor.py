@@ -19,7 +19,7 @@ class HTMLParser:
             self.text_file = html_file.read()
 
     def make_title(self):
-        self.title += "St. John's College JCR"
+        self.title += "<title>St. John's JCR</title>"
         self.title += "\n{% endblock %}\n\n"
 
     def make_header(self):
@@ -85,7 +85,7 @@ exceptions_list = []
 
 def assets_finder(filepath):
     '''Check if file is static content'''
-    if 'assets' in filepath:
+    if 'assets' in filepath or 'shared' in filepath:
         exceptions_list.append(filepath)
     else:
         return None
@@ -96,7 +96,7 @@ def chop_main(filepath):
 
 curr_dir = os.path.dirname(__file__)
 
-templates_path = os.path.join(curr_dir,'templates2')
+templates_path = os.path.join(curr_dir,'templates')
 
 
 file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
