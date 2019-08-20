@@ -6,11 +6,11 @@ freshers = Blueprint('freshers', __name__)
 @freshers.route("/freshers")
 @freshers.route("/freshers/home")
 def freshers_home():
-    return render_template("freshers/home.html", a=auth_decorator)
+    return render_template("freshers/home.j2.html", a=auth_decorator, current_page="/freshers")
 
 @freshers.route('/freshers/<pagename>')
 def freshers_routing(pagename):
-    return render_template(f"freshers/{pagename}.html".format(pagename),
+    return render_template(f"freshers/{pagename}.j2.html".format(pagename),
                                 a=auth_decorator, current_page ="/freshers/{}".format(pagename))
 
 

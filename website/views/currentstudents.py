@@ -9,13 +9,13 @@ currentstudents = Blueprint('currentstudents', __name__)
 @auth_decorator
 def current_home():
     user_crsid = auth_decorator.principal
-    return render_template("currentstudents/home.html", a=auth_decorator, current_page ="/currentstudents/{}".format(pagename))
+    return render_template("currentstudents/home.j2.html", a=auth_decorator, current_page="/currentstudents")
 
 
 @currentstudents.route('/currentstudents/<pagename>')
 @auth_decorator
 def current_routing(pagename):
-    return render_template("/currentstudents/{}.html".format(pagename), a=auth_decorator, current_page ="/currentstudents/{}".format(pagename))
+    return render_template("/currentstudents/{}.j2.html".format(pagename), a=auth_decorator, current_page="/currentstudents/{}".format(pagename))
 
 
 @currentstudents.route('/currentstudents/<pagename>/')

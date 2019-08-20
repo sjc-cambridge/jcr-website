@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import os
 import pathlib
-
+import shutil
 
 class HTMLParser:
     """
@@ -94,11 +94,23 @@ def chop_main(filepath):
     html_scanner = HTMLParser(filepath)
     html_scanner.modify_template()
 
-curr_dir = os.path.dirname(__file__)
+def jinja_rename(filepath):
+    if '.j2.html' not in filepath:  # If not already renamed
+        jinja_filepath = filepath.replace(".html", ".j2.html")
+        os.rename(filepath, jinja_filepath)
+    return 'Renamed {}'.format(filepath)
 
+curr_dir = os.path.dirname(__file__)
+templates_og_path = os.path.join(curr_dir,'templates_og')  # Templates before jinjafication from BSS.
 templates_path = os.path.join(curr_dir,'templates')
 
+try:
+    shutil.copytree(templates_og_path, templates_path)  # Make copy of og templates and move to templates folder.
+except Exception as e:
+    print(e)  # Directory already exists
 
 file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
 
 file_recurse(chop_main, templates_path, exceptions_list)  # Jinja stitching with exceptions
+
+file_recurse(jinja_rename, templates_path, exceptions_list)  # Renaming files to j2.html to show use of Jinja 2.

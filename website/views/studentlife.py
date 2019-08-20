@@ -7,11 +7,11 @@ student_routes = Blueprint('studentlife', __name__)
 @student_routes.route("/studentlife")
 @student_routes.route("/studentlife/")
 def student_home():
-    return render_template("studentlife/home.html", a=auth_decorator, current_page ="/studentlife/{}".format(pagename))
+    return render_template("studentlife/home.j2.html", a=auth_decorator, current_page ="/studentlife")
 
 @student_routes.route('/studentlife/<pagename>')
 def student_routing(pagename):
-    return render_template("studentlife/{}.html".format(pagename), a=auth_decorator, current_page ="/studentlife/{}".format(pagename))
+    return render_template("studentlife/{}.j2.html".format(pagename), a=auth_decorator, current_page ="/studentlife/{}".format(pagename))
 
 
 @student_routes.route('/studentlife/<pagename>/')

@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.html", a=auth_decorator, current_page="/")
+    return render_template("index.j2.html", a=auth_decorator, current_page="/")
 
 @main.route("/login")
 @auth_decorator
@@ -37,16 +37,16 @@ def server_overload(e):
 
 @main.route("/401")
 def error401():
-    return render_template('401.html')
+    return render_template('401.j2.html')
 
 @main.route("/403")
 def error403():
-    return render_template('403.html')
+    return render_template('403.j2.html')
 
 @main.route("/404")
 def error404():
-    return render_template('404.html')
+    return render_template('404.j2.html')
 
 @main.route("/500")
 def error500():
-    return render_template('500.html')
+    return render_template('500.j2.html')

@@ -1,0 +1,76 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<h1 class="text-center" id="pageheading">
+ Student Life
+</h1>
+<p class="text-center" id="pageparagraph" style="margin: 0px;">
+ It's sometimes difficult to take everything in. Here's a handy guide to everything you might have missed about living at John's.
+</p>
+{% endblock %}
+
+{% block main %}
+<main class="features-boxed">
+ <div class="container">
+  <div class="row justify-content-center features">
+   <div class="col-sm-8 col-md-5 col-lg-4 d-flex d-md-flex d-xl-flex justify-content-center align-content-stretch justify-content-md-center justify-content-xl-center item">
+    <div class="box" style="width: 290px;">
+     <i class="fa fa-trophy icon">
+     </i>
+     <h3 class="name">
+      Clubs and Societies
+     </h3>
+     <p class="description">
+      <br/>
+      St John’s has a wealth of clubs and societies to explore and be a part of.
+      <br/>
+     </p>
+     <a class="learn-more" href="/studentlife/clubsandsocieties">
+      Let's play »
+     </a>
+    </div>
+   </div>
+   <div class="col-sm-8 col-md-5 col-lg-4 d-flex d-xl-flex justify-content-center justify-content-xl-center item">
+    <div class="box" style="width: 290px;">
+     <i class="fa fa-cutlery icon">
+     </i>
+     <h3 class="name">
+      Facilities
+     </h3>
+     <p class="description">
+      <br/>
+      From the buttery to the gym. We're here to make sure you don't miss a thing.
+      <br/>
+     </p>
+     <a class="learn-more" href="/studentlife/facilities">
+      Let's cook »
+     </a>
+    </div>
+   </div>
+   <div class="col-sm-8 col-md-5 col-lg-4 d-flex d-sm-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-xl-center item">
+    <div class="box" style="width: 290px;">
+     <i class="fa fa-home icon">
+     </i>
+     <h3 class="name">
+      Life at Cambridge
+     </h3>
+     <p class="description">
+      <br/>
+      Cambridge can be daunting at first. But very soon you'll call it a home.
+      <br/>
+     </p>
+     <a class="learn-more" href="/studentlife/atcambridge">
+      Let's live it up »
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+{% endblock %}
