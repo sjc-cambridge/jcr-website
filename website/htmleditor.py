@@ -3,6 +3,9 @@ import os
 import pathlib
 import shutil
 
+curr_dir = os.path.dirname(__file__)
+
+
 class HTMLParser:
     """
     Class can be used to bulk edit the html files created by exporting with
@@ -10,6 +13,7 @@ class HTMLParser:
     page content is within a main element and that you give your page header
     container the id 'headerbox'.
     """
+
     def __init__(self, path):
         self.path = path
         self.extension = "{% extends 'shared/_layout.j2.html' %}\n\n"
@@ -57,7 +61,7 @@ class HTMLParser:
         self.edited_html = self.edited_html.replace('\\n', ' ')
         self.edited_html = BeautifulSoup(self.edited_html, 'html.parser')
         self.edited_html = self.edited_html.prettify('utf-8')
-        with open(self.path,'wb') as html_file:
+        with open(self.path, 'wb') as html_file:
             html_file.write(self.edited_html)  # Write HTML
         return 'Snipped {}'.format(self.path)
 
@@ -80,7 +84,9 @@ def file_recurse(func, directory_path, exceptions):
             file_recurse(func, path2, exceptions)
     return
 
+
 exceptions_list = []
+
 
 def assets_finder(filepath):
     '''Check if file is static content or jinja stuff'''
@@ -89,9 +95,11 @@ def assets_finder(filepath):
     else:
         return None
 
+
 def jinjafy_html(filepath):
     html_parser = HTMLParser(filepath)
     html_parser.modify_template()
+
 
 def jinja_rename(filepath):
     if '.j2.html' not in filepath:  # If not already renamed
@@ -99,19 +107,48 @@ def jinja_rename(filepath):
         os.rename(filepath, jinja_filepath)
     return 'Renamed {}'.format(filepath)
 
-curr_dir = os.path.dirname(__file__)
-templates_og_path = os.path.join(curr_dir,'templates_og')  # Templates before jinjafication from BSS.
-templates_path = os.path.join(curr_dir,'templates')
+
+def copy_new_files(src_dir, dst_dir, extension="**/*.*"):
+    for file in pathlib.Path(src_dir).glob(extension):
+        if file not in pathlib.Path(str(dst_dir)).glob(extension):
+            shutil.copy(str(file), dst_dir)
+        else:
+            print("{} exists in {}".format(
+                file, os.path.join(os.path.split(dst_dir)[-2:])
+            ))
+
+
+# Templates before jinjafication from BSS.
+templates_og_dir = os.path.join(curr_dir, 'templates_og')
+templates_dir = os.path.join(curr_dir, 'templates')
+templates_temp_dir = os.path.join(curr_dir, 'templates_temp')
+assets_dir = os.path.join(curr_dir, 'assets')
 
 try:
-    shutil.copytree(templates_og_path, templates_path)  # Make copy of og templates and move to templates folder.
-    shutil.move(os.path.join(curr_dir, 'templates/assets'), os.path.join(curr_dir, 'assets')) #bring out assets
-    shutil.copytree(os.path.join(curr_dir, 'shared_copy'), os.path.join(templates_path, 'shared'))  # Make copy of og templates and move to templates folder.
+    # try delete old temp directory
+    try:
+        shutil.rmtree(templates_temp_dir)
+    except Exception as e:
+        print(e)
+
+    print("Copying to temp folder")
+    shutil.copytree(templates_og_dir, templates_temp_dir)
+
+    print("Copying over any new assets")
+    copy_new_files(os.path.join(templates_temp_dir, 'assets'), assets_dir)
+
+    print("Ignoring any assets files")
+    file_recurse(assets_finder, templates_temp_dir, [])
+
+    print("Jinjafying html files")
+    file_recurse(jinjafy_html, templates_temp_dir,
+                 exceptions_list)
+
+    print("Rename files to .j2.html")
+    file_recurse(jinja_rename, templates_temp_dir, exceptions_list)
+
+    print("Copying over any new pages")
+    copy_new_files(templates_temp_dir, templates_dir, "*.j2.html")
+
 except Exception as e:
-    print(e)  # Directory already exists
-
-file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
-
-file_recurse(jinjafy_html, templates_path, exceptions_list)  # Jinja stitching with exceptions
-
-file_recurse(jinja_rename, templates_path, exceptions_list)  # Renaming files to j2.html to show use of Jinja 2.
+    print(e)
