@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect
 from website.config import johnian_access, JCR
 from website.content.retrieve import retrieveJson
 
@@ -16,4 +16,4 @@ def student_routing(pagename):
 
 @student_routes.route('/studentlife/<pagename>/')
 def student_routing2(pagename):
-    return redirect('/studentlife/{}'.format(pagename))
+    return redirect('/studentlife/{pagename}')
