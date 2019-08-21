@@ -3,29 +3,37 @@
         "category": "Sports",
         "clubs": [
             {
-                "imageName": "President.jpg",
-                "heading": "SJCAFC",
-                "description": "The best of the best"
+                "imageName": "studentlife/sjcafc.jpg",
+                "heading": "Football - SJCAFC",
+                "description": [
+                    "The most magnificent team of them all. With 3 men's teams and 1 women's team, there is fun for all the family.", 
+                    "Men's Captain: Dan Osborne (do318)",
+                    "Women's Captains:  Lucy Carson (lmc83) & Mikaela Thordson (malt2)"
+                ]
             },
             {
-                "imageName": "President.jpg",
-                "heading": "SJCRUFC",
-                "description": "You are tearing me apart Lisa"
+                "imageName": "studentlife/scjrufc.jpg",
+                "heading": "Rugby - SJCRUFC",
+                "description": [
+                    "Affectionately termed the redboys. SJCRUFC is known as one of the best rugby teams in Cambridge.",
+                    "Captain: Will Saunter (wrms2)",
+                    "Vice Captain: James Laudage (?)"
+                ]
             }
         ]
     },
     {
-        "category": "Academic",
+        "category": "Music",
         "clubs": [
             {
                 "imageName": "President.jpg",
-                "heading": "The JCR",
-                "description": "Oh Yes"
+                "heading": "St John's Voices",
+                "description": ["Oh Yes"]
             },
             {
                 "imageName": "President.jpg",
-                "heading": "The Bar",
-                "description": "Why Denny Why"
+                "heading": "The Gents of St John's",
+                "description": ["Why Denny Why"]
             }
         ]
     }

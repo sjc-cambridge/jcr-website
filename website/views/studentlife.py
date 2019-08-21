@@ -16,4 +16,9 @@ def student_routing(pagename):
 
 @student_routes.route('/studentlife/<pagename>/')
 def student_routing2(pagename):
-    return redirect('/studentlife/{pagename}')
+    return redirect('/studentlife/{}'.format(pagename))
+
+@student_routes.route("/studentlife/clubsandsocietiesv2")
+def clubsandsocieties():
+    clubs_by_category = retrieveJson("studentlife/clubsandsocieties")
+    return render_template("studentlife/clubsandsocietiesv2.j2.html", a=auth_decorator, clubs_by_category=clubs_by_category)
