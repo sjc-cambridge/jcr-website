@@ -25,11 +25,8 @@ class HTMLParser:
     def make_header(self):
         with open(self.path) as html_file:
             soup = BeautifulSoup(self.text_file, 'html.parser')
-            heading = soup.find(id='pageheading')
-            paragraph = soup.find(id='pageparagraph')
-            for element in [heading, paragraph]:
-                if element:
-                    self.header += f"{element}\n"
+            heading = soup.find(id='headerbox')
+            self.header += f"{heading}\n"
             self.header += "{% endblock %}\n\n"
 
     def get_main_start(self):
@@ -84,15 +81,15 @@ def file_recurse(func, directory_path, exceptions):
 exceptions_list = []
 
 def assets_finder(filepath):
-    '''Check if file is static content'''
-    if 'assets' in filepath or 'shared' in filepath:
+    '''Check if file is static content or jinja stuff'''
+    if '.DS_Store' in filepath or 'assets' in filepath or 'shared' in filepath or 'j2.html' in filepath:
         exceptions_list.append(filepath)
     else:
         return None
 
-def chop_main(filepath):
-    html_scanner = HTMLParser(filepath)
-    html_scanner.modify_template()
+def jinjafy_html(filepath):
+    html_parser = HTMLParser(filepath)
+    html_parser.modify_template()
 
 def jinja_rename(filepath):
     if '.j2.html' not in filepath:  # If not already renamed
@@ -111,6 +108,6 @@ except Exception as e:
 
 file_recurse(assets_finder, templates_path, [])  # Build list of assets file paths by recursion
 
-file_recurse(chop_main, templates_path, exceptions_list)  # Jinja stitching with exceptions
+file_recurse(jinjafy_html, templates_path, exceptions_list)  # Jinja stitching with exceptions
 
 file_recurse(jinja_rename, templates_path, exceptions_list)  # Renaming files to j2.html to show use of Jinja 2.

@@ -11,7 +11,7 @@ currentstudents = Blueprint('currentstudents', __name__)
 @auth_decorator
 def current_home():
     user_crsid = auth_decorator.principal
-    return render_template("currentstudents/home.j2.html", a=auth_decorator, current_page="/currentstudents")
+    return render_template("currentstudents/home.j2.html", crsid=auth_decorator.principal, current_page="/currentstudents")
 
 @auth_decorator
 @currentstudents.route("/currentstudents/minutes/<filename>")
@@ -32,7 +32,7 @@ def return_transparencydoc():
 @currentstudents.route('/currentstudents/<pagename>')
 @auth_decorator
 def current_routing(pagename):
-    return render_template("/currentstudents/{}.j2.html".format(pagename), a=auth_decorator, current_page="/currentstudents/{}".format(pagename))
+    return render_template("/currentstudents/{}.j2.html".format(pagename), crsid=auth_decorator.principal, current_page="/currentstudents/{}".format(pagename))
 
 
 @currentstudents.route('/currentstudents/<pagename>/')

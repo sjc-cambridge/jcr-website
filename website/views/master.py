@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.j2.html", a=auth_decorator, current_page="/")
+    return render_template("index.j2.html", crsid=auth_decorator.principal, current_page="/")
 
 @main.route("/login")
 @auth_decorator
@@ -20,7 +20,11 @@ def login_route():
 @main.route("/logout")
 def logout_route():
     auth_decorator.logout()
-    return redirect(url_for("main.home"))
+    return_url = request.args.get('redirect')
+    if return_url:
+        return redirect(return_url)
+    else:
+        return redirect(url_for("main.home"))
 
 def access_denied(e):
     return redirect(url_for("main.error401"))

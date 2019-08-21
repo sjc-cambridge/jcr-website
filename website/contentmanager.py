@@ -20,3 +20,11 @@ def get_transparencydoc():
     except Exception as e:
         print(e)
         return None
+
+def get_manifesto(position):
+    filepath = os.path.join(curr_dir,'content/manifestos', filename+'.pdf')
+    try:
+        return send_file(filepath)
+    except Exception as e:
+        print(e)
+        return None

@@ -2,6 +2,7 @@
 {
   "president":
     {
+      "name":"Anusha Ashok & Ollie Barnard",
         "co1":
             {
               "name": "Anusha Ashok",
@@ -72,6 +73,12 @@
       {
          "name": "George Lodge",
          "crsid": "geal2",
+         "bio":""
+      },
+    "treasurer":
+      {
+         "name": "Nick Palmer",
+         "crsid": "np481",
          "bio":""
       },
     "welfare":

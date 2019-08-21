@@ -52,8 +52,8 @@ class Committee(dict):
         return "Emailed JCR Committee"
 
 
-JCR = Committee("committee.json")
-print(JCR['president'])
+JCR = Committee("content/committee.json")
+
 
 #print(JCR['PRESIDENT']['name'])
 #print(JCR['COMPUTING']['name'])

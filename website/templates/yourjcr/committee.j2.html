@@ -7,15 +7,19 @@
 {% endblock %}
 
 {% block header %}
-<h1 class="text-center d-flex justify-content-center headershrink" id="pageheading" style="padding-top: 10px;">
- Meet the Committee
- <br/>
-</h1>
-<p class="text-center" id="pageparagraph" style="padding: 0px;">
- <br/>
- Everything the JCR does doesn’t just happen by itself, it requires the work of our wonderful committee! Have a look below to see our shout-out to them for all of their hard work.
- <br/>
-</p>
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center d-flex justify-content-center headershrink" id="pageheading" style="padding-top: 10px;">
+   Meet the Committee
+   <br/>
+  </h1>
+  <p class="text-center" id="pageparagraph" style="padding: 0px;">
+   <br/>
+   Everything the JCR does doesn’t just happen by itself, it requires the work of our wonderful committee! Have a look below to see our shout-out to them for all of their hard work.
+   <br/>
+  </p>
+ </div>
+</div>
 {% endblock %}
 
 {% block main %}
@@ -30,7 +34,7 @@
        Co-Presidents
       </h4>
       <p class="card-text">
-       Anusha Ashok and Ollie Barnard
+       {{JCR['president']['name']}}
       </p>
       <a class="btn btn-primary" href="/yourjcr/committee/presidents" role="button" style="color: rgb(255,255,255);">
        Profile
@@ -48,7 +52,7 @@
        Vice President
       </h4>
       <p class="card-text">
-       Nina Newhouse
+       {{JCR['vicepresident']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/vicepresident" role="button">
        Profile
@@ -60,13 +64,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/AAffairs.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Academic.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        Academic Affairs and Careers
       </h4>
       <p class="card-text">
-       Dani Vijayakumar
+       {{JCR['academic']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/academicaffairs" role="button">
        Profile
@@ -84,7 +88,7 @@
        Access
       </h4>
       <p class="card-text">
-       Imy Arden-Jones
+       {{JCR['access']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/access" role="button">
        Profile
@@ -102,7 +106,7 @@
        Computing
       </h4>
       <p class="card-text">
-       Jonathan Carter
+       {{JCR['computing']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/computing" role="button">
        Profile
@@ -120,7 +124,7 @@
        Ents
       </h4>
       <p class="card-text">
-       Lawrence Tray
+       {{JCR['ents']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/ents" role="button">
        Profile
@@ -138,7 +142,7 @@
        Equal Opportunities
       </h4>
       <p class="card-text">
-       David Quist
+       {{JCR['equalops']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/equalops" role="button">
        Profile
@@ -156,7 +160,7 @@
        Ethical and Charitable Affairs
       </h4>
       <p class="card-text">
-       Anna Stevenson
+       {{JCR['ethical']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/ethical" role="button">
        Profile
@@ -174,7 +178,7 @@
        Facilities
       </h4>
       <p class="card-text">
-       Tim d'Aboville
+       {{JCR['facilities']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/facilities" role="button">
        Profile
@@ -192,7 +196,7 @@
        Secretary and Publicity
       </h4>
       <p class="card-text">
-       Martin Limback-Stokin
+       {{JCR['secretary']['name']}}
       </p>
       <button class="btn btn-primary" type="button">
        Profile
@@ -210,7 +214,7 @@
        Sports, Services and Societies
       </h4>
       <p class="card-text">
-       George Lodge
+       {{JCR['services']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/equalops" role="button">
        Profile
@@ -228,7 +232,7 @@
        Treasurer
       </h4>
       <p class="card-text">
-       Nick Palmer
+       {{JCR['treasurer']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/treasurer" role="button">
        Profile
@@ -246,7 +250,7 @@
        Female and Non-Binary Welfare
       </h4>
       <p class="card-text">
-       Amara Mulliner
+       {{JCR['welfare']['fnb']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/fwelfare" role="button">
        Profile
@@ -265,7 +269,7 @@
        <br/>
       </h4>
       <p class="card-text">
-       Alex Mercer
+       {{JCR['welfare']['mnb']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/mwelfare" role="button">
        Profile
@@ -277,13 +281,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/YashJCR.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/BME.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        BME
       </h4>
       <p class="card-text">
-       Yashoraj Agarwal
+       {{JCR['bme']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/bme" role="button">
        Profile
@@ -295,13 +299,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/SophieJCR.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Internationals.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        Internationals'
       </h4>
       <p class="card-text">
-       Sophie Michalski
+       {{JCR['internationals']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/international" role="button">
        Profile
@@ -313,13 +317,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/LGBT.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/LGBTQ.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        LGBT+
       </h4>
       <p class="card-text">
-       Laurence van Someren
+       {{JCR['lgbtq']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/lgbt" role="button">
        Profile
@@ -331,13 +335,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/BeccaJCR.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Disabilities.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        Physical Disabilities
       </h4>
       <p class="card-text">
-       Rebecca Gutteridge
+       {{JCR['disabilities']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/disabilities" role="button">
        Profile
@@ -349,13 +353,13 @@
    </div>
    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
     <div class="card border-white" style="padding: 10px;">
-     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Womens.jpg"/>
+     <img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Women.jpg"/>
      <div class="card-body">
       <h4 class="card-title">
        Women's
       </h4>
       <p class="card-text">
-       Anastasia Blamey
+       {{JCR['women']['name']}}
       </p>
       <a class="btn btn-primary text-light" href="/yourjcr/committee/women" role="button">
        Profile
