@@ -10,7 +10,7 @@ def freshers_home():
 
 @freshers.route('/freshers/<pagename>')
 def freshers_routing(pagename):
-    return render_template(f"freshers/{pagename}.j2.html".format(pagename),
+    return render_template("freshers/{}.j2.html".format(pagename),
                                 crsid=auth_decorator.principal, current_page ="/freshers/{}".format(pagename))
 
 
