@@ -3,7 +3,6 @@ import os
 import pathlib
 import shutil
 
-
 class HTMLParser:
     """
     Class can be used to bulk edit the html files created by exporting with
