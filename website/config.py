@@ -54,7 +54,6 @@ class Committee(dict):
 
 JCR = Committee("content/committee.json")
 
-
 #print(JCR['PRESIDENT']['name'])
 #print(JCR['COMPUTING']['name'])
 

@@ -102,8 +102,9 @@ templates_og_path = os.path.join(curr_dir,'templates_og')  # Templates before ji
 templates_path = os.path.join(curr_dir,'templates')
 
 try:
-    shutil.move(os.path.join(curr_dir, 'templates_og/assets'), os.path.join(curr_dir, 'assets')) #bring out assets
     shutil.copytree(templates_og_path, templates_path)  # Make copy of og templates and move to templates folder.
+    shutil.move(os.path.join(curr_dir, 'templates/assets'), os.path.join(curr_dir, 'assets')) #bring out assets
+    shutil.copytree(os.path.join(curr_dir, 'shared_copy'), os.path.join(templates_path, 'shared'))  # Make copy of og templates and move to templates folder.
 except Exception as e:
     print(e)  # Directory already exists
 
