@@ -12,7 +12,7 @@ class Request(flask.Request):
     trusted_hosts = {'jfc43.user.srcf.net', 'localhost'}
 
 def create_site():
-    app = Flask(__name__, static_folder='templates/assets')
+    app = Flask(__name__, static_folder='assets')
     app.request_class = Request
     app.config["SECRET_KEY"] = os.urandom(16)
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)

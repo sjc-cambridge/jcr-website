@@ -23,10 +23,10 @@ class HTMLParser:
         self.title += "\n{% endblock %}\n\n"
 
     def make_header(self):
-        with open(self.path) as html_file:
+        with open(self.path):
             soup = BeautifulSoup(self.text_file, 'html.parser')
             heading = soup.find(id='headerbox')
-            self.header += f"{heading}\n"
+            self.header += "{}\n".format(heading)
             self.header += "{% endblock %}\n\n"
 
     def get_main_start(self):
@@ -102,6 +102,7 @@ templates_og_path = os.path.join(curr_dir,'templates_og')  # Templates before ji
 templates_path = os.path.join(curr_dir,'templates')
 
 try:
+    shutil.move(os.path.join(curr_dir, 'templates_og/assets'), os.path.join(curr_dir, 'assets')) #bring out assets
     shutil.copytree(templates_og_path, templates_path)  # Make copy of og templates and move to templates folder.
 except Exception as e:
     print(e)  # Directory already exists
