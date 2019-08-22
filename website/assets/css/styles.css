@@ -1,3 +1,16 @@
+html, body
+{
+    max-width: 100%
+    overflow-x: hidden;
+}
+
+/* CAN USE TO DEBUG CSS!*/
+/** {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
+
 .dropdown, .dropleft, .dropright, .dropup {
 }
 
@@ -51,6 +64,8 @@
 
 #footer {
   border-radius: 0px;
+  overflow-x: hidden!important;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -98,4 +113,3 @@
     font-size: 36px;
   }
 }
-

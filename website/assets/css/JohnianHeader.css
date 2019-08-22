@@ -30,7 +30,7 @@
 }
 
 #navbarheading {
+  max-width:100%;
   overflow-x: hidden;
   padding-top: 120px;
 }
-
