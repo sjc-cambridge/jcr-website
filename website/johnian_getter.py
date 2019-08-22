@@ -1,6 +1,5 @@
-''' File connects to UIS to get CRSids of all Johns undergraduates and postgraduates.
-Stores all CRSids in pickled list. Idea is this file could be run on a cronjob
-(or just using datetime triggered by a website routing function),
+''' File connects to UIS to get CRSids of all Johnians known for website access.
+Stores all CRSids in pickled list. Idea is this file is run periodically, say once a day,
 so we're not making loads of unneccesary requests to UIS server.
 Has to be run from behind the Uni firewall i.e. on the Uni network e.g. eduroam
 or via the Cambridge VPN
@@ -16,9 +15,9 @@ members of St. John's in case these change for any reason and need to  be re-fou
 Used myself, an old friend and DoS to get IDs!
 
 pm = PersonMethods(conn)
-me = pm.getGroups('crsid','jfc43') # Getting Johns Undergrad IDs
-marcus = pm.getGroups("crsid","mjgs3") # Getting Johns Postgrad IDs
-hynes = pm.getGroups("crsid", "tph1")
+me = pm.getGroups('crsid','jfc43') # Getting Johns Undergrad ID String
+marcus = pm.getGroups("crsid","mjgs3") # Getting Johns Postgrad ID String
+hynes = pm.getGroups("crsid", "tph1") # Getting general members of Johns group
 for group in me:
     print(group.groupid, group.description)
     print(group.name)
@@ -39,5 +38,7 @@ for johnian in johnians:
     crsid = johnian.identifier.value
     johnian_crsids.append(crsid)
 
-with open("johnians.txt", "wb") as file:   #Pickling
+with open("johnians.txt", "wb") as file:   # Pickling
+    """We store the list so that we don't have to make a request to UIS every time
+        we want a list of Johnian CRSids"""
     pickle.dump(johnian_crsids, file)

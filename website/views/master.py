@@ -1,15 +1,15 @@
 from flask import Blueprint, render_template, redirect, url_for, request
-from website.config import auth_decorator
+from website.config import johnian_access, JCR
 
 main = Blueprint('main', __name__)
 
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.j2.html", crsid=auth_decorator.principal, current_page="/")
+    return render_template("index.j2.html", crsid=johnian_access.principal, current_page="/")
 
 @main.route("/login")
-@auth_decorator
+@johnian_access
 def login_route():
     return_url = request.args.get('redirect')
     if return_url:
@@ -19,7 +19,7 @@ def login_route():
 
 @main.route("/logout")
 def logout_route():
-    auth_decorator.logout()
+    johnian_access.logout()
     return_url = request.args.get('redirect')
     if return_url:
         return redirect(return_url)
@@ -40,16 +40,16 @@ def server_overload(e):
 
 @main.route("/401")
 def error401():
-    return render_template('401.j2.html')
+    return render_template('401.j2.html', JCR=JCR)
 
 @main.route("/403")
 def error403():
-    return render_template('403.j2.html')
+    return render_template('403.j2.html', JCR=JCR)
 
 @main.route("/404")
 def error404():
-    return render_template('404.j2.html')
+    return render_template('404.j2.html', JCR=JCR)
 
 @main.route("/500")
 def error500():
-    return render_template('500.j2.html')
+    return render_template('500.j2.html', JCR=JCR)

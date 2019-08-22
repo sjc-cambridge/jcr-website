@@ -12,9 +12,8 @@ with open(os.path.join(script_dir, "johnians.txt"), "rb") as file:
 
 #johnian_crsids.remove('jfc43') #Testing login works
 
-auth_decorator = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
+johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
                                             require_principal = johnian_crsids)
-
 
 class Committee(dict):
     '''To do: edit .forward function.
@@ -22,11 +21,20 @@ class Committee(dict):
     def __init__(self, committee_json_path, *args):
         dict.__init__(self, *args)
         self.path = os.path.join(script_dir, committee_json_path)
+        self.committee_crsids = []
         with open(self.path, 'r') as f:
             committee_json = json.load(f)
             for key, item in committee_json.items():
                 self[key] = item
-
+                for key2, item2 in item.items():
+                    if key2 == 'crsid':
+                        self.committee_crsids.append(item2)
+                    else: # Sub-dict, e.g. welfare officers
+                        print(type(item2))
+                        if isinstance(item2, dict):
+                            print('Woop')
+                            self.committee_crsids.append(item2['crsid'])
+        self.committee_crsids = set(self.committee_crsids)
 
     def email_member(self, input_message, committee_role):
         self.email_people(input_message, [committee_role])
@@ -51,10 +59,11 @@ class Committee(dict):
         smtpserver.close()
         return "Emailed JCR Committee"
 
-
 JCR = Committee("content/committee.json")
 
+committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
+                                            require_principal = JCR.committee_crsids)
 #print(JCR['PRESIDENT']['name'])
 #print(JCR['COMPUTING']['name'])
 
-#print(JCR.email_member('Function for emailing members','COMPUTING')) # Pls don't spam meh
+#print(JCR.email_member('Function for emailing members','computing')) # Pls don't spam meh
