@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, send_file
 import os
 from website.config import auth_decorator
-from website.contentmanager import get_minutes, get_transparencydoc
+from website.contentmanager import get_minutes, get_transparencydoc, election_json, ELECTIONS_ONGOING
+
 
 currentstudents = Blueprint('currentstudents', __name__)
 
@@ -28,6 +29,18 @@ def return_transparencydoc():
         return get_transparencydoc()
     except Exception as e:
         return str(e)
+
+@auth_decorator
+@currentstudents.route("/currentstudents/elections")
+def elections_page():
+    user_crsid = auth_decorator.principal
+    if ELECTIONS_ONGOING:  # See contentmanager.py
+        template_path="currentstudents/currentelections.j2.html"
+    else:
+        template_path="currentstudents/electionresults.j2.html"
+    return render_template(template_path, crsid=auth_decorator.principal,
+                            current_page="/currentstudents/elections", e=election_json)
+
 
 @currentstudents.route('/currentstudents/<pagename>')
 @auth_decorator
