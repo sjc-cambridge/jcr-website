@@ -1,7 +1,7 @@
-from flask import Blueprint, render_template, send_file
+from flask import Blueprint, render_template, send_file, request
 import os
 from website.config import auth_decorator
-from website.contentmanager import get_minutes, get_transparencydoc, election_json, ELECTIONS_ONGOING
+from website.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
 
 
 currentstudents = Blueprint('currentstudents', __name__)
@@ -41,6 +41,14 @@ def elections_page():
     return render_template(template_path, crsid=auth_decorator.principal,
                             current_page="/currentstudents/elections", e=election_json)
 
+@auth_decorator
+@currentstudents.route("/currentstudents/elections/getmanifesto")
+def return_manifesto():
+    manifesto = request.args.get('manifesto')
+    try:
+        return get_manifesto(manifesto)
+    except Exception as e:
+        return str(e)
 
 @currentstudents.route('/currentstudents/<pagename>')
 @auth_decorator

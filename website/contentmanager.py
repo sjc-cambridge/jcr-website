@@ -4,7 +4,7 @@ import json
 
 curr_dir = os.path.dirname(__file__)
 
-ELECTIONS_ONGOING = True
+ELECTIONS_ONGOING = False
 
 if ELECTIONS_ONGOING:
     json_path = 'content/elections/candidates.json'
@@ -16,7 +16,7 @@ with open(election_json_path, 'r') as f:
     election_json = json.load(f)
 
 def get_manifesto(filename):
-    filepath = os.path.join(curr_dir,'content/manifestos', filename)
+    filepath = os.path.join(curr_dir,'content/elections/manifestos', filename)
     try:
         return send_file(filepath)
     except Exception as e:
