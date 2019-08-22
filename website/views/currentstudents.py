@@ -14,24 +14,27 @@ def current_home():
     user_crsid = auth_decorator.principal
     return render_template("currentstudents/home.j2.html", crsid=auth_decorator.principal, current_page="/currentstudents")
 
-@auth_decorator
+
 @currentstudents.route("/currentstudents/minutes/<filename>")
+@auth_decorator
 def return_minutes(filename):
     try:
         return get_minutes(filename)
     except Exception as e:
         return str(e)
 
-@auth_decorator
+
 @currentstudents.route("/currentstudents/transparency")
+@auth_decorator
 def return_transparencydoc():
     try:
         return get_transparencydoc()
     except Exception as e:
         return str(e)
 
-@auth_decorator
+
 @currentstudents.route("/currentstudents/elections")
+@auth_decorator
 def elections_page():
     user_crsid = auth_decorator.principal
     if ELECTIONS_ONGOING:  # See contentmanager.py
@@ -41,8 +44,9 @@ def elections_page():
     return render_template(template_path, crsid=auth_decorator.principal,
                             current_page="/currentstudents/elections", e=election_json)
 
-@auth_decorator
+
 @currentstudents.route("/currentstudents/elections/getmanifesto")
+@auth_decorator
 def return_manifesto():
     manifesto = request.args.get('manifesto')
     try:
