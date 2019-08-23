@@ -1,455 +1,52 @@
 {% extends 'shared/_layout.j2.html' %}
+{% import 'shared/_picture_card.j2.html' as pictureCard %}
 
 {% block title %}
-<title>
-    St. John's JCR
-</title>
+<title>Clubs and Societies</title>
 {% endblock %}
 
 {% block header %}
 <div class=" container col-sm col-md-10 col-lg-10" id="headerbox" style="padding: 0px;">
- <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
-  <h1 class="text-center headershrink" id="pageheading">
-   Clubs and Societies
-  </h1>
-  <p class="text-center" id="pageparagraph" style="margin: 0px;">
-   There is a wealth of clubs and societies to join at John's. This is a little catalogue to see if anything tickles your fancy. Please note these are just John's societies there are plenty of others that are university wide.
-  </p>
- </div>
+    <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+        <h1 class="text-center headershrink" id="pageheading">
+            Clubs and Societies
+        </h1>
+        <p class="text-center" id="pageparagraph" style="margin: 0px;">
+            There is a wealth of clubs and societies to join at John's. This is a little catalogue to see if anything
+            tickles your fancy.
+            Please note these are just John's societies there are plenty of others that are university wide.
+        </p>
+    </div>
 </div>
 {% endblock %}
 
 {% block main %}
 <main>
     <div class="container" style="margin-top: 16px;">
-        <div>
-            <ul class="nav nav-tabs card-header">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab">
-                        Sports
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-2" role="tab">
-                        Music
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-3" role="tab">
-                        Dining
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-4" role="tab">
-                        Academic
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#tab-5" role="tab">
-                        Misc
-                    </a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab-1" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body" style="padding: 20;padding-top: 0;padding-bottom: 0;">
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/studentlife/sjcafc.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Football - SJCAFC
-                                            </h4>
-                                            <p>
-                                                The most magnificent team of them all. With 3 men's teams and 1 women's
-                                                team, there is fun for all the family.
-                                            </p>
-                                            <p>
-                                                Men's Captain: Dan Osborne (do318)
-                                            </p>
-                                            <p>
-                                                Women's Captains:  Lucy Carson (lmc83) &amp; Mikayla Thorsden (?)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-left"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row flex-row-reverse align-items-center">
-                                        <div class="align-items-center col-sm col-md-5 col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/studentlife/scjrufc.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-sm col-md-7 col-lg-8">
-                                            <h4>
-                                                Rugby - SJCRUFC
-                                                <br />
-                                            </h4>
-                                            <p>
-                                                Affectionately termed the redboys. SJCRUFC is known as one of the best
-                                                rugby teams in Cambridge.
-                                                <br />
-                                            </p>
-                                            <p>
-                                                Captain: Will Saunter (wrms2)
-                                            </p>
-                                            <p>
-                                                Vice Captain: James Laudage (?)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Hockey
-                                            </h4>
-                                            <p>
-                                                It's not quite football or rugby but it'll do. The men's team are the
-                                                Nogs and the women the Nags. Don't ask me why.
-                                            </p>
-                                            <p>
-                                                Men's Captain: ?
-                                            </p>
-                                            <p>
-                                                Women's Captain: ?
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-left"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Rowing - LMBC
-                                            </h4>
-                                            <p>
-                                                Lady Margaret Boat Club is love. Lady Margaret Boat Club is life. I
-                                                don't think I can summarise any better.
-                                            </p>
-                                            <p>
-                                                Captain: Aidan Williams (aw768)
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Cricket
-                                            </h4>
-                                            <p>
-                                                A summer sport. If you like standing around in the sun working on your
-                                                tan and occasionally throwing a ball, this one's for you.
-                                            </p>
-                                            <p>
-                                                Captain: TBC (it could be you)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-left"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Ultimate Frisbee
-                                            </h4>
-                                            <p>
-                                                It's like american football but with a frisbee... and fewer wipeouts.
-                                            </p>
-                                            <p>
-                                                Captain: ?
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Cheerleading
-                                            </h4>
-                                            <p>
-                                                The newly formed John's Jaguars won cheer cuppers in their first year.
-                                                Let's keep up the momentum.
-                                            </p>
-                                            <p>
-                                                #letsgogirls
-                                            </p>
-                                            <p>
-                                                #roar
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-2" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                St John's Voices
-                                            </h4>
-                                            <p>
-                                                You can add a description
-                                            </p>
-                                            <p>
-                                                Oh look another one.
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-left"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                The Gents of St John's
-                                            </h4>
-                                            <p>
-                                                You can add a description
-                                            </p>
-                                            <p>
-                                                Oh look another one
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Title
-                                            </h4>
-                                            <p>
-                                                You can add a description
-                                            </p>
-                                            <p>
-                                                Oh look another one.
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-3" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Title
-                                            </h4>
-                                            <p>
-                                                You can add a description
-                                            </p>
-                                            <p>
-                                                Oh look another one.
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card col" data-aos="fade-left"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Title
-                                            </h4>
-                                            <p>
-                                                You can add a description
-                                            </p>
-                                            <p>
-                                                Oh look another one
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-4" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Parson's Society
-                                            </h4>
-                                            <p>
-                                                This one's for the engineers.
-                                            </p>
-                                            <p>
-                                                President: Zenga Nyirenda (zrjn2)
-                                            </p>
-                                            <p>
-                                                Not president: Ollie Barnard (ojrb2)
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-5" role="tabpanel">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card col" data-aos="fade-right"
-                                style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
-                                <div class="card-body">
-                                    <div class="row d-lg-flex align-items-lg-center">
-                                        <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4"
-                                            style="margin-bottom: 10px;margin-top: 10px;">
-                                            <img class="img-fluid border rounded mr-3"
-                                                src="/assets/img/110614_16574.jpg" style="margin-right: 0px;" />
-                                        </div>
-                                        <div class="col-md-7 col-lg-8">
-                                            <h4>
-                                                Rubix Cube Soc
-                                            </h4>
-                                            <p>
-                                                It's Lit
-                                            </p>
-                                            <p>
-                                            </p>
-                                            <p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <ul class="nav nav-tabs card-header" style="padding-bottom: 0px">
+            {% for club_category in clubs_by_category %}
+            {% set activity = "active" if loop.index == 1 %}
+            <li class="nav-item"><a class="nav-link {{activity}}" role="tab" data-toggle="tab"
+                    href="#tab-{{loop.index}}">{{club_category.category}}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="tab-content">
+            {% for club_category in clubs_by_category %}
+            {% set activity="show active" if loop.index == 1 %}
+            <div class="tab-pane fade {{activity}}" role="tabpanel" id="tab-{{loop.index}}">
+                <div class="card">
+                    <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+                        {% for club in club_category.clubs %}
+                        {% if loop.index % 2 == 1 %}
+                        {{pictureCard.left(club)}}
+                        {% else %}
+                        {{pictureCard.right(club)}}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </main>

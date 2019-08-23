@@ -19,6 +19,48 @@
                     "Captain: Will Saunter (wrms2)",
                     "Vice Captain: James Laudage (?)"
                 ]
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Hockey",
+                "description": [
+                    "Up and coming in college and always will be. The men are called the Nogs and the women the Nags. Don't ask me why",
+                    "Men's: Captain: ?",
+                    "Women's Captain: ?"
+                ]
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Rowing - LMBC",
+                "description": [
+                    "Lady Margaret Boat Club is love. Lady Margaret Boat Club is life. I don't think I can summarise any better.",
+                    "Captain: Aidan Williams (aw768)"
+                ]
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Cricket",
+                "description": [
+                    "A summer sport. If you like standing around in the sun working on your tan and occasionally throwing a ball, this one's for you.",
+                    "Captain: TBC"
+                ]
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Ultimate Frisbee",
+                "description": [
+                    "It's like american football but with a frisbee... and fewer wipeouts.",
+                    "Captain: ?"
+                ]
+            },
+            {
+                "imageName": "President.jpg",
+                "heading": "Cheerleading",
+                "description": [
+                    "The newly formed John's Jaguars won cheer cuppers in their first year. Let's keep up the momentum.",
+                    "#letsgogirls",
+                    "#roar"
+                ]
             }
         ]
     },
@@ -34,6 +76,33 @@
                 "imageName": "President.jpg",
                 "heading": "The Gents of St John's",
                 "description": ["Why Denny Why"]
+            }
+        ]
+    },
+    {
+        "category": "Academic",
+        "clubs": [
+            {
+                "imageName": "President.jpg",
+                "heading": "The Parsons Society",
+                "description": [
+                    "This one is for the engineers",
+                    "President: Zenga Nyirenda (zrjn2)",
+                    "Not president: Ollie Barnard (ojrb2)"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "clubs": [
+            {
+                "imageName": "President.jpg",
+                "heading": "Rubix Cube Soc",
+                "description": [
+                    "A bit of a rogue one.",
+                    "But if Rubix is your thing go ahead"
+                ]
             }
         ]
     }
