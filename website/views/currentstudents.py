@@ -58,7 +58,8 @@ def return_manifesto():
 @johnian_access
 def current_routing(pagename):
     return render_template("/currentstudents/{}.j2.html".format(pagename), JCR=JCR,
-    crsid=johnian_access.principal, current_page="/currentstudents/{}".format(pagename))
+                            current_page="/currentstudents/{}".format(pagename),
+                            crsid=johnian_access.principal)
 
 
 @currentstudents.route('/currentstudents/<pagename>/')

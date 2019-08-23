@@ -5,8 +5,10 @@ import shutil
 
 class HTMLParser:
     """
-    Class can be used to parse html files, snipping out important bits e.g. mains
-    and stitching jinja in.
+    Class can be used to bulk edit the html files created by exporting with
+    Bootstrap studio, converting them to use jinja syntax. Make sure your main
+    page content is within a main element and that you give your page header
+    container the id 'headerbox'.
     """
     def __init__(self, path):
         self.path = path

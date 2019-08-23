@@ -6,6 +6,22 @@ import pickle
 import smtplib
 import json
 
+"""
+    This file creates the JCR object which is used for committee verification,
+    sending emails and displaying members in the YourJCR section.
+    To change a JCR member e.g. at handover simply edit their name, crsid and bio
+    in content/committee.json and make sure the new JCR officers image replaces
+    theirs with the same (role) name in assets/img/committee e.g. Computing.jpg
+
+    This should change all instances of the officer's name on the website to the
+    new officer since we have used jinja syntax e.g. JCR['position']['name'].
+    Although if the name of a role changes (e.g. co-presidents to president)
+    you will need to edit /yourjcr/committee.j2.html and the relevant officer page.
+
+    The file also creates johnian_access and committee_access, which are
+    decorator classes which restrict pages appropriately.
+"""
+
 script_dir = os.path.dirname(__file__)
 
 with open(os.path.join(script_dir, "johnians.txt"), "rb") as file:
@@ -36,6 +52,7 @@ class Committee(dict):
                     else: # Sub-dict, e.g. welfare officers
                         if isinstance(item2, dict):
                             self.committee_crsids.append(item2['crsid'])
+
         self.committee_crsids = set(self.committee_crsids)
 
     def email_member(self, subject, input_message, committee_role):

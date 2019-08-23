@@ -4,6 +4,15 @@ import json
 
 curr_dir = os.path.dirname(__file__)
 
+
+"""
+    ELECTIONS_ONGOING variable allows switching between two slightly different
+    templates, since for an ongoing election you want several people for each
+    position and different header text. You will also want to put the voting
+    link for the election in the heading paragraph as it becomes available.
+    For this you'll need to edit currentelections.j2.html, see comments in HTML
+"""
+
 ELECTIONS_ONGOING = False
 
 if ELECTIONS_ONGOING:
