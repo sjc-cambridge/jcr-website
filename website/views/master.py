@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.j2.html", crsid=johnian_access.principal, current_page="/")
+    return render_template("index.j2.html", crsid=johnian_access.principal, JCR=JCR, current_page="/")
 
 @main.route("/login")
 @johnian_access

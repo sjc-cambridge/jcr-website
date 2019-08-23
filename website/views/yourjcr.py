@@ -6,7 +6,7 @@ yourjcr= Blueprint('yourjcr', __name__)
 @yourjcr.route("/yourjcr")
 @yourjcr.route("/yourjcr/")
 def jcr_home():
-    return render_template("yourjcr/home.j2.html", crsid=johnian_access.principal, current_page ="/yourjcr")
+    return render_template("yourjcr/home.j2.html", JCR=JCR, crsid=johnian_access.principal, current_page ="/yourjcr")
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):

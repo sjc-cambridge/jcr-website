@@ -30,9 +30,7 @@ class Committee(dict):
                     if key2 == 'crsid':
                         self.committee_crsids.append(item2)
                     else: # Sub-dict, e.g. welfare officers
-                        print(type(item2))
                         if isinstance(item2, dict):
-                            print('Woop')
                             self.committee_crsids.append(item2['crsid'])
         self.committee_crsids = set(self.committee_crsids)
 

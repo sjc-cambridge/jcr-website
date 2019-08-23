@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, Blueprint, url_for
-from website.config import johnian_access, committee_access
+from website.config import johnian_access, JCR
 
 freshers = Blueprint('freshers', __name__)
 
@@ -7,17 +7,15 @@ freshers = Blueprint('freshers', __name__)
 @freshers.route("/freshers/home")
 def freshers_home():
     crsid=johnian_access.principal
-    return render_template("freshers/home.j2.html", crsid=crsid, current_page="/freshers")
+    return render_template("freshers/home.j2.html", JCR=JCR, crsid=crsid, current_page="/freshers")
 
 @freshers.route('/freshers/<pagename>')
-@committee_access
 def freshers_routing(pagename):
     crsid=johnian_access.principal
     current_page ="/freshers/{}".format(pagename)
-    return render_template("freshers/{}.j2.html".format(pagename), crsid=crsid, current_page=current_page)
+    return render_template("freshers/{}.j2.html".format(pagename), JCR=JCR, crsid=crsid, current_page=current_page)
 
 
 @freshers.route('/freshers/<pagename>/')
-@committee_access
 def freshers_routing2(pagename):
     return redirect('/freshers/{}'.format(pagename))
