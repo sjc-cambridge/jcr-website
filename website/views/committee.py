@@ -6,6 +6,14 @@ from website.contentmanager import get_minutes, get_transparencydoc, get_manifes
 
 committee = Blueprint('committee', __name__)
 
+"""
+Things for committee page:
+- Allow committee to add/edit/remove agenda points, probably store in weekly JSON.
+- Ability for Martin to upload resulting minutes straight into content folder would be ideal.
+- This could simultaneously email it out to committee members and the beauty of jinja would
+    mean it would appear on the minutes of meetings page.
+"""
+
 @committee.route("/committee")
 @committee.route("/committee/")
 @committee.route("/committee/home")
