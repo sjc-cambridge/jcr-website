@@ -112,7 +112,7 @@ def get_file_array(dir, regex_pattern):
     return files
 
 
-def copy_new_files(src_dir, dst_dir, regex_pattern="**/*.*"):
+def copy_over_only_new_files(src_dir, dst_dir, regex_pattern="**/*.*"):
     """Recursively copies files from one directory into another
     It only copies files that do not exist in the destionation
     """
@@ -153,10 +153,10 @@ print("Creating templates_temp directory\n")
 shutil.copytree(templates_og_dir, templates_temp_dir)
 
 print("Copying over any new assets\n")
-copy_new_files(assets_temp_dir, assets_dir)
+copy_over_only_new_files(assets_temp_dir, assets_dir)
 
 print("Jinjafying html files\n")
 file_recurse(jinjafy_html, templates_temp_dir)
 
 print("Copying over any new pages\n")
-copy_new_files(templates_temp_dir, templates_dir, "**/*.j2.html")
+copy_over_only_new_files(templates_temp_dir, templates_dir, "**/*.j2.html")
