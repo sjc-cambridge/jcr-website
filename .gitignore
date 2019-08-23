@@ -4,3 +4,5 @@
 .vscode/
 *.bsdesign
 *.bsdesign.tmp
+
+website/templates_temp

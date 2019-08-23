@@ -3,8 +3,6 @@ import os
 import pathlib
 import shutil
 
-curr_dir = os.path.dirname(__file__)
-
 
 class HTMLParser:
     """
@@ -25,23 +23,23 @@ class HTMLParser:
             self.text_file = html_file.read()
 
     def make_title(self):
-        self.title += "<title>St. John's JCR</title>"
+        self.title += "<title>St. John's JCR </title>"
         self.title += "\n{% endblock %}\n\n"
 
     def make_header(self):
         with open(self.path):
-            soup = BeautifulSoup(self.text_file, 'html.parser')
-            heading = soup.find(id='headerbox')
+            soup = BeautifulSoup(self.text_file, "html.parser")
+            heading = soup.find(id="headerbox")
             self.header += "{}\n".format(heading)
             self.header += "{% endblock %}\n\n"
 
     def get_main_start(self):
         """Find end of main."""
-        return self.text_file.find('<main')
+        return self.text_file.find("<main")
 
     def get_main_end(self):
         """Find end of main."""
-        return self.text_file.find('/main>') + 6
+        return self.text_file.find("/main>") + 6
 
     def strip_main(self):
         """Stip HTML to leave contents main behind, add jinja main syntax."""
@@ -58,97 +56,107 @@ class HTMLParser:
         self.edited_html += self.title
         self.edited_html += self.header
         self.edited_html += self.snipped_main
-        self.edited_html = self.edited_html.replace('\\n', ' ')
-        self.edited_html = BeautifulSoup(self.edited_html, 'html.parser')
-        self.edited_html = self.edited_html.prettify('utf-8')
-        with open(self.path, 'wb') as html_file:
+        self.edited_html = self.edited_html.replace("\\n", " ")
+        self.edited_html = BeautifulSoup(self.edited_html, "html.parser")
+        self.edited_html = self.edited_html.prettify("utf-8")
+        with open(self.path, "wb") as html_file:
             html_file.write(self.edited_html)  # Write HTML
-        return 'Snipped {}'.format(self.path)
+        return "Snipped {}".format(self.path)
 
 
-def file_recurse(func, directory_path, exceptions):
-    '''Function for recursively operating on all files
+def file_recurse(func, directory_path):
+    """Function for recursively operating on all files
         in a directory w/ exceptions.
-    '''
+    """
     path = pathlib.Path(directory_path)
     for filepath_obj in path.iterdir():
         filepath = str(filepath_obj)
-        print(filepath)
         if filepath_obj.is_file():
-            if filepath not in exceptions:
-                func(filepath)
-            else:
+            if file_is_exempt(filepath):
                 pass
+            else:
+                func(filepath)
         else:
             path2 = pathlib.Path(filepath)
-            file_recurse(func, path2, exceptions)
+            file_recurse(func, path2)
     return
 
 
-exceptions_list = []
-
-
-def assets_finder(filepath):
-    '''Check if file is static content or jinja stuff'''
-    if '.DS_Store' in filepath or 'assets' in filepath or 'shared' in filepath or 'j2.html' in filepath:
-        exceptions_list.append(filepath)
+def file_is_exempt(filepath):
+    """Check if file is static content or jinja stuff
+    """
+    if ".DS_Store" in filepath or "assets" in filepath or "shared" in filepath or "j2.html" in filepath:
+        return True
     else:
-        return None
+        return False
 
 
 def jinjafy_html(filepath):
-    html_parser = HTMLParser(filepath)
-    html_parser.modify_template()
-
-
-def jinja_rename(filepath):
-    if '.j2.html' not in filepath:  # If not already renamed
+    """Jinjafies html file to extend from shared/_layout.j2.html
+    """
+    if ".html" in filepath and ".j2.html" not in filepath:  # If
+        html_parser = HTMLParser(filepath)
+        html_parser.modify_template()
         jinja_filepath = filepath.replace(".html", ".j2.html")
         os.rename(filepath, jinja_filepath)
-    return 'Renamed {}'.format(filepath)
+        return "Jinjafied {}".format(filepath)
 
 
-def copy_new_files(src_dir, dst_dir, extension="**/*.*"):
-    for file in pathlib.Path(src_dir).glob(extension):
-        if file not in pathlib.Path(str(dst_dir)).glob(extension):
-            shutil.copy(str(file), dst_dir)
+def get_file_array(dir, regex_pattern):
+    """Return an array of filepaths within a directory that match given pattern
+    """
+    files = []
+    files_generator = pathlib.Path(dir).glob(regex_pattern)
+    for file in files_generator:
+        files.append(str(file))
+    return files
+
+
+def copy_new_files(src_dir, dst_dir, regex_pattern="**/*.*"):
+    """Recursively copies files from one directory into another
+    It only copies files that do not exist in the destionation
+    """
+    src_files = get_file_array(src_dir, regex_pattern)
+    dst_files = get_file_array(dst_dir, regex_pattern)
+
+    for src_file in src_files:
+        potential_dst_file = src_file.replace(src_dir, dst_dir, 1)
+
+        if potential_dst_file not in dst_files:
+            print("Copying new file:\n {} >> {}\n".format(
+                src_file, potential_dst_file))
+            shutil.copy(src_file, potential_dst_file)
         else:
-            print("{} exists in {}".format(
-                file, os.path.join(os.path.split(dst_dir)[-2:])
-            ))
+            # file exists already >> skip
+            pass
 
 
-# Templates before jinjafication from BSS.
-templates_og_dir = os.path.join(curr_dir, 'templates_og')
-templates_dir = os.path.join(curr_dir, 'templates')
-templates_temp_dir = os.path.join(curr_dir, 'templates_temp')
-assets_dir = os.path.join(curr_dir, 'assets')
+# define directory paths
+curr_dir = os.path.dirname(__file__)
 
+templates_dir = os.path.join(curr_dir, "templates")
+assets_dir = os.path.join(curr_dir, "assets")
+
+templates_og_dir = os.path.join(curr_dir, "templates_og")
+
+templates_temp_dir = os.path.join(curr_dir, "templates_temp")
+assets_temp_dir = os.path.join(templates_temp_dir, "assets")
+
+# file manipulation
 try:
-    # try delete old temp directory
-    try:
-        shutil.rmtree(templates_temp_dir)
-    except Exception as e:
-        print(e)
+    shutil.rmtree(templates_temp_dir)
+    print("Removed old temp directory\n")
+except:
+    print("No temp directory exists yet\n")
 
-    print("Copying to temp folder")
-    shutil.copytree(templates_og_dir, templates_temp_dir)
+print("Creating templates_temp directory\n")
+shutil.copytree(templates_og_dir, templates_temp_dir)
 
-    print("Copying over any new assets")
-    copy_new_files(os.path.join(templates_temp_dir, 'assets'), assets_dir)
+print("Copying over any new assets\n")
+copy_new_files(assets_temp_dir, assets_dir)
 
-    print("Ignoring any assets files")
-    file_recurse(assets_finder, templates_temp_dir, [])
+print("Jinjafying html files\n")
+file_recurse(jinjafy_html, templates_temp_dir)
 
-    print("Jinjafying html files")
-    file_recurse(jinjafy_html, templates_temp_dir,
-                 exceptions_list)
-
-    print("Rename files to .j2.html")
-    file_recurse(jinja_rename, templates_temp_dir, exceptions_list)
-
-    print("Copying over any new pages")
-    copy_new_files(templates_temp_dir, templates_dir, "*.j2.html")
-
-except Exception as e:
-    print(e)
+print("Copying over any new pages\n")
+copy_new_files(templates_temp_dir, templates_dir, "**/*.j2.html")
