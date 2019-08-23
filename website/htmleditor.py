@@ -159,3 +159,6 @@ file_recurse(jinjafy_html, templates_temp_dir)
 
 print("Copying over any new pages\n")
 copy_over_only_new_files(templates_temp_dir, templates_dir, "**/*.j2.html")
+
+print("Removing temp directory\n")
+shutil.rmtree(templates_temp_dir)
