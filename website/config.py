@@ -35,7 +35,7 @@ with open(os.path.join(script_dir, "johnians.txt"), "rb") as file:
 #johnian_crsids.remove('jfc43') #Testing login works by removing myself
 
 """This decorator restricts pages to Johnians."""
-johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
+johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 6000,
                                             require_principal = johnian_crsids)
 
 class Committee(dict):
@@ -125,8 +125,7 @@ class Committee(dict):
 JCR = Committee("content/committee.json")
 
 # Committee access decorator for restricting committee section of website.
-committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 15,
-                                            require_principal = JCR.committee_crsids)
+committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 6000, require_principal = JCR.committee_crsids)
 #print(JCR['PRESIDENT']['name'])
 #print(JCR['COMPUTING']['name'])
 

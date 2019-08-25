@@ -48,7 +48,7 @@ def elections_page():
 @currentstudents.route("/currentstudents/elections/getmanifesto")
 @johnian_access
 def return_manifesto():
-    manifesto = request.args.get('manifesto')
+    manifesto = request.args.get('manifesto')  # see elections html pages to understand this.
     try:
         return get_manifesto(manifesto)
     except Exception as e:
