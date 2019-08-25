@@ -32,9 +32,6 @@ with open(os.path.join(script_dir, "johnians.txt"), "rb") as file:
     johnian_crsids = set(pickle.load(file))
 
 
-with open(os.path.join(script_dir, "config.txt"), "r") as file:
-    app_key = file.readlines()[0] # See https://support.google.com/accounts/answer/185833?hl=en
-
 #johnian_crsids.remove('jfc43') #Testing login works by removing myself
 
 """This decorator restricts pages to Johnians."""
@@ -80,8 +77,8 @@ class Committee(dict):
         return "Emailed {}".format(email_address)
 
     def email_people(self, subject, input_message, address_list, reply_to = None, attachment=None):
-        """Email a list of emails a subject/ input message. Gmail account uses
-            2-factor authentication so password used won't work anywhere else."""
+        """Email a list of emails Gmail account uses 2-factor authentication so
+            password used won't work anywhere else."""
 
         recipients_string = ", ".join(address_list)
         message = MIMEMultipart()
@@ -114,6 +111,8 @@ class Committee(dict):
             message.attach(part)
 
         gmail_user = 'sjcjcrmisc@gmail.com'
+        with open(os.path.join(script_dir, "config.txt"), "r") as file:
+            app_key = file.readlines()[0] # See https://support.google.com/accounts/answer/185833?hl=en
         gmail_pwd = app_key # App password not re-usable see above.
         smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
         smtpserver.ehlo()
