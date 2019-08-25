@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, send_file, request
 import os
 from website.config import johnian_access, JCR
 from website.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
-
+from website.welfaresystem import userhash
 
 currentstudents = Blueprint('currentstudents', __name__)
 
@@ -53,6 +53,17 @@ def return_manifesto():
         return get_manifesto(manifesto)
     except Exception as e:
         return str(e)
+
+@currentstudents.route("/currentstudents/welfare")
+@johnian_access
+def welfarepage():
+    crsid=johnian_access.principal
+    user_code = userhash(crsid)
+    return render_template("/currentstudents/welfare.j2.html", JCR=JCR,
+                            current_page="/currentstudents/welfare",
+                            crsid=johnian_access.principal,
+                            user_code=user_code)
+
 
 @currentstudents.route('/currentstudents/<pagename>')
 @johnian_access
