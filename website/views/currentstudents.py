@@ -15,15 +15,6 @@ def current_home():
     return render_template("currentstudents/home.j2.html", crsid=johnian_access.principal, current_page="/currentstudents", JCR=JCR)
 
 
-@currentstudents.route("/currentstudents/minutes/<filename>")
-@johnian_access
-def return_minutes(filename):
-    try:
-        return get_minutes(filename)
-    except Exception as e:
-        return str(e)
-
-
 @currentstudents.route("/currentstudents/transparency")
 @johnian_access
 def return_transparencydoc():
