@@ -82,6 +82,7 @@ class Committee(dict):
 
         recipients_string = ", ".join(address_list)
         message = MIMEMultipart()
+        gmail_user = 'sjcjcrmisc@gmail.com'
         message["From"] = gmail_user
         message["To"] = recipients_string
         message["Subject"] = subject
@@ -110,7 +111,6 @@ class Committee(dict):
             # Add attachment to message and convert message to string
             message.attach(part)
 
-        gmail_user = 'sjcjcrmisc@gmail.com'
         with open(os.path.join(script_dir, "config.txt"), "r") as file:
             app_key = file.readlines()[0] # See https://support.google.com/accounts/answer/185833?hl=en
         gmail_pwd = app_key # App password not re-usable see above.
