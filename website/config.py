@@ -107,7 +107,7 @@ class Committee(dict):
             # Add header as key/value pair to attachment part
             part.add_header(
                 "Content-Disposition",
-                f"attachment; filename= {attachment}",
+                "attachment; filename= {}".format(attachment),
             )
 
             # Add attachment to message and convert message to string
