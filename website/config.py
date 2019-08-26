@@ -123,6 +123,7 @@ class Committee(dict):
         return "Email sent!"
 
 JCR = Committee("content/committee.json")
+print(JCR.committee_crsids)
 
 # Committee access decorator for restricting committee section of website.
 committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 6000, require_principal = JCR.committee_crsids)
