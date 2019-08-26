@@ -24,11 +24,9 @@ def minutes_page():
             print(e)
             return str(e)
     minutes_dict = get_minutes_dict()
-    print("HELLO")
-    year = str(datetime.date.today().year) # Used to show last 2 years of minutes
     return render_template("yourjcr/minutes.j2.html", crsid=johnian_access.principal,
                             current_page ="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
-                            year=year, sorted=sorted)
+                            sorted=sorted)
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):

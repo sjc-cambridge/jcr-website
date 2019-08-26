@@ -2,7 +2,9 @@ from flask import Blueprint, render_template, send_file, request, redirect, url_
 import os
 from website.config import committee_access, JCR
 from website.contentmanager import get_minutes, save_minutes
-
+from website.contentmanager import get_minutes_dict, get_minutes, delete_minutes
+from website.misc import get_year_range
+import datetime
 
 committee = Blueprint('committee', __name__)
 
@@ -23,7 +25,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 @committee.route("/committee", methods=['GET', 'POST'])
 @committee.route("/committee/", methods=['GET', 'POST'])
 @committee_access
-def upload_file():
+def upload_minutes():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -37,28 +39,27 @@ def upload_file():
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
-            print(request.files)
             year = request.form.get("year")
             term = request.form.get("term")
-            print(year, term)
             log_msg = save_minutes(term, year, file)
             flash(log_msg)
-            return redirect(url_for('committee.upload_file'))
-    return '''
-    <!doctype html>
-    <title>Upload Minutes</title>
-    <h1>Upload Minutes</h1>
-    <form method=post enctype=multipart/form-data>
-      <select name="year">
-          <option value="2018-2019">2018/2019</option>
-          <option value="2019-2020">2019/2020</option>
-      </select>
-      <select name="term">
-          <option value="Michaelmas">Michaelmas</option>
-          <option value="Lent">Lent</option>
-          <option value="Easter">Easter</option>
-      </select>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+            return redirect(url_for('committee.upload_minutes'))
+    minutes_dict = get_minutes_dict()
+    minutes_range = get_year_range()  # Range of minutes that can be added
+    return render_template("committee/upload_minutes.j2.html", crsid=committee_access.principal,
+                            current_page ="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
+                            sorted=sorted, minutes_range=minutes_range)
+
+
+
+@committee.route('/committee/delete_minutes')
+@committee_access
+def minutes_page():
+    academicyear = request.args.get("academicyear") # e.g. 2019/2020
+    term = request.args.get("term")
+    filename = request.args.get("filename")
+    try:
+        delete_minutes(term, academicyear, filename)
+    except Exception as e:
+        print(e)
+    return redirect(url_for('committee.upload_minutes'))
