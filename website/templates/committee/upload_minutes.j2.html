@@ -26,7 +26,7 @@
 <p>Please upload in the form 'JCR Meeting Minutes yyyy-mm-dd.pdf'</p>
 <form method=post enctype=multipart/form-data>
   <select name="year">
-    {% for academic_year in minutes_range %}
+    {% for academic_year in minutes_range[::-1] %}
       <option value="{{academic_year}}">{{academic_year}}</option>
     {% endfor %}
   </select>

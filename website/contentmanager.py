@@ -31,8 +31,6 @@ def get_manifesto(filename):
 
 
 def save_minutes(term, year, file):
-    if '' in [term, year]:
-        return ("Term or academic year not specified, please try again.")
     yearpath = os.path.join(curr_dir,'content/minutes', year)
     if not os.path.exists(yearpath):
         os.makedirs(yearpath)
