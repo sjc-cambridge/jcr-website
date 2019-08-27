@@ -12,8 +12,8 @@ def student_home():
 
 
 @student_routes.route('/studentlife/atcambridge')
-def student_routing(pagename):
-    return render_template("studentlife/atcambridge.j2.html".format(pagename), JCR=JCR, crsid=johnian_access.principal, current_page="/studentlife/{}".format(pagename))
+def student_routing():
+    return render_template("studentlife/atcambridge.j2.html", JCR=JCR, crsid=johnian_access.principal, current_page="/studentlife/atcambridge")
 
 
 @student_routes.route("/studentlife/clubsandsocieties")
