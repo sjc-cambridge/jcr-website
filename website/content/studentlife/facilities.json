@@ -3,7 +3,7 @@
         "area": "First Court",
         "facilities": [
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/formal.jpg",
                 "heading": "Formal Hall",
                 "description": [
                     "Located just in between first and second court, hall is one of college's prized possessions.",
@@ -11,7 +11,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/old_music.jpg",
                 "heading": "Old Music Room",
                 "description": [
                     "Hosts a few choice events. The annual wine tasting takes palce in the old music room and is not one to miss."
@@ -23,7 +23,7 @@
         "area": "Second Court",
         "facilities": [
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/jcr.jpg",
                 "heading": "The JCR",
                 "description": [
                     "Short for the Junior Combination Room, this is the one room in college dedicated exclusively to undergraduate students.",
@@ -31,7 +31,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/bar.jpg",
                 "heading": "The Bar",
                 "description": [
                     "Pubs in Cambridge are expensive. There are however two exceptions: spoons and college bars. John's bar is a student favourite thanks to its cosy atmosphere and cheap pints.",
@@ -39,7 +39,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/buttery.jpg",
                 "heading": "The Buttery",
                 "description": [
                     "If you have neither the desire nor the ability to cook. The buttery has you covered. This serves an informal breakfast, lunch and dinner every day. On saturdays the two are combined into a fan favourite brunch.",
@@ -52,7 +52,7 @@
         "area": "Chapel Court",
         "facilities": [
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/library.jpg",
                 "heading": "The Library",
                 "description": [
                     "Does what is says on the tin.",
@@ -61,7 +61,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/chapel.jpg",
                 "heading": "The Chapel",
                 "description": [
                     "An absolutely gorgeous area of college. The chapel is always a place for reflection or admiration.",
@@ -69,7 +69,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/forecourt_bikes.jpg",
                 "heading": "Forecourt Bike Shed",
                 "description": [
                     "Though not in Chapel Court, this is right nextdoor to chapel court separated only by the plodge.",
@@ -83,7 +83,7 @@
         "area": "Fisher Building",
         "facilities": [
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/palmerston.jpg",
                 "heading": "The Palmerston Room",
                 "description": [
                     "One of the most miscellaneous but best rooms in college. It is a fully-sized badminton court but also has a stage and removable seating.",
@@ -91,7 +91,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/fisher_foyer.jpg",
                 "heading": "The Fisher Foyer",
                 "description": [
                     "Hosts various events over the course of the year. However, it is best known as the OG Ent location.",
@@ -99,7 +99,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/fisher_computer.jpg",
                 "heading": "Computer Room",
                 "description": [
                     "A well-kept secret. On the top floor of the Fisher Building is a computer room. This houses various computers and some printers.",
@@ -112,7 +112,7 @@
         "area": "Cripps Basement",
         "facilities": [
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/cripps_bikes.jpg",
                 "heading": "Cripps Bike Shed",
                 "description": [
                     "Much like it's counterpart in Forecourt you can keep your bike here. Pick whichever is most convenient.",
@@ -120,7 +120,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/fitness_centre.jpg",
                 "heading": "The Fitness Centre",
                 "description": [
                     "If you like staying fit, this is the place for you.",
@@ -129,7 +129,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/free_weights.jpg",
                 "heading": "The Free Weights Room",
                 "description": [
                     "Because one gym wasn't enough.",
@@ -138,7 +138,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/snooker_room.jpg",
                 "heading": "The Snooker Room",
                 "description": [
                     "A very underrated room in college. This houses a fully sized snooker table.",
@@ -146,7 +146,7 @@
                 ]
             },
             {
-                "imageName": "President.jpg",
+                "imageName": "studentlife/facilities/band_practice_room.jpg",
                 "heading": "Band Practice Room",
                 "description": [
                     "Also underneath Cripps, this room is wonderfully noise-insulated and has all the equipment you could possibly need to jam out.",
