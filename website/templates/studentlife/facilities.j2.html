@@ -22,19 +22,29 @@
 {% block main %}
 <main>
     <div class="container" style="margin-top: 16px;">
-        <ul class="nav nav-tabs card-header" style="padding-bottom: 0px">
+
+        <nav class="nav nav-tabs card-header flex-row flex-no-wrap" style="padding-bottom: 0px">
             {% for facilities_area in facilities_by_area %}
-            {% set activity = "active" if loop.index == 1 %}
-            <li class="nav-item"><a class="nav-link {{activity}}" role="tab" data-toggle="tab"
-                    href="#tab-{{loop.index}}">{{facilities_area.area}}</a></li>
+            {% set activity = "active" if loop.index == 2 %}
+            <a class="col nav-item nav-link {{activity}}" role="tab" data-toggle="tab" href="#tab-{{loop.index}}"
+                style="overflow: hidden; text-overflow: ellipsis;">
+                {{facilities_area.area}}
+            </a>
             {% endfor %}
-        </ul>
+        </nav>
+
+
         <div class="tab-content">
             {% for facilities_area in facilities_by_area %}
-            {% set activity="show active" if loop.index == 1 %}
+            {% set activity="show active" if loop.index == 2 %}
             <div class="tab-pane fade {{activity}}" role="tabpanel" id="tab-{{loop.index}}">
                 <div class="card">
                     <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+                        <div class="container text-center d-none d-sm-none">
+                            <H5>
+                                {{facilities_area.area}}
+                            </H5>
+                        </div>
                         {% for facility in facilities_area.facilities %}
                         {% if loop.index % 2 == 1 %}
                         {{pictureCard.left(facility)}}

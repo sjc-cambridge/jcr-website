@@ -11,10 +11,11 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/old_music.jpg",
+                "imageName": "studentlife/facilities/old_music_room.jpg",
                 "heading": "Old Music Room",
                 "description": [
-                    "Hosts a few choice events. The annual wine tasting takes palce in the old music room and is not one to miss."
+                    "Hosts a few choice events. The annual wine tasting takes palce in the old music room and is not one to miss.",
+                    "To book for your own event please email: publicrooms@joh.cam.ac.uk"
                 ]
             }
         ]
@@ -69,7 +70,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/forecourt_bikes.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Forecourt Bike Shed",
                 "description": [
                     "Though not in Chapel Court, this is right nextdoor to chapel court separated only by the plodge.",
@@ -99,7 +100,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/fisher_computer.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Computer Room",
                 "description": [
                     "A well-kept secret. On the top floor of the Fisher Building is a computer room. This houses various computers and some printers.",
@@ -112,7 +113,7 @@
         "area": "Cripps Basement",
         "facilities": [
             {
-                "imageName": "studentlife/facilities/cripps_bikes.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Cripps Bike Shed",
                 "description": [
                     "Much like it's counterpart in Forecourt you can keep your bike here. Pick whichever is most convenient.",
@@ -120,7 +121,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/fitness_centre.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Fitness Centre",
                 "description": [
                     "If you like staying fit, this is the place for you.",
@@ -129,7 +130,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/free_weights.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Free Weights Room",
                 "description": [
                     "Because one gym wasn't enough.",
@@ -138,7 +139,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/snooker_room.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Snooker Room",
                 "description": [
                     "A very underrated room in college. This houses a fully sized snooker table.",
@@ -146,7 +147,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/facilities/band_practice_room.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Band Practice Room",
                 "description": [
                     "Also underneath Cripps, this room is wonderfully noise-insulated and has all the equipment you could possibly need to jam out.",
