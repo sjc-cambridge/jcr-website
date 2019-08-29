@@ -22,7 +22,10 @@ def logout_route():
     johnian_access.logout()
     return_url = request.args.get('redirect')
     if return_url:
-        return redirect(return_url)
+        if 'committee' not in return_url and 'currentstudents' not in return_url:
+            return redirect(return_url)
+        else:
+            return redirect(url_for("main.home"))
     else:
         return redirect(url_for("main.home"))
 
@@ -40,16 +43,16 @@ def server_overload(e):
 
 @main.route("/401")
 def error401():
-    return render_template('401.j2.html', JCR=JCR)
+    return render_template('401.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
 @main.route("/403")
 def error403():
-    return render_template('403.j2.html', JCR=JCR)
+    return render_template('403.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
 @main.route("/404")
 def error404():
-    return render_template('404.j2.html', JCR=JCR)
+    return render_template('404.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
 @main.route("/500")
 def error500():
-    return render_template('500.j2.html', JCR=JCR)
+    return render_template('500.j2.html', crsid=johnian_access.principal, JCR=JCR)

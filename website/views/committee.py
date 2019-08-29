@@ -22,8 +22,15 @@ def allowed_file(filename):
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
-@committee.route("/committee", methods=['GET', 'POST'])
-@committee.route("/committee/", methods=['GET', 'POST'])
+@committee.route("/committee")
+@committee.route("/committee/")
+@committee_access
+def committee_home():
+    return render_template("committee/home.j2.html", crsid=committee_access.principal,
+                            current_page ="/committee/home", JCR=JCR)
+
+
+@committee.route("/committee/upload_minutes", methods=['GET', 'POST'])
 @committee_access
 def upload_minutes():
     if request.method == 'POST':
@@ -32,7 +39,6 @@ def upload_minutes():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        print(file)
         # if user does not select file, browser also
         # submit an empty part without filename
         if file.filename == '':
@@ -43,11 +49,11 @@ def upload_minutes():
             term = request.form.get("term")
             log_msg = save_minutes(term, year, file)
             flash(log_msg)
-            return redirect(url_for('committee.upload_minutes'))
+            return redirect(request.url)
     minutes_dict = get_minutes_dict()
     minutes_range = get_year_range()  # Range of minutes that can be added
     return render_template("committee/upload_minutes.j2.html", crsid=committee_access.principal,
-                            current_page ="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
+                            JCR=JCR, minutes_dict=minutes_dict,
                             sorted=sorted, minutes_range=minutes_range)
 
 
