@@ -21,7 +21,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/hockey.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Hockey",
                 "description": [
                     "Up and coming in college and always will be. The men are called the Nogs and the women the Nags. Don't ask me why",
@@ -30,7 +30,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/rowing.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Rowing - LMBC",
                 "description": [
                     "Lady Margaret Boat Club is love. Lady Margaret Boat Club is life. I don't think I can summarise any better.",
@@ -38,7 +38,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/cricket.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Cricket",
                 "description": [
                     "A summer sport. If you like standing around in the sun working on your tan and occasionally throwing a ball, this one's for you.",
@@ -46,7 +46,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/ultimate.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Ultimate Frisbee",
                 "description": [
                     "It's like american football but with a frisbee... and fewer wipeouts.",
@@ -54,7 +54,7 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/cheerleading.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Cheerleading",
                 "description": [
                     "The newly formed John's Jaguars won cheer cuppers in their first year. Let's keep up the momentum.",
@@ -68,14 +68,14 @@
         "category": "Music",
         "clubs": [
             {
-                "imageName": "studentlife/clubsandsocieties/st_johns_voices.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "St John's Voices",
-                "description": ["Oh Yes"]
+                "description": ["A choir of some description"]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/gents.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Gents of St John's",
-                "description": ["Why Denny Why"]
+                "description": ["Another choir, but this time just men."]
             }
         ]
     },
@@ -83,7 +83,7 @@
         "category": "Academic",
         "clubs": [
             {
-                "imageName": "studentlife/clubsandsocieties/parsons.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Parsons Society",
                 "description": [
                     "This one is for the engineers",
@@ -97,7 +97,7 @@
         "category": "Misc",
         "clubs": [
             {
-                "imageName": "studentlife/clubsandsocieties/rubix.jpg",
+                "imageName": "studentlife/placeholder.jpg",
                 "heading": "Rubix Cube Soc",
                 "description": [
                     "A bit of a rogue one.",

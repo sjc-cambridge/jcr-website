@@ -23,13 +23,16 @@
 {% block main %}
 <main>
     <div class="container" style="margin-top: 16px;">
-        <ul class="nav nav-tabs card-header" style="padding-bottom: 0px">
+        <nav class="nav nav-tabs card-header flex-row flex-no-wrap" style="padding-bottom: 0px">
             {% for club_category in clubs_by_category %}
             {% set activity = "active" if loop.index == 1 %}
-            <li class="nav-item"><a class="nav-link {{activity}}" role="tab" data-toggle="tab"
-                    href="#tab-{{loop.index}}">{{club_category.category}}</a></li>
+            <a class="col nav-item nav-link {{activity}}" role="tab" data-toggle="tab" href="#tab-{{loop.index}}"
+                style="overflow: hidden; text-overflow: ellipsis;">
+                {{club_category.category}}
+            </a>
             {% endfor %}
-        </ul>
+        </nav>
+
         <div class="tab-content">
             {% for club_category in clubs_by_category %}
             {% set activity="show active" if loop.index == 1 %}
