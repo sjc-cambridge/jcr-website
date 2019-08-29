@@ -30,29 +30,13 @@ def logout_route():
         return redirect(url_for("main.home"))
 
 def access_denied(e):
-    return redirect(url_for("main.error401"))
-
-def forbidden(e):
-    return redirect(url_for("main.error403"))
-
-def page_not_found(e):
-    return redirect(url_for("main.error404"))
-
-def server_overload(e):
-    return redirect(url_for("main.error500"))
-
-@main.route("/401")
-def error401():
     return render_template('401.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
-@main.route("/403")
-def error403():
+def forbidden(e):
     return render_template('403.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
-@main.route("/404")
-def error404():
+def page_not_found(e):
     return render_template('404.j2.html', crsid=johnian_access.principal, JCR=JCR)
 
-@main.route("/500")
-def error500():
+def server_overload(e):
     return render_template('500.j2.html', crsid=johnian_access.principal, JCR=JCR)
