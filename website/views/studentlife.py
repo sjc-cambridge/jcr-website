@@ -6,7 +6,7 @@ student_routes = Blueprint('studentlife', __name__)
 
 
 @student_routes.route("/studentlife")
-@student_routes.route("/studentlife/")
+@student_routes.route("/studentlife/home")
 def student_home():
     return render_template("studentlife/home.j2.html", JCR=JCR, crsid=johnian_access.principal, current_page="/studentlife")
 
