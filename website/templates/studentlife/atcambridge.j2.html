@@ -3,7 +3,7 @@
 
 {% block title %}
 <title>
-	St. John's JCR
+	Life at Cambridge
 </title>
 {% endblock %}
 
@@ -25,7 +25,7 @@
 <main>
 	<div class="container" style="margin-top:10px">
 
-		<!-- <div class="row justify-content-around align-content-around">
+		<div class="row justify-content-around align-content-around">
 			{{
 				link.card(
 					href="#dress-codes",
@@ -54,12 +54,14 @@
 					icon="fa-phone"
 				)
 			}}
-		</div> -->
+		</div>
 
 		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
 			<div class="card-header">
 				<h4>
-					Dress Codes
+					<a class="anchor" name="dress-codes">
+						Dress Codes
+					</a>
 				</h4>
 			</div>
 			<div class="card-body">
@@ -136,10 +138,10 @@
 		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
 			<div class="card-header">
 				<h4>
-					Entertainment
+					<a class="anchor" name="entertainment">
+						Entertainment
+					</a>
 				</h4>
-				<a href="#" name="entertainment">
-				</a>
 			</div>
 			<div class="card-body">
 				<div class="row d-md-flex align-items-md-center">
@@ -354,10 +356,10 @@
 		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
 			<div class="card-header">
 				<h4>
-					Money Matters
+					<a class="anchor" name="money-matters">
+						Money Matters
+					</a>
 				</h4>
-				<a href="#" name="money-matters">
-				</a>
 			</div>
 			<div class="card-body">
 				<div class="row d-lg-flex justify-content-lg-center">
@@ -472,10 +474,10 @@
 		<div class="card" style="margin-top: 20px;margin-bottom: 20px;">
 			<div class="card-header">
 				<h4>
-					Useful Contacts
+					<a class="anchor" name="useful-contacts">
+						Useful Contacts
+					</a>
 				</h4>
-				<a href="#" name="useful-contacts">
-				</a>
 			</div>
 			<div class="card-body">
 				<p class="card-text">
@@ -488,4 +490,11 @@
 		</div>
 	</div>
 </main>
+<style>
+	.anchor:target {
+		padding-top: 120px;
+		margin-top: -120px;
+		z-index: 0;
+	}
+</style>
 {% endblock %}
