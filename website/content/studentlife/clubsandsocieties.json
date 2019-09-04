@@ -4,16 +4,26 @@
         "clubs": [
             {
                 "imageName": "studentlife/clubsandsocieties/sjcafc.jpg",
-                "heading": "Football - SJCAFC",
+                "heading": "Men's Football - SJCAFC",
                 "description": [
-                    "The most magnificent team of them all. With 3 men's teams and 1 women's team, there is fun for all the family.", 
-                    "Men's Captain: Dan Osborne (do318)",
-                    "Women's Captains:  Lucy Carson (lmc83) & Mikaela Thordson (malt2)"
+                    "St John's College Association Football Club (SJCAFC) is the most magnificent club of them all. With 3 men's teams, all skill levels are welcome.",
+                    "The firsts secured promotion back to Div 1 in the magnificent 2018/19 season under the leadership of capitan Hearn. The 2019/20 chapter of the SJCAFC fairytale is yet to be written. Perhaps, you could feature.", 
+                    "Captain: Dan Osborne (do318)",
+                    "Vice Captain: Jonathan Carter (jfc43)"
+                ]
+            },
+            {
+                "imageName": "studentlife/clubsandsocieties/womens_football.jpg",
+                "heading": "Women's Football - John's and Kings",
+                "description": [
+                    "Johns and Kings Women's Football had a fantastic 2018/19 season. The captains, Phoebe Harris and Charly Pressdee, worked hard on recruitment and on fostering an encouraging atmosphere. The hard work paid off as the team lost only one match in the league, securing promotion into division 2, as well as coming 2nd in the Cuppers Plate.",
+                    "We hope to see a lot of new faces join our team this coming year and help us carry on this incredible momentum into the 2019/20 season with the new captains Lucy Carson and Mikaela Thordson. Relaxed training sessions will be every week with matches most weekends during season. Moreover, we will be planning several social events and gatherings outside of training making women's football a great way to socialize not only within the team but also with other college teams at both St John's and King's.", 
+                    "Contact Lucy (lmc83) or Mikaela (malt2) for more details - everyone is welcome!"
                 ]
             },
             {
                 "imageName": "studentlife/clubsandsocieties/scjrufc.jpg",
-                "heading": "Rugby - SJCRUFC",
+                "heading": "Men's Rugby - SJCRUFC",
                 "description": [
                     "Affectionately termed the redboys. SJCRUFC is known as one of the best rugby teams in Cambridge.",
                     "Captain: Will Saunter (wrms2)",
@@ -21,12 +31,10 @@
                 ]
             },
             {
-                "imageName": "studentlife/placeholder.jpg",
+                "imageName": "studentlife/clubsandsocieties/hockey.jpg",
                 "heading": "Hockey",
                 "description": [
-                    "Up and coming in college and always will be. The men are called the Nogs and the women the Nags. Don't ask me why",
-                    "Men's: Captain: ?",
-                    "Women's Captain: ?"
+                    "The Nogs are the SJC Mens Hockey Team and are the statistically most successful team from Johns having won the College League for the last two years. As well as having a lot of fun on the astro, we also have a strong social element off the pitch. Come join the best sports team in Johns!"
                 ]
             },
             {
@@ -38,19 +46,20 @@
                 ]
             },
             {
-                "imageName": "studentlife/placeholder.jpg",
-                "heading": "Cricket",
+                "imageName": "studentlife/clubsandsocieties/dancesport.jpg",
+                "heading": "DanceSport",
                 "description": [
-                    "A summer sport. If you like standing around in the sun working on your tan and occasionally throwing a ball, this one's for you.",
-                    "Captain: TBC"
+                    "The St John's College Dancesport team welcomes dancers of any level of experience, from complete beginners to Blues athletes. We compete in the annual cuppers competition organized by the Cambridge University Dancesport team.",
+                    "While we do not organize any classes ourselves, we organize shared practice sessions at the Palmerston room, and have produced many Blues athletes over the years. "
                 ]
             },
             {
-                "imageName": "studentlife/placeholder.jpg",
+                "imageName": "studentlife/clubsandsocieties/ultimate.jpg",
                 "heading": "Ultimate Frisbee",
                 "description": [
-                    "It's like american football but with a frisbee... and fewer wipeouts.",
-                    "Captain: ?"
+                    "St John's College Ultimate is one of the friendliest sports teams in college; we have great spirit both on the pitch and off. We are very welcoming and strike a good balance between playing for fun, and playing to win.",
+                    "Ultimate is a superb sport and we are looking to build the team over the next couple of seasons, so please do try us out (whether you've played before or not!). In term times we have one match each weekend and an (optional) midweek training (all pretty informal). Regular socials too!", 
+                    "Please email Lennie Wells (ww347@cam.ac.uk) if you'd like more information"
                 ]
             },
             {
@@ -83,6 +92,14 @@
         "category": "Academic",
         "clubs": [
             {
+                "imageName": "studentlife/clubsandsocieties/medsoc.jpg",
+                "heading": "MedSoc",
+                "description": [
+                    "MedSoc represents both the Medics and Vets at John's. We organise social events through out the year including swaps, the garden party and annual society dinner.",
+                    "There are also regular talks open to everyone. If you have any questions please contact the secretary Anna (ars59) for more details or check out our <a href=\"www.johmedsoc.co.uk\">website</a>"
+                ]
+            },
+            {
                 "imageName": "studentlife/placeholder.jpg",
                 "heading": "The Parsons Society",
                 "description": [
@@ -97,11 +114,11 @@
         "category": "Misc",
         "clubs": [
             {
-                "imageName": "studentlife/placeholder.jpg",
-                "heading": "Rubix Cube Soc",
+                "imageName": "studentlife/clubsandsocieties/johns_cu.jpg",
+                "heading": "The St John's Christian Union",
                 "description": [
-                    "A bit of a rogue one.",
-                    "But if Rubix is your thing go ahead"
+                    "The Christian Union is a group of students in St John's who love Jesus, follow him, and want to tell others about his amazing love for us! We meet once a week for a fun time of sharing, prayer, and learning more about our faith. We run events in College every term, and also join with other Colleges for University-wide events (visit <a href=\"https://ciccu.org.uk\">ciccu.org.uk</a> to learn more). All are welcome to join us!",
+                    "Visit our <a href=\"https://www.facebook.com/johns.cu/\">Facebook Page</a> or <a href=\"https://www.facebook.com/groups/stjohnscu/\">Facebook Group</a>. You can also get in touch by emailing either of the reps: Hannah Lawson (hfl29) or Carrie Tan (wct25)!"
                 ]
             }
         ]

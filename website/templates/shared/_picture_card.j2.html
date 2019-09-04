@@ -18,7 +18,7 @@ obj: {
             <div class="col-lg-8">
                 <h4 style="margin-top: 10px;">{{obj.heading}}</h4>
                 {% for paragraph in obj.description %}
-                <p>{{paragraph}}</p>
+                <p>{{paragraph | safe}}</p>
                 {% endfor %}
             </div>
         </div>
@@ -36,7 +36,7 @@ obj: {
             <div class="col-lg-8">
                 <h4 style="margin-top: 10px;">{{obj.heading}}</h4>
                 {% for paragraph in obj.description %}
-                <p>{{paragraph}}</p>
+                <p>{{paragraph | safe}}</p>
                 {% endfor %}
             </div>
         </div>
