@@ -26,7 +26,8 @@
         <nav class="nav nav-tabs card-header flex-row" style="padding-bottom: 0px">
             {% for club_category in clubs_by_category %}
             {% set activity = "active" if loop.index == 1 %}
-            <a class="col text-center nav-item nav-link {{activity}}" role="tab" data-toggle="tab" href="#tab-{{loop.index}}">
+            <a class="col text-center nav-item nav-link {{activity}}" role="tab" data-toggle="tab"
+                href="#tab-{{loop.index}}">
                 {{club_category.category}}
             </a>
             {% endfor %}
@@ -49,7 +50,42 @@
                 </div>
             </div>
             {% endfor %}
+            <div class="card" style="margin-top: 20px;">
+                <div class="card-header" id="heading-example">
+                    <h5 class="mb-0">
+                        <a class="collapsed d-block" data-toggle="collapse" href="#collapse-example" aria-expanded="true"
+                            aria-controls="collapse-example">
+                            <i class="fa fa-chevron-down pull-right"></i>
+                            Adding a new Society / editing an existing one
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-example" class="collapse" aria-labelledby="heading-example">
+                    <div class="card-body">
+                        <p>If you are part of a club or society that is not on here and would like to be featured,
+                            please send an email to the computing officer (computing@sjcjcr.com) titled <b>New
+                                Society
+                                Request</b> with the following:</p>
+                        <ul>
+                            <li>Society Name</li>
+                            <li>Desired category to be filed under</li>
+                            <li>Short description (50-100 words)</li>
+                            <li>An attached image (4:3 landscape aspect ratio works best)</li>
+                        </ul>
+                        <p>The same goes if you want to update a description (say with new captains).</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>
+<style>
+    .card-header .fa {
+        transition: .3s transform ease-in-out;
+    }
+
+    .card-header .collapsed .fa {
+        transform: rotate(90deg);
+    }
+</style>
 {% endblock %}
