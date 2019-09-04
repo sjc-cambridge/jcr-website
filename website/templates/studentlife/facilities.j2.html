@@ -26,7 +26,8 @@
         <nav class="nav nav-tabs card-header flex-row" style="padding-bottom: 0px">
             {% for facilities_area in facilities_by_area %}
             {% set activity = "active" if loop.index == 2 %}
-            <a class="col text-center nav-item nav-link {{activity}}" role="tab" data-toggle="tab" href="#tab-{{loop.index}}">
+            <a class="col text-center nav-item nav-link {{activity}}" role="tab" data-toggle="tab"
+                href="#tab-{{loop.index}}">
                 {{facilities_area.area}}
             </a>
             {% endfor %}
