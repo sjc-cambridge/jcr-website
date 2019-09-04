@@ -24,7 +24,11 @@
 {% block main %}
 <main>
 	<div class="container" style="margin-top:10px">
-
+		<div class="row col">
+			<h5>
+				<a href="/studentlife"><< Back to Student Life Home</a>
+			</h5>
+		</div>
 		<div class="row justify-content-around align-content-around">
 			{{
 				link.card(
@@ -494,7 +498,6 @@
 	.anchor:target {
 		padding-top: 120px;
 		margin-top: -120px;
-		z-index: 0;
 	}
 </style>
 {% endblock %}
