@@ -1,24 +1,34 @@
 $(function () {
-  $(document).scroll(function () {
-    var $nav = $(".fixed-top");
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-  });
+	$(document).scroll(function () {
+		var $nav = $(".fixed-top");
+		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+	});
 });
 
 $(function () {
-  var lastScrollTop = 0;
-  var $navbar = $('.navbar');
-  var $heading = $('#navbarheading');
+	var lastScrollTop = 0;
+	var inProgress = false;
+	var $navbar = $('.navbar');
+	var $heading = $('#navbarheading');
+	var topHeight = $heading.height() + $navbar.height();
 
-  $(window).scroll(function (event) {
-    var st = $(this).scrollTop();
+	function animationComplete() {
+		inProgress = false;
+	};
 
-    if (st > lastScrollTop && st > $heading.height()) { // scroll down
-      $navbar.slideUp();
+	$(window).scroll(function (event) {
+		var st = $(this).scrollTop();
 
-    } else { // scroll up
-      $navbar.slideDown();
-    }
-    lastScrollTop = st;
-  });
+		if (inProgress === false) {
+			inProgress = true
+			if (st > lastScrollTop && st > topHeight) { // scroll down
+				$navbar.slideUp(undefined, animationComplete);
+
+			} else { // scroll up
+				$navbar.slideDown(undefined, animationComplete);
+			}
+			lastScrollTop = st;
+		}
+	});
+
 });
