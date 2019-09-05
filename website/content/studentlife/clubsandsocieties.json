@@ -77,14 +77,13 @@
         "category": "Music",
         "clubs": [
             {
-                "imageName": "studentlife/placeholder.jpg",
+                "imageName": "studentlife/clubsandsocieties/st_johns_voices.jpg",
                 "heading": "St John's Voices",
-                "description": ["A choir of some description"]
-            },
-            {
-                "imageName": "studentlife/placeholder.jpg",
-                "heading": "The Gents of St John's",
-                "description": ["Another choir, but this time just men."]
+                "description": [
+                    "St John's Voices is the College's extremely fine mixed-voice choir. Founded in 2013, SJV is one of Cambridge's newest choirs, and is made up of male and female students of the College.",
+                    "Renowned for being friendly and relaxed as well as for its remarkably high musical standards, the choir sings evensong on Mondays in the beautiful College Chapel, as well as concerts, international tours, recordings and other performances. This year the choir will be launching their debut professional recording, on the Naxos label, and will be touring Germany during the Easter vacation.",
+                    "The choir is directed by Graham Walker (ghw2@cam.ac.uk). More about St John's Voices may be found on their <a href=\"https://www.joh.cam.ac.uk/chapel-choir#lps-6\">website</a>."
+                ]
             }
         ]
     },
@@ -96,7 +95,7 @@
                 "heading": "MedSoc",
                 "description": [
                     "MedSoc represents both the Medics and Vets at John's. We organise social events through out the year including swaps, the garden party and annual society dinner.",
-                    "There are also regular talks open to everyone. If you have any questions please contact the secretary Anna (ars59) for more details or check out our <a href=\"www.johmedsoc.co.uk\">website</a>"
+                    "There are also regular talks open to everyone. If you have any questions please contact the secretary Anna (ars59) for more details or check out our <a href=\"http://www.johmedsoc.co.uk\">website</a>"
                 ]
             },
             {
