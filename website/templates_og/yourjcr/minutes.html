@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    {% block title %}
-    {% endblock %}
+    <title>JCRweb_master</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
@@ -23,9 +22,20 @@
     <link rel="stylesheet" href="/assets/css/JohnianHeader.css">
     <link rel="stylesheet" href="/assets/css/JohnianNavbar.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
+<title>St. John's College JCR</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-light navbar-expand fixed-top" style="overflow-x: hidden;">
+        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST JOHN'S JCR</a>
+            <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
+                <div class="btn-group ml-auto" role="group"><a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login" style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;"><i class="fas fa-crow"></i>&nbsp; Login</a>
+                    <button
+                        class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button" style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;"><i class="fa fa-navicon"></i>&nbsp;Menu</button>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div>
         <div class="overlay"></div>
         <div id="sidebar" class="sidebar-right" style="background-color: rgba(118,187,239,0.17);">
@@ -34,7 +44,7 @@
                 <h2></h2>
             </div>
             <ul>
-                <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/yourjcr/home"><i class="fa fa-group"></i>&nbsp;&nbsp;Your JCR</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#yourjcrmenu" aria-expanded="false" aria-controls="yourjcrmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/yourjcr/home"><i class="fa fa-user"></i>&nbsp;Your JCR</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#yourjcrmenu" aria-expanded="false" aria-controls="yourjcrmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                     <ul
                         class="list-unstyled collapse" id="yourjcrmenu" aria-expanded="false">
                         <li id="sublink"> <a href="/yourjcr/committee"><i class="fa fa-group"></i>&nbsp; Committee</a></li>
@@ -43,9 +53,9 @@
                         <li id="sublink"> <a href="/yourjcr/consentjohns"><i class="fa fa-intersex"></i>&nbsp; Consent John's</a></li>
                         <li id="sublink"> <a href="/yourjcr/ents"><i class="fas fa-glass-cheers"></i>&nbsp; Ents</a></li>
                         <li id="sublink"> </li>
-                      </ul>
+            </ul>
             </li>
-            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-bicycle"></i>&nbsp;Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp; Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
                     class="list-unstyled collapse" id="slifemenu" aria-expanded="false">
                     <li id="sublink"> <a href="/studentlife/atcambridge"><i class="fa fa-mortar-board"></i>&nbsp; Life in Cambridge</a></li>
@@ -54,7 +64,7 @@
                     <li id="sublink"> </li>
                     </ul>
             </li>
-            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/freshers/home"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;Freshers</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#freshersmenu" aria-expanded="false" aria-controls="freshersmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/freshers/home"><i class="fa fa-user"></i>&nbsp; Freshers</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#freshersmenu" aria-expanded="false" aria-controls="freshersmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
                     class="list-unstyled collapse" id="freshersmenu" aria-expanded="false">
                     <li id="sublink"> <a href="/freshers/yourfirstday"><i class="fa fa-info-circle"></i>&nbsp; Your First Day</a></li>
@@ -64,68 +74,36 @@
                     <li id="sublink"> <a href="/freshers/glossary"><i class="fa fa-question"></i>&nbsp; Glossary of Terms</a></li>
                     </ul>
             </li>
-            <li><span class="d-flex menuwrapper" style="width: 100%;">
-                <a class="menuname" href="/currentstudents/home"><i class="fa fa-home"></i>&nbsp;&nbsp;&nbsp;Current Students</a>
-                {% if crsid %}
-                <a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown"
-                role="button" href="#cstudentsmenu" aria-expanded="false" aria-controls="cstudentsmenu"
-                data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a>
-                {% else %}
-                <a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown"
-                role="button"><i class="fa fa-lock d-lg-flex"></i></a>
-                {% endif %}
-                </span>
-                <ul class="list-unstyled collapse" id="cstudentsmenu" aria-expanded="false">
-                    <li id="sublink"> <a href="/currentstudents/welfare"><i class="fa fa-star"></i>&nbsp; Welfare
-                            Supplies</a></li>
-                    <li id="sublink"> <a href="/currentstudents/feedback"><i class="fa fa-wpforms"></i>&nbsp;
-                            Facilities Feedback</a></li>
-                    <li id="sublink"> <a href="/currentstudents/elections"><i class="fa fa-info-circle"></i>&nbsp;
-                            JCR Elections</a></li>
-                </ul>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/currentstudents/home"><i class="fa fa-user"></i>&nbsp; Current Students</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#cstudentsmenu" aria-expanded="false" aria-controls="cstudentsmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="cstudentsmenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/currentstudents/welfare"><i class="fa fa-star"></i>&nbsp; Welfare Supplies</a></li>
+                    <li id="sublink"> <a href="/currentstudents/feedback"><i class="fa fa-wpforms"></i>&nbsp; Facilities Feedback</a></li>
+                    <li id="sublink"> <a href="/currentstudents/elections"><i class="fa fa-info-circle"></i>&nbsp; JCR Elections</a></li>
+                    </ul>
             </li>
-            {% if crsid in JCR.committee_crsids %}
-            <li>
-                <span class="d-flex menuwrapper" style="width: 100%;">
-                  <a class="menuname" href="/committee" style="color: #FFD700;"><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp; Committee</a>
-                  <a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown"
-                  role="button" href="/committee" style="color: #FFD700;"><i class="fa fa-rocket d-lg-flex"></i></a>
-                  </span>
-            </li>
-            {% endif %}
             </ul>
         </div>
     </div>
-    <nav class="navbar navbar-light navbar-expand fixed-top">
-        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/"
-                style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST
-                JOHN'S JCR</a>
-            <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
-                <div class="btn-group ml-auto" role="group">
-                    {% if crsid %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/logout?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp; Logout {{crsid}}</a>
-                    {% else %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp;  Login</a>
-                    {% endif %}
-                    <button class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;"><i
-                            class="fa fa-navicon"></i>&nbsp;Menu</button>
-                </div>
+    <section id="navbarheading" class="clean-block features" style="background-position: center;background-size: cover;background-repeat: no-repeat;filter: brightness(100%) contrast(100%) saturate(100%);padding-bottom: 0px;width: 100%;background-image: url(&quot;/assets/img/110614.jpg&quot;);padding-top: 100px;">
+        <div class="container class=&quot;col-sm col-md-10 col-lg-10&quot;" id="headerbox" style="padding: 0px;">
+            <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+                <h1 class="text-center" id="pageheading">Minutes of meetings</h1>
+                <p class="text-center" id="pageparagraph" style="margin: 0px;">The minutes of JCR meetings from the past year can be found below. If <br>you require any clarification of any of the details found therein, or <br>believe there to be an error, please <a href="http://sjcjcr.com/current-students/feedback/">contact {{JCR['secretary']['name'].split()[0]}}</a>,
+                    the JCR secretary.&nbsp;</p>
             </div>
         </div>
-    </nav>
-    <section id="navbarheading" class="clean-block features" style="background-position: center;background-size: cover;background-repeat: no-repeat;filter: brightness(100%) contrast(100%) saturate(100%);padding-bottom: 0px;width: 100%;background-image: url(&quot;/assets/img/110614.jpg&quot;);">
-        {% block header %}
-        {% endblock %}
     </section>
-
-    {% block main %}
-    {% endblock %}
-
+    <main style="padding: 20px;">
+        <section>
+            <h1>Lent Term 2019/20</h1>
+            <ul class="list-group">
+                <li class="list-group-item"><span>List Group Item 1</span></li>
+                <li class="list-group-item"><span>List Group Item 2</span></li>
+                <li class="list-group-item"><span>List Group Item 3</span></li>
+            </ul>
+        </section>
+    </main>
     <footer class="page-footer dark" style="overflow-x: hidden;width: 100%;background-color: rgb(255,255,255);">
         <div class="container">
             <div class="row">

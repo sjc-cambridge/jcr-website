@@ -3,14 +3,79 @@
         "category": "Sports",
         "clubs": [
             {
-                "imageName": "President.jpg",
-                "heading": "SJCAFC",
-                "description": "The best of the best"
+                "imageName": "studentlife/clubsandsocieties/sjcafc.jpg",
+                "heading": "Football - SJCAFC",
+                "description": [
+                    "The most magnificent team of them all. With 3 men's teams and 1 women's team, there is fun for all the family.", 
+                    "Men's Captain: Dan Osborne (do318)",
+                    "Women's Captains:  Lucy Carson (lmc83) & Mikaela Thordson (malt2)"
+                ]
             },
             {
-                "imageName": "President.jpg",
-                "heading": "SJCRUFC",
-                "description": "You are tearing me apart Lisa"
+                "imageName": "studentlife/clubsandsocieties/scjrufc.jpg",
+                "heading": "Rugby - SJCRUFC",
+                "description": [
+                    "Affectionately termed the redboys. SJCRUFC is known as one of the best rugby teams in Cambridge.",
+                    "Captain: Will Saunter (wrms2)",
+                    "Vice Captain: James Laudage (?)"
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Hockey",
+                "description": [
+                    "Up and coming in college and always will be. The men are called the Nogs and the women the Nags. Don't ask me why",
+                    "Men's: Captain: ?",
+                    "Women's Captain: ?"
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Rowing - LMBC",
+                "description": [
+                    "Lady Margaret Boat Club is love. Lady Margaret Boat Club is life. I don't think I can summarise any better.",
+                    "Captain: Aidan Williams (aw768)"
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Cricket",
+                "description": [
+                    "A summer sport. If you like standing around in the sun working on your tan and occasionally throwing a ball, this one's for you.",
+                    "Captain: TBC"
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Ultimate Frisbee",
+                "description": [
+                    "It's like american football but with a frisbee... and fewer wipeouts.",
+                    "Captain: ?"
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Cheerleading",
+                "description": [
+                    "The newly formed John's Jaguars won cheer cuppers in their first year. Let's keep up the momentum.",
+                    "#letsgogirls",
+                    "#roar"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Music",
+        "clubs": [
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "St John's Voices",
+                "description": ["A choir of some description"]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "The Gents of St John's",
+                "description": ["Another choir, but this time just men."]
             }
         ]
     },
@@ -18,14 +83,26 @@
         "category": "Academic",
         "clubs": [
             {
-                "imageName": "President.jpg",
-                "heading": "The JCR",
-                "description": "Oh Yes"
-            },
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "The Parsons Society",
+                "description": [
+                    "This one is for the engineers",
+                    "President: Zenga Nyirenda (zrjn2)",
+                    "Not president: Ollie Barnard (ojrb2)"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "clubs": [
             {
-                "imageName": "President.jpg",
-                "heading": "The Bar",
-                "description": "Why Denny Why"
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Rubix Cube Soc",
+                "description": [
+                    "A bit of a rogue one.",
+                    "But if Rubix is your thing go ahead"
+                ]
             }
         ]
     }

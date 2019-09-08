@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, send_file, request
 import os
 from website.config import johnian_access, JCR
 from website.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
-
+from website.welfaresystem import userhash
 
 currentstudents = Blueprint('currentstudents', __name__)
 
@@ -13,15 +13,6 @@ currentstudents = Blueprint('currentstudents', __name__)
 def current_home():
     user_crsid = johnian_access.principal
     return render_template("currentstudents/home.j2.html", crsid=johnian_access.principal, current_page="/currentstudents", JCR=JCR)
-
-
-@currentstudents.route("/currentstudents/minutes/<filename>")
-@johnian_access
-def return_minutes(filename):
-    try:
-        return get_minutes(filename)
-    except Exception as e:
-        return str(e)
 
 
 @currentstudents.route("/currentstudents/transparency")
@@ -48,11 +39,22 @@ def elections_page():
 @currentstudents.route("/currentstudents/elections/getmanifesto")
 @johnian_access
 def return_manifesto():
-    manifesto = request.args.get('manifesto')
+    manifesto = request.args.get('manifesto')  # see elections html pages to understand this.
     try:
         return get_manifesto(manifesto)
     except Exception as e:
         return str(e)
+
+@currentstudents.route("/currentstudents/welfare")
+@johnian_access
+def welfarepage():
+    crsid=johnian_access.principal
+    user_code = userhash(crsid)
+    return render_template("/currentstudents/welfare.j2.html", JCR=JCR,
+                            current_page="/currentstudents/welfare",
+                            crsid=johnian_access.principal,
+                            user_code=user_code)
+
 
 @currentstudents.route('/currentstudents/<pagename>')
 @johnian_access

@@ -3,6 +3,7 @@ from flask import Flask, url_for
 from website.views.master import main, page_not_found, access_denied, server_overload, forbidden
 import os
 from website.views.currentstudents import currentstudents
+from website.views.committee import committee
 from website.views.yourjcr import yourjcr
 from website.views.freshers import freshers
 from website.views.studentlife import student_routes
@@ -26,6 +27,7 @@ def create_site():
     app.register_blueprint(freshers)
     app.register_blueprint(yourjcr)
     app.register_blueprint(student_routes)
+    app.register_blueprint(committee)
     """Attach error handling functions for relevant error codes."""
     app.register_error_handler(401, access_denied)
     app.register_error_handler(403, forbidden)

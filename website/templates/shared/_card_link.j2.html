@@ -1,0 +1,13 @@
+{% macro card(href, text, icon) -%}
+<div class="col-sm col-lg-3">
+    <a class="text-center align-self-center" href="{{href}}" style="margin: 10px;" >
+        <div style="padding: 10px; background-color: #f2f2f2;">
+            <h4>
+                {{text}}
+            </h4>
+            <i class="fa {{icon}}" style="font-size: 48px;">
+            </i>
+        </div>
+    </a>
+</div>
+{%- endmacro %}
