@@ -1,6 +1,7 @@
-from flask_wtf import Form, StringField, TextAreaField, SubmitField
+from flask_wtf import FlaskForm
+from wtforms import StringField, TextAreaField, SubmitField
 
-class ContactForm(Form):
+class ContactForm(FlaskForm):
     name = StringField("Name")
     email = StringField("Email")
     subject = StringField("Subject")
