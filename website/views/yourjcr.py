@@ -38,7 +38,10 @@ def contact():
         senderEmail = request.form['senderEmail']
         subject = request.form['subject']
         message = request.form['message']
-        JCR.email_member(subject, message, recipient)
+        wrapped_message = "Hi {}!\n\nYou have been contacted by {} via the JCR website. Their message is as " \
+                          "follows:\n\n\"{}\"\n\nIf you would like to reply to reply, their email is {}.\n\nSouvent " \
+                          "Me Souvient".format(JCR[recipient]['name'], senderName, message, senderEmail)
+        JCR.email_member(subject, wrapped_message, recipient)
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
                                current_page="/yourjcr/contact", JCR=JCR)
     elif request.method == 'GET':
