@@ -7,7 +7,7 @@
   height: 100vh;
   z-index: 1032;
   color: #fff;
-  overflow-y: visible;
+  overflow-y: scroll;
 }
 
 #sidebar.active {
@@ -57,7 +57,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1031;
   display: none;
   overflow-y: visible;
@@ -127,10 +127,10 @@
   border-color: rgba(255,255,255,.3);
 }
 
-#content {
-  /*width: 100%;*/
-  /*min-height: 100vh;*/
-}
+/* #content {
+  width: 100%;
+  min-height: 100vh;
+} */
 
 .btn-group, .btn-group-vertical {
   background: transparent;
