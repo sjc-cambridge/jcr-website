@@ -43,7 +43,8 @@ def contact():
                           "Me Souvient".format(JCR[recipient]['name'], senderName, message, senderEmail)
         JCR.email_member(subject, wrapped_message, recipient)
         return render_template("yourjcr/sent.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR)
+                               current_page="/yourjcr/contact", JCR=JCR) # Better way of doing this using jinja, but
+        # this is simpler from a long-term maintenance perspective
     elif request.method == 'GET':
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
                                current_page="/yourjcr/contact", JCR=JCR)
