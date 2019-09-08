@@ -41,11 +41,8 @@ def contact():
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
-    if pagename == "contact":
-
-    else:
-        return render_template("yourjcr/{}.j2.html".format(pagename), crsid=johnian_access.principal,
-                               current_page="/yourjcr/{}".format(pagename), JCR=JCR)
+    return render_template("yourjcr/{}.j2.html".format(pagename), crsid=johnian_access.principal,
+                            current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
 
 @yourjcr.route('/yourjcr/<pagename>/')
