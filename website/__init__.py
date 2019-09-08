@@ -11,7 +11,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 
 class Request(flask.Request):
     """This specifies locations that the Raven access module will work!"""
-    trusted_hosts = {'jfc43.user.srcf.net', 'localhost'}
+    trusted_hosts = {'jfc43.user.srcf.net', 'localhost', '127.0.0.1'}
 
 def create_site():
     """Create Flask app, specify folder containing static content e.g. imgs, CSS"""
