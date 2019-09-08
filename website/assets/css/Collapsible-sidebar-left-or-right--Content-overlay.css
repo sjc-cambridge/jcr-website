@@ -7,7 +7,7 @@
   height: 100vh;
   z-index: 1032;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 #sidebar.active {
@@ -60,7 +60,7 @@
   background: rgba(0, 0, 0, 0.75);
   z-index: 1031;
   display: none;
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 #sidebar .sidebar-header {
@@ -69,7 +69,7 @@
   min-height: 65px;
   text-align: left;
   background-color: rgb(90,135,194);
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 .sidebar-header h1, .sidebar-header h2, .sidebar-header h3, .sidebar-header h4, .sidebar-header h5 {
@@ -88,7 +88,7 @@
   text-decoration: none;
   background: rgba(0,0,0,.1);
   /*margin-bottom: 1px;*/
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 #sidebar ul li a:hover, #sidebar ul li.active > a, #sidebar a[aria-expanded="true"] {
