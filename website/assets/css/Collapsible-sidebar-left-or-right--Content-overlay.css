@@ -7,7 +7,8 @@
   height: 100vh;
   z-index: 1032;
   color: #fff;
-  overflow-y: scroll;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 #sidebar.active {
