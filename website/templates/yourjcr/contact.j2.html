@@ -22,10 +22,23 @@
 {% block main %}
 <main class="features-boxed">
  <div class="container">
-  <form action="/yourjcr/contact" method="post" style="padding-top: 15px;padding-bottom: 15px;">
-   <h5>
-    To:
-   </h5>
+  <form action="{{ url_for('contact') }}" method="post" style="padding-top: 15px;padding-bottom: 15px;">
+   <h5>To:</h5>
+   {{ form.hidden_tag() }}
+
+    {{ form.name.label }}
+    {{ form.name }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.subject.label }}
+    {{ form.subject }}
+
+    {{ form.message.label }}
+    {{ form.message }}
+
+    {{ form.submit }}
    <div class="form-group">
     <select class="form-control">
      <option value="president@sjcjcr.com">

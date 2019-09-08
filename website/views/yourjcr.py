@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, Blueprint, url_for
 from website.config import johnian_access, JCR
 from website.contentmanager import get_minutes_dict, get_minutes
+from website.forms import ContactForm
 import datetime
 
 yourjcr = Blueprint('yourjcr', __name__)
@@ -29,15 +30,19 @@ def minutes_page():
                            current_page="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
                            sorted=sorted)
 
+@yourjcr.route('/yourjcr/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if request.method == 'POST':
+        return 'Form posted'
+    elif request.method == 'GET':
+        return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
+                               current_page="/yourjcr/current", JCR=JCR, form=form)
 
-@yourjcr.route('/yourjcr/<pagename>', methods=['GET', 'POST'])
+@yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
     if pagename == "contact":
-        if request.form:
-            with open('test.txt','r') as file:
-                file.write(request.form)
-        return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/current", JCR=JCR)
+
     else:
         return render_template("yourjcr/{}.j2.html".format(pagename), crsid=johnian_access.principal,
                                current_page="/yourjcr/{}".format(pagename), JCR=JCR)
