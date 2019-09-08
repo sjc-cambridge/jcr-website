@@ -30,6 +30,7 @@ def minutes_page():
                            current_page="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
                            sorted=sorted)
 
+
 @yourjcr.route('/yourjcr/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
@@ -37,12 +38,13 @@ def contact():
         return 'Form posted'
     elif request.method == 'GET':
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/current", JCR=JCR, form=form)
+                               current_page="/yourjcr/contact", JCR=JCR, form=form)
+
 
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
     return render_template("yourjcr/{}.j2.html".format(pagename), crsid=johnian_access.principal,
-                            current_page="/yourjcr/{}".format(pagename), JCR=JCR)
+                           current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
 
 @yourjcr.route('/yourjcr/<pagename>/')
