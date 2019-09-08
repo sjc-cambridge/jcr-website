@@ -30,7 +30,7 @@ def minutes_page():
                            sorted=sorted)
 
 
-@yourjcr.route('/yourjcr/<pagename>')
+@yourjcr.route('/yourjcr/<pagename>', methods=['GET', 'POST'])
 def jcr_routing(pagename):
     if pagename == "contact":
         if request.form:
