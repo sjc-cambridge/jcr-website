@@ -26,9 +26,6 @@
   background: transparent;
 }
 
-.btn.btn-primary.ml-auto.pull-right.open-sidebar {
-}
-
 @media (min-width: 768px) {
   #raven {
     font-size: 30px;
