@@ -66,7 +66,7 @@
         ]
     },
     {
-        "category": "Music",
+        "category": "Music and Drama",
         "clubs": [
             {
                 "imageName": "studentlife/clubsandsocieties/st_johns_voices.jpg",
@@ -75,6 +75,16 @@
                     "St John's Voices is the College's extremely fine mixed-voice choir. Founded in 2013, SJV is one of Cambridge's newest choirs, and is made up of male and female students of the College.",
                     "Renowned for being friendly and relaxed as well as for its remarkably high musical standards, the choir sings evensong on Mondays in the beautiful College Chapel, as well as concerts, international tours, recordings and other performances. This year the choir will be launching their debut professional recording, on the Naxos label, and will be touring Germany during the Easter vacation.",
                     "The choir is directed by Graham Walker (ghw2@cam.ac.uk). More about St John's Voices may be found on their <a href=\"https://www.joh.cam.ac.uk/chapel-choir#lps-6\">website</a>."
+                ]
+            },
+            {
+                "imageName": "studentlife/clubsandsocieties/lady_margaret_players.jpg",
+                "heading": "Lady Margaret Players",
+                "description": [
+                    "The Lady Margaret Players are the St John's College theatrical society, funding and promoting the dramatic arts within College and beyond. We strive to encourage Johnians and Non-Johnians alike to take part in performing arts, running theatrical events and aiming to build an inclusive community of theatre-lovers.  We put on a freshers' play in Michaelmas, a student-written show in Lent and a May Week show in Easter and accept applications to fund other theatrical projects across Cambridge.",
+                    "President: Beatrix Swanson Scott",
+                    "Junior Treasurer: Sophie Hill",
+                    "Senior Treasurer: Professor John Kerrigan"
                 ]
             }
         ]
