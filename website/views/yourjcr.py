@@ -33,6 +33,9 @@ def minutes_page():
 @yourjcr.route('/yourjcr/<pagename>')
 def jcr_routing(pagename):
     if pagename == "contact":
+        if request.form:
+            with open('test.txt','r') as file:
+                file.write(request.form)
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
                                current_page="/yourjcr/current", JCR=JCR)
     else:
