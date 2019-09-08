@@ -22,13 +22,13 @@
 {% block main %}
 <main class="features-boxed">
  <div class="container">
-  <form action="/submit" method="post" style="padding-top: 15px;padding-bottom: 15px;">
+  <form action="{{ url_for('yourjcr.contact') }}" method="post" style="padding-top: 15px;padding-bottom: 15px;">
    <h5>
     To:
    </h5>
    <div class="form-group">
     <select class="form-control" name="recipient">
-     <option value="president@sjcjcr.com">
+     <option value="president">
       {{JCR['president']['name']}} - Co-Presidents
      </option>
      <option selected="" value="vicepresident@sjcjcr.com">
