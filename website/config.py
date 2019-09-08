@@ -71,7 +71,7 @@ class Committee(dict):
         self.email_people(subject, input_message, committee_emails)
         return "Emailed JCR Committee"
 
-    def email_someone(self, subject, input_message, email_address):
+    def email_someone(self, subject, input_message, email_address): # should this be in the Committee class?
         """Email committee member"""
         self.email_people(subject, input_message, [email_address])
         return "Emailed {}".format(email_address)
