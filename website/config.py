@@ -32,8 +32,6 @@ with open(os.path.join(script_dir, "johnians.txt"), "rb") as file:
     johnian_crsids = set(pickle.load(file))
 
 
-#johnian_crsids.remove('jfc43') #Testing login works by removing myself
-
 """This decorator restricts pages to Johnians."""
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(max_life = 6000,
                                             require_principal = johnian_crsids)

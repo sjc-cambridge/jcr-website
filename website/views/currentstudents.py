@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, send_file, request, redirect
 import os
 from website.config import johnian_access, JCR
-from website.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
+from website.helper.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
 currentstudents = Blueprint('currentstudents', __name__)
