@@ -22,19 +22,18 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/scjrufc.jpg",
-                "heading": "Men's Rugby - SJCRUFC",
-                "description": [
-                    "Affectionately termed the redboys. SJCRUFC is known as one of the best rugby teams in Cambridge.",
-                    "Captain: Will Saunter (wrms2)",
-                    "Vice Captain: James Laudage (?)"
-                ]
-            },
-            {
                 "imageName": "studentlife/clubsandsocieties/hockey.jpg",
                 "heading": "Hockey",
                 "description": [
                     "The Nogs are the SJC Mens Hockey Team and are the statistically most successful team from Johns having won the College League for the last two years. As well as having a lot of fun on the astro, we also have a strong social element off the pitch. Come join the best sports team in Johns!"
+                ]
+            },
+            {
+                "imageName": "studentlife/clubsandsocieties/netball.jpg",
+                "heading": "Netball - SJCNC",
+                "description": [
+                    "The St John's College Netball Club is one of the largest and best netball clubs in the university. The ladies first team is a dominant force, having won the intercollegiate Cuppers trophy twice in the last three years and regularly topping division 1, with the ladies second team gaining solid results in division 2. The mixed netball team is also a highly enthusiastic squad who secured promotion after a stellar season.",
+                    "Whether you want to play top level college netball or just a relaxed weekend match, SJCNC is definitely for you!"
                 ]
             },
             {
