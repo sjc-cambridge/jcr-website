@@ -1,4 +1,4 @@
-from ibisclient import *
+from .ibisclient import *
 import pickle
 
 ''' File connects to UIS to get CRSids of all Johnians known for website access.

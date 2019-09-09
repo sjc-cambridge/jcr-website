@@ -3,7 +3,7 @@ import os
 from website.config import committee_access, JCR
 from website.contentmanager import get_minutes, save_minutes
 from website.contentmanager import get_minutes_dict, get_minutes, delete_minutes
-from website.misc import get_year_range
+from website.helper.timehelper import get_year_range
 import datetime
 
 committee = Blueprint('committee', __name__)
