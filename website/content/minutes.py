@@ -8,31 +8,8 @@ from website.content.retrieve import retrieveJson
 
 curr_dir = os.path.dirname(__file__)
 
-"""
-    ELECTIONS_ONGOING variable allows switching between two slightly different
-    templates, since for an ongoing election you want several people for each
-    position and different header text. You will also want to put the voting
-    link for the election in the heading paragraph as it becomes available.
-    For this you'll need to edit currentelections.j2.html, see comments in HTML
-"""
-
-ELECTIONS_ONGOING = True
-
-if ELECTIONS_ONGOING:
-    json_path = 'elections/candidates'
-else:
-    json_path = 'elections/elected'
-
-election_json = retrieveJson(json_path)
-
-
-def get_manifesto(filename):
-    filepath = os.path.join(curr_dir, 'content/elections/manifestos', filename)
-    return send_file(filepath, as_attachment=True)
-
-
 def save_minutes(term, year, file):
-    yearpath = os.path.join(curr_dir, 'content/minutes', year)
+    yearpath = os.path.join(curr_dir, 'minutes', year)
     if not os.path.exists(yearpath):
         os.makedirs(yearpath)
     termpath = os.path.join(yearpath, term)
@@ -48,10 +25,10 @@ def save_minutes(term, year, file):
 
 
 def delete_minutes(term, year, filename):
-    filepath = os.path.join(curr_dir, 'content/minutes', year, term, filename)
+    filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
     try:
         os.remove(filepath)
-        termpath = os.path.join(curr_dir, 'content/minutes', year, term)
+        termpath = os.path.join(curr_dir, 'minutes', year, term)
         if not os.listdir(termpath):
             os.rmdir(termpath)  # Delete term folder if now empty
         return 'Deleted minutes'
@@ -63,7 +40,7 @@ def get_minutes_dict():
     """Get minutes folder directory structure for displaying stuff in minutes.j2.html"""
     minutes_dict = dict()
     minutes_range = get_year_range()
-    minutes_path = pathlib.Path(os.path.join(curr_dir, 'content/minutes'))
+    minutes_path = pathlib.Path(os.path.join(curr_dir, 'minutes'))
     for academic_year in minutes_path.iterdir():
         year_str = str(academic_year).split('/')[-1]  # Strip rest of file path
         if year_str in minutes_range:
@@ -80,11 +57,10 @@ def get_minutes_dict():
 
 
 def get_minutes(term, year, filename):
-    filepath = os.path.join(curr_dir, 'content/minutes', year, term, filename)
+    filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
     return send_file(filepath, as_attachment=True)
 
 
 def get_transparencydoc():
-    filename = "JCRTransparencyDoc.pdf"
-    filepath = os.path.join(curr_dir, 'content', filename)
+    filepath = os.path.join(curr_dir, "minutes/JCRTransparencyDoc.pdf")
     return send_file(filepath,  as_attachment=True, attachment_filename='JCRTransparency.pdf')

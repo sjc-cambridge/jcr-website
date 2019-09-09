@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, send_file, request, redirect
 import os
 from website.helper.auth import johnian_access, JCR
-from website.helper.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
+from website.content.minutes import get_minutes, get_transparencydoc
+from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
 currentstudents = Blueprint('currentstudents', __name__)
@@ -28,7 +29,7 @@ def return_transparencydoc():
 @johnian_access
 def elections_page():
     user_crsid = johnian_access.principal
-    if ELECTIONS_ONGOING:  # See contentmanager.py
+    if ELECTIONS_ONGOING:  # See elections.py
         template_path="currentstudents/currentelections.j2.html"
     else:
         template_path="currentstudents/electionresults.j2.html"

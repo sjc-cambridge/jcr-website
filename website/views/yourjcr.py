@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, Blueprint, url_for
 from website.helper.auth import johnian_access, JCR
-from website.helper.contentmanager import get_minutes_dict, get_minutes
+from website.content.minutes import get_minutes_dict, get_minutes
 import datetime
 
 yourjcr = Blueprint('yourjcr', __name__)
