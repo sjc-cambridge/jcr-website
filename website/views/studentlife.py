@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, redirect
-from website.config import johnian_access, JCR
+from website.helper.auth import johnian_access, JCR
 from website.content.retrieve import retrieveJson
 
 student_routes = Blueprint('studentlife', __name__)

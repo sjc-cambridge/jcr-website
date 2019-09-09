@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, send_file, request, redirect
 import os
-from website.config import johnian_access, JCR
+from website.helper.auth import johnian_access, JCR
 from website.helper.contentmanager import get_minutes, get_transparencydoc, get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
@@ -12,7 +12,7 @@ currentstudents = Blueprint('currentstudents', __name__)
 @johnian_access
 def current_home():
     user_crsid = johnian_access.principal
-    return render_template("currentstudents/home.j2.html", crsid=johnian_access.principal, current_page="/currentstudents", JCR=JCR)
+    return render_template("currentstudents/home.j2.html", crsid=user_crsid, current_page="/currentstudents", JCR=JCR)
 
 
 @currentstudents.route("/currentstudents/transparency")
@@ -32,7 +32,7 @@ def elections_page():
         template_path="currentstudents/currentelections.j2.html"
     else:
         template_path="currentstudents/electionresults.j2.html"
-    return render_template(template_path, crsid=johnian_access.principal, JCR=JCR,
+    return render_template(template_path, crsid=user_crsid, JCR=JCR,
                             current_page="/currentstudents/elections", e=election_json)
 
 

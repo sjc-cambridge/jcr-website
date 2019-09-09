@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, Blueprint, url_for
-from website.config import johnian_access, JCR
+from website.helper.auth import johnian_access, JCR
 
 freshers = Blueprint('freshers', __name__)
 

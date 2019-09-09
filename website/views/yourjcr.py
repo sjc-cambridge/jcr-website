@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, Blueprint, url_for
-from website.config import johnian_access, JCR
+from website.helper.auth import johnian_access, JCR
 from website.helper.contentmanager import get_minutes_dict, get_minutes
 import datetime
 

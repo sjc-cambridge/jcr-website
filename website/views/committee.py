@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, send_file, request, redirect, url_for, flash
 import os
-from website.config import committee_access, JCR
+from website.helper.auth import committee_access, JCR
 from website.helper.contentmanager import get_minutes, save_minutes, get_minutes_dict, delete_minutes
 from website.helper.timehelper import get_year_range
 import datetime
