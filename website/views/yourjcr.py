@@ -81,7 +81,7 @@ def jcr_committee_routing(pagename):
         member_crsid = member['crsid']
         bio = member['bio']
     return render_template("yourjcr/committee/committeeprofile.j2.html", crsid=johnian_access.principal, role=role, name=name, member_crsid=member_crsid, bio=bio,
-                           current_page="/yourjcr/{}".format(pagename))
+                           current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
 
 @yourjcr.route('/yourjcr/committee/<pagename>/')
