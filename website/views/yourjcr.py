@@ -75,11 +75,13 @@ def jcr_committee_routing(pagename):
         name = "{} & {}".format(JCR['president']['co1']['name'],JCR['president']['co2']['name'])
         member_crsid = "{} & {}".format(JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'])
         bio = JCR['president']['bio']
+        img = JCR['president']['img']
     else:
         role = member['role']
         name = member['name']
         member_crsid = member['crsid']
         bio = member['bio']
+        img = member['img']
     return render_template("yourjcr/committee/committeeprofile.j2.html", crsid=johnian_access.principal, role=role, name=name, member_crsid=member_crsid, bio=bio, img=img,
                            current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
