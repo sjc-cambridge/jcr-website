@@ -14,84 +14,96 @@
               "name": "Ollie Barnard",
               "crsid": "ojrb2"
             },
-        "bio":"Hey, we’re Ollie & Anusha your JCR Co-Presidents for 2019. We’re second years studying Engineering and Maths. As Co-Presidents we lead the JCR Committee and act as the key link between students and College. We sit on committees such as CUSU Council and College Council to ensure that your opinions are conveyed to the right people to improve your John’s experience. Alongside our fantastic committee we’re working to make John’s the most exciting, most supportive and most enjoyable it can be for us as students, so if you have any suggestions please feel free to get in touch by email, or even just chat to us if you see us around college or in the buttery!"
+        "bio":"Hey, we’re Ollie & Anusha your JCR Co-Presidents for 2019. We’re second years studying Engineering and Maths. As Co-Presidents we lead the JCR Committee and act as the key link between students and College. We sit on committees such as CUSU Council and College Council to ensure that your opinions are conveyed to the right people to improve your John’s experience. Alongside our fantastic committee we’re working to make John’s the most exciting, most supportive and most enjoyable it can be for us as students, so if you have any suggestions please feel free to get in touch by email, or even just chat to us if you see us around college or in the buttery!",
+        "img":"President.jpg"
     },
     "vicepresident":
       {
         "role":"Vice President",
         "name": "Nina Newhouse",
         "crsid": "nn304",
-        "bio": "Hey, I’m Nina, second year Geographer and your Vice Pres for this year! I’m also involved with the Cambridge International Development society, college netball and lacrosse, and am helping to organise a climate change forum this term. Being VP means I’m in charge of the JCR constitution, chair the open meetings we hold and more generally support the Presidents in what they do. I’m also in charge of Fresher’s Week, so if you ever feel a bit lost or confused during Fresher’s Week, or at any point during the year, I’m your first call. In the meantime, if you’ve got any questions or suggestions, please feel free to email me!"
+        "bio": "Hey, I’m Nina, second year Geographer and your Vice Pres for this year! I’m also involved with the Cambridge International Development society, college netball and lacrosse, and am helping to organise a climate change forum this term. Being VP means I’m in charge of the JCR constitution, chair the open meetings we hold and more generally support the Presidents in what they do. I’m also in charge of Fresher’s Week, so if you ever feel a bit lost or confused during Fresher’s Week, or at any point during the year, I’m your first call. In the meantime, if you’ve got any questions or suggestions, please feel free to email me!",
+        "img": "VicePresident.jpg"
       },
     "academic":
       {
         "role":"Academic Affairs and Careers",
         "name": "Dani Vijayakumar",
         "crsid": "dv292",
-        "bio":"Hey I’m Dani and I’m the Academic Affairs and Careers Officer. I’m a first year economics student, as well as being one of the college’s Pink Week reps and Marshall society president this year. I’m in charge of all matters related to academic life and careers. I’m looking forward to providing a friendly and supportive academic environment in St John’s and helping you discover the careers industries you’d like to work in!"
+        "bio":"Hey I’m Dani and I’m the Academic Affairs and Careers Officer. I’m a first year economics student, as well as being one of the college’s Pink Week reps and Marshall society president this year. I’m in charge of all matters related to academic life and careers. I’m looking forward to providing a friendly and supportive academic environment in St John’s and helping you discover the careers industries you’d like to work in!",
+        "img": "Academic.jpg"
       },
     "access":
       {
          "role":"Access",
          "name": "Imy Arden-Jones",
          "crsid": "iaa32",
-         "bio":"Hi! I’m Imy, a first year medic and your JCR Access Officer. I am also involved in the Cambridge WAMS (widening access to medical school) society and college rowing. My role is to continue the great work of Leia in ensuring John’s is accessible for everyone, regardless of background. This includes working on the CUSU shadowing scheme, the alternative prospectus and getting John’s students involved in access work. Check out the JCR Access webpage for more information. If you have any concerns or ideas, or want to get involved in any access programmes, please get in touch!"
+         "bio":"Hi! I’m Imy, a first year medic and your JCR Access Officer. I am also involved in the Cambridge WAMS (widening access to medical school) society and college rowing. My role is to continue the great work of Leia in ensuring John’s is accessible for everyone, regardless of background. This includes working on the CUSU shadowing scheme, the alternative prospectus and getting John’s students involved in access work. Check out the JCR Access webpage for more information. If you have any concerns or ideas, or want to get involved in any access programmes, please get in touch!",
+         "img": "Access.jpg"
       },
     "computing":
       {
         "role":"Computing",
         "name": "Jonathan Carter",
         "crsid": "jfc43",
-        "bio":"Hey everyone! I’m Jonathan, your JCR Computing Officer for this year. I’m a third year studying engineering and also Vice-Captain of the college 1st XI football team. As computing officer, I manage the JCR website and help out with any of the technical aspects of the JCR. I also act as a connection between the student body and the IT department to ensure that improvements students feel are important are acted upon. If you have suggestions on how the JCR could use technology to better your experience in college I’d love to know; whether it be something on the website, the Facebook page, or anything in between. Please feel free to email me with any questions!"
+        "bio":"Hey everyone! I’m Jonathan, your JCR Computing Officer for this year. I’m a third year studying engineering and also Vice-Captain of the college 1st XI football team. As computing officer, I manage the JCR website and help out with any of the technical aspects of the JCR. I also act as a connection between the student body and the IT department to ensure that improvements students feel are important are acted upon. If you have suggestions on how the JCR could use technology to better your experience in college I’d love to know; whether it be something on the website, the Facebook page, or anything in between. Please feel free to email me with any questions!",
+        "img": "Computing.jpg"
       },
     "ents":
       {
         "role":"Ents",
         "name": "Lawrence Tray",
         "crsid": "lpt30",
-        "bio":"Hi there, I’m Lawrence, your ents officer for 2019. I’m a second year engineer and enjoy playing football and mixed lacrosse for the college. My job is to organise the college Ents (aka Bops outside of Johnsbridge). These are parties held in college with amazing drinks deals, great tunes and even better people. We run about 3 a term and believe me you won’t want to miss a single one. In the summer term, we’ll be running a very special June Event as a post-exams celebration – more details to follow. Make sure to follow the Ents instagram for the latest updates: stjohnsents. Remember, tripos can wait. SouvEnt me souviEnt"
+        "bio":"Hi there, I’m Lawrence, your ents officer for 2019. I’m a second year engineer and enjoy playing football and mixed lacrosse for the college. My job is to organise the college Ents (aka Bops outside of Johnsbridge). These are parties held in college with amazing drinks deals, great tunes and even better people. We run about 3 a term and believe me you won’t want to miss a single one. In the summer term, we’ll be running a very special June Event as a post-exams celebration – more details to follow. Make sure to follow the Ents instagram for the latest updates: stjohnsents. Remember, tripos can wait. SouvEnt me souviEnt",
+        "img": "Ents.jpg"
       },
     "ethical":
       {
          "role":"Ethical and Charitable Affairs",
          "name": "Anna Stevenson",
          "crsid": "ars59",
-         "bio":"Hi, I’m Anna, your Ethical and Charitable Affairs officer this year. I’m a first year medic and am involved in college mixed lacrosse and swimming. My job is to make the college more environmentally friendly and raise as much money as possible for charity. Please get in touch if you have any ideas about how to do this or want to run an event for charity!"
+         "bio":"Hi, I’m Anna, your Ethical and Charitable Affairs officer this year. I’m a first year medic and am involved in college mixed lacrosse and swimming. My job is to make the college more environmentally friendly and raise as much money as possible for charity. Please get in touch if you have any ideas about how to do this or want to run an event for charity!",
+         "img": "Ethical.jpg"
       },
     "equalops":
       {
          "role":"Equal Opportunities",
          "name": "David Quist",
          "crsid": "dq220",
-         "bio":"Hello! I’m David (he/him), a first-year medical student, member of the St. John’s rugby team and now, the Equal Opportunities Officer for 2019. I’m greatly looking forward to continuing the hard work of last year’s Equal Opportunities Officer and her sub-committee, ensuring St. John’s is an equal, inclusive and friendly community, that is proud to celebrate the diversity of its student body. This could not be achieved without the help of the BME, LGBT+, International, Women’s, Mental Health and Disabilities officers and the rest of the JCR committee, as well as the potential for collaboration with other colleges to organise speaker events, casual meet ups and Halls for minority groups. Ultimately, we would like you to be rest assured that we will work hard to ensure that everyone really feels like St. John’s truly is a home away from home. However, for this to truly be achieved I’d like to welcome anyone with any concerns or new and interesting ideas to get in touch with me either by email (dq220), or feel free to have a chat if you see me around."
+         "bio":"Hello! I’m David (he/him), a first-year medical student, member of the St. John’s rugby team and now, the Equal Opportunities Officer for 2019. I’m greatly looking forward to continuing the hard work of last year’s Equal Opportunities Officer and her sub-committee, ensuring St. John’s is an equal, inclusive and friendly community, that is proud to celebrate the diversity of its student body. This could not be achieved without the help of the BME, LGBT+, International, Women’s, Mental Health and Disabilities officers and the rest of the JCR committee, as well as the potential for collaboration with other colleges to organise speaker events, casual meet ups and Halls for minority groups. Ultimately, we would like you to be rest assured that we will work hard to ensure that everyone really feels like St. John’s truly is a home away from home. However, for this to truly be achieved I’d like to welcome anyone with any concerns or new and interesting ideas to get in touch with me either by email (dq220), or feel free to have a chat if you see me around.",
+         "img": "EqualOps.jpg"
       },
     "facilities":
       {
         "role":"Facilities",
         "name": "Tim d'Aboville",
         "crsid": "tgmd2",
-        "bio":"Hey there! I’m Tim, a footballer in John’s 1st XI and Social Sec for the PuntSoc who studies HisPol. More importantly though, I’m your JCR Facilities Officer for the year! My role is to ensure that the various facilities around college (Bar, Buttery, Gyms, Laundry…) are not only operational but constantly improved! While I regularly use them myself, I would truly appreciate to have any feedback regarding the college facilities to ensure they always suit your needs. For this, feel free to drop me an email or use the newly implemented online feedback system! See you around!"
+        "bio":"Hey there! I’m Tim, a footballer in John’s 1st XI and Social Sec for the PuntSoc who studies HisPol. More importantly though, I’m your JCR Facilities Officer for the year! My role is to ensure that the various facilities around college (Bar, Buttery, Gyms, Laundry…) are not only operational but constantly improved! While I regularly use them myself, I would truly appreciate to have any feedback regarding the college facilities to ensure they always suit your needs. For this, feel free to drop me an email or use the newly implemented online feedback system! See you around!",
+        "img": "Facilities.jpg"
       },
     "secretary":
       {
         "role":"Secretary, Publicity and External Affairs",
         "name": "Martin Limback-Stokin",
         "crsid": "mml54",
-        "bio":"Hi, I’m Martin, a first year medic, and this year I’m your JCR Secretary, External Officer and Publicity Officer. My job is to assist the JCR’s work with admin, taking meeting minutes, and booking rooms. As External Officer, I represent your views at CUSU (Cambridge University Students’ Union) alongside the President every week and as Publicity Officer I also send out the weekly bulletin and help running the JCR social media accounts. Feel free to email me to raise any issues or suggestions that I can take to the JCR, college or CUSU."
+        "bio":"Hi, I’m Martin, a first year medic, and this year I’m your JCR Secretary, External Officer and Publicity Officer. My job is to assist the JCR’s work with admin, taking meeting minutes, and booking rooms. As External Officer, I represent your views at CUSU (Cambridge University Students’ Union) alongside the President every week and as Publicity Officer I also send out the weekly bulletin and help running the JCR social media accounts. Feel free to email me to raise any issues or suggestions that I can take to the JCR, college or CUSU.",
+        "img": "Secretary.jpg"
       },
     "services":
       {
          "role":"Sports, Services and Societies",
          "name": "George Lodge",
          "crsid": "geal2",
-         "bio":"Hey! I’m George, this year’s Sports, Services and Societies Officer. I’m a second year Linguistics student and I’m the John’s athletics captain, play rugby for John’s and I play in and am on the committee of the college Jazz Band. My role is to look after the JCR and to support all the college societies and sports teams with anything they might need, so please get in touch if you have any questions, comments or queries for me!"
+         "bio":"Hey! I’m George, this year’s Sports, Services and Societies Officer. I’m a second year Linguistics student and I’m the John’s athletics captain, play rugby for John’s and I play in and am on the committee of the college Jazz Band. My role is to look after the JCR and to support all the college societies and sports teams with anything they might need, so please get in touch if you have any questions, comments or queries for me!",
+         "img": "Sports.jpg"
       },
     "treasurer":
       {
          "role":"Treasurer",
          "name": "Nick Palmer",
          "crsid": "np481",
-         "bio":"Hi everyone! I’m Nick, a second year mathmo and your JCR treasurer for this year. My role is managing the JCR bank account and keeping everything running smoothly from a financial standpoint by making sure we stay within our budgets . If any of you have suggestions or queries about the budget, or more generally about the JCR and how it all works, feel free to find me around college or drop me an email."
+         "bio":"Hi everyone! I’m Nick, a second year mathmo and your JCR treasurer for this year. My role is managing the JCR bank account and keeping everything running smoothly from a financial standpoint by making sure we stay within our budgets . If any of you have suggestions or queries about the budget, or more generally about the JCR and how it all works, feel free to find me around college or drop me an email.",
+         "img": "Treasurer.jpg"
       },
     "welfare":
       {
@@ -99,13 +111,15 @@
                 "role":"Male and Non-Binary Welfare",
                 "name": "Alex Mercer",
                 "crsid": "am2686",
-                "bio": "Hi, I’m Alex and I’m your male welfare officer this year. I’m a first year studying Geography and I’m also part of the college football, lacrosse and volleyball teams. My aim is to ensure that all students are supported by organising welfare events, providing anonymous sexual health supplies, and running weekly drop in sessions. If you have any worries or issues at all I’m always available for a chat and I am able to point you towards someone in the college’s support team if you require further help."
+                "bio": "Hi, I’m Alex and I’m your male welfare officer this year. I’m a first year studying Geography and I’m also part of the college football, lacrosse and volleyball teams. My aim is to ensure that all students are supported by organising welfare events, providing anonymous sexual health supplies, and running weekly drop in sessions. If you have any worries or issues at all I’m always available for a chat and I am able to point you towards someone in the college’s support team if you require further help.",
+                "img": "MWelfare.jpg"
                 },
         "fnb": {
                 "role":"Female and Non-Binary Welfare",
                 "name": "Amara Mulliner",
                 "crsid": "aom32",
-                "bio":"Hi, I’m Amara, your female welfare officer this year. I’m a second year studying Economics, and play netball, hockey and cox for the college. I’m also part of the University Athletics team. My role is to keep College as happy and healthy as possible, running weekly drop in sessions, organising welfare events and providing anonymous sexual health supplies. If you have any worries or issues at all I’m always available for a chat and I am able to point you towards someone in the college’s support team if you require further help."
+                "bio":"Hi, I’m Amara, your female welfare officer this year. I’m a second year studying Economics, and play netball, hockey and cox for the college. I’m also part of the University Athletics team. My role is to keep College as happy and healthy as possible, running weekly drop in sessions, organising welfare events and providing anonymous sexual health supplies. If you have any worries or issues at all I’m always available for a chat and I am able to point you towards someone in the college’s support team if you require further help.",
+                "img": "FWelfare.jpg"
                 }
       },
     "bme":
@@ -113,34 +127,39 @@
         "role":"BME",
         "name": "Yash Agarwal",
         "crsid": "ya279",
-        "bio":"As BME Officer for John’s, I aim to make sure people are not denied opportunities due to things outside their control. Over the year, I hope to organise events within and among colleges to celebrate different backgrounds and cultures. I also hope to start a ‘Buddy Bench’ in the buttery where you can meet new people. I believe John’s is one of the best and most inclusive colleges in Cambridge and I hope that every member of the college can feel they belong here, regardless of the colour of their skin or background. If you have any suggestions or issues to discuss, please feel free to email me!"
+        "bio":"As BME Officer for John’s, I aim to make sure people are not denied opportunities due to things outside their control. Over the year, I hope to organise events within and among colleges to celebrate different backgrounds and cultures. I also hope to start a ‘Buddy Bench’ in the buttery where you can meet new people. I believe John’s is one of the best and most inclusive colleges in Cambridge and I hope that every member of the college can feel they belong here, regardless of the colour of their skin or background. If you have any suggestions or issues to discuss, please feel free to email me!",
+        "img": "BME.jpg"
       },
     "internationals":
       {
          "role":"International Students",
          "name": "Sophie Michalski",
          "crsid": "msm60",
-         "bio":"Hi – I’m Sophie, your International Students’ Officer! I am a second-year lawyer, but you’re more likely to find me at the Boathouse than at the Law Fac. My role is to represent non-British students and make sure that your needs are met in and outside college. Starting university is a challenging experience which may be compounded by moving to a new country, so feel free to email me if you have any questions or concerns at any time. I look forwards to hearing from you!"
+         "bio":"Hi – I’m Sophie, your International Students’ Officer! I am a second-year lawyer, but you’re more likely to find me at the Boathouse than at the Law Fac. My role is to represent non-British students and make sure that your needs are met in and outside college. Starting university is a challenging experience which may be compounded by moving to a new country, so feel free to email me if you have any questions or concerns at any time. I look forwards to hearing from you!",
+         "img": "Internationals.jpg"
       },
     "lgbtq":
       {
         "role":"LGBT+",
         "name": "Laurence van Someren",
         "crsid": "alv36",
-        "bio":"Hi there! I’m Laurence (he/him), a first-year mathmo and your LGBT+ Officer. My mission is to make sure everyone feels welcome and safe at John’s regardless of their sexuality or gender identity. But more than just that, I want to let LGBT+ people here feel part of a community – and to that end I’ll be putting on events throughout the year, ranging from casual tea & cake get-togethers to LGBT+ formal swaps with other colleges (and more!). If you identify as LGBT+, or are simply unsure, I’m always here for you if you have any questions or concerns, so don’t hesitate to get in touch!"
+        "bio":"Hi there! I’m Laurence (he/him), a first-year mathmo and your LGBT+ Officer. My mission is to make sure everyone feels welcome and safe at John’s regardless of their sexuality or gender identity. But more than just that, I want to let LGBT+ people here feel part of a community – and to that end I’ll be putting on events throughout the year, ranging from casual tea & cake get-togethers to LGBT+ formal swaps with other colleges (and more!). If you identify as LGBT+, or are simply unsure, I’m always here for you if you have any questions or concerns, so don’t hesitate to get in touch!",
+        "img": "LGBTQ.jpg"
       },
     "disabilities":
       {
          "role":"Disabilities",
          "name": "Becca Gutteridge",
          "crsid": "rg603",
-         "bio":"Hey there, I’m Becca! I’m a first-year English student and I’m your Disabilities Officer!\n\nI tutor creative writing, attend poetry circle and Femsoc. I am here to improve the experience of disabled students here at John’s. I want all students at John’s, no matter what their disability to feel welcome and included!  This includes practical arrangements such as access, communicating to the College your physical needs both from a welfare and academic perspective and raising awareness of disability issues. I really want to break down stigma surrounding disabilities, particularly invisible disabilities. My role encompasses physical disabilities but I am also happy to listen to any other types of disability queries you may have -whether or not you have a diagnosis. I will be a friendly face around college, so feel free to come and speak to me in person or get in touch online with questions or suggestions – I look forward to hearing from you!"
+         "bio":"Hey there, I’m Becca! I’m a first-year English student and I’m your Disabilities Officer!\n\nI tutor creative writing, attend poetry circle and Femsoc. I am here to improve the experience of disabled students here at John’s. I want all students at John’s, no matter what their disability to feel welcome and included!  This includes practical arrangements such as access, communicating to the College your physical needs both from a welfare and academic perspective and raising awareness of disability issues. I really want to break down stigma surrounding disabilities, particularly invisible disabilities. My role encompasses physical disabilities but I am also happy to listen to any other types of disability queries you may have -whether or not you have a diagnosis. I will be a friendly face around college, so feel free to come and speak to me in person or get in touch online with questions or suggestions – I look forward to hearing from you!",
+         "img": "Disabilities.jpg"
       },
     "women":
       {
         "role":"Women",
         "name": "Anastasia Blamey",
         "crsid": "ab2555",
-        "bio":"Hi, I’m Anastasia – a first year studying medicine and your women’s officer. I am part of the university cheerleading team and college medical society. My aim is to advocate for women’s rights within college and help to celebrate the successes of the female members of John’s.\n\nIf you have any concerns about issues you have within or outside of college, please do not hesitate to contact me! I would be happy to help or point you towards the right person."
+        "bio":"Hi, I’m Anastasia – a first year studying medicine and your women’s officer. I am part of the university cheerleading team and college medical society. My aim is to advocate for women’s rights within college and help to celebrate the successes of the female members of John’s.\n\nIf you have any concerns about issues you have within or outside of college, please do not hesitate to contact me! I would be happy to help or point you towards the right person.",
+        "img": "Women.jpg"
       }
 }

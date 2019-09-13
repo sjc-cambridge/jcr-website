@@ -63,8 +63,25 @@ def jcr_routing2(pagename):
 
 @yourjcr.route('/yourjcr/committee/<pagename>')
 def jcr_committee_routing(pagename):
-    return render_template("yourjcr/committee/committeeprofile.j2.html", crsid=johnian_access.principal,
-                           current_page="/yourjcr/{}".format(pagename), JCR=JCR, member=pagename)
+    if pagename == 'fwelfare':
+        member = JCR['welfare']['fnb']
+    elif pagename == 'mwelfare':
+        member = JCR['welfare']['mnb']
+    else:
+        member = pagename
+
+    if pagename == 'president':
+        role = JCR['president']['role']
+        name = "{} & {}".format(JCR['president']['co1']['name'],JCR['president']['co2']['name'])
+        member_crsid = "{} & {}".format(JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'])
+        bio = JCR['president']['bio']
+    else:
+        role = member[pagename]['role']
+        name = member[pagename]['name']
+        member_crsid = member[pagename]['crsid']
+        bio = member[pagename]['bio']
+    return render_template("yourjcr/committee/committeeprofile.j2.html", crsid=johnian_access.principal, role=role, name=name, member_crsid=member_crsid, bio=bio,
+                           current_page="/yourjcr/{}".format(pagename))
 
 
 @yourjcr.route('/yourjcr/committee/<pagename>/')

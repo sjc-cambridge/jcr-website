@@ -28,11 +28,11 @@
   <div class="row" data-aos="fade-up" data-aos-duration="700" style="padding-top: 20px;padding-bottom: 20px;">
    <div class="col text-center">
     <h1 class="text-left">
-     {{JCR[member]['role']}}
+     {{role}}
      <br/>
     </h1>
     <h3 class="text-left text-secondary">
-     {{JCR[member]['name']}}
+     {{name}}
     </h3>
     <h5 class="text-left text-secondary">
      <em>
@@ -40,7 +40,7 @@
      </em>
      <strong>
       <em>
-       {{JCR[member]['crsid']}}
+       {{member_crsid}}
       </em>
      </strong>
      <br/>
@@ -49,28 +49,28 @@
   </div>
   <div class="row" data-aos="fade-up" data-aos-duration="700">
    <div class="col-xl-5">
-    <img class="img-fluid border rounded" src={{"/assets/img/{}.jpg/".format(member.capitalize())}}>
+    <img class="img-fluid border rounded" src={{"/assets/img/{}/".format(img)}}>
    </div>
    <div class="clearfix">
    </div>
    <div class="col text-center">
     <div style="padding-top: 10px;">
      <p style="padding: 5px;">
-      {{JCR[member]['bio']}}
+      {{bio}}
       <br/>
      </p>
      <div class="row">
       <div class="col-xl-6" style="padding-top: 10px;">
        <a class="btn btn-primary text-light" href="/yourjcr/contact" role="button">
         Contact Me
-       </button>
+       </a>
       </div>
       <div class="clearfix">
       </div>
       <div class="col-xl-6" style="padding-top: 10px;">
        <a class="btn btn-primary text-light" href="/yourjcr/committee" role="button">
         Back to Committee
-       </button>
+       </a>
       </div>
      </div>
     </div>
