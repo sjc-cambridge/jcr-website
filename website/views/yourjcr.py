@@ -64,7 +64,7 @@ def jcr_routing2(pagename):
 @yourjcr.route('/yourjcr/committee/<pagename>')
 def jcr_committee_routing(pagename):
     return render_template("yourjcr/committee/{}.j2.html".format(pagename), crsid=johnian_access.principal,
-                           current_page="/yourjcr/{}".format(pagename), JCR=JCR)
+                           current_page="/yourjcr/{}".format(pagename), JCR=JCR, member=pagename)
 
 
 @yourjcr.route('/yourjcr/committee/<pagename>/')
