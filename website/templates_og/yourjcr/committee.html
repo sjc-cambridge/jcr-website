@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
     <link rel="stylesheet" href="/assets/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+    <link rel="stylesheet" href="/assets/css/Contact-Form-Clean.css">
     <link rel="stylesheet" href="/assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
@@ -47,7 +48,7 @@
             </li>
             <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp; Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
                 <ul
-                    class="list-unstyled" id="slifemenu" aria-expanded="false">
+                    class="list-unstyled collapse" id="slifemenu" aria-expanded="false">
                     <li id="sublink"> <a href="/studentlife/atcambridge"><i class="fa fa-mortar-board"></i>&nbsp; Life in Cambridge</a></li>
                     <li id="sublink"> <a href="/studentlife/clubsandsocieties"><i class="fa fa-soccer-ball-o"></i>&nbsp; Clubs &amp; Societies</a></li>
                     <li id="sublink"> <a href="/studentlife/facilities"><i class="fa fa-university"></i>&nbsp; Facilities</a></li>
@@ -97,16 +98,16 @@
         <div class="container" style="width: 100%;">
             <div class="row">
                 <div class="col-sm-8 col-md-8 col-lg-6 col-xl-4 offset-sm-2 offset-md-2 offset-lg-3 offset-xl-4">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/President.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/President.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Co-Presidents</h4>
-                            <p class="card-text">{{JCR['president']['name']}}</p><a class="btn btn-primary" role="button" style="color: rgb(255,255,255);" href="/yourjcr/committee/presidents">Profile</a></div>
+                            <p class="card-text">{{JCR['president']['name']}}</p><a class="btn btn-primary" role="button" style="color: rgb(255,255,255);" href="/yourjcr/committee/president">Profile</a></div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/VicePresident.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/VicePresident.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Vice President</h4>
                             <p class="card-text">{{JCR['vicepresident']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/vicepresident">Profile</a></div>
@@ -114,15 +115,15 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Academic.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Academic.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Academic Affairs and Careers</h4>
-                            <p class="card-text">{{JCR['academic']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/academicaffairs">Profile</a></div>
+                            <p class="card-text">{{JCR['academic']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/academic">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Access.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Access.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Access</h4>
                             <p class="card-text">{{JCR['access']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/access">Profile</a></div>
@@ -130,7 +131,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Computing.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Computing.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Computing</h4>
                             <p class="card-text">{{JCR['computing']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/computing">Profile</a></div>
@@ -138,7 +139,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Ents.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Ents.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Ents</h4>
                             <p class="card-text">{{JCR['ents']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/ents">Profile</a></div>
@@ -146,7 +147,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/EqualOps.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/EqualOps.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Equal Opportunities</h4>
                             <p class="card-text">{{JCR['equalops']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/equalops">Profile</a></div>
@@ -154,7 +155,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Ethical.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Ethical.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Ethical and Charitable Affairs</h4>
                             <p class="card-text">{{JCR['ethical']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/ethical">Profile</a></div>
@@ -162,7 +163,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Facilities.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Facilities.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Facilities</h4>
                             <p class="card-text">{{JCR['facilities']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/facilities">Profile</a></div>
@@ -170,23 +171,23 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Secretary.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Secretary.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Secretary and Publicity</h4>
-                            <p class="card-text">{{JCR['secretary']['name']}}</p><button class="btn btn-primary" type="button">Profile</button></div>
+                            <p class="card-text">{{JCR['secretary']['name']}}</p><a class="btn btn-primary" role="button" href="/yourjcr/committee/secretary">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Sports.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Sports.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Sports, Services and Societies</h4>
-                            <p class="card-text">{{JCR['services']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/equalops">Profile</a></div>
+                            <p class="card-text">{{JCR['services']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/services">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Treasurer.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Treasurer.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Treasurer</h4>
                             <p class="card-text">{{JCR['treasurer']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/treasurer">Profile</a></div>
@@ -194,7 +195,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/FWelfare.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/FWelfare.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Female and Non-Binary Welfare</h4>
                             <p class="card-text">{{JCR['welfare']['fnb']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/fwelfare">Profile</a></div>
@@ -202,15 +203,15 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/MWelfare.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/MWelfare.jpg">
                         <div class="card-body">
-                            <h4 class="card-title">Female and Non-Binary Welfare<br></h4>
+                            <h4 class="card-title">Male and Non-Binary Welfare<br></h4>
                             <p class="card-text">{{JCR['welfare']['mnb']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/mwelfare">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/BME.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/BME.jpg">
                         <div class="card-body">
                             <h4 class="card-title">BME</h4>
                             <p class="card-text">{{JCR['bme']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/bme">Profile</a></div>
@@ -218,23 +219,23 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Internationals.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Internationals.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Internationals'</h4>
-                            <p class="card-text">{{JCR['internationals']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/international">Profile</a></div>
+                            <p class="card-text">{{JCR['internationals']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/internationals">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/LGBTQ.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/LGBTQ.jpg">
                         <div class="card-body">
                             <h4 class="card-title">LGBT+</h4>
-                            <p class="card-text">{{JCR['lgbtq']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/lgbt">Profile</a></div>
+                            <p class="card-text">{{JCR['lgbtq']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/lgbtq">Profile</a></div>
                     </div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Disabilities.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Disabilities.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Physical Disabilities</h4>
                             <p class="card-text">{{JCR['disabilities']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/disabilities">Profile</a></div>
@@ -242,7 +243,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 offset-xl-0">
-                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/Women.jpg">
+                    <div class="card border-white" style="padding: 10px;"><img class="card-img-top w-100 d-block" data-bs-hover-animate="bounce" src="/assets/img/committee/Women.jpg">
                         <div class="card-body">
                             <h4 class="card-title">Women's</h4>
                             <p class="card-text">{{JCR['women']['name']}}</p><a class="btn btn-primary text-light" role="button" href="/yourjcr/committee/women">Profile</a></div>
