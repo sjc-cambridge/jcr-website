@@ -1,11 +1,11 @@
-from website.content.retrieve import retrieveJson
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
-from website.content.retrieve import retrieveBinary
 import os
+from website.content.retrieve import retrieveBinary
+from website.content.committee import get_committee_json
 
 script_dir = os.path.dirname(__file__)
 
@@ -23,7 +23,7 @@ class Committee(dict):
         dict.__init__(self, *args)
         self.committee_crsids = []
 
-        committee_json = retrieveJson("committee")
+        committee_json = get_committee_json()
 
         for key, item in committee_json.items():
             self[key] = item

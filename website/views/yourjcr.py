@@ -1,9 +1,14 @@
 from flask import render_template, request, redirect, Blueprint, url_for
 from website.helper.auth import johnian_access, JCR
 from website.content.minutes import get_minutes_dict, get_minutes
+from website.content.documents import get_constitution
 import datetime
 
+<<<<<<< HEAD
 yourjcr = Blueprint('yourjcr', __name__)
+=======
+yourjcr = Blueprint("yourjcr", __name__)
+>>>>>>> 22826f1... JCR-5 Refactor content directory and implement constitution endpoint
 
 
 @yourjcr.route("/yourjcr")
@@ -12,7 +17,7 @@ def jcr_home():
     return render_template("yourjcr/home.j2.html", JCR=JCR, crsid=johnian_access.principal, current_page="/yourjcr")
 
 
-@yourjcr.route('/yourjcr/minutes')
+@yourjcr.route("/yourjcr/minutes")
 @johnian_access
 def minutes_page():
     if request.args:
@@ -50,18 +55,24 @@ def contact():
                                current_page="/yourjcr/contact", JCR=JCR)
 
 
-@yourjcr.route('/yourjcr/<pagename>')
+@yourjcr.route("/yourjcr/constitution")
+@johnian_access
+def return_constitution():
+    return get_constitution()
+
+
+@yourjcr.route("/yourjcr/<pagename>")
 def jcr_routing(pagename):
     return render_template("yourjcr/{}.j2.html".format(pagename), crsid=johnian_access.principal,
                            current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
 
-@yourjcr.route('/yourjcr/<pagename>/')
+@yourjcr.route("/yourjcr/<pagename>/")
 def jcr_routing2(pagename):
-    return redirect(url_for('/yourjcr/{}'.format(pagename)))
+    return redirect(url_for("/yourjcr/{}".format(pagename)))
 
 
-@yourjcr.route('/yourjcr/committee/<pagename>')
+@yourjcr.route("/yourjcr/committee/<pagename>")
 def jcr_committee_routing(pagename):
     if pagename == 'fwelfare':
         member = JCR['welfare']['fnb']
@@ -86,6 +97,6 @@ def jcr_committee_routing(pagename):
                            current_page="/yourjcr/{}".format(pagename), JCR=JCR)
 
 
-@yourjcr.route('/yourjcr/committee/<pagename>/')
+@yourjcr.route("/yourjcr/committee/<pagename>/")
 def jcr_committee_routing2(pagename):
-    return redirect(url_for('/yourjcr/committee/{}'.format(pagename)))
+    return redirect(url_for("/yourjcr/committee/{}".format(pagename)))

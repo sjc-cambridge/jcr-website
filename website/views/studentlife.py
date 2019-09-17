@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect
 from website.helper.auth import johnian_access, JCR
-from website.content.retrieve import retrieveJson
+from website.content.studentlife import get_clubs_by_category, get_facilities_by_area
 
 student_routes = Blueprint('studentlife', __name__)
 
@@ -19,11 +19,11 @@ def student_routing():
 
 @student_routes.route("/studentlife/clubsandsocieties")
 def clubsandsocieties():
-    clubs_by_category = retrieveJson("studentlife/clubsandsocieties")
+    clubs_by_category = get_clubs_by_category()
     return render_template("studentlife/clubsandsocieties.j2.html", JCR=JCR, crsid=johnian_access.principal, clubs_by_category=clubs_by_category)
 
 
 @student_routes.route("/studentlife/facilities")
 def facilities():
-    facilities_by_area = retrieveJson("studentlife/facilities")
+    facilities_by_area = get_facilities_by_area()
     return render_template("studentlife/facilities.j2.html", JCR=JCR, crsid=johnian_access.principal, facilities_by_area=facilities_by_area)

@@ -59,8 +59,3 @@ def get_minutes_dict():
 def get_minutes(term, year, filename):
     filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
     return send_file(filepath, as_attachment=True)
-
-
-def get_transparencydoc():
-    filepath = os.path.join(curr_dir, "minutes/JCRTransparencyDoc.pdf")
-    return send_file(filepath,  as_attachment=True, attachment_filename='JCRTransparency.pdf')
