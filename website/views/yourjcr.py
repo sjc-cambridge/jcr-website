@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, Blueprint, url_for
 from website.helper.auth import johnian_access, JCR
 from website.content.minutes import get_minutes_dict, get_minutes
-from website.content.documents import get_constitution
+from website.content.documents import send_constitution
 import datetime
 
 <<<<<<< HEAD
@@ -58,7 +58,7 @@ def contact():
 @yourjcr.route("/yourjcr/constitution")
 @johnian_access
 def return_constitution():
-    return get_constitution()
+    return send_constitution()
 
 
 @yourjcr.route("/yourjcr/<pagename>")

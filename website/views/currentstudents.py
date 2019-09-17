@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, send_file, request, redirect
 import os
 from website.helper.auth import johnian_access, JCR
 from website.content.minutes import get_minutes
-from website.content.documents import get_transparencydoc
+from website.content.documents import send_transparencydoc
 from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
@@ -21,7 +21,7 @@ def current_home():
 @currentstudents.route("/currentstudents/transparency")
 @johnian_access
 def return_transparencydoc():
-    return get_transparencydoc()
+    return send_transparencydoc()
 
 
 @currentstudents.route("/currentstudents/elections")
