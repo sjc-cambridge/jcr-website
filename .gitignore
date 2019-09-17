@@ -8,3 +8,5 @@ website/config.txt
 website/templates_temp
 
 .venv/
+
+.pytest_cache/
