@@ -9,6 +9,9 @@ The bulk of the functionality is contained within the website directory. The sub
   * Display and content are for the most part separated. This directory contains info needed to populate various pages.
   * The preferred method for this is to define a `.json` file for a particularly content heavy but repetitive page (e.g. facilities, meet the committee etc). This json can then be read by the `retrieve.py` file and passed to a jinja template and rendered accordingly.
   * This directory also contains static docs for viewing such as JCR minutes in pdf format etc
+* `helper`
+  * Contains miscellaneous helper functions.
+  * If you are unsure where to put a file, here is probably the right place.
 * `ibisclient`
   * This is not our own but deals with querying cambridges lookup service to determine who is or is not a Johnian.
 * `templates`

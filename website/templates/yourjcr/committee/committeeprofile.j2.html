@@ -2,81 +2,81 @@
 
 {% block title %}
 <title>
- St. John's JCR
+    St. John's JCR
 </title>
 {% endblock %}
 
 {% block header %}
 <div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
- <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
-  <h1 class="text-center headershrink" id="pageheading" style="padding-top: 10px;">
-   Meet the Committee
-   <br/>
-  </h1>
-  <p class="text-center" id="pageparagraph" style="padding: 0px;">
-   <br>
-    Everything the JCR does doesn’t just happen by itself, it requires the work of our wonderful committee! Have a look below to see our shout-out to them for all of their hard work.
-    <br/>
-   </br>
-  </p>
- </div>
+    <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+        <h1 class="text-center headershrink" id="pageheading" style="padding-top: 10px;">
+            Meet the Committee
+            <br />
+        </h1>
+        <p class="text-center" id="pageparagraph" style="padding: 0px;">
+            <br>
+            Everything the JCR does doesn’t just happen by itself, it requires the work of our wonderful committee! Have
+            a look below to see our shout-out to them for all of their hard work.
+            <br>
+        </p>
+    </div>
 </div>
 {% endblock %}
 
 {% block main %}
 <main>
- <div class="container">
-  <div class="row" data-aos="fade-up" data-aos-duration="700" style="padding-top: 20px;padding-bottom: 20px;">
-   <div class="col text-center">
-    <h1 class="text-left">
-     {{role}}
-     <br/>
-    </h1>
-    <h3 class="text-left text-secondary">
-     {{name}}
-    </h3>
-    <h5 class="text-left text-secondary">
-     <em>
-      CRSid:
-     </em>
-     <strong>
-      <em>
-       {{member_crsid}}
-      </em>
-     </strong>
-     <br/>
-    </h5>
-   </div>
-  </div>
-  <div class="row" data-aos="fade-up" data-aos-duration="700">
-   <div class="col-xl-5">
-    <img class="img-fluid border rounded" src='{{"/assets/img/committee/{}/".format(img)}}'/>
-   </div>
-   <div class="clearfix">
-   </div>
-   <div class="col text-center">
-    <div style="padding-top: 10px;">
-     <p style="padding: 5px;">
-      {{bio}}
-      <br/>
-     </p>
-     <div class="row">
-      <div class="col-xl-6" style="padding-top: 10px;">
-       <a class="btn btn-primary" href="/yourjcr/contact" role="button">
-        Contact Me
-       </a>
-      </div>
-      <div class="clearfix">
-      </div>
-      <div class="col-xl-6" style="padding-top: 10px;">
-       <a class="btn btn-primary" href="/yourjcr/committee" role="button">
-        Back to Committee
-       </a>
-      </div>
-     </div>
+    <div class="container">
+        <div class="row" data-aos="fade-up" data-aos-duration="700" style="padding-top: 20px;padding-bottom: 20px;">
+            <div class="col text-center">
+                <h1 class="text-left">
+                    {{role}}
+                    <br />
+                </h1>
+                <h3 class="text-left text-secondary">
+                    {{name}}
+                </h3>
+                <h5 class="text-left text-secondary">
+                    <em>
+                        CRSid:
+                    </em>
+                    <strong>
+                        <em>
+                            {{member_crsid}}
+                        </em>
+                    </strong>
+                    <br />
+                </h5>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-duration="700">
+            <div class="col-xl-5">
+                <img class="img-fluid border rounded" src='{{"/assets/img/committee/{}/".format(img)}}' />
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="col text-center">
+                <div style="padding-top: 10px;">
+                    <p style="padding: 5px;">
+                        {{bio}}
+                        <br />
+                    </p>
+                    <div class="row">
+                        <div class="col-xl-6" style="padding-top: 10px;">
+                            <a class="btn btn-primary" href="/yourjcr/contact" role="button">
+                                Contact Me
+                            </a>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="col-xl-6" style="padding-top: 10px;">
+                            <a class="btn btn-primary" href="/yourjcr/committee" role="button">
+                                Back to Committee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   </div>
-  </div>
- </div>
 </main>
 {% endblock %}

@@ -120,6 +120,42 @@
                                 </div>
                             </a>
                         </li>
+                        <li id="sublink">
+                            <a href="/yourjcr/contactus">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        Contact Us
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li id="sublink">
+                            <a href="/yourjcr/constitution">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-book"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        Constitution
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li id="sublink">
+                            <a href="/yourjcr/minutes">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-pencil"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        Minutes of Meetings
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -258,6 +294,18 @@
                                 </div>
                             </a>
                         </li>
+                        <li id="sublink">
+                            <a href="https://www.joh.cam.ac.uk">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-external-link"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        College Website
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -307,14 +355,28 @@
                             </a>
                         </li>
                         <li id="sublink">
-                            <div class="row">
-                                <div class="col-2 text-center">
-                                    <i class="fa fa-info-circle"></i>
+                            <a href="/currentstudents/elections">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-info-circle"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        JCR Elections
+                                    </div>
                                 </div>
-                                <div class="col-10">
-                                    JCR Elections
+                            </a>
+                        </li>
+                        <li id="sublink">
+                            <a href="/currentstudents/transparency">
+                                <div class="row">
+                                    <div class="col-2 text-center">
+                                        <i class="fa fa-paper-plane"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        Transparency Doc
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -346,23 +408,26 @@
                 style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST
                 JOHN'S JCR</a>
             <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
-                <div class="btn-group ml-auto" role="group">
-                    {% if crsid %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven"
-                        href="/logout?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp;Logout {{crsid}}</a>
-                    {% else %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven"
-                        href="/login?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp;Login</a>
-                    {% endif %}
-                    <button class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;">
-                        <i class="fa fa-navicon"></i>&nbsp;Menu
-                    </button>
-                </div>
+                <ul class="navbar-nav ml-auto d-flex flex-row align-items-center">
+                    <li class="nav-item">
+                        {% if crsid %}
+                        <a class="btn btn-primary" role="button" id="raven" href="/logout?redirect={{current_page}}"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fas fa-crow"></i>&nbsp;Logout {{crsid}}</a>
+                        </button>
+                        {% else %}
+                        <a class="btn btn-primary" role="button" id="raven" href="/login?redirect={{current_page}}"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fas fa-crow"></i>&nbsp;Login</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary open-sidebar" id="navmenu" type="button"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fa fa-navicon"></i>&nbsp;Menu
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

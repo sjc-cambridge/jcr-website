@@ -28,6 +28,8 @@ $(function () {
 				$navbar.slideDown(undefined, animationComplete);
 			}
 			lastScrollTop = st;
+		} else if (st < topHeight) {
+				$navbar.slideDown();
 		}
 	});
 
