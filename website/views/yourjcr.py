@@ -4,11 +4,7 @@ from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
 import datetime
 
-<<<<<<< HEAD
-yourjcr = Blueprint('yourjcr', __name__)
-=======
 yourjcr = Blueprint("yourjcr", __name__)
->>>>>>> 22826f1... JCR-5 Refactor content directory and implement constitution endpoint
 
 
 @yourjcr.route("/yourjcr")
