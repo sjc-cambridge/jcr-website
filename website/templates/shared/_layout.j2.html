@@ -408,23 +408,26 @@
                 style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST
                 JOHN'S JCR</a>
             <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
-                <div class="btn-group ml-auto" role="group">
-                    {% if crsid %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven"
-                        href="/logout?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp;Logout {{crsid}}</a>
-                    {% else %}
-                    <a class="btn btn-primary ml-auto pull-right" role="button" id="raven"
-                        href="/login?redirect={{current_page}}"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;">
-                        <i class="fas fa-crow"></i>&nbsp;Login</a>
-                    {% endif %}
-                    <button class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button"
-                        style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;">
-                        <i class="fa fa-navicon"></i>&nbsp;Menu
-                    </button>
-                </div>
+                <ul class="navbar-nav ml-auto d-flex flex-row align-items-center">
+                    <li class="nav-item">
+                        {% if crsid %}
+                        <a class="btn btn-primary" role="button" id="raven" href="/logout?redirect={{current_page}}"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fas fa-crow"></i>&nbsp;Logout {{crsid}}</a>
+                        </button>
+                        {% else %}
+                        <a class="btn btn-primary" role="button" id="raven" href="/login?redirect={{current_page}}"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fas fa-crow"></i>&nbsp;Login</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary open-sidebar" id="navmenu" type="button"
+                            style="margin: 0px; background-color: transparent; border-color: transparent; min-width: none;">
+                            <i class="fa fa-navicon"></i>&nbsp;Menu
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

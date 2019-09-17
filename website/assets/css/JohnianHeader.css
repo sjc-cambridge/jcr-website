@@ -10,9 +10,6 @@
   border-radius: 10px;
 }
 
-.btn.btn-primary.ml-auto.pull-right.open-sidebar {
-}
-
 @media (min-width: 768px) {
   #raven {
     font-size: 30px;
