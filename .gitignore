@@ -6,7 +6,7 @@
 *.bsdesign.tmp
 website/config.txt
 website/templates_temp
-
+website/helper/config.json
 .venv/
 
 .pytest_cache/

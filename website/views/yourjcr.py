@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages
-from website.helper.auth import johnian_access, JCR, is_human
+from website.helper.auth import johnian_access, JCR, is_human, captchapublickey
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
 import datetime
@@ -59,7 +59,7 @@ def contact():
         return redirect(url_for("yourjcr.contact"))
     else:
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
+                               current_page="/yourjcr/contact", JCR=JCR, sitekey=captchapublickey)
 
 
 @yourjcr.route("/yourjcr/constitution")

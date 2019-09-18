@@ -14,14 +14,15 @@ class Committee(dict):
     """Committee object is a sub-class of dictionary (for neat indexing)
         also has email methods useful for contact us and committee pages."""
 
-    """ TODO: 
+    """ TODO:
     - edit .forward function.
     - Send PDF minutes
     """
 
-    def __init__(self, *args):
-        dict.__init__(self, *args)
+    def __init__(self, app_pwd):
+        dict.__init__(self)
         self.committee_crsids = []
+        self.app_pwd = app_pwd
 
         committee_json = get_committee_json()
 
@@ -88,16 +89,16 @@ class Committee(dict):
             # Add attachment to message and convert message to string
             message.attach(part)
 
-        # TODO: implement actual env file
+        '''# TODO: implement actual env file
         with open(os.path.join(script_dir, "config.txt"), "r") as file:
             # See https://support.google.com/accounts/answer/185833?hl=en
             app_key = file.readlines()[0]
 
-        gmail_pwd = app_key  # App password not re-usable see above.
+        gmail_pwd = app_key  # App password not re-usable see above.'''
         smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
         smtpserver.ehlo()
         smtpserver.starttls()
-        smtpserver.login(gmail_user, gmail_pwd)
+        smtpserver.login(gmail_user, self.app_pwd)
         smtpserver.sendmail(gmail_user, address_list, message.as_string())
         smtpserver.close()
         return "Email sent!"
