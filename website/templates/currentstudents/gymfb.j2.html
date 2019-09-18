@@ -13,18 +13,27 @@
    Gym Feedback
   </h1>
   <p class="text-center" id="pageparagraph" style="margin: 0px;">
-   If you have any feedback on the college gym your JCR facilities officer Tim (
+   If you have any feedback on the college gym your JCR facilities officer  {{JCR['facilities']['name'].split()[0]}} (
    <strong>
-    <em>
-     tgmd2
-    </em>
+    {{JCR['facilities']['crsid']}}
    </strong>
-   ) would love to hear it using the form below.
+   ) would love to hear it using the form below.
   </p>
  </div>
 </div>
 {% endblock %}
 
 {% block main %}
-
+<main>
+ <section class="text-left" style="padding: 20px;">
+  <a href="/currentstudents/feedback" id="backlink">
+   &lt; back to Feedback
+  </a>
+ </section>
+ <section class="d-lg-flex justify-content-lg-center" style="width: 100%;padding: 20px;">
+  <iframe frameborder="0" height="1966" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSfQ8WEdVZRCsXkjYrborY0dXkGzI3wbGNbMmUSgPKeqVjQgDg/viewform?embedded=true" width="100%">
+   Loading…
+  </iframe>
+ </section>
+</main>
 {% endblock %}
