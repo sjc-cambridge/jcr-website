@@ -1,5 +1,6 @@
 """Unit test file for yourjcr routes
 Simple checks whether the pages can be rendered correctly"""
+from mock import patch
 
 
 def test_home(client):
@@ -37,11 +38,23 @@ def test_contactus(client):
     assert response.status_code == 200
 
 
-def test_constitution(client):
+def test_constitution_unauthenticated(client):
+    """When trying to access this resource redirected to raven login"""
+    response = client.get("/yourjcr/constitution")
+    assert response.status_code == 303
+
+
+@patch("website.views.yourjcr.johnian_access", side_effect=lambda: True)
+def test_constitution_authenticated(johnian_access_patch, client):
     response = client.get("/yourjcr/constitution")
     assert response.status_code == 200
 
 
-def test_minutes(client):
+def test_minutes_unauthenticated(client):
+    response = client.get("/yourjcr/minutes")
+    assert response.status_code == 303
+
+
+def test_minutes_authenticated(johnian_access, client):
     response = client.get("/yourjcr/minutes")
     assert response.status_code == 200

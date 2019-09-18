@@ -3,3 +3,4 @@ Flask==1.0.2
 Werkzeug==0.15.5
 pytest==5.0.1
 pylint==2.3.1
+mock==3.0.5
