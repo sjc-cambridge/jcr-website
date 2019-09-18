@@ -1,5 +1,5 @@
-from flask import render_template, request, redirect, Blueprint, url_for
-from website.helper.auth import johnian_access, JCR
+from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages
+from website.helper.auth import johnian_access, JCR, is_human
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
 import datetime
@@ -33,22 +33,33 @@ def minutes_page():
 
 @yourjcr.route('/yourjcr/contact', methods=['GET', 'POST'])
 def contact():
+
+    sitekey = "6LdI-LgUAAAAAM7BWzlvLCKuFR5p0jFTqaOpoo-L"
+
     if request.method == 'POST':
         recipient = request.form['recipient']
         senderName = request.form['senderName']
         senderEmail = request.form['senderEmail']
         subject = request.form['subject']
         message = request.form['message']
+        captcha_response = request.form['g-recaptcha-response']
+
+        if not is_human(captcha_response):
+            # Process request here
+            flash("Need to verify you're a human!!")
+            return redirect(url_for("yourjcr.contact"))
+
+        flash("Your message has been sent! If you would like to send another message, fill in the form again below.")
+
         wrapped_message = "Hi {}!\n\nYou have been contacted by {} via the JCR website. Their message is as " \
                           "follows:\n\n\"{}\"\n\nIf you would like to reply, their email is {}.\n\nSouvent " \
                           "Me Souvient".format(JCR[recipient]['name'], senderName, message, senderEmail)
         JCR.email_member(subject, wrapped_message, recipient)
-        return render_template("yourjcr/sent.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR) # Better way of doing this using jinja, but
-        # this is simpler from a long-term maintenance perspective
-    elif request.method == 'GET':
+
+        return redirect(url_for("yourjcr.contact"))
+    else:
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR)
+                               current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
 
 
 @yourjcr.route("/yourjcr/constitution")

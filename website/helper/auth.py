@@ -1,7 +1,7 @@
 import ucam_webauth
 import ucam_webauth.raven
 import ucam_webauth.raven.flask_glue
-import pickle
+import pickle, requests, json
 from website.helper.committee import Committee
 from website.helper.johnians import retrieve_johnian_crsids
 
@@ -38,3 +38,15 @@ committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     max_life=6000,
     require_principal=JCR.committee_crsids
 )
+
+
+def is_human(captcha_response):
+    """ Validating recaptcha response from google server.
+        Returns True captcha test passed for the submitted form
+        else returns False.
+    """
+    secret = "***REMOVED***"
+    payload = {'response':captcha_response, 'secret':secret}
+    response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
+    response_text = json.loads(response.text)
+    return response_text['success']
