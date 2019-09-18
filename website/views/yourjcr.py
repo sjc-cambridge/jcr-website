@@ -46,7 +46,7 @@ def contact():
 
         if not is_human(captcha_response):
             # Process request here
-            flash("Need to verify you're a human!!")
+            flash("Please verify you're a human!")
             return redirect(url_for("yourjcr.contact"))
 
         flash("Your message has been sent! If you would like to send another message, fill in the form again below.")
