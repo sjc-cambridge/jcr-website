@@ -1,3 +1,4 @@
+"""Module for manipulating minutes pdf documents from JCR meetings"""
 import os
 from flask import send_file
 import json

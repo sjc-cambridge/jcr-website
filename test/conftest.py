@@ -1,3 +1,8 @@
+"""Important config file for pytest setup:
+This defines several fixtures that can be accessed by any subsequent test
+The most important one is the client fixture.
+This exposes a test_client of the app to make any arbitrary http request to."""
+
 import pytest
 from website import create_site
 
@@ -21,20 +26,21 @@ def runner(app):
     return app.test_cli_runner()
 
 
-#TODO bypass authentication nicely
+# TODO bypass authentication nicely
 class AuthActions(object):
     def __init__(self, client):
         self._client = client
 
     def login(self, username="test", password="test"):
         return self._client.post(
-            "/auth/login", data={"username": username, "password": password}
+            "/login", data={"username": username, "password": password}
         )
 
     def logout(self):
-        return self._client.get("/auth/logout")
+        return self._client.get("/logout")
 
 
 @pytest.fixture
 def auth(client):
+    """Handles auth state"""
     return AuthActions(client)
