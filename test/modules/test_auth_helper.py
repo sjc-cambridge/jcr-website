@@ -11,9 +11,9 @@ def test_undergrads():
 
 def test_postgrads():
     assert "aos27" in johnian_crsids  # Sabir
+    assert "dtz21" in johnian_crsids  # Darius, added via exceptions JSON!
 
 
 def test_fellows():
-    assert "aw329" in johnian_crsids  # Wheeler
     assert "tph1" in johnian_crsids # Hynes
     assert "hew1001" in johnian_crsids # Watson
