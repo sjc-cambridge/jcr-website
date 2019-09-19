@@ -5,6 +5,7 @@ instance/*
 *.bsdesign
 *.bsdesign.tmp
 website/helper/config.txt
+website/helper/johnians.dump
 website/templates_temp
 website/content/keys.json
 .venv/
