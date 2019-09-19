@@ -27,7 +27,6 @@
       {% for message in messages %}
         <p>{{ message }}</p>
       {% endfor %}
-      </ul>
     {% endif %}
   {% endwith %}
   <form action="{{ url_for('yourjcr.contact') }}" method="post" style="padding-top: 15px;padding-bottom: 15px;">
@@ -36,63 +35,19 @@
    </h5>
    <div class="form-group">
     <select class="form-control" name="recipient">
-     <option value="president">
-      {{JCR['president']['name']}} - Co-Presidents
-     </option>
-     <option selected="" value="vicepresident">
-      {{JCR['vicepresident']['name']}} - Vice President
-     </option>
-     <option selected="" value="academic">
-      {{JCR['academic']['name']}} - Academic Affairs and Careers
-     </option>
-     <option selected="" value="access">
-      {{JCR['access']['name']}} - Access
-     </option>
-     <option selected="" value="computing">
-      {{JCR['computing']['name']}} - Computing
-     </option>
-     <option selected="" value="ents">
-      {{JCR['ents']['name']}} - Ents
-     </option>
-     <option selected="" value="equalops">
-      {{JCR['equalops']['name']}} - Equal Opportunities
-     </option>
-     <option selected="" value="ethical">
-      {{JCR['ethical']['name']}} - Ethical and Charitable Affairs
-     </option>
-     <option selected="" value="facilities">
-      {{JCR['facilities']['name']}} - Facilities
-     </option>
-     <option selected="" value="secretary">
-      {{JCR['secretary']['name']}} - Secretary, Publicity and External Affairs
-     </option>
-     <option selected="" value="services">
-      {{JCR['services']['name']}} - Sports, Services and Societies
-     </option>
-     <option selected="" value="treasurer">
-      {{JCR['treasurer']['name']}} - Treasurer
-     </option>
-     <option selected="" value="welfare">
-      {{JCR['welfare']['fnb']['name']}} - Female and Non-Binary Welfare
-     </option>
-     <option selected="" value="welfare">
-      {{JCR['welfare']['mnb']['name']}} - Male and Non-Binary Welfare
-     </option>
-     <option selected="" value="bme">
-      {{JCR['bme']['name']}} - BME
-     </option>
-     <option selected="" value="international">
-      {{JCR['internationals']['name']}} - Internationals'
-     </option>
-     <option selected="" value="lgbtq">
-      {{JCR['lgbtq']['name']}} - LGBT+
-     </option>
-     <option selected="" value="disabilities">
-      {{JCR['disabilities']['name']}} - Disabilities
-     </option>
-     <option selected="" value="women">
-      {{JCR['women']['name']}} - Women
-     </option>
+      {% for position in JCR %}
+      {% if 'role' in JCR[position].keys() %}
+        <option value="{{position}}">
+         {{JCR[position]['role']}} - {{JCR[position]['name']}}
+        </option>
+      {% else %}
+        {% for subposition in JCR[position] %}
+          <option value="{{position}}">
+           {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
+          </option>
+        {% endfor %}
+      {% endif %}
+      {% endfor %}
     </select>
    </div>
    <h5>
