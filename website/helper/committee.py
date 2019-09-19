@@ -1,13 +1,5 @@
-from email import encoders
-from email.mime.base import MIMEBase
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import smtplib
-import os
-from website.content.retrieve import retrieveBinary
 from website.content.committee import get_committee_json
-
-script_dir = os.path.dirname(__file__)
+from website.helper.email import email_people, email_someone
 
 
 class Committee(dict):
@@ -42,6 +34,16 @@ class Committee(dict):
         self.email_people(subject, input_message, [
                           committee_role + '@sjcjcr.com'], app_pwd=app_pwd)
         return "Emailed {}".format(self[committee_role]['name'])
+
+    def email_member(self, subject, input_message, committee_role):
+        """Email committee member"""
+        if (committee_role in self.keys()):
+            email_address = committee_role + '@sjcjcr.com'
+            email_someone(subject, input_message, email_address)
+            return "Emailed {}".format(self[committee_role]['name'])
+        else:
+            raise ValueError("That role is not in the committee")
+
 
     def email_committee(self, subject, input_message, app_pwd):
         """Email entire committee"""
@@ -102,3 +104,5 @@ class Committee(dict):
         smtpserver.sendmail(gmail_user, address_list, message.as_string())
         smtpserver.close()
         return "Email sent!"
+        email_people(subject, input_message, committee_emails)
+        return "Emailed JCR Committee"
