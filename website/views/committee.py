@@ -22,7 +22,6 @@ def allowed_file(filename):
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 @committee.route("/committee")
-@committee.route("/committee/")
 @committee_access
 def committee_home():
     return render_template("committee/home.j2.html", crsid=committee_access.principal,

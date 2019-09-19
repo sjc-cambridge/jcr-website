@@ -10,7 +10,6 @@ currentstudents = Blueprint('currentstudents', __name__)
 
 
 @currentstudents.route("/currentstudents")
-@currentstudents.route("/currentstudents/")
 @currentstudents.route("/currentstudents/home")
 @johnian_access
 def current_home():

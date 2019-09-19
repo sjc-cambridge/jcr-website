@@ -24,3 +24,33 @@ The bulk of the functionality is contained within the website directory. The sub
   * The `htmleditor.py` srcipt will make a copy of `templates_og` jinjafy the html files and copy over any new templates and/or assets to the templates and assets directories respectively.
 * `views`
   * This contains all routing logic. Each file defines the routing information for each subsection of the website (e.g. studentlife)
+
+## Testing with venv
+
+For testing and development it is best to use a python virtual environment, to create one use:
+
+```
+$ python3 -m venv .venv
+$ source ./.venv/bin/activate
+```
+
+This creates a `.venv` directory that contains a local virtual python environment. The second command activates the venv.
+
+It will prepend `(.venv)` to the start of the line - you can quit out using ```$ deactivate```. While you are within a virtual env you can use `python` and `pip` commands as you would normally.
+
+To install all required packages simply run the following command in the root directory.
+
+```
+$ pip install -r requirements/txt
+```
+
+To make sure you can use absolute imports you must install the whole directory in editable state. This allows you to use absolute imports of the website and test directories. To do this run:
+
+```
+$ pip install -e .
+```
+
+Now running tests becomes as easy as: 
+```
+$ pytest
+```
