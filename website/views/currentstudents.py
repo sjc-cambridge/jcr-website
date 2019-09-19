@@ -6,24 +6,24 @@ from website.content.documents import send_transparencydoc
 from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
-currentstudents = Blueprint('currentstudents', __name__)
+currentstudents = Blueprint('currentstudents', __name__, url_prefix='/currentstudents')
 
 
-@currentstudents.route("/currentstudents")
-@currentstudents.route("/currentstudents/home")
+@currentstudents.route("/")
+@currentstudents.route("/home")
 @johnian_access
 def current_home():
     user_crsid = johnian_access.principal
     return render_template("currentstudents/home.j2.html", crsid=user_crsid, current_page="/currentstudents", JCR=JCR)
 
 
-@currentstudents.route("/currentstudents/transparency")
+@currentstudents.route("/transparency")
 @johnian_access
 def return_transparencydoc():
     return send_transparencydoc()
 
 
-@currentstudents.route("/currentstudents/elections")
+@currentstudents.route("/elections")
 @johnian_access
 def elections_page():
     user_crsid = johnian_access.principal
@@ -35,7 +35,7 @@ def elections_page():
                            current_page="/currentstudents/elections", e=election_json)
 
 
-@currentstudents.route("/currentstudents/elections/getmanifesto")
+@currentstudents.route("/elections/getmanifesto")
 @johnian_access
 def return_manifesto():
     # see elections html pages to understand this.
@@ -46,7 +46,7 @@ def return_manifesto():
         return str(e)
 
 
-@currentstudents.route("/currentstudents/welfare")
+@currentstudents.route("/welfare")
 @johnian_access
 def welfarepage():
     crsid = johnian_access.principal
@@ -57,7 +57,7 @@ def welfarepage():
                            user_code=user_code)
 
 
-@currentstudents.route('/currentstudents/<pagename>')
+@currentstudents.route('/<pagename>')
 @johnian_access
 def current_routing(pagename):
     return render_template("/currentstudents/{}.j2.html".format(pagename), JCR=JCR,
@@ -65,7 +65,7 @@ def current_routing(pagename):
                            crsid=johnian_access.principal)
 
 
-@currentstudents.route('/currentstudents/<pagename>/')
+@currentstudents.route('/<pagename>/')
 @johnian_access
 def current_routing2(pagename):
     return redirect('/currentstudents/{}'.format(pagename))
