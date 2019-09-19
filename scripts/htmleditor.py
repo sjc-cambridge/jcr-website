@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import os
-import pathlib
+from pathlib import Path
 import shutil
 
 class HTMLParser:
@@ -67,7 +67,7 @@ def file_recurse(func, directory_path):
     """Function for recursively operating on all files
         in a directory w/ exceptions.
     """
-    path = pathlib.Path(directory_path)
+    path = Path(directory_path)
     for filepath_obj in path.iterdir():
         filepath = str(filepath_obj)
         if filepath_obj.is_file():
@@ -76,7 +76,7 @@ def file_recurse(func, directory_path):
             else:
                 func(filepath)
         else:
-            path2 = pathlib.Path(filepath)
+            path2 = Path(filepath)
             file_recurse(func, path2)
     return
 
@@ -105,7 +105,7 @@ def get_file_array(dir, regex_pattern):
     """Return an array of filepaths within a directory that match given pattern
     """
     files = []
-    files_generator = pathlib.Path(dir).glob(regex_pattern)
+    files_generator = Path(dir).glob(regex_pattern)
     for file in files_generator:
         files.append(str(file))
     return files
@@ -131,14 +131,15 @@ def copy_over_only_new_files(src_dir, dst_dir, regex_pattern="**/*.*"):
 
 
 # define directory paths
-curr_dir = os.path.dirname(__file__)
+script_dir = os.path.dirname(__file__)
+parent_dir = Path(script_dir).parent
 
-templates_dir = os.path.join(curr_dir, "templates")
-assets_dir = os.path.join(curr_dir, "assets")
+templates_dir = os.path.join(parent_dir, "website/templates")
+assets_dir = os.path.join(parent_dir, "website/assets")
 
-templates_og_dir = os.path.join(curr_dir, "templates_og")
+templates_og_dir = os.path.join(parent_dir, "website/templates_og")
 
-templates_temp_dir = os.path.join(curr_dir, "templates_temp")
+templates_temp_dir = os.path.join(parent_dir, "website/templates_temp")
 assets_temp_dir = os.path.join(templates_temp_dir, "assets")
 
 # file manipulation

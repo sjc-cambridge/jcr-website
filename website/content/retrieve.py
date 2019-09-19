@@ -11,8 +11,8 @@ def retrieveJson(filepath):
 
     filepath = str(filepath).replace(".json", "") # remove json if present
     path = os.path.join(script_dir, filepath + ".json")
-    json_file = open(path, "r")
-    json_object = json.load(json_file)
+    with open(path, "r") as json_file:
+        json_object = json.load(json_file)
     return json_object
 
 

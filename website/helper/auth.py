@@ -29,23 +29,24 @@ script_dir = os.path.dirname(__file__)
 johnian_crsids = retrieve_johnian_crsids()
 
 # This decorator restricts pages to Johnians
+# Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
-    max_life=6000,
+    max_life=60*60*24*3,
     require_principal=johnian_crsids
 )
 
-with open(os.path.join(script_dir, "config.json"), "r") as json_file:
-    json_object = json.load(json_file)
-    app_pwd = json_object["gmailkey"]
-    captchapublickey = json_object["captchapublickey"]
-    captchaprivatekey = json_object["captchaprivatekey"]
+keys_json = retrieveJson("config/keys")
+
+app_pwd = keys_json["gmailkey"]
+captchapublickey = keys_json["captchapublickey"]
+captchaprivatekey = keys_json["captchaprivatekey"]
 
 # JCR object to be exported
 JCR = Committee(app_pwd=app_pwd)
 
 # Committee access decorator restricts access to just committee members
 committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
-    max_life=6000,
+    max_life=60*60*24*3,
     require_principal=JCR.committee_crsids
 )
 

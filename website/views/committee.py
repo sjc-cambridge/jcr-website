@@ -5,7 +5,7 @@ from website.content.minutes import get_minutes, save_minutes, get_minutes_dict,
 from website.helper.timehelper import get_year_range
 import datetime
 
-committee = Blueprint('committee', __name__)
+committee = Blueprint('committee', __name__, url_prefix="/committee")
 
 """
 Things for committee page:
@@ -21,14 +21,20 @@ def allowed_file(filename):
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
-@committee.route("/committee")
+@committee.route("/")
 @committee_access
 def committee_home():
     return render_template("committee/home.j2.html", crsid=committee_access.principal,
                             current_page ="/committee/home", JCR=JCR)
 
+@committee.route("/agenda")
+@committee_access
+def committee_agenda():
+    return render_template("committee/agenda.j2.html", crsid=committee_access.principal,
+                            current_page ="/committee/agenda", JCR=JCR)
 
-@committee.route("/committee/upload_minutes", methods=['GET', 'POST'])
+
+@committee.route("/upload_minutes", methods=['GET', 'POST'])
 @committee_access
 def upload_minutes():
     if request.method == 'POST':
@@ -37,8 +43,6 @@ def upload_minutes():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        # if user does not select file, browser also
-        # submit an empty part without filename
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
@@ -56,7 +60,7 @@ def upload_minutes():
 
 
 
-@committee.route('/committee/delete_minutes')
+@committee.route('/delete_minutes')
 @committee_access
 def minutes_page():
     academicyear = request.args.get("academicyear") # e.g. 2019/2020
