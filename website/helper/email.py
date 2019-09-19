@@ -10,9 +10,9 @@ from website.content.retrieve import retrieveBinary
 script_dir = os.path.dirname(__file__)
 
 
-def email_someone(subject, input_message, email_address):
-    """Email committee member"""
-    email_people(subject, input_message, [email_address])
+def email_someone(subject, input_message, email_address, reply_to=None, attachment=None):
+    """Email any recipient, with optional reply_to and attachments"""
+    email_people(subject, input_message, [email_address], reply_to, attachment)
     return "Emailed {}".format(email_address)
 
 

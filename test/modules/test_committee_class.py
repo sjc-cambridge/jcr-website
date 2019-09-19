@@ -32,6 +32,7 @@ def test_committee_instantiation():
         assert role in JCR
 
 
+#TODO: make sure mocked function is called
 @patch('website.helper.committee.email_someone')
 def test_email_member(email_someone_patch):
     """Test to make sure can email all committee"""
