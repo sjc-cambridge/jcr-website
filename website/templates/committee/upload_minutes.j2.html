@@ -14,7 +14,7 @@
   </h1>
   <p class="text-center" id="pageparagraph" style="margin: 0px;">
    Hey {{JCR['secretary']['name'].split()[0]}}, here you can upload/ remove meeting minutes
-   from the website and email them out to the rest of the JCR, love JC xx
+   from the website, love JC xx
   </p>
  </div>
 </div>
@@ -23,7 +23,7 @@
 {% block main %}
 <main style="padding: 20px;">
 <h1>Upload Minutes</h1>
-<p>Please upload in the form 'JCR Meeting Minutes yyyy-mm-dd.pdf'</p>
+<p>Please upload in the form 'JCR Meeting Minutes yyyy-mm-dd.pdf' (otherwise they might not show up in order!)</p>
 <form method=post enctype=multipart/form-data>
   <select name="year">
     {% for academic_year in minutes_range[::-1] %}
@@ -50,7 +50,10 @@
    <li class="list-group-item">
     <span>
       <a href="/yourjcr/minutes?term={{term}}&academicyear={{academic_year}}&filename={{minutes}}">{{minutes}}</a>
-      <a class="btn" href="/committee/delete_minutes?term={{term}}&academicyear={{academic_year}}&filename={{minutes}}">Delete minutes</a>
+      <a class="btn" onclick="return confirm('Are you sure?')"
+          href="/committee/delete_minutes?term={{term}}&academicyear={{academic_year}}&filename={{minutes}}">
+          Delete minutes
+      </a>
     </span>
    </li>
    {% endfor %}
