@@ -2,6 +2,7 @@ import flask
 from flask import Flask, url_for
 from website.views.master import main, page_not_found, access_denied, server_overload, forbidden
 import os
+from website.content.retrieve import retrieveJson
 from website.views.currentstudents import currentstudents
 from website.views.committee import committee
 from website.views.yourjcr import yourjcr
@@ -17,8 +18,11 @@ def create_site():
     """Create Flask app, specify folder containing static content e.g. imgs, CSS"""
     app = Flask(__name__, static_folder='assets')
     app.request_class = Request
-    """Line below doesn't really do anything for us, but required by auth_decorator to work"""
-    app.config["SECRET_KEY"] = os.urandom(16)
+    """Line below required by auth_decorator to work.
+        Secret key is arbitrary, but needs to be the same between 
+        Gunicorn workers for session management.
+        """
+    app.config["SECRET_KEY"] = retrieveJson("config/keys")['secretkey']
     """Line below ensures app re-directs correctly when running on SRCF server."""
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1) # IMPORTANT
     """Attach each eaction of the website to the app."""
