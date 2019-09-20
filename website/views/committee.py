@@ -19,7 +19,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'pdf'}
 
 @committee.route("/")
 @committee_access
@@ -39,7 +39,6 @@ def committee_agenda():
 def upload_minutes():
     if request.method == 'POST':
         if committee_access.principal not in (JCR['secretary']['crsid'], JCR['computing']['crsid']):
-            print('hey')
             flash('Only the secretary or computing officer can add/remove minutes!')
             return redirect(request.url)
         # check if the post request has the file part
@@ -55,6 +54,9 @@ def upload_minutes():
             term = request.form.get("term")
             log_msg = save_minutes(term, year, file)
             flash(log_msg)
+            return redirect(request.url)
+        else:
+            flash('Only PDF uploads are allowed!')
             return redirect(request.url)
     minutes_dict = get_minutes_dict()
     minutes_range = get_year_range()  # Range of minutes that can be added
