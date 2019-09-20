@@ -36,15 +36,15 @@
    <div class="form-group">
     <select class="form-control" name="recipient">
       {% for position in JCR %}
-      {% if 'role' in JCR[position].keys() %}
+      {% if 'role' in JCR[position] %}
         <option value="{{position}}">
          {{JCR[position]['role']}} - {{JCR[position]['name']}}
         </option>
       {% else %}
         {% for subposition in JCR[position] %}
-          <option value="{{position}}">
-           {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
-          </option>
+            <option value="{{position}}">
+             {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
+            </option>
         {% endfor %}
       {% endif %}
       {% endfor %}

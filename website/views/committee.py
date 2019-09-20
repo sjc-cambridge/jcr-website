@@ -38,6 +38,10 @@ def committee_agenda():
 @committee_access
 def upload_minutes():
     if request.method == 'POST':
+        if committee_access.principal not in (JCR['secretary']['crsid'], JCR['computing']['crsid']):
+            print('hey')
+            flash('Only the secretary or computing officer can add/remove minutes!')
+            return redirect(request.url)
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
@@ -63,6 +67,10 @@ def upload_minutes():
 @committee.route('/delete_minutes')
 @committee_access
 def minutes_page():
+    if committee_access.principal not in (JCR['secretary']['crsid'], JCR['computing']['crsid']):
+        secretary_name, computing_name = JCR['secretary']['name'], JCR['computing']['name']
+        flash('Only the Secretary ({0}) or Computing officer ({1}) can add/remove minutes!'.format(secretary_name, computing_name))
+        return redirect(url_for('committee.upload_minutes'))
     academicyear = request.args.get("academicyear") # e.g. 2019/2020
     term = request.args.get("term")
     filename = request.args.get("filename")

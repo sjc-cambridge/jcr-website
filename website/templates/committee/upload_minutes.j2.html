@@ -37,10 +37,18 @@
   </select>
   <input type=file name=file>
   <input type=submit value=Upload>
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     {% for message in messages %}
+       <p>{{ message }}</p>
+     {% endfor %}
+   {% endif %}
+  {% endwith %}
+  {% for academic_year in sorted(minutes_dict)[::-1] %}
+  {% for term in ['Easter', 'Lent', 'Michaelmas'] %}
+  {% if term in minutes_dict[academic_year] %}
 </form>
-{% for academic_year in sorted(minutes_dict)[::-1] %}
-{% for term in ['Easter', 'Lent', 'Michaelmas'] %}
-{% if term in minutes_dict[academic_year] %}
+
  <section style="padding: 20px;">
   <h1>
    {{term}} Term {{academic_year}}
