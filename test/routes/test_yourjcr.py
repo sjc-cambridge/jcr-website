@@ -5,7 +5,16 @@ from mock import patch
 
 def test_home(client):
     response = client.get("/yourjcr")
+    assert response.status_code == 308
+    response = client.get("/yourjcr/")
     assert response.status_code == 200
+    response = client.get("/yourjcr/home")
+    assert response.status_code == 200
+
+
+def test_404(client):
+    response = client.get("/yourjcr/does_not_exist")
+    assert response.status_code == 404
 
 
 def test_committee(client):

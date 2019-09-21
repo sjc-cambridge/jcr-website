@@ -1,5 +1,4 @@
-from flask import Blueprint, render_template, send_file, request, redirect
-import os
+from flask import Blueprint, render_template, send_file, request, redirect, abort
 from website.helper.auth import johnian_access, JCR
 from website.content.minutes import get_minutes
 from website.content.documents import send_transparencydoc
@@ -60,12 +59,12 @@ def welfarepage():
 @currentstudents.route('/<pagename>')
 @johnian_access
 def current_routing(pagename):
-    return render_template("/currentstudents/{}.j2.html".format(pagename), JCR=JCR,
-                           current_page="/currentstudents/{}".format(pagename),
-                           crsid=johnian_access.principal)
-
-
-@currentstudents.route('/<pagename>/')
-@johnian_access
-def current_routing2(pagename):
-    return redirect('/currentstudents/{}'.format(pagename))
+    try:
+        return render_template(
+            "/currentstudents/{}.j2.html".format(pagename),
+            JCR=JCR,
+            current_page="/currentstudents/{}".format(pagename),
+            crsid=johnian_access.principal
+        )
+    except:
+        abort(404)

@@ -4,7 +4,16 @@ Simple checks whether the pages can be rendered correctly"""
 
 def test_home(client):
     response = client.get("/studentlife")
+    assert response.status_code == 308
+    response = client.get("/studentlife/")
     assert response.status_code == 200
+    response = client.get("/studentlife/home")
+    assert response.status_code == 200
+
+
+def test_404(client):
+    response = client.get("/studentlife/does_not_exist")
+    assert response.status_code == 404
 
 
 def test_clubs_and_societies(client):

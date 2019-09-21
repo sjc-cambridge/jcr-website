@@ -3,7 +3,7 @@ Only checks you get the 303 redirect"""
 
 
 def test_home(client):
-    response = client.get("/committee")
+    response = client.get("/committee/")
     assert response.status_code == 303
 
 

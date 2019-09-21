@@ -4,7 +4,16 @@ Simple checks whether the pages can be rendered correctly"""
 
 def test_home(client):
     response = client.get("/currentstudents")
+    assert response.status_code == 308
+    response = client.get("/currentstudents/")
     assert response.status_code == 303
+    response = client.get("/currentstudents/home")
+    assert response.status_code == 303
+
+# NB! johnian_access preferentially returns a 303
+# def test_404(client):
+#     response = client.get("/currentstudents/does_not_exist")
+#     assert response.status_code == 404
 
 
 def test_committee(client):
