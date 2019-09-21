@@ -31,6 +31,7 @@ def create_site(config=None):
     except FileNotFoundError as e:
         print(e)
         print("You need to create the instance/config.py file for secure keys!\n \
+        Make sure the file permissions are chmod 700 if on your own domain\
         If unsure contact the computing officer.")
         sys.exit()
 

@@ -27,6 +27,11 @@ def committee_home():
     return render_template("committee/home.j2.html", crsid=committee_access.principal,
                             current_page ="/committee/home", JCR=JCR)
 
+@committee.route("/welfare")
+@committee_access
+def committee_welfare():
+    return redirect("https://docs.google.com/spreadsheets/d/***REMOVED***/edit?usp=sharing")
+
 @committee.route("/agenda")
 @committee_access
 def committee_agenda():
