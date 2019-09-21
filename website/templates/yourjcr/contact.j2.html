@@ -37,12 +37,12 @@
     <select class="form-control" name="recipient">
       {% for position in JCR %}
       {% if 'role' in JCR[position] %}
-        <option value="{{position}}">
+        <option value="{{position}}" {{ 'selected' if position == role_str }}>
          {{JCR[position]['role']}} - {{JCR[position]['name']}}
         </option>
       {% else %}
         {% for subposition in JCR[position] %}
-            <option value="{{position}}">
+            <option value="{{position}}" {{ 'selected' if subposition == role_str }}>
              {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
             </option>
         {% endfor %}

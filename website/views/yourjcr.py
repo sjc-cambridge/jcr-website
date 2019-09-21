@@ -38,6 +38,8 @@ def contact():
     privatekey = current_app.config['CAPTCHA_PRIVATE']
     app_pwd = current_app.config['GMAIL_KEY']
 
+    role_str = request.args.get("role")
+
     if request.method == 'POST':
         recipient = request.form['recipient']
         senderName = request.form['senderName']
@@ -61,7 +63,7 @@ def contact():
         return redirect(url_for("yourjcr.contact"))
     else:
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
+                                role_str=role_str, current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
 
 
 @yourjcr.route("/yourjcr/constitution")
@@ -85,10 +87,13 @@ def jcr_routing2(pagename):
 def jcr_committee_routing(pagename):
     if pagename == 'fwelfare':
         member = JCR['welfare']['fnb']
+        role_str = 'fnb'
     elif pagename == 'mwelfare':
         member = JCR['welfare']['mnb']
+        role_str = 'mnb'
     else:
         member = JCR[pagename]
+        role_str = pagename
 
     if pagename == 'president':
         role = JCR['president']['role']
@@ -103,7 +108,7 @@ def jcr_committee_routing(pagename):
         bio = member['bio']
         img = member['img']
     return render_template("yourjcr/committee/committeeprofile.j2.html", crsid=johnian_access.principal, role=role, name=name, member_crsid=member_crsid, bio=bio, img=img,
-                           current_page="/yourjcr/{}".format(pagename), JCR=JCR)
+                           current_page="/yourjcr/{}".format(pagename), JCR=JCR, role_str=role_str)
 
 
 @yourjcr.route("/yourjcr/committee/<pagename>/")
