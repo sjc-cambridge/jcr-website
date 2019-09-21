@@ -1,5 +1,4 @@
 """Email helper file used to send emails"""
-import os
 import smtplib
 from email import encoders
 from email.mime.base import MIMEBase
@@ -7,16 +6,14 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from website.content.retrieve import retrieveBinary
 
-script_dir = os.path.dirname(__file__)
 
-
-def email_someone(subject, input_message, email_address, reply_to=None, attachment=None):
+def email_someone(subject, input_message, email_address, app_pwd, reply_to=None, attachment=None):
     """Email any recipient, with optional reply_to and attachments"""
-    email_people(subject, input_message, [email_address], reply_to, attachment)
+    email_people(subject, input_message, [email_address], app_pwd, reply_to, attachment)
     return "Emailed {}".format(email_address)
 
 
-def email_people(subject, input_message, address_list, reply_to=None, attachment=None):
+def email_people(subject, input_message, address_list, app_pwd, reply_to=None, attachment=None):
     """Email a list of emails Gmail account uses 2-factor authentication so
         password used won't work anywhere else."""
 
@@ -51,16 +48,10 @@ def email_people(subject, input_message, address_list, reply_to=None, attachment
         # Add attachment to message and convert message to string
         message.attach(part)
 
-    # TODO: implement actual env file
-    with open(os.path.join(script_dir, "config.txt"), "r") as file:
-        # See https://support.google.com/accounts/answer/185833?hl=en
-        app_key = file.readlines()[0]
-
-    gmail_pwd = app_key  # App password not re-usable see above.
     smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
     smtpserver.ehlo()
     smtpserver.starttls()
-    smtpserver.login(gmail_user, gmail_pwd)
+    smtpserver.login(gmail_user, app_pwd)
     smtpserver.sendmail(gmail_user, address_list, message.as_string())
     smtpserver.close()
     return "Email sent!"

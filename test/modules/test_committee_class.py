@@ -3,6 +3,8 @@ from website.helper.committee import Committee
 from mock import patch
 import pytest
 
+gmail_pwd = "mock_pwd"
+
 roles = {
     "president",
     "vicepresident",
@@ -39,7 +41,7 @@ def test_email_member(email_someone_patch):
     JCR = Committee()
     for role in roles:
         try:
-            JCR.email_member("subject", "message", role)
+            JCR.email_member("subject", "message", role, gmail_pwd)
         except Exception as e:
             print("Does not work for {}".format(role))
             raise e
@@ -50,10 +52,10 @@ def test_email_bogus_member(email_someone_patch):
     """Raises ValueError when trying to email non committee"""
     JCR = Committee()
     with pytest.raises(ValueError):
-        JCR.email_member("subject", "message", "banter")
+        JCR.email_member("subject", "message", "banter", gmail_pwd)
 
 
 @patch('website.helper.committee.email_people')
 def test_email_committee(email_people_patch):
     JCR = Committee()
-    JCR.email_committee("subject", "message")
+    JCR.email_committee("subject", "message", gmail_pwd)

@@ -31,78 +31,15 @@ class Committee(dict):
 
     def email_member(self, subject, input_message, committee_role, app_pwd):
         """Email committee member"""
-        self.email_people(subject, input_message, [
-                          committee_role + '@sjcjcr.com'], app_pwd=app_pwd)
-        return "Emailed {}".format(self[committee_role]['name'])
-
-    def email_member(self, subject, input_message, committee_role):
-        """Email committee member"""
         if (committee_role in self.keys()):
             email_address = committee_role + '@sjcjcr.com'
-            email_someone(subject, input_message, email_address)
+            email_someone(subject, input_message, email_address, app_pwd)
             return "Emailed {}".format(self[committee_role]['name'])
         else:
             raise ValueError("That role is not in the committee")
 
-
     def email_committee(self, subject, input_message, app_pwd):
         """Email entire committee"""
         committee_emails = [role + '@sjcjcr.com' for role in self.keys()]
-        self.email_people(subject, input_message, committee_emails)
-        return "Emailed JCR Committee"
-
-    def email_someone(self, subject, input_message, email_address, app_pwd):
-        """Email committee member"""
-        self.email_people(subject, input_message, [email_address])
-        return "Emailed {}".format(email_address)
-
-    def email_people(self, subject, input_message, address_list, app_pwd, reply_to=None, attachment=None):
-        """Email a list of emails Gmail account uses 2-factor authentication so
-            password used won't work anywhere else."""
-
-        recipients_string = ", ".join(address_list)
-        message = MIMEMultipart()
-        gmail_user = 'sjcjcrmisc@gmail.com'
-        message["From"] = gmail_user
-        message["To"] = recipients_string
-        message["Subject"] = subject
-        if reply_to:
-            message["reply-to"] = reply_to
-
-        message.attach(MIMEText(input_message, "plain"))
-
-        if attachment:
-            # Open PDF file in binary mode
-            file_content = retrieveBinary(attachment)
-            # Add file as application/octet-stream
-            # Email client can usually download this automatically as attachment
-            part = MIMEBase("application", "octet-stream")
-            part.set_payload(file_content)
-
-            # Encode file in ASCII characters to send by email
-            encoders.encode_base64(part)
-
-            # Add header as key/value pair to attachment part
-            part.add_header(
-                "Content-Disposition",
-                "attachment; filename= {}".format(attachment),
-            )
-
-            # Add attachment to message and convert message to string
-            message.attach(part)
-
-        '''# TODO: implement actual env file
-        with open(os.path.join(script_dir, "config.txt"), "r") as file:
-            # See https://support.google.com/accounts/answer/185833?hl=en
-            app_key = file.readlines()[0]
-
-        gmail_pwd = app_key  # App password not re-usable see above.'''
-        smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
-        smtpserver.ehlo()
-        smtpserver.starttls()
-        smtpserver.login(gmail_user, app_pwd)
-        smtpserver.sendmail(gmail_user, address_list, message.as_string())
-        smtpserver.close()
-        return "Email sent!"
-        email_people(subject, input_message, committee_emails)
+        email_people(subject, input_message, committee_emails, app_pwd)
         return "Emailed JCR Committee"
