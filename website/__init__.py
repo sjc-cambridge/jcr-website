@@ -1,7 +1,7 @@
 import flask
 from flask import Flask, url_for
 from website.views.master import main, page_not_found, access_denied, server_overload, forbidden
-import os
+import os, sys
 from website.content.retrieve import retrieveJson
 from website.views.currentstudents import currentstudents
 from website.views.committee import committee
@@ -10,19 +10,28 @@ from website.views.freshers import freshers
 from website.views.studentlife import student_routes
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+
 class Request(flask.Request):
     """This specifies locations that the Raven access module will work!"""
     trusted_hosts = {'sjcjcr.com', 'lpt30.user.srcf.net', 'jfc43.user.srcf.net', 'test.sjcjcr.com', 'localhost', '127.0.0.1', 'ojrb2.user.srcf.net'}
 
 def create_site():
     """Create Flask app, specify folder containing static content e.g. imgs, CSS"""
-    app = Flask(__name__, static_folder='assets')
+    app = Flask(__name__, instance_relative_config=True, static_folder='assets')
+
+    # Load the default configuration
+    app.config.from_object('config.production')
+
+    # Load the configuration from the instance folder
+    try:
+        app.config.from_pyfile('config.py')
+    except FileNotFoundError as e:
+        print(e)
+        print("You need to create the instance/config.py file for secure keys!\n \
+        If unsure contact the computing officer.")
+        sys.exit()
+
     app.request_class = Request
-    """Line below required by auth_decorator to work.
-        Secret key is arbitrary, but needs to be the same between 
-        Gunicorn workers for session management.
-        """
-    app.config["SECRET_KEY"] = retrieveJson("config/keys")['secretkey']
     """Line below ensures app re-directs correctly when running on SRCF server."""
     app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1) # IMPORTANT
     """Attach each eaction of the website to the app."""

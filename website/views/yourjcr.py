@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages
+from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages, current_app
 from website.helper.auth import johnian_access, JCR, is_human, captchapublickey
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
@@ -34,7 +34,9 @@ def minutes_page():
 @yourjcr.route('/yourjcr/contact', methods=['GET', 'POST'])
 def contact():
 
-    sitekey = "6LdI-LgUAAAAAM7BWzlvLCKuFR5p0jFTqaOpoo-L"
+    sitekey = current_app.config['CAPTCHA_PUBLIC'] #"6LdI-LgUAAAAAM7BWzlvLCKuFR5p0jFTqaOpoo-L"
+    privatekey = current_app.config['CAPTCHA_PRIVATE']
+    app_pwd = current_app.config['GMAIL_KEY']
 
     if request.method == 'POST':
         recipient = request.form['recipient']
@@ -44,7 +46,7 @@ def contact():
         message = request.form['message']
         captcha_response = request.form['g-recaptcha-response']
 
-        if not is_human(captcha_response):
+        if not is_human(captcha_response, privatekey):
             # Process request here
             flash("Please verify you're a human!")
             return redirect(url_for("yourjcr.contact"))
@@ -54,12 +56,12 @@ def contact():
         wrapped_message = "Hi {}!\n\nYou have been contacted by {} via the JCR website. Their message is as " \
                           "follows:\n\n\"{}\"\n\nIf you would like to reply, their email is {}.\n\nSouvent " \
                           "Me Souvient".format(JCR[recipient]['name'], senderName, message, senderEmail)
-        JCR.email_member(subject, wrapped_message, recipient)
+        JCR.email_member(subject, wrapped_message, recipient, app_pwd)
 
         return redirect(url_for("yourjcr.contact"))
     else:
         return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
-                               current_page="/yourjcr/contact", JCR=JCR, sitekey=captchapublickey)
+                               current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
 
 
 @yourjcr.route("/yourjcr/constitution")

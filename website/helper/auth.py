@@ -35,14 +35,20 @@ johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     require_principal=johnian_crsids
 )
 
-keys_json = retrieveJson("config/keys")
 
+
+app_pwd = os.getenv("gmailkey")
+captchapublickey = os.getenv("captchapublickey")
+captchaprivatekey = os.getenv("captchaprivatekey")
+
+'''
+keys_json = retrieveJson("config/keys")
 app_pwd = keys_json["gmailkey"]
 captchapublickey = keys_json["captchapublickey"]
-captchaprivatekey = keys_json["captchaprivatekey"]
+captchaprivatekey = keys_json["captchaprivatekey"]'''
 
 # JCR object to be exported
-JCR = Committee(app_pwd=app_pwd)
+JCR = Committee()
 
 # Committee access decorator restricts access to just committee members
 committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
@@ -50,7 +56,7 @@ committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     require_principal=JCR.committee_crsids
 )
 
-def is_human(captcha_response):
+def is_human(captcha_response, captchaprivatekey):
     """ Validating recaptcha response from google server.
         Returns True captcha test passed for the submitted form
         else returns False.

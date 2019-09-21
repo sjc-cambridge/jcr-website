@@ -19,10 +19,10 @@ class Committee(dict):
     - Send PDF minutes
     """
 
-    def __init__(self, app_pwd):
+    def __init__(self):
         dict.__init__(self)
         self.committee_crsids = []
-        self.app_pwd = app_pwd
+        #self.app_pwd = app_pwd
 
         committee_json = get_committee_json()
 
@@ -37,24 +37,24 @@ class Committee(dict):
 
         self.committee_crsids = set(self.committee_crsids)
 
-    def email_member(self, subject, input_message, committee_role):
+    def email_member(self, subject, input_message, committee_role, app_pwd):
         """Email committee member"""
         self.email_people(subject, input_message, [
-                          committee_role + '@sjcjcr.com'])
+                          committee_role + '@sjcjcr.com'], app_pwd=app_pwd)
         return "Emailed {}".format(self[committee_role]['name'])
 
-    def email_committee(self, subject, input_message):
+    def email_committee(self, subject, input_message, app_pwd):
         """Email entire committee"""
         committee_emails = [role + '@sjcjcr.com' for role in self.keys()]
         self.email_people(subject, input_message, committee_emails)
         return "Emailed JCR Committee"
 
-    def email_someone(self, subject, input_message, email_address):
+    def email_someone(self, subject, input_message, email_address, app_pwd):
         """Email committee member"""
         self.email_people(subject, input_message, [email_address])
         return "Emailed {}".format(email_address)
 
-    def email_people(self, subject, input_message, address_list, reply_to=None, attachment=None):
+    def email_people(self, subject, input_message, address_list, app_pwd, reply_to=None, attachment=None):
         """Email a list of emails Gmail account uses 2-factor authentication so
             password used won't work anywhere else."""
 
@@ -98,7 +98,7 @@ class Committee(dict):
         smtpserver = smtplib.SMTP("smtp.gmail.com", 587)
         smtpserver.ehlo()
         smtpserver.starttls()
-        smtpserver.login(gmail_user, self.app_pwd)
+        smtpserver.login(gmail_user, app_pwd)
         smtpserver.sendmail(gmail_user, address_list, message.as_string())
         smtpserver.close()
         return "Email sent!"
