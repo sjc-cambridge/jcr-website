@@ -34,7 +34,7 @@ class Committee(dict):
         if (committee_role in self.keys()):
             email_address = committee_role + '@sjcjcr.com'
             email_someone(subject, input_message, email_address, app_pwd)
-            return "Emailed {}".format(self[committee_role]['name'])
+            return "Emailed {}".format(email_address)
         else:
             raise ValueError("That role is not in the committee")
 
