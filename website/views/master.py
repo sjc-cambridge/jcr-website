@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request
+from flask import Blueprint, render_template, redirect, url_for, request, current_app
 from website.helper.auth import johnian_access, JCR
 
 main = Blueprint('main', __name__)
@@ -39,4 +39,8 @@ def page_not_found(e):
     return render_template('404.j2.html', crsid=johnian_access.principal, JCR=JCR), 404
 
 def server_overload(e):
+    """Inform computing officer of server error"""
+    app_pwd = current_app.config["GMAIL_KEY"]
+    error_msg = "Server error encountered by a user accessing {}".format(request.url)
+    JCR.email_member('Error 500', error_msg, 'computing', app_pwd)
     return render_template('500.j2.html', crsid=johnian_access.principal, JCR=JCR), 500
