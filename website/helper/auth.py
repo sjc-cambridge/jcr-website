@@ -7,7 +7,6 @@ from website.helper.committee import Committee
 from website.helper.johnians import retrieve_johnian_crsids
 from website.content.retrieve import retrieveJson
 
-script_dir = os.path.dirname(__file__)
 
 """
     This file creates the JCR object which is used for committee verification,
@@ -40,12 +39,6 @@ johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
 app_pwd = os.getenv("gmailkey")
 captchapublickey = os.getenv("captchapublickey")
 captchaprivatekey = os.getenv("captchaprivatekey")
-
-'''
-keys_json = retrieveJson("config/keys")
-app_pwd = keys_json["gmailkey"]
-captchapublickey = keys_json["captchapublickey"]
-captchaprivatekey = keys_json["captchaprivatekey"]'''
 
 # JCR object to be exported
 JCR = Committee()

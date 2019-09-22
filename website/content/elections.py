@@ -23,5 +23,6 @@ else:
 election_json = retrieveJson(json_path)
 
 def get_manifesto(filename):
+    """Sends manifesto as attachment"""
     filepath = os.path.join(curr_dir, 'elections/manifestos', filename)
     return send_file(filepath, as_attachment=True)

@@ -5,10 +5,11 @@ script_dir = os.path.dirname(__file__)
 
 
 def retrieveJson(filepath):
-    """retrieves a parsed json object from the filepath supplied
+    """
+    Retrieves a parsed json object from the filepath supplied
     the .json suffix is optional
-    e.g. filepath='studentlife/glossary'"""
-
+    e.g. filepath='studentlife/glossary'
+    """
     filepath = str(filepath).replace(".json", "") # remove json if present
     path = os.path.join(script_dir, filepath + ".json")
     with open(path, "r") as json_file:
@@ -18,7 +19,6 @@ def retrieveJson(filepath):
 
 def retrieveBinary(filepath):
     """Reads specified file and returns binary"""
-
     path = os.path.join(script_dir, filepath)
     with open(path, "rb") as file:
         return file.read()

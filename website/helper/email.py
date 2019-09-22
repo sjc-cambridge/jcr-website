@@ -14,8 +14,9 @@ def email_someone(subject, input_message, email_address, app_pwd, reply_to=None,
 
 
 def email_people(subject, input_message, address_list, app_pwd, reply_to=None, attachment=None):
-    """Email a list of emails Gmail account uses 2-factor authentication so
-        password used won't work anywhere else."""
+    """Email a list of emails
+    Gmail account uses 2-factor authentication so
+    password used won't work anywhere else."""
 
     recipients_string = ", ".join(address_list)
     message = MIMEMultipart()

@@ -10,6 +10,12 @@ from website.content.retrieve import retrieveJson
 curr_dir = os.path.dirname(__file__)
 
 def save_minutes(term, year, file):
+    """
+    Saves minutes pdf in correct directory
+    year: int
+    term: {'Michaelmas', 'Lent', 'Easter'}
+    file: Minutes pdf to save
+    """
     yearpath = os.path.join(curr_dir, 'minutes', year)
     if not os.path.exists(yearpath):
         os.makedirs(yearpath)
@@ -26,6 +32,9 @@ def save_minutes(term, year, file):
 
 
 def delete_minutes(term, year, filename):
+    """
+    Deletes set of minutes from server
+    """
     filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
     try:
         os.remove(filepath)
@@ -58,5 +67,6 @@ def get_minutes_dict():
 
 
 def get_minutes(term, year, filename):
+    """Send minutes pdf as attachment"""
     filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
     return send_file(filepath, as_attachment=True)
