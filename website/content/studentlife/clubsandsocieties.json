@@ -7,9 +7,10 @@
                 "heading": "Men's Football - SJCAFC",
                 "description": [
                     "St John's College Association Football Club (SJCAFC) is the most magnificent club of them all. With 3 men's teams, all skill levels are welcome.",
-                    "The firsts secured promotion back to Div 1 in the magnificent 2018/19 season under the leadership of capitan Hearn. The 2019/20 chapter of the SJCAFC fairytale is yet to be written. Perhaps you could feature.", 
-                    "Captain: Dan Osborne (do318)",
-                    "Vice Captain: Jonathan Carter (jfc43)"
+                    "The 2018/19 season was glorious. It saw the firsts secure promotion back to the premiership and the thirds win the double. The 2019/20 chapter of the SJCAFC fairytale is yet to be written. Perhaps you could feature.", 
+                    "1sts Captain: Dan Osborne (do318)",
+                    "2nds Captain: To be elected",
+                    "3rds Captain: Ryan Walker (rgw39) and Elwin Marshall (em705)"
                 ]
             },
             {
@@ -31,8 +32,19 @@
                 ]
             },
             {
-                "imageName": "studentlife/clubsandsocieties/hockey.jpg",
-                "heading": "Hockey",
+                "imageName": "studentlife/clubsandsocieties/nags.jpg",
+                "heading": "Women's Hockey - The Nags",
+                "description": [
+                    "More affectionately known as the Nags, the women’s hockey team are the most successful women’s team at John’s, having won the league four times in a row. We have people of all abilities playing for us, from the well-accomplished uni hockey players to the girls who are yet to learn which side of the stick to use!",
+                    "Although we are fiercely successful on the pitch, off the pitch is where we really thrive. I challenge you to find another team who will dress up as Mario-Kart characters, down VKs, and run around Cambridge looking for chocolate coins.",
+                    "<i>\"Life didn't begin until I became a Nag\"</i> - Brag Nag on Nag Day 2017",
+                    "<i>\"Do you even go to John’s if you aren’t a Nag\"</i>  - Oompa Loompa Nag at Welcome Drinks 2019",
+                    "<i>ναγοι προ σἁγων</i>"
+                ]
+            },
+            {
+                "imageName": "studentlife/clubsandsocieties/nogs.jpg",
+                "heading": "Men's Hockey - The Nogs",
                 "description": [
                     "The Nogs are the SJC Mens Hockey Team and are the statistically most successful team from Johns having won the College League for the last two years. As well as having a lot of fun on the astro, we also have a strong social element off the pitch. Come join the best sports team in Johns!"
                 ]
@@ -69,6 +81,15 @@
                     "St John's College Ultimate is one of the friendliest sports teams in college; we have great spirit both on the pitch and off. We are very welcoming and strike a good balance between playing for fun, and playing to win.",
                     "Ultimate is a superb sport and we are looking to build the team over the next couple of seasons, so please do try us out (whether you've played before or not!). In term times we have one match each weekend and an (optional) midweek training (all pretty informal). Regular socials too!",
                     "Please email Lennie Wells (ww347@cam.ac.uk) if you'd like more information"
+                ]
+            },
+            {
+                "imageName": "studentlife/clubsandsocieties/swimming.jpg",
+                "heading": "Swimming",
+                "description": [
+                    "Historically St John's has had a strong swim team. The team competes in the annual cuppers competition, normally held in Easter term.",
+                    "Additionally, many swimmers at John's also compete in the cuppers waterpolo league in a combined team with Churchill.",
+                    "Unfortunately, the team does not have any training sessions. However, if you are looking to swim at university you could join Cambridge University Swimming and Waterpolo Club, which has two squads that range in ability and commitment levels. Alternatively, you could train yourself at Parkside Pool, a short cycle or about a 20 minute walk from John's."
                 ]
             }
         ]
