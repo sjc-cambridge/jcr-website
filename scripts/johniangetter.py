@@ -38,7 +38,8 @@ for group in brian:
 '''
 
 script_dir = os.path.dirname(__file__)
-parent_dir = Path(script_dir).parent
+parent_dir = str(Path(script_dir).parent)
+print(parent_dir)
 johnian_dump = os.path.join(parent_dir, "website/helper/johnians.dump")
 
 def update_johnians_crsids():
