@@ -1,5 +1,7 @@
 #!/bin/sh
-INIT_CMD="gunicorn --bind 127.0.0.1:$PORT wsgi:app"
+echo "Select port number to kill:"
+read PORT
+INIT_CMD="gunicorn -w=3 --bind 127.0.0.1:$PORT wsgi:app"
 FLAG=$(pgrep -f "$INIT_CMD")
 if [ -z "$FLAG" ]
 then

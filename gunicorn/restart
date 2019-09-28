@@ -1,3 +1,3 @@
 #!/bin/sh
-./kill
-./start
+./gunicorn/kill
+./gunicorn/start
