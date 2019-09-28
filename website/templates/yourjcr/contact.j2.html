@@ -42,7 +42,7 @@
         </option>
       {% else %}
         {% for subposition in JCR[position] %}
-            <option value="{{position}}" {{ 'selected' if subposition == role_str }}>
+            <option value="{{subposition}}" {{ 'selected' if subposition == role_str }}>
              {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
             </option>
         {% endfor %}

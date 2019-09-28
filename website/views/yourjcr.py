@@ -46,7 +46,6 @@ def contact():
         subject = request.form['subject']
         message = request.form['message']
         captcha_response = request.form['g-recaptcha-response']
-
         if not is_human(captcha_response, privatekey):
             # Process request here
             flash("Please verify you're a human!")
@@ -54,10 +53,15 @@ def contact():
 
         flash("Your message has been sent! If you would like to send another message, fill in the form again below.")
 
+        if recipient in ['mnb', 'fnb']:
+            recipientName = JCR['welfare'][recipient]["name"]
+            recipient = 'welfare'
+        else:
+            recipientName = JCR[recipient]["name"]
         wrapped_message = "Hi {}!\n\nYou have been contacted by {} via the JCR website. Their message is as " \
                           "follows:\n\n\"{}\"\n\nIf you would like to reply, their email is {}.\n\nSouvent " \
                           "Me Souvient".format(
-                              JCR[recipient]["name"], senderName, message, senderEmail)
+                              recipientName, senderName, message, senderEmail)
         JCR.email_member(subject, wrapped_message, recipient, app_pwd)
 
         return redirect(url_for("yourjcr.contact"))

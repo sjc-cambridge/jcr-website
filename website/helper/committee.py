@@ -14,7 +14,6 @@ class Committee(dict):
     def __init__(self):
         dict.__init__(self)
         self.committee_crsids = []
-        #self.app_pwd = app_pwd
 
         committee_json = get_committee_json()
 
