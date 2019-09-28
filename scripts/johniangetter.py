@@ -18,7 +18,7 @@ Used myself, an old friend and DoS to get IDs!'''
 conn = createTestConnection()
 pm = PersonMethods(conn)
 me = pm.getGroups('crsid','jfc43') # Getting Johns Undergrad ID String
-marcus = pm.getGroups("crsid","dtz21") # Getting Johns Postgrad ID String
+brian = pm.getGroups("crsid","ba364") # Getting Johns Postgrad ID String
 hynes = pm.getGroups("crsid", "aw329") # Getting general members of Johns group
 
 print('My groups')
@@ -31,8 +31,8 @@ for group in hynes:
     print(group.groupid, group.description)
     print(group.name)
 
-print('Marcus groups')
-for group in marcus:
+print('Brian groups')
+for group in brian:
     print(group.groupid, group.description)
     print(group.name)
 '''
@@ -47,9 +47,31 @@ def update_johnians_crsids():
     conn = createTestConnection()
 
     gm = GroupMethods(conn)
-    johnians = gm.getMembers('johnsug-members') +\
-        gm.getMembers('johnspg-members') +\
-        gm.getMembers('johns-members')
+
+    ug_johnians = gm.getMembers('johnsug-members')
+    pg_johnians = gm.getMembers('johnspg-members')
+    johnians = gm.getMembers('johns-members')
+
+    ug_no = len(ug_johnians)
+    pg_no = len(pg_johnians)
+    other_no = len(johnians)
+    total = ug_no+pg_no+other_no
+    '''
+    print('Undergraduates:')
+    for johnian in ug_johnians:
+        print(johnian.identifier.value, johnian.registeredName)
+
+    print('Postgraduates:')
+    for johnian in pg_johnians:
+        print(johnian.identifier.value, johnian.registeredName)
+
+    print('Johnians:')
+    for johnian in johnians:
+        print(johnian.identifier.value, johnian.registeredName)
+        '''
+    johnians += ug_johnians
+    johnians += pg_johnians
+
     johnian_crsids = []
 
     for johnian in johnians:
@@ -62,6 +84,10 @@ def update_johnians_crsids():
             make sure the list is up to date."""
         pickle.dump(johnian_crsids, file)
 
+    print("Found {0} Johnians! {1} Undergraduates, {2} Post-Graduates and "
+            "{3} others".format(total, ug_no, pg_no, other_no))
+
 if __name__ == "__main__":
     # Being run as script => update johns list
+
     update_johnians_crsids()

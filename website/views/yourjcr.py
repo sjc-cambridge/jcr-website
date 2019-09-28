@@ -33,8 +33,6 @@ def minutes_page():
 
 @yourjcr.route("/contact", methods=["GET", "POST"])
 def contact():
-
-    # "6LdI-LgUAAAAAM7BWzlvLCKuFR5p0jFTqaOpoo-L"
     sitekey = current_app.config["CAPTCHA_PUBLIC"]
     privatekey = current_app.config["CAPTCHA_PRIVATE"]
     app_pwd = current_app.config["GMAIL_KEY"]
@@ -78,9 +76,9 @@ def return_constitution():
 def jcr_routing(pagename):
     try:
         return render_template(
-            "yourjcr/{}.j2.html".format(pagename), 
+            "yourjcr/{}.j2.html".format(pagename),
             crsid=johnian_access.principal,
-            current_page="/yourjcr/{}".format(pagename), 
+            current_page="/yourjcr/{}".format(pagename),
             JCR=JCR
         )
     except:
@@ -110,7 +108,7 @@ def jcr_committee_routing(pagename):
         member_crsid = member["crsid"]
         bio = member["bio"]
         img = member["img"]
-        
+
     return render_template(
         "yourjcr/committee/committeeprofile.j2.html",
         crsid=johnian_access.principal,

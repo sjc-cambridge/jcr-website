@@ -1,6 +1,7 @@
 ## Project Structure
 
-The bulk of the functionality is contained within the website directory. The sub-directories are organised as follows:
+The bulk of the functionality is contained within the website directory.
+The sub-directories are organised as follows:
 
 * `assets`
   * This contains all the static assets needed for the website (jss, css, fonts, images)
@@ -12,8 +13,6 @@ The bulk of the functionality is contained within the website directory. The sub
 * `helper`
   * Contains miscellaneous helper functions.
   * If you are unsure where to put a file, here is probably the right place.
-* `ibisclient`
-  * This is not our own but deals with querying cambridges lookup service to determine who is or is not a Johnian.
 * `templates`
   * This contains the jinja html templates (named with extension `.j2.html` to distinguish from regular html). Each template is derived from a base layout template.
   * `shared`
@@ -24,6 +23,36 @@ The bulk of the functionality is contained within the website directory. The sub
   * The `htmleditor.py` srcipt will make a copy of `templates_og` jinjafy the html files and copy over any new templates and/or assets to the templates and assets directories respectively.
 * `views`
   * This contains all routing logic. Each file defines the routing information for each subsection of the website (e.g. studentlife)
+
+# Other directories:
+* `ibisclient`
+  * This is not our own but deals with querying Cambridge's lookup service to determine who is or is not a Johnian.
+
+* `config`
+  * See the folder's README for explanation.
+
+* `instance`
+  * This is created upon trying to run the app locally. It is in the gitignore since it contains sensitive information such as API keys.
+  Upon cloning the repo you should make an instance folder in the root and create a config.py file, the computing officer (past or present) should be able to help you with this.
+
+* `gunicorn`
+  * This directory contains shell scripts for running the app under a Gunicorn proxy for use in production. Scripts should be run from the root directory e.g.
+  ```
+  $ ./gunicorn/start
+  will start the website wrapped in a Gunicorn proxy.
+  ```
+
+* `config`
+  * See folders README for explanation.
+
+* `test`
+  * Testing framework folder.
+
+* `scripts`
+  * Website related scripts. See it's README for an explanation.
+
+## Running the site locally.
+After cloning the website run `python3 run.py` from the website root.
 
 ## Testing with venv
 
@@ -50,7 +79,7 @@ To make sure you can use absolute imports you must install the whole directory i
 $ pip install -e .
 ```
 
-Now running tests becomes as easy as: 
+Now running tests becomes as easy as:
 ```
 $ pytest
 ```
