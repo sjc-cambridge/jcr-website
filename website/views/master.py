@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, current_app
 from website.helper.auth import johnian_access, JCR
+from website.content.documents import send_helpdoc
 
 main = Blueprint('main', __name__)
 
@@ -28,6 +29,10 @@ def logout_route():
             return redirect(url_for("main.home"))
     else:
         return redirect(url_for("main.home"))
+
+@main.route("/gettinghelp")
+def getting_help():
+    return send_helpdoc()
 
 def access_denied(e):
     return render_template('401.j2.html', crsid=johnian_access.principal, JCR=JCR), 401
