@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect
 from website.helper.auth import johnian_access, JCR
 from website.content.studentlife import get_clubs_by_category, get_facilities_by_area
+from website.content.documents import send_billsglossary
 
 student_routes = Blueprint('studentlife', __name__, url_prefix="/studentlife")
 
@@ -26,3 +27,7 @@ def clubsandsocieties():
 def facilities():
     facilities_by_area = get_facilities_by_area()
     return render_template("studentlife/facilities.j2.html", JCR=JCR, crsid=johnian_access.principal, facilities_by_area=facilities_by_area)
+
+@student_routes.route("/billsglossary")
+def billsglossary():
+    return send_billsglossary()

@@ -20,3 +20,8 @@ def send_constitution():
     """Sends constitution doc as pdf attachment"""
     filepath = os.path.join(curr_dir, "documents/Constitution.pdf")
     return send_file(filepath,  as_attachment=True, attachment_filename="JCRConstitution.pdf")
+
+def send_billsglossary():
+    """Sends constitution doc as pdf attachment"""
+    filepath = os.path.join(curr_dir, "documents/StudentBillsGlossary.pdf")
+    return send_file(filepath,  as_attachment=True, attachment_filename="Student Bills Glossary.pdf")
