@@ -93,12 +93,20 @@ def jcr_routing(pagename):
 def jcr_committee_routing(pagename):
     if pagename == "fwelfare":
         member = JCR["welfare"]["fnb"]
+        role_str = 'fnb'
+        email = 'welfare'
     elif pagename == "mwelfare":
         member = JCR["welfare"]["mnb"]
+        role_str = 'mnb'
+        email = 'welfare'
     elif pagename in JCR:
         member = JCR[pagename]
+        role_str = pagename
+        email = pagename
     else:
         abort(404)
+
+    email+='@sjcjcr.com'
 
     if pagename == "president":
         role = JCR["president"]["role"]
@@ -116,7 +124,8 @@ def jcr_committee_routing(pagename):
     return render_template(
         "yourjcr/committee/committeeprofile.j2.html",
         crsid=johnian_access.principal,
-        role=role,
+        role_str=role_str,
+        email=email,
         name=name,
         member_crsid=member_crsid,
         bio=bio,
