@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages, current_app, abort
-from website.helper.auth import johnian_access, JCR, is_human, captchapublickey
+from website.helper.auth import johnian_access, JCR, is_human, captchapublickey, auth_checker
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
 from profanity_check import predict, predict_prob
@@ -11,7 +11,7 @@ yourjcr = Blueprint("yourjcr", __name__, url_prefix="/yourjcr")
 @yourjcr.route("/")
 @yourjcr.route("/home")
 def jcr_home():
-    return render_template("yourjcr/home.j2.html", JCR=JCR, crsid=johnian_access.principal, current_page="/yourjcr")
+    return render_template("yourjcr/home.j2.html", JCR=JCR, crsid=auth_checker(johnian_access), current_page="/yourjcr")
 
 
 @yourjcr.route("/minutes")
@@ -27,7 +27,7 @@ def minutes_page():
             print(e)
             return str(e)
     minutes_dict = get_minutes_dict()
-    return render_template("yourjcr/minutes.j2.html", crsid=johnian_access.principal,
+    return render_template("yourjcr/minutes.j2.html", crsid=auth_checker(johnian_access),
                            current_page="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
                            sorted=sorted)
 
@@ -66,17 +66,18 @@ def contact():
 
         rude_prob = predict_prob([senderName, senderEmail, subject, message])
         print(rude_prob)
+
         if max(rude_prob) > 0.5:
-            wrapped_message = "User with CRSid: {} tried to send: \n" + wrapped_message
+            wrapped_message = "User with CRSid: {} tried to send:\n\n".format(johnian_access.principal) + wrapped_message
             wrapped_message += "\n P(Offensive) = {}".format(rude_prob)
+            recipient = 'computing'
             print(wrapped_message)
-            JCR.email_member(subject, wrapped_message, 'computing', app_pwd)
-        else:
-            print(recipient)
-            JCR.email_member(subject, wrapped_message, recipient, app_pwd)
+
+        JCR.email_member(subject, wrapped_message, recipient, app_pwd)
+
         return redirect(url_for("yourjcr.contact"))
     else:
-        return render_template("yourjcr/contact.j2.html", crsid=johnian_access.principal,
+        return render_template("yourjcr/contact.j2.html", crsid=auth_checker(johnian_access),
                                 role_str=role_str, current_page="/yourjcr/contact", JCR=JCR, sitekey=sitekey)
 
 
@@ -91,7 +92,7 @@ def jcr_routing(pagename):
     try:
         return render_template(
             "yourjcr/{}.j2.html".format(pagename),
-            crsid=johnian_access.principal,
+            crsid=auth_checker(johnian_access),
             current_page="/yourjcr/{}".format(pagename),
             JCR=JCR
         )
@@ -133,7 +134,7 @@ def jcr_committee_routing(pagename):
 
     return render_template(
         "yourjcr/committee/committeeprofile.j2.html",
-        crsid=johnian_access.principal,
+        crsid=auth_checker(johnian_access),
         role_str=role_str,
         email=email,
         name=name,

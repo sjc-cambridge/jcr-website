@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, send_file, request, redirect, abort
-from website.helper.auth import johnian_access, JCR
+from website.helper.auth import johnian_access, JCR, auth_checker
 from website.content.minutes import get_minutes
 from website.content.documents import send_transparencydoc
 from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
@@ -52,7 +52,7 @@ def welfarepage():
     user_code = userhash(crsid)
     return render_template("/currentstudents/welfare.j2.html", JCR=JCR,
                            current_page="/currentstudents/welfare",
-                           crsid=johnian_access.principal,
+                           crsid=crsid,
                            user_code=user_code)
 
 
@@ -64,7 +64,7 @@ def current_routing(pagename):
             "/currentstudents/{}.j2.html".format(pagename),
             JCR=JCR,
             current_page="/currentstudents/{}".format(pagename),
-            crsid=johnian_access.principal
+            crsid=auth_checker(johnian_access)
         )
     except:
         abort(404)
