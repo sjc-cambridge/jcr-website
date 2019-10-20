@@ -35,7 +35,7 @@
    </h5>
    <div class="form-group">
     <select class="form-control" name="recipient">
-      {% for position in JCR %}
+      {% for position in JCR|sort %}
       {% if 'role' in JCR[position] %}
         <option value="{{position}}" {{ 'selected' if position == role_str }}>
          {{JCR[position]['role']}} - {{JCR[position]['name']}}
