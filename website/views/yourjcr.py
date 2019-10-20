@@ -65,13 +65,11 @@ def contact():
                               recipientName, senderName, message, senderEmail)
 
         rude_prob = predict_prob([senderName, senderEmail, subject, message])
-        print(rude_prob)
 
         if max(rude_prob) > 0.5:
             wrapped_message = "User with CRSid: {} tried to send:\n\n".format(johnian_access.principal) + wrapped_message
             wrapped_message += "\n P(Offensive) = {}".format(rude_prob)
             recipient = 'computing'
-            print(wrapped_message)
 
         JCR.email_member(subject, wrapped_message, recipient, app_pwd)
 
