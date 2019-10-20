@@ -1,5 +1,8 @@
 README.md
 setup.py
+config/__init__.py
+config/development.py
+config/production.py
 ibisclient/__init__.py
 ibisclient/connection.py
 ibisclient/dto.py
@@ -12,7 +15,6 @@ sjcjcr_website.egg-info/SOURCES.txt
 sjcjcr_website.egg-info/dependency_links.txt
 sjcjcr_website.egg-info/top_level.txt
 website/__init__.py
-website/config.py
 website/forms.py
 website/content/__init__.py
 website/content/committee.py
@@ -24,6 +26,7 @@ website/content/studentlife.py
 website/helper/__init__.py
 website/helper/auth.py
 website/helper/committee.py
+website/helper/email.py
 website/helper/johnians.py
 website/helper/timehelper.py
 website/helper/welfaresystem.py

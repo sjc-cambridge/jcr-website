@@ -1,0 +1,36 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center" id="pageheading">
+   Puffer Jackets
+  </h1>
+  <p class="text-center" id="pageparagraph" style="margin: 0px;">
+   St. John's Puffer jackets are back! If you'd like one simply fill in the form below!
+   If you have any questions, get in touch with Anusha (<b>aa2004</b>).
+  </p>
+ </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main>
+ <section class="text-left" style="padding: 20px;">
+  <a href="/currentstudents" id="backlink">
+   &lt; back to Current Students
+  </a>
+ </section>
+ <section class="d-lg-flex justify-content-lg-center" style="width: 100%;padding: 20px;">
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfHfQn7UvM4PGBBueDoW8_4tjOItR69LeQaPOQn0O0GzAD9MA/viewform?embedded=true" width="100%" frameborder="0" height="2000" marginheight="0" marginwidth="0">
+   Loading…
+   </iframe>
+ </section>
+</main>
+{% endblock %}

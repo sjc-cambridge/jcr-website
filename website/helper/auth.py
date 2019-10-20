@@ -26,7 +26,6 @@ from website.content.retrieve import retrieveJson
 
 # set of all johnian crsids
 johnian_crsids = retrieve_johnian_crsids()
-johnian_crsids.remove('jfc43')
 # This decorator restricts pages to Johnians
 # Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
