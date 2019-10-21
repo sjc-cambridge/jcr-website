@@ -26,15 +26,12 @@ from website.content.retrieve import retrieveJson
 
 # set of all johnian crsids
 johnian_crsids = retrieve_johnian_crsids()
-
 # This decorator restricts pages to Johnians
 # Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     max_life=60*60*24*3,
     require_principal=johnian_crsids
 )
-
-
 
 app_pwd = os.getenv("gmailkey")
 captchapublickey = os.getenv("captchapublickey")

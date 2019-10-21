@@ -1,4 +1,4 @@
-from ibisclient import createTestConnection, GroupMethods, PersonMethods
+from ibisclient import createConnection, GroupMethods, PersonMethods
 import pickle
 import os
 from pathlib import Path
@@ -39,13 +39,12 @@ for group in brian:
 
 script_dir = os.path.dirname(__file__)
 parent_dir = str(Path(script_dir).parent)
-print(parent_dir)
 johnian_dump = os.path.join(parent_dir, "website/helper/johnians.dump")
 
 def update_johnians_crsids():
     """Make request to UIS to retrieve all johnians
     Dump in johnians.dump file"""
-    conn = createTestConnection()
+    conn = createConnection()
 
     gm = GroupMethods(conn)
 
