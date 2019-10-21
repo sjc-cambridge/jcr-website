@@ -26,6 +26,7 @@ from website.content.retrieve import retrieveJson
 
 # set of all johnian crsids
 johnian_crsids = retrieve_johnian_crsids()
+
 # This decorator restricts pages to Johnians
 # Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
@@ -50,7 +51,7 @@ committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
 
 def auth_checker(access_decorator):
     """ If user is authorised under current scheme return crsid else None"""
-    if access_decorator.check_authorised(access_decorator.principal, access_decorator.ptags):
+    if access_decorator.principal in johnian_crsids:
         return access_decorator.principal
     else:
         return None
