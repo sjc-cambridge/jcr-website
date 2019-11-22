@@ -22,7 +22,7 @@
 
 {% block main %}
 <main>
-{% for position in e|sort %}
+{% for position in e|sort(reverse=True) %}
  <section class="text-center" style="padding: 15px;">
   <h1>
    {{position}}
