@@ -23,6 +23,7 @@ def return_transparencydoc():
 
 
 @currentstudents.route("/elections")
+@currentstudents.route("/elections/")
 @johnian_access
 def elections_page():
     user_crsid = johnian_access.principal
