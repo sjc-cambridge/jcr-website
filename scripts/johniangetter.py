@@ -1,4 +1,4 @@
-from ibisclient import createConnection, GroupMethods, PersonMethods
+from ibisclient import createConnection, GroupMethods, PersonMethods, InstitutionMethods
 import pickle
 import os
 from pathlib import Path
@@ -46,15 +46,15 @@ def update_johnians_crsids():
     Dump in johnians.dump file"""
     conn = createConnection()
 
-    gm = GroupMethods(conn)
+    im = InstitutionMethods(conn)
 
-    ug_johnians = gm.getMembers('johnsug-members')
-    pg_johnians = gm.getMembers('johnspg-members')
-    johnians = gm.getMembers('johns-members')
+    ug_johnians = [johnian.identifier.value for johnian in im.getMembers('JOHNSUG')]
+    pg_johnians = [johnian.identifier.value for johnian in im.getMembers('JOHNSPG')]
+    johnian_crsids = [johnian.identifier.value for johnian in im.getMembers('JOHNS')]
 
     ug_no = len(ug_johnians)
     pg_no = len(pg_johnians)
-    other_no = len(johnians)
+    other_no = len(johnian_crsids)
     total = ug_no+pg_no+other_no
     '''
     print('Undergraduates:')
@@ -69,14 +69,8 @@ def update_johnians_crsids():
     for johnian in johnians:
         print(johnian.identifier.value, johnian.registeredName)
         '''
-    johnians += ug_johnians
-    johnians += pg_johnians
-
-    johnian_crsids = []
-
-    for johnian in johnians:
-        crsid = johnian.identifier.value
-        johnian_crsids.append(crsid)
+    johnian_crsids += ug_johnians
+    johnian_crsids += pg_johnians
 
     with open(johnian_dump, "wb") as file:   # Pickling
         """We store the list so that we don't have to make a request to UIS every
