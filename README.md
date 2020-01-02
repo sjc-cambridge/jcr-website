@@ -26,7 +26,7 @@ The sub-directories are organised as follows:
 
 # Other directories:
 * `ibisclient`
-  * This is not our own but deals with querying Cambridge's lookup service to determine who is or is not a Johnian.
+  * This is not our own. It's an API that can query Cambridge's lookup service (lookup.cam.ac.uk) to determine who is or is not a Johnian. It can be wrong in cases like PhD students who might not show up as members of John's and might need manually adding!
 
 * `config`
   * See the folder's README for explanation.
