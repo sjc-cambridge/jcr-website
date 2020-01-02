@@ -2,7 +2,6 @@ from flask import render_template, request, redirect, Blueprint, url_for, flash,
 from website.helper.auth import johnian_access, JCR, is_human, captchapublickey, auth_checker
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.documents import send_constitution
-from profanity_check import predict, predict_prob
 import datetime
 
 yourjcr = Blueprint("yourjcr", __name__, url_prefix="/yourjcr")
@@ -61,15 +60,9 @@ def contact():
             recipientName = JCR[recipient]["name"]
         wrapped_message = "Hi {}!\n\nYou have been contacted by {} via the JCR website. Their message is as " \
                           "follows:\n\n\"{}\"\n\nIf you would like to reply, their email is {}.\n\nSouvent " \
-                          "Me Souvient".format(
+                          "Me Souvient\n\n Note: This inbox is not tracked so don't reply to it! Message "\
+                          "the computing officer if you have any queries!".format(
                               recipientName, senderName, message, senderEmail)
-
-        rude_prob = predict_prob([senderName, senderEmail, subject, message])
-
-        if max(rude_prob) > 0.5:
-            wrapped_message = "User with CRSid: {} tried to send:\n\n".format(johnian_access.principal) + wrapped_message
-            wrapped_message += "\n P(Offensive) = {}".format(rude_prob)
-            recipient = 'computing'
 
         JCR.email_member(subject, wrapped_message, recipient, app_pwd)
 
