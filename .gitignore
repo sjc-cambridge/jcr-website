@@ -4,6 +4,7 @@ instance/*
 .vscode/
 *.bsdesign
 *.bsdesign.tmp
+website/content/config/johnians.txt
 website/helper/config.txt
 website/helper/johnians.dump
 website/templates_temp

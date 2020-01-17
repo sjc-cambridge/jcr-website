@@ -3,6 +3,9 @@ import os
 from website.helper.auth import committee_access, JCR
 from website.content.minutes import get_minutes, save_minutes, get_minutes_dict, delete_minutes
 from website.helper.timehelper import get_year_range
+from website.content.documents import send_johnianlist
+#from scripts.johniangetter import retrieve_johnian_crsids
+from flask import jsonify
 import datetime
 
 committee = Blueprint('committee', __name__, url_prefix="/committee")
@@ -31,6 +34,11 @@ def committee_home():
 @committee_access
 def committee_welfare():
     return redirect("https://docs.google.com/spreadsheets/d/***REMOVED***/edit?usp=sharing")
+
+@committee.route("/get_johnians")
+@committee_access
+def committee_johnians():
+    return send_johnianlist()
 
 @committee.route("/agenda")
 @committee_access

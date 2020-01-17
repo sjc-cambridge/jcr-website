@@ -56,7 +56,7 @@ def auth_checker(access_decorator):
 def is_human(captcha_response, captchaprivatekey):
     """ Validating recaptcha response from google server.
         Returns True captcha test passed for the submitted form
-        else returns False.
+        else returns False. Used in contact us form.
     """
     secret = captchaprivatekey
     payload = {'response':captcha_response, 'secret':secret}
