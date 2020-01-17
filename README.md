@@ -60,7 +60,7 @@ For testing and development it is best to use a python virtual environment, to c
 
 ```
 $ python3 -m venv .venv
-$ source ./.venv/bin/activate
+$ source .venv/bin/activate
 ```
 
 This creates a `.venv` directory that contains a local virtual python environment. The second command activates the venv.
@@ -70,7 +70,7 @@ It will prepend `(.venv)` to the start of the line - you can quit out using ```$
 To install all required packages simply run the following command in the root directory.
 
 ```
-$ pip install -r requirements/txt
+$ pip install -r requirements.txt
 ```
 
 To make sure you can use absolute imports you must install the whole directory in editable state. This allows you to use absolute imports of the website and test directories. To do this run:
