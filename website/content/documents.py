@@ -26,6 +26,6 @@ def send_billsglossary():
     return send_file(filepath,  as_attachment=True, attachment_filename="Student Bills Glossary.pdf")
 
 def send_johnianlist():
-    update_johnian_crsids()
+    #update_johnian_crsids()
     filepath = os.path.join(curr_dir, "config/johnians.txt")
     return send_file(filepath, as_attachment=True, attachment_filename="JohnianList.txt")
