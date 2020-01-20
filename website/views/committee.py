@@ -50,7 +50,6 @@ def committee_agenda():
 minutes_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'],
                    JCR['secretary']['crsid'])
 
-print(minutes_editors)
 
 @committee.route("/upload_minutes", methods=['GET', 'POST'])
 @committee_access
