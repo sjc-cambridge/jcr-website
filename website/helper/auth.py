@@ -39,7 +39,7 @@ captchaprivatekey = os.getenv("captchaprivatekey")
 
 # JCR object to be exported
 JCR = Committee()
-
+print(JCR.committee_crsids)
 # Committee access decorator restricts access to just committee members
 committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     max_life=60*60*24*3,

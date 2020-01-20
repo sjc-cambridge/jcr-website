@@ -47,12 +47,17 @@ def committee_agenda():
                             current_page ="/committee/agenda", JCR=JCR)
 
 
+minutes_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'],
+                   JCR['secretary']['crsid'])
+
+print(minutes_editors)
+
 @committee.route("/upload_minutes", methods=['GET', 'POST'])
 @committee_access
 def upload_minutes():
     if request.method == 'POST':
-        if committee_access.principal not in (JCR['secretary']['crsid'], JCR['computing']['crsid']):
-            flash('Only the secretary or computing officer can add/remove minutes!')
+        if committee_access.principal not in minutes_editors:
+            flash('Only the Secretary/ Computing officer/ Presidents can add/remove minutes!')
             return redirect(request.url)
         # check if the post request has the file part
         if 'file' not in request.files:

@@ -14,14 +14,13 @@ class Committee(dict):
     def __init__(self):
         dict.__init__(self)
         self.committee_crsids = []
-
         committee_json = get_committee_json()
 
         for key, item in committee_json.items():
             self[key] = item
             for key2, item2 in item.items():
                 if key2 == 'crsid':
-                    self.committee_crsids.append(item2)
+                    if item2 != "None": self.committee_crsids.append(item2)
                 else:  # Sub-dict, e.g. welfare officers
                     if isinstance(item2, dict):
                         self.committee_crsids.append(item2['crsid'])
@@ -30,7 +29,7 @@ class Committee(dict):
 
     def email_member(self, subject, input_message, committee_role, app_pwd):
         """Email committee member"""
-        if (committee_role in self.keys()):
+        if committee_role in self.keys():
             email_address = committee_role + '@sjcjcr.com'
             email_someone(subject, input_message, email_address, app_pwd)
             return "Emailed {}".format(email_address)
