@@ -13,7 +13,7 @@ curr_dir = os.path.dirname(__file__)
 """
 
 # TODO: Do this in .env file
-ELECTIONS_ONGOING = True
+ELECTIONS_ONGOING = False
 
 if ELECTIONS_ONGOING:
     json_path = 'elections/candidates'
