@@ -48,7 +48,7 @@ def committee_agenda():
 
 
 minutes_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'],
-                   JCR['secretary']['crsid'], JCR['computing']['crsid'])
+                   JCR['secretary']['crsid']) #, JCR['computing']['crsid'])
 
 
 
@@ -58,24 +58,24 @@ def upload_minutes():
     if request.method == 'POST':
         if committee_access.principal not in minutes_editors:
             flash('Only the Secretary/ Computing officer/ Presidents can add/remove minutes!')
-            return redirect(request.url)
+            return upload_minutes()
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
-            return redirect(request.url)
+            return upload_minutes()
         file = request.files['file']
         if file.filename == '':
             flash('No selected file')
-            return redirect(request.url)
+            return upload_minutes()
         if file and allowed_file(file.filename):
             year = request.form.get("year")
             term = request.form.get("term")
             log_msg = save_minutes(term, year, file)
             flash(log_msg)
-            return redirect(request.url)
+            return upload_minutes()
         else:
             flash('Only PDF uploads are allowed!')
-            return redirect(request.url)
+            return upload_minutes()
     minutes_dict = get_minutes_dict()
     minutes_range = get_year_range()  # Range of minutes that can be added
     return render_template("committee/upload_minutes.j2.html", crsid=committee_access.principal,
