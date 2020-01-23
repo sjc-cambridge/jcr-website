@@ -29,7 +29,7 @@
         "role":"Academic Affairs and Careers",
         "name": "Tom Hasson",
         "crsid": "th574",
-        "bio":"Hey I’m Dani and I’m the Academic Affairs and Careers Officer. I’m a first year economics student, as well as being one of the college’s Pink Week reps and Marshall society president this year. I’m in charge of all matters related to academic life and careers. I’m looking forward to providing a friendly and supportive academic environment in St John’s and helping you discover the careers industries you’d like to work in!",
+        "bio":"Hi, I'm Tom, your Academic Affairs and Careers Officer. I'm a second year Bio-Natsci, as well as LBC for the college boatclub, I sit on the Punt Soc committee, and the Skills Advisory Group for guiding how aspects of courses and colleges should be set up to provide you with necessary skills for careers and life. I'm looking forward to providing a positive academic environment at St John's, as well as career guidance and opportunities. Please feel free to contact me if you have any concerns or requests for anything academic or to do with careers and I'll be happy to help.",
         "img": "Academic.jpg"
       },
     "access":
@@ -37,8 +37,16 @@
          "role":"Access",
          "name": "Imy Arden-Jones",
          "crsid": "iaa32",
-         "bio":"Hi! I’m Imy, a first year medic and your JCR Access Officer. I am also involved in the Cambridge WAMS (widening access to medical school) society and college rowing. My role is to continue the great work of Leia in ensuring John’s is accessible for everyone, regardless of background. This includes working on the CUSU shadowing scheme, the alternative prospectus and getting John’s students involved in access work. Check out the JCR Access webpage for more information. If you have any concerns or ideas, or want to get involved in any access programmes, please get in touch!",
+         "bio":"Hi! I’m Imy, a second year medic and your JCR Access Officer. I am also involved in the Cambridge WAMS (widening access to medical school) society and college rowing. My role is to continue the great work of Leia in ensuring John’s is accessible for everyone, regardless of background. This includes working on the CUSU shadowing scheme, the alternative prospectus and getting John’s students involved in access work. Check out the JCR Access webpage for more information. If you have any concerns or ideas, or want to get involved in any access programmes, please get in touch!",
          "img": "Access.jpg"
+      },
+      "bme":
+      {
+        "role":"BME",
+        "name": "Josh Adeyemi",
+        "crsid": "ja689",
+        "bio":"Hi there! I’m Josh, a first year HSPS student, footballer for John's 1st XI and now, your BME Officer for 2020. As BME Officer, I aim to ensure first and foremost that BME members of the college feel included and welcome. I plan to encourage more BME students to apply to John’s through various initiatives in and outside of college. With a particular focus on Black students, who are disproportionately underrepresented at John’s, I want to introduce a John’s BME Open Day and implement a ‘BAMEntor’ scheme which matches prospective applicants of BME heritage with Johnians to enable them to make the most informed application possible. Whilst I look forward to working with fellow JCR members, I also look forward to engaging with fellow students on how John’s can become the most diverse and accessible college at Cambridge.",
+        "img": "BME.jpg"
       },
     "computing":
       {
@@ -47,6 +55,14 @@
         "crsid": "jfc43",
         "bio":"Hey everyone! I’m Jonathan, your JCR Computing Officer for this year. I’m a fourth year studying engineering and also Vice-Captain of the college 1st XI football team. As computing officer, I manage the JCR website and help out with any of the technical aspects of the JCR. I also act as a connection between the student body and the IT department to ensure that improvements students feel are important are acted upon. If you have suggestions on how the JCR could use technology to better your experience in college I’d love to know; whether it be something on the website, the Facebook page, or anything in between. Please feel free to email me with any questions!",
         "img": "Computing.jpg"
+      },
+    "disabilities":
+      {
+         "role":"Disabilities",
+         "name": "Jenny Perratt",
+         "crsid": "jnp36",
+         "bio":"Hi, I’m Jenny - a first-year geographer and your Disabilities Officer for the year. I’m here to facilitate arrangements needed for students’ disabilities regarding any area of college life, be it pastoral care, academics, or general accessibility. This includes ease of mobility around the college, ensuring accessibility in the new buttery/dining room refurbishments, accommodating learning issues, and mental wellbeing. I’ll also raise awareness within the college for the issues faced by students with disabilities, and liaise with University-level bodies like the Disability Resource Centre and the SU’s Disabled Students Campaign to ensure students are supported outside the college too. Disabilities include mobility issues, health conditions, learning difficulties, and any other condition – and you don’t need to have a diagnosis to seek help from the resources available! Get in touch with me, in person or online, if you have any questions or concerns :)",
+         "img": "Disabilities.jpg"
       },
     "ents":
       {
@@ -61,7 +77,7 @@
          "role":"Ethical and Charitable Affairs",
          "name": "Emma Warburton",
          "crsid": "ejw96",
-         "bio":"Hi, I’m Emma, a second year medic and your Ethical and Charitable Affairs Officer for this year. I’m also the Treasurer of John’s MedSoc, as well as a volunteer and representative for several charities. It’s my responsibility to ensure that John’s, as both an institution and community, minimises its environmental impact and promotes the work of charitable organisations. If you’d like to organise an event for charity or have any relevant ideas to discuss, please feel free to getin touch via email.",
+         "bio":"Hi, I’m Emma, a second year medic and your Ethical and Charitable Affairs Officer for this year. I’m also the Treasurer of John’s MedSoc, as well as a volunteer and representative for several charities. It’s my responsibility to ensure that John’s, as both an institution and community, minimises its environmental impact and promotes the work of charitable organisations. If you’d like to organise an event for charity or have any relevant ideas to discuss, please feel free to get in touch via email.",
          "img": "Ethical.jpg"
       },
     "equalops":
@@ -80,6 +96,30 @@
         "bio":"Hi, I’m Hugo, a first year History and Politics student and your Facilities Officer for this year! I’m also involved in college mixed netball and college and university rugby. As Facilities Officer, I’m responsible for the Bar, Buttery, Laundry Room and Fitness Centre/Weights Room, and can introduce improvements to these college facilities. So if you have any suggestions or changes you’d like to see, please drop me an email, or use the online form available on the JCR website <a href = \"http://www.sjcjcr.com/currentstudents/feedback\">here</a> and that I will send round towards the end of each term!",
         "img": "Facilities.jpg"
       },
+   "internationals":
+      {
+         "role":"International Students",
+         "name": "Bhanu Balusu",
+         "crsid": "bb562",
+         "bio":"Hi, I'm Bhanu, a second year engineer, and I'm your international students' officer this year. In this role, I seek to represent and cater to the needs of non-British students. Attending university in a foreign country can bring multiple challenges with it, so feel free to contact me with any questions or concerns that you may have.",
+         "img": "Internationals.jpg"
+      },
+      "lgbtq":
+      {
+        "role":"LGBT+",
+        "name": "Laurence van Someren",
+        "crsid": "alv36",
+        "bio":"Hi there! I’m Laurence (he/him), a second-year mathmo and your LGBT+ Officer. My mission is to make sure everyone feels welcome and safe at John’s regardless of their sexuality or gender identity. But more than just that, I want to let LGBT+ people here feel part of a community – and to that end I’ll be putting on events throughout the year, ranging from casual tea & cake get-togethers to LGBT+ formal swaps with other colleges (and more!). If you identify as LGBT+, or are simply unsure, I’m always here for you if you have any questions or concerns, so don’t hesitate to get in touch!",
+        "img": "LGBTQ.jpg"
+      },
+    "mentalhealth":
+      {
+         "role":"Mental Health",
+         "name": "Becca Gutteridge",
+         "crsid": "rg603",
+         "bio":"Hey, I’m Becca, I’m a second year English student and I’m your ,ental Health Officer! In my spare time I’m VP of John’s Femsoc and Cox for LMBC. Im here to make sure the mental health needs of all students; from wellbeing, right through to mental health problems and long term conditions becoming a disability. Its my aim to make sure all those suffering with mental health issues feel supported, included and have the chance to talk and get the right help -there is lots of support available at John’s if you just ask! \n\nI will be working with College to improve mental health care and helping you to find out where you can get support. I also think it’s really important to continue the work of the last JCR to improve the mental wellbeing of everyone at John’s. \n\n“Wellbeing” -being healthy and happy- is so important in such a stress-fuelled environment as Cambridge and helps reduce the risk of/eases management of mental health issues. A big part of my role will also be to improve education and break down stigma surrounding mental health. It really is OK not to be ok, 1/4 of people experience mental health issues and to start feeling better and stop the stigma we need to talk about it!\n\nCome and chat to me any time you see me around college or get in touch via email or Facebook if you need support or have any queries or suggestions!",
+          "img": "MentalHealth.jpg"
+      },
     "publicity":
       {
         "role":"Publicity",
@@ -92,7 +132,7 @@
       {
         "role":"Secretary",
         "name": "None",
-        "crsid": "None",
+        "crsid": "mml54",
         "bio": "None",
         "img": "None"
       },
@@ -128,46 +168,6 @@
                 "bio":"Hi, I’m Izzy, your female welfare officer this year. I’m a second year studying Engineering and I play netball, frisbee and cox for the college. My role is to support all self-identifying women and non-binary students to keep College as happy and healthy as possible. As well as organising welfare events and providing anonymous sexual health supplies, I’m always available for a chat if you have any welfare concerns and I am able to point you towards someone in the college’s support team if you require further help.",
                 "img": "FWelfare.jpg"
                 }
-      },
-    "bme":
-      {
-        "role":"BME",
-        "name": "Josh Adeyemi",
-        "crsid": "ja689",
-        "bio":"Hi there! I’m Josh, a first year HSPS student, footballer for John's 1st XI and now, your BME Officer for 2020. As BME Officer, I aim to ensure first and foremost that BME members of the college feel included and welcome. I plan to encourage more BME students to apply to John’s through various initiatives in and outside of college. With a particular focus on Black students, who are disproportionately underrepresented at John’s, I want to introduce a John’s BME Open Day and implement a ‘BAMEntor’ scheme which matches prospective applicants of BME heritage with Johnians to enable them to make the most informed application possible. Whilst I look forward to working with fellow JCR members, I also look forward to engaging with fellow students on how John’s can become the most diverse and accessible college at Cambridge.",
-        "img": "BME.jpg"
-      },
-    "internationals":
-      {
-         "role":"International Students",
-         "name": "Bhanu Balusu",
-         "crsid": "bb562",
-         "bio":"Hi, I'm Bhanu, a second year engineer, and I'm your international students' officer this year. In this role, I seek to represent and cater to the needs of non-British students. Attending university in a foreign country can bring multiple challenges with it, so feel free to contact me with any questions or concerns that you may have.",
-         "img": "Internationals.jpg"
-      },
-    "lgbtq":
-      {
-        "role":"LGBT+",
-        "name": "Laurence van Someren",
-        "crsid": "alv36",
-        "bio":"Hi there! I’m Laurence (he/him), a first-year mathmo and your LGBT+ Officer. My mission is to make sure everyone feels welcome and safe at John’s regardless of their sexuality or gender identity. But more than just that, I want to let LGBT+ people here feel part of a community – and to that end I’ll be putting on events throughout the year, ranging from casual tea & cake get-togethers to LGBT+ formal swaps with other colleges (and more!). If you identify as LGBT+, or are simply unsure, I’m always here for you if you have any questions or concerns, so don’t hesitate to get in touch!",
-        "img": "LGBTQ.jpg"
-      },
-    "disabilities":
-      {
-         "role":"Disabilities",
-         "name": "Jenny Perratt",
-         "crsid": "jnp36",
-         "bio":"Hi, I’m Jenny - a first-year geographer and your Disabilities Officer for the year. I’m here to facilitate arrangements needed for students’ disabilities regarding any area of college life, be it pastoral care, academics, or general accessibility. This includes ease of mobility around the college, ensuring accessibility in the new buttery/dining room refurbishments, accommodating learning issues, and mental wellbeing. I’ll also raise awareness within the college for the issues faced by students with disabilities, and liaise with University-level bodies like the Disability Resource Centre and the SU’s Disabled Students Campaign to ensure students are supported outside the college too. Disabilities include mobility issues, health conditions, learning difficulties, and any other condition – and you don’t need to have a diagnosis to seek help from the resources available! Get in touch with me, in person or online, if you have any questions or concerns :)",
-         "img": "Disabilities.jpg"
-      },
-    "mentalhealth":
-      {
-         "role":"Mental Health",
-         "name": "Becca Gutteridge",
-         "crsid": "rg603",
-         "bio":"Hey there, I’m Becca! I’m a second-year English student and I’m your Mental Health Officer!\n\nI tutor creative writing, attend poetry circle and Femsoc. I want all students at John’s to feel welcome and included! I will be a friendly face around college, so feel free to come and speak to me in person or get in touch online with questions or suggestions – I look forward to hearing from you!",
-          "img": "MentalHealth.jpg"
       },
     "women":
       {
