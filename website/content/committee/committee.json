@@ -35,9 +35,9 @@
     "access":
       {
          "role":"Access",
-         "name": "Imy Arden-Jones",
-         "crsid": "iaa32",
-         "bio":"Hi! I’m Imy, a second year medic and your JCR Access Officer. I am also involved in the Cambridge WAMS (widening access to medical school) society and college rowing. My role is to continue the great work of Leia in ensuring John’s is accessible for everyone, regardless of background. This includes working on the CUSU shadowing scheme, the alternative prospectus and getting John’s students involved in access work. Check out the JCR Access webpage for more information. If you have any concerns or ideas, or want to get involved in any access programmes, please get in touch!",
+         "name": "Amy Bottomley",
+         "crsid": "at806",
+         "bio":"",
          "img": "Access.jpg"
       },
       "bme":
@@ -107,9 +107,9 @@
       "lgbtq":
       {
         "role":"LGBT+",
-        "name": "Laurence van Someren",
-        "crsid": "alv36",
-        "bio":"Hi there! I’m Laurence (he/him), a second-year mathmo and your LGBT+ Officer. My mission is to make sure everyone feels welcome and safe at John’s regardless of their sexuality or gender identity. But more than just that, I want to let LGBT+ people here feel part of a community – and to that end I’ll be putting on events throughout the year, ranging from casual tea & cake get-togethers to LGBT+ formal swaps with other colleges (and more!). If you identify as LGBT+, or are simply unsure, I’m always here for you if you have any questions or concerns, so don’t hesitate to get in touch!",
+        "name": "Emilie Walker",
+        "crsid": "ejw99",
+        "bio":" ",
         "img": "LGBTQ.jpg"
       },
     "mentalhealth":
@@ -131,10 +131,10 @@
     "secretary":
       {
         "role":"Secretary",
-        "name": "None",
-        "crsid": "mml54",
-        "bio": "None",
-        "img": "None"
+        "name": "Sophie McInerney",
+        "crsid": "sam264",
+        "bio": " ",
+        "img": "Secretary.jpg"
       },
     "services":
       {

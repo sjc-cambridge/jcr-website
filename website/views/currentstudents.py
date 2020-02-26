@@ -5,6 +5,7 @@ from website.content.documents import send_transparencydoc
 from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
+
 currentstudents = Blueprint('currentstudents', __name__, url_prefix='/currentstudents')
 
 
