@@ -76,11 +76,12 @@ def update_johnian_crsids():
 
     johnian_crsids, print_str = get_johnian_crsids()
 
-    with open(johnian_dump, "w") as file:   # Pickling
+    with open(johnian_dump, "w") as file:   # Writing crsids to file
         for crsid in johnian_crsids:
             file.write("%s\n" % crsid)
 
     print(print_str)
+
 
 def retrieve_johnian_crsids():
     """Returns the most up to date set of all johnian crsids.
@@ -91,6 +92,7 @@ def retrieve_johnian_crsids():
             johnian_crsids = file.readlines()
             johnian_crsids = [crsid.split("\n")[0] for crsid in johnian_crsids]
             return set(johnian_crsids)
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        print(e)
         update_johnian_crsids()
         return retrieve_johnian_crsids()

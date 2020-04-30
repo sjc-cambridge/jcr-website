@@ -24,13 +24,12 @@ from website.content.retrieve import retrieveJson
     decorator classes which restrict pages appropriately.
 """
 
-# set of all johnian crsids
-johnian_crsids = retrieve_johnian_crsids()
+
 # This decorator restricts pages to Johnians
 # Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     max_life=60*60*24*3,
-    require_principal=johnian_crsids
+    require_principal=retrieve_johnian_crsids()
 )
 
 app_pwd = os.getenv("gmailkey")
@@ -48,7 +47,7 @@ committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
 
 def auth_checker(access_decorator):
     """ If user is authorised under current scheme return crsid else None"""
-    if access_decorator.principal in johnian_crsids:
+    if access_decorator.principal in retrieve_johnian_crsids():
         return access_decorator.principal
     else:
         return None

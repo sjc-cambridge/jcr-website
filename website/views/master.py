@@ -4,10 +4,12 @@ from website.content.documents import send_helpdoc
 
 main = Blueprint('main', __name__)
 
+
 @main.route("/")
 @main.route("/home")
 def home():
     return render_template("index.j2.html", crsid=auth_checker(johnian_access), JCR=JCR, current_page="/")
+
 
 @main.route("/login")
 @johnian_access
@@ -17,6 +19,7 @@ def login_route():
         return redirect(return_url)
     else:
         return redirect(url_for("main.home"))
+
 
 @main.route("/logout")
 def logout_route():
@@ -30,18 +33,23 @@ def logout_route():
     else:
         return redirect(url_for("main.home"))
 
+
 @main.route("/gettinghelp")
 def getting_help():
     return send_helpdoc()
 
+
 def access_denied(e):
     return render_template('401.j2.html', crsid=auth_checker(johnian_access), JCR=JCR), 401
+
 
 def forbidden(e):
     return render_template('403.j2.html', crsid=auth_checker(johnian_access), JCR=JCR), 403
 
+
 def page_not_found(e):
     return render_template('404.j2.html', crsid=auth_checker(johnian_access), JCR=JCR), 404
+
 
 def server_overload(e):
     """Inform computing officer of server error"""
