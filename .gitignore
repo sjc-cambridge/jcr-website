@@ -10,6 +10,7 @@ website/helper/johnians.dump
 website/templates_temp
 website/content/keys.json
 .venv/
-
+env_main/
+test/
 .pytest_cache/
 .idea/
