@@ -1,107 +1,98 @@
 {
   "president":
     {
-      "role":"Co-Presidents",
-      "name":"Tim d'Aboville & Candela Louzao Carabel",
-      "co1":
-          {
-            "name": "Tim d'Aboville",
-            "crsid": "tgmd2"
-          },
-      "co2":
-          {
-            "name": "Candela Louzao Carabel",
-            "crsid": "cl755"
-          },
-        "bio":"Hey! We’re Tim & Candela your JCR Co-Presidents for 2020. We’re second years studying HisPol and Engineering. As Co-Presidents we lead the JCR Committee and act as the key link between students and College. We sit on committees such as CUSU Council and College Council to ensure that your opinions are conveyed to the right people to improve your experience both at uni and at John’s. Alongside our committee we’re working to make John’s the most exciting, most supportive and most enjoyable it can be for you, so if you have any suggestions or issues please feel free to get in touch with us!",
-        "img":"President.jpg"
+      "role":"President",
+      "name":"Paula Espada Blanco",
+      "crsid": "pe284",
+      "bio": "Hello! I’m Paula, a second-year HSPSer from Spain, and your JCR President for 2021. My role involves representing undergraduate Johnians and acting as a link between you and college. I sit on various committees, send many emails and do lots of admin... But most importantly, I oversee and support this fantastic Committee in every event or project we organise throughout the year. I love St John's and the Johnian community. Living here has been an incredible experience, and I want to help others feel as welcome and happy as I feel in college. I’ll do my best to make the JCR as supportive and representative as possible, so please feel free to get in touch with any questions, ideas or suggestions. I’ll be happy to help :)",
+      "img":"President.jpg"
     },
     "vicepresident":
       {
         "role":"Vice President",
-        "name": "Anna Stevenson",
-        "crsid": "ars59",
-        "bio": "Hi, I’m Anna, a second year medic and your Vice-President this year! I’m also the Medsoc secretary, SSSK treasurer and a student rep on the Climate Change Committee. As VP, I chair Open meetings, am responsible for the constitution and help out the presidents more generally. My other main job is to organise Freshers week so please get in touch if you have any suggestions or questions about this or anything else.",
+        "name": "William Tan",
+        "crsid": "wwt2",
+        "bio": "Hi, I’m Will, a 2nd year medic and your 2021 Vice-President! As VP, I chair undergraduate Open Meetings, am responsible for the constitution and help out the president generally. I aim to uphold the cracker that is college life whilst ensuring the community is as inclusive and welcoming to everyone. My other big job is to organise Freshers’ Week so please get in touch if you have any suggestions there, or just drop me a message with anything to take to college at all at wwwt2!",
         "img": "VicePresident.jpg"
       },
     "academic":
       {
         "role":"Academic Affairs and Careers",
-        "name": "Tom Hasson",
-        "crsid": "th574",
-        "bio":"Hi, I'm Tom, your Academic Affairs and Careers Officer. I'm a second year Bio-Natsci, as well as LBC for the college boatclub, I sit on the Punt Soc committee, and the Skills Advisory Group for guiding how aspects of courses and colleges should be set up to provide you with necessary skills for careers and life. I'm looking forward to providing a positive academic environment at St John's, as well as career guidance and opportunities. Please feel free to contact me if you have any concerns or requests for anything academic or to do with careers and I'll be happy to help.",
+        "name": "James Perman",
+        "crsid": "ajp255",
+        "bio":"Hey, I’m James and I’m a first studying Biological Natural Sciences. I’m involved with college rugby and university volleyball and I’ll be your Academic Affairs and Careers Officer this year. I hope to create an academic environment where the students feel comfortable and supported in both their degree and careers beyond university. If you have any questions, reach out and I’ll be happy to try and help.",
         "img": "Academic.jpg"
       },
     "access":
       {
          "role":"Access",
-         "name": "Amy Bottomley",
-         "crsid": "at806",
-         "bio":"Hey everyone! I'm Amy (she/her), your Access Officer for this year. I'm in my third year of English, so I've been here for a while and have tried all sorts of things before settling on what I care about most… Access! As well as being your JCR Access Officer, I'm also on the CSU Class Act committee and act as your college Class Act representative. I've got some really exciting plans for the next year that I can't wait for you all to see. Check out the <a href=\"https://sjcjcr.com/yourjcr/access\">Access pages</a> for more information on how to get involved and join our <a href=\"https://www.facebook.com/groups/1997072020542977/\">John's Access group</a> on Facebook to keep up to date with everything that is going on! I'm always keen to hear any ideas you might have, so feel free to get in touch about anything and everything Access and Class Act related!!",
+         "name": "Felix Haynes",
+         "crsid": "fdjh2",
+         "bio":"Hi! I’m Felix, a second year studying HSPS, and your Access Officer this year! Part of my role involves working with the Admissions Office, Admissions Tutor, and the JCR to ensure John’s is accessible to prospective students from a range of backgrounds, and sharing opportunities for current students to get involved (you can find out more about these in the [John’s Access] group!). The other part of my role focuses on post-admission access, providing advice and resources to current students, and ensuring college remains a place where everyone is supported. Outside of the JCR, I help to run access initiatives for the wider university, and am involved with various fundraising initiatives in Cambridge. Please do get in touch if you have any concerns, or are interested in getting involved with access at John’s!",
          "img": "Access.jpg"
       },
       "bme":
       {
         "role":"BME",
-        "name": "Josh Adeyemi",
-        "crsid": "ja689",
-        "bio":"Hi there! I’m Josh, a first year HSPS student, footballer for John's 1st XI and now, your BME Officer for 2020. As BME Officer, I aim to ensure first and foremost that BME members of the college feel included and welcome. I plan to encourage more BME students to apply to John’s through various initiatives in and outside of college. With a particular focus on Black students, who are disproportionately underrepresented at John’s, I want to introduce a John’s BME Open Day and implement a ‘BAMEntor’ scheme which matches prospective applicants of BME heritage with Johnians to enable them to make the most informed application possible. Whilst I look forward to working with fellow JCR members, I also look forward to engaging with fellow students on how John’s can become the most diverse and accessible college at Cambridge.",
+        "name": "Maryam Khan",
+        "crsid": "mzk22",
+        "bio":"Hi! I'm Maryam, I'm a first-year HSPS student and your Ethnic Minorities Officer for this year! I want to make sure all ethnic minority Johnians feel safe and happy in college. I also want to ensure our culture and heritage is celebrated through different events within the college. Along with this, I want to focus on access and support for ethnic minority students who want to apply to Johns. Please feel free to contact me if you have any questions, concerns, or suggestions!",
         "img": "BME.jpg"
       },
     "computing":
       {
         "role":"Computing",
-        "name": "Koji Shukawa",
-        "crsid": "ks925",
-        "bio":"Hey everyone! I’m Koji, your JCR Computing Officer for this year. I’m a first year studying Physical Natural Sciences. As computing officer, I manage the JCR website and help out with any of the technical aspects of the JCR. I also act as a connection between the student body and the IT department to ensure that improvements students feel are important are acted upon. If you have suggestions on how the JCR could use technology to better your experience in college I’d love to know; whether it be something on the website, the Facebook page, or anything in between. Please feel free to email me with any questions!",
+        "name": "Jan Derlatka",
+        "crsid": "jjd61",
+        "bio":"Hi, I’m Jan, a first year Engineering student and your Computing Officer for this year! I'm involved in University ski racing, train triathlon and before coming to Cambridge I had studied Computer Science for a year. As Computing Officer I am responsible for technical aspects of the JCR operation, right now I am developing an online ticketing system for JCR events. If you have any ideas on what else we could create I will be more than happy to hear from you! I also act as a connection between the student body and the IT department, ensuring that important improvements desired by students, are acted upon.",
         "img": "Computing.jpg"
       },
     "disabilities":
       {
          "role":"Disabilities",
-         "name": "Jenny Perratt",
-         "crsid": "jnp36",
-         "bio":"Hi, I’m Jenny - a first-year geographer and your Disabilities Officer for the year. I’m here to facilitate arrangements needed for students’ disabilities regarding any area of college life, be it pastoral care, academics, or general accessibility. This includes ease of mobility around the college, ensuring accessibility in the new buttery/dining room refurbishments, accommodating learning issues, and mental wellbeing. I’ll also raise awareness within the college for the issues faced by students with disabilities, and liaise with University-level bodies like the Disability Resource Centre and the SU’s Disabled Students Campaign to ensure students are supported outside the college too. Disabilities include mobility issues, health conditions, learning difficulties, and any other condition – and you don’t need to have a diagnosis to seek help from the resources available! Get in touch with me, in person or online, if you have any questions or concerns :)",
+         "name": "Pollyanna Hopkins",
+         "crsid": "pgh29",
+         "bio":"Hi I am Pollyanna Hopkins and I am your Disabilities Officer this year. I am passionate about making the transition to university life as smooth as possible for all disabled students. I am here to facilitate arrangements needed for students’ disabilities regarding any area of college life. This includes ease of mobility around the college, ensuring accessibility in the new buttery/dining room refurbishments, accommodating learning issues, and mental wellbeing. I’ll also liaise with University-level bodies like the Disability Resource Centre and the SU’s Disabled Students Campaign to ensure students are supported outside the college too. I am particularly keen to assist students with disabilities in securing suitable accommodation outside of the room ballot, as well as the necessary exam arrangements in Lent and Easter terms. Please don't hesitate to get in touch with any queries or issues, I look forward to working with you all this year!",
          "img": "Disabilities.jpg"
       },
     "ents":
       {
         "role":"Ents",
-        "name": "Parth Kotwal",
-        "crsid": "pak38",
-        "bio":"Hey! I'm Parth and I'm your Ents officer for 2020. I'm a second year Engineer and I'm a memberof the St John's rugby team. My job is to organise the college Ents, live music evenings, and other social events within St John's and to ensure that John's remains one of the most fun and social colleges within Cambridge! We usually hold at least three Ents a term in Michaelmas and Lent, along with the rather special June Event as part of our post-exams celebrations in the Easter Term. Make sure to follow the Ents Instagram for the latest updates: @stjohnsents",
+        "name": "Emily Cavannah",
+        "crsid": "ec716",
+        "bio":"Hi, I’m Emily, I’m the Ents officer on this year’s JCR and I’m a second year Engling. My role is to host and organise the social events in term. From theming parities to ordering drinks, I’m pretty much the manager for everyone’s social life here at John’s so please do not hesitate to get in touch if you have any questions, comments or queries for me!",
         "img": "Ents.jpg"
       },
     "ethical":
       {
          "role":"Ethical and Charitable Affairs",
-         "name": "Emma Warburton",
-         "crsid": "ejw96",
-         "bio":"Hi, I’m Emma, a second year medic and your Ethical and Charitable Affairs Officer for this year. I’m also the Treasurer of John’s MedSoc, as well as a volunteer and representative for several charities. It’s my responsibility to ensure that John’s, as both an institution and community, minimises its environmental impact and promotes the work of charitable organisations. If you’d like to organise an event for charity or have any relevant ideas to discuss, please feel free to get in touch via email.",
+         "name": "Annabel Poon",
+         "crsid": "ayxp2",
+         "bio":"Hi, I’m Annabel and I’m your Ethical & Charitable Affairs Officer for this year! I’m a second year studying Medicine. I also sit on the committees for SJC PuntSoc and SJC Medsoc, and am involved in Uni hockey. My role involves encouraging environmentally sustainable practices and promoting the work of charitable organisations among the undergraduate community here at John’s. If you have any suggestions for events or ideas that you want to discuss, please feel free to contact me!",
          "img": "Ethical.jpg"
       },
     "equalops":
       {
          "role":"Equal Opportunities",
-         "name": "William Tan",
-         "crsid": "wwwt2",
-         "bio":"Hi! I’m Will (he/him), a first-year medic rowing with the college’s Lady Margaret Boat Club and your 2020 Equal Opportunities Officer. I’m excited to continue the work of last year’s Equal Opportunities Officer ensuring St. John’s is an equal, inclusive and friendly community, that is proud to celebrate the diversity of its student body. This could not be achieved without the work of the BAME, LGBT+, International, Women’s, Mental Health and Disabilities officers and the rest of the JCR committee and I’m greatly looking forward to working closely together with them and you to represent and speak for every member of the college family. Ultimately, we would like you to be rest assured that we will work hard to ensure that everyone really feels like St. John’s truly is a home away from home. However, for this to be achieved, I'd like to welcome anyone with any concerns or new and interesting ideas to get in touch with me either by email (wwwt2), or feel free to have a chat if you see me around!",
+         "name": "Ariana Zarrabian",
+         "crsid": "ahz23",
+         "bio":"Hi, I’m Ariana, a second year History and Politics student and your Equal Opportunities Officer for this year! I’m also Co-Social Sec for women’s hockey in college and Treasurer for the SJC History Society. As the Equal Opps Officer, I am responsible for everyone to feel that John’s is a welcoming, non-discriminatory environment with equal access to matters ranging from accommodation to placement schemes. Working closely with the Liberation Officers and the Access Officer, I am here to ensure concerns are addressed as well as increase and celebrate diversity at John’s. So, if you have any suggestions or concerns, please email me or drop me a message!",
          "img": "EqualOps.jpg"
       },
     "facilities":
       {
         "role":"Facilities",
-        "name": "Hugo Lloyd Williams",
-        "crsid": "hgl28",
-        "bio":"Hi, I’m Hugo, a first year History and Politics student and your Facilities Officer for this year! I’m also involved in college mixed netball and college and university rugby. As Facilities Officer, I’m responsible for the Bar, Buttery, Laundry Room and Fitness Centre/Weights Room, and can introduce improvements to these college facilities. So if you have any suggestions or changes you’d like to see, please drop me an email, or use the online form available on the JCR website <a href = \"http://www.sjcjcr.com/currentstudents/feedback\">here</a> and that I will send round towards the end of each term!",
+        "name": "Ed Smith",
+        "crsid": "bsf24",
+        "bio":"Yello, I’m Ed, I’m a first year Philosophy student and honoured to be your Facilities Officer this year. Catch me playing rugby for the Redboys and hockey for the Mogs. My job encompasses the Bar, Buttery, Fitness Centre, Weights Room and Laundry Room, and I hope to use my influence to get these back up and running in all their glory as soon as possible. If you have any general queries or ideas on how to improve any of these facilities, please feel free to either swing us an email, use the form on the JCR website found here, or drop an angry anonymous letter in my pidge.",
         "img": "Facilities.jpg"
       },
    "internationals":
       {
          "role":"International Students",
-         "name": "Bhanu Balusu",
-         "crsid": "bb562",
-         "bio":"Hi, I'm Bhanu, a second year engineer, and I'm your international students' officer this year. In this role, I seek to represent and cater to the needs of non-British students. Attending university in a foreign country can bring multiple challenges with it, so feel free to contact me with any questions or concerns that you may have.",
+         "name": "Anna-Maria Papameletiou",
+         "crsid": "amp215",
+         "bio": "Hey! My name is Anna-Maria, and I’m a Second-Year Biological Natural Sciences student from Greece. In my free time, I enjoy playing hockey for College. I’m very excited to be your International Students’ Officer this year. I’m here to help out international students by representing them in the JCR committee and providing them with support and information. I’ll also be organising International Freshers’ Week in September. I know that going to University in a different country can come with various challenges, so if you have any questions for me or want a chat, feel free to get in touch!",
          "img": "Internationals.jpg"
       },
       "lgbtq":
@@ -115,17 +106,17 @@
     "mentalhealth":
       {
          "role":"Mental Health",
-         "name": "Becca Gutteridge",
-         "crsid": "rg603",
-         "bio":"Hey, I’m Becca, I’m a second year English student and I’m your ,ental Health Officer! In my spare time I’m VP of John’s Femsoc and Cox for LMBC. Im here to make sure the mental health needs of all students; from wellbeing, right through to mental health problems and long term conditions becoming a disability. Its my aim to make sure all those suffering with mental health issues feel supported, included and have the chance to talk and get the right help -there is lots of support available at John’s if you just ask! \n\nI will be working with College to improve mental health care and helping you to find out where you can get support. I also think it’s really important to continue the work of the last JCR to improve the mental wellbeing of everyone at John’s. \n\n“Wellbeing” -being healthy and happy- is so important in such a stress-fuelled environment as Cambridge and helps reduce the risk of/eases management of mental health issues. A big part of my role will also be to improve education and break down stigma surrounding mental health. It really is OK not to be ok, 1/4 of people experience mental health issues and to start feeling better and stop the stigma we need to talk about it!\n\nCome and chat to me any time you see me around college or get in touch via email or Facebook if you need support or have any queries or suggestions!",
+         "name": "Bilal Qureshi",
+         "crsid": "bwq20",
+         "bio":"Hi, I’m Bilal – a second-year medic, member of the College Hockey team and your Mental Health Officer for this year. Primarily, my role is to support the mental health of students across college. Cambridge can be a very taxing place at times, so I want to make it clear that it is normal to not feel 100%, and hopefully I can make it easier for everyone to access support. This will involve working with our welfare officers, Hugo and Chani, with events and drop-ins. As well as, regularly communicating the concerns of the student body to college and directing people to avenues of support. Importantly, please feel free to also contact me directly for support, through social media or if you see me in-person. I’m always happy to stop and chat even when I’m hurrying through 2nd court so please introduce yourself! The same applies if you have any suggestions or want me to raise any issues with college!",
           "img": "MentalHealth.jpg"
       },
     "publicity":
       {
         "role":"Publicity",
-        "name": "Paula Espada",
-        "crsid": "pe284",
-        "bio":"Hello! My name is Paula and I’m a Spanish fresher studying HSPS. I’m also very excited to be your Publicity Officer this year. My role involves managing JCR presence on social media, sending the weekly bulletin and arranging poster displays. Everything to keep you involved and up-to-date! I’m also in charge of the ‘Johnian of the Week’ campaign and promoting all the amazing things Johnians are doing. If there’s anything you’d like to see advertised on social media or the weekly bulletin, feel free to drop me an email. I’ll be happy to hear your suggestions and ideas, too. See you around!",
+        "name": "Elizabeth White",
+        "crsid": "ehw33",
+        "bio":"Hi! I’m Liz and I’m a first-year English student. I’m so lucky that, as Publicity Officer, I get to make contact with pretty much every undergraduate in St John's. My role involves keeping the JCR social media pages updated, active and engaging for people. I also send out the Weekly Bulletin every Thursday so students can stay up to date with what’s going on around college and what the JCR have been up to. I love seeing all the exciting campaigns and projects students are working on, so please do drop me an email if there’s anything you want to see in the bulletin or on the socials. I’d also be grateful for any feedback or suggestions; my role is to communicate with you, and as long as I’m doing that well, I’m happy!",
         "img": "Publicity.jpg"
       },
     "secretary":
@@ -133,48 +124,48 @@
         "role":"Secretary",
         "name": "Sophie McInerney",
         "crsid": "sam264",
-        "bio": " ",
+        "bio": "Hi I’m Sophie, your JCR secretary. As a third year mathmo I like to give myself a break from numbers and write the agenda and minutes of the JCR meetings, so you lovely people can keep track of what we’ve been up to. (Meeting minutes are kept on the JCR website). I also represent our JCR at the Cambridge Students Union meetings, so act as a bridge between university and college student initiatives. If you have questions about these, or want us to discuss something at a JCR meeting please drop me an email or stop me around college. As well as spending time helping the JCR provide top quality events, I’ve a become a lockdown running addict and previously involved in rowing, netball and the Adams society!",
         "img": "Secretary.jpg"
       },
     "services":
       {
          "role":"Sports, Services and Societies",
-         "name": "Zac Bischoff",
-         "crsid": "zab25",
-         "bio":"Hi, I’m Zac, this year’s Sports, Services and Societies Officer. I’m a second year Engineer and I play rugby for the Uni 2nds and Redboys and I’ve also represented Johns at volleyball and swimming. I’m the president of the Parson’s Society at Johns and co-captain of the RBBC. My role is to look after the JCR and to support all the college societies and sports teams with anything they might need, so please get in touch if you have any questions, comments or queries for me!",
+         "name": "Rayyaan Hector",
+         "crsid": "riawh2",
+         "bio":"I’m Rayyaan Hector, your JCR Sports, Services and Societies Officer for 2021. I am a first year Geographer at John’s, playing American Football with the Cambridge University Pythons, rugby with the Redboys and football with the Poulets (albeit the 2nd XI). I’ve also enjoyed playing Ultimate Frisbee as a new sport to get to grips with whilst at John’s. As well as all that, I see the great value in societies and their importance, once chairing and founding one myself but more than happy at the moment just to be a member of some. Ultimately, it is my role to help and support all college societies and sports teams as well as to ensure the Junior Combination Room is looked after and equipped. Feel free to drop an email, text or have a chat if you’ve got any questions about setting up a society/sports club, wanting to join one or if you need anything as a society/sports club. More than willing to help.",
          "img": "Services.jpg"
       },
     "treasurer":
       {
          "role":"Treasurer",
-         "name": "Martin Limback-Stokin",
-         "crsid": "mml54",
-         "bio":"Hi,  I’m Martin, a second year medic and your JCR treasurer for this year.  I’m also involved with college sport and play ice hockey for the University. My role is managing the JCR bank account and ensuring the JCR runs smoothly from a financial standpoint. If any of you have any suggestions or queries about the budget, or more generally about the JCR, feel free to find me around college or drop me an email.",
+         "name": "Ben Foster",
+         "crsid": "bsf24",
+         "bio": "Hi, I'm Ben, a first year engineer and your JCR Treasurer for this year. I play hockey for the Uni 2nds and for the St John's Mogs. I manage the budgets of officers in the committee but most importantly, my role is to keep the books for the JCR's finances so that we can run smoothly. If you have any suggestions or queries about the budget or spending, then feel free to find me around college or drop me email.",
          "img": "Treasurer.jpg"
       },
     "welfare":
       {
         "mnb": {
                 "role":"Male and Non-Binary Welfare",
-                "name": "Mark Pepper",
-                "crsid": "mlp51",
-                "bio": "Hi, I’m Mark. I’m a second year studying Maths and I’m part of the Adams society, Cambridge University Hare and Hounds and play college football from time to time. My regular work will involve organising welfare events, running a weekly drop in session and distributing free anonymous sexual health supplies. Please contact me if anything is on your mind, whether you have any worries or issues, an idea for a new welfare event or you just need a chat and a coffee.",
+                "name": "Hugo Lloyd Williams",
+                "crsid": "hgl28",
+                "bio": "Hey guys, I’m Hugo (he/him) and I’m your Male and Non-Binary Welfare Officer. I’m a second-year History and Politics Student, as well as being involved with college mixed netball and both university and college rugby. I’ll be working with Bilal and Chani as the Mental Health and Female Welfare Officers respectively to organise welfare events, both in person and virtually, and run weekly drop-in sessions. Please email me or shoot me a message on social media if anything is on your mind, whether you have any worries or issues, ideas for student welfare or just want a relaxed chat!",
                 "img": "MWelfare.jpg"
                 },
         "fnb": {
                 "role":"Female and Non-Binary Welfare",
-                "name": "Isobel McIntyre",
-                "crsid": "icm29",
-                "bio":"Hi, I’m Izzy, your female welfare officer this year. I’m a second year studying Engineering and I play netball, frisbee and cox for the college. My role is to support all self-identifying women and non-binary students to keep College as happy and healthy as possible. As well as organising welfare events and providing anonymous sexual health supplies, I’m always available for a chat if you have any welfare concerns and I am able to point you towards someone in the college’s support team if you require further help.",
+                "name": "Chani Merrel",
+                "crsid": "csm63",
+                "bio":"Hi I'm Chani, and I'm your female welfare officer this year! I'm a second year studying Education, English, and Drama and I love music and all things theatre. My role is to represent and support female and non-binary students at St. Johns. With Hugo, the other Welfare officer, I organise regular welfare events, online and (covid-permitting) in person, to try and keep college as happy and healthy as possible. We also provide free anonymous sexual health supplies and sanitary products for college. I'm always keen for any suggestions on how we can improve college life and am always up for a chat about anything at all.",
                 "img": "FWelfare.jpg"
                 }
       },
     "women":
       {
         "role":"Women",
-        "name": "Eimear Heath",
-        "crsid": "erch2",
-        "bio":"Hi, I’m Eimear. I’m a second year studying Biological Natural Sciences. As well as being Treasurer of St John’s Feminist Society, I am actively involved in the Cambridge theatre scene. As Women’s Officer I will advocate for women’s rights within college with the overall purpose of cultivating an environment in St John’s where everyone can feel safe, happy and healthy. I aim to raise awareness of Feminist issues, such as sexual consent, increasing the proportion of women in leadership roles and challenging toxic masculinity. In particular, I am excited to ‘put the fun in Feminism’ through ‘Cake that glass ceiling’ casual chat events and more formal events in collaboration with St John’s Feminist Society. If you have any questions or want a chat, please do not hesitate to get in touch!",
+        "name": "Naomi Jennings",
+        "crsid": "nj335",
+        "bio":"Hey, I’m Naomi and I’m a fresher studying Classics. As well as being reserve on the University Challenge team and trying (within current limitations) to take part in College activities like Rowing, I’m really happy to be your Gender Equality officer for this year. My biggest aim is to continue the cultivation of our College into a welcoming and supportive environment for people of all gender identification through tackling any gender issues that arise. I will be managing the ‘Consent Johns’ campaign and hope to keep a high standard of education and conversation around matters of consent (as well as producing much loved stash). I also hope to increase services for women in college and work with the St John’s Feminist Society on varied events. I’m always free for a chat and open to any suggestions, queries or complaints so please get in touch!",
         "img": "Women.jpg"
       }
 }

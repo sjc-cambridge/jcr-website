@@ -47,7 +47,7 @@ def committee_agenda():
                             current_page ="/committee/agenda", JCR=JCR)
 
 
-minutes_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'],
+minutes_editors = (JCR['president']['crsid'],
                    JCR['secretary']['crsid'], JCR['computing']['crsid'])
 
 
