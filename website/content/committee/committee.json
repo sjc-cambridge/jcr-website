@@ -1,5 +1,6 @@
 {
-    "president":
+
+  "president":
     {
       "role":"President",
       "name":"Paula Espada Blanco",
@@ -60,7 +61,7 @@
         "role":"Ents",
         "name": "Emily Cavannah",
         "crsid": "ec716",
-        "bio":"Hi, I'm Emily, I'm the Ents officer on this year's JCR and I'm a second year Engling. My role is to host and organise the social events in term. From theming parities to ordering drinks, I'm pretty much the manager for everyone's social life here at John's so please do not hesitate to get in touch if you have any questions, comments or queries for me!",
+        "bio":"Hi, I'm Emily, I'm the Ents officer on this year's JCR and I'm a second year Engling. My role is to host and organise the social events in term. From theming parities to ordering drinks, I'm pretty much the manager for everyones' social life here at John's so please do not hesitate to get in touch if you have any questions, comments or queries for me!",
         "img": "Ents.jpg"
       },
     "ethical":
@@ -108,7 +109,7 @@
          "role":"Mental Health",
          "name": "Bilal Qureshi",
          "crsid": "bwq20",
-         "bio":"Hi, I'm Bilal – a second-year medic, member of the College Hockey team and your Mental Health Officer for this year. Primarily, my role is to support the mental health of students across college. Cambridge can be a very taxing place at times, so I want to make it clear that it is normal to not feel 100%, and hopefully I can make it easier for everyone to access support. This will involve working with our welfare officers, Hugo and Chani, with events and drop-ins. As well as, regularly communicating the concerns of the student body to college and directing people to avenues of support. Importantly, please feel free to also contact me directly for support, through social media or if you see me in-person. I'm always happy to stop and chat even when I'm hurrying through 2nd court so please introduce yourself! The same applies if you have any suggestions or want me to raise any issues with college!",
+         "bio":"Hi, I'm Bilal a second-year medic, member of the College Hockey team and your Mental Health Officer for this year. Primarily, my role is to support the mental health of students across college. Cambridge can be a very taxing place at times, so I want to make it clear that it is normal to not feel 100%, and hopefully I can make it easier for everyone to access support. This will involve working with our welfare officers, Hugo and Chani, with events and drop-ins. As well as, regularly communicating the concerns of the student body to college and directing people to avenues of support. Importantly, please feel free to also contact me directly for support, through social media or if you see me in-person. I'm always happy to stop and chat even when I'm hurrying through 2nd court so please introduce yourself! The same applies if you have any suggestions or want me to raise any issues with college!",
           "img": "MentalHealth.jpg"
       },
     "publicity":
@@ -165,7 +166,7 @@
         "role":"Women",
         "name": "Naomi Jennings",
         "crsid": "nj335",
-        "bio":"Hey, I'm Naomi and I'm a fresher studying Classics. As well as being reserve on the University Challenge team and trying (within current limitations) to take part in College activities like Rowing, I'm really happy to be your Gender Equality officer for this year. My biggest aim is to continue the cultivation of our College into a welcoming and supportive environment for people of all gender identification through tackling any gender issues that arise. I will be managing the ‘Consent Johns' campaign and hope to keep a high standard of education and conversation around matters of consent (as well as producing much loved stash). I also hope to increase services for women in college and work with the St John's Feminist Society on varied events. I'm always free for a chat and open to any suggestions, queries or complaints so please get in touch!",
+        "bio":"Hey, I'm Naomi and I'm a fresher studying Classics. As well as being reserve on the University Challenge team and trying (within current limitations) to take part in College activities like Rowing, I'm really happy to be your Gender Equality officer for this year. My biggest aim is to continue the cultivation of our College into a welcoming and supportive environment for people of all gender identification through tackling any gender issues that arise. I will be managing the 'Consent Johns' campaign and hope to keep a high standard of education and conversation around matters of consent (as well as producing much loved stash). I also hope to increase services for women in college and work with the St John's Feminist Society on varied events. I'm always free for a chat and open to any suggestions, queries or complaints so please get in touch!",
         "img": "Women.jpg"
       }
 }
