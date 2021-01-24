@@ -4,8 +4,8 @@ FLAG=$(pgrep -f "$INIT_CMD")
 if [ -z "$FLAG" ]
 then
     echo "Starting gunicorn server on port 1511..."
-    . /home/jjd61/sjcjcr/website/env_jjd61/bin/activate
-    cd /home/jjd61/sjcjcr/website/
+    . /home/ks925/sjcjcr/website/env3_main/bin/activate
+    cd /home/ks925/sjcjcr/website/
     python -V
     com_output=`gunicorn -w=3 --bind 127.0.0.1:1511 wsgi:app &`
     echo "Startup failed"
