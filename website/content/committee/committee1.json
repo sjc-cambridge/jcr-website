@@ -12,7 +12,7 @@
       {
         "role":"Vice President",
         "name": "William Tan",
-        "crsid": "wwwt2",
+        "crsid": "wwt2",
         "bio": "Hi, I'm Will, a 2nd year medic and your 2021 Vice-President! As VP, I chair undergraduate Open Meetings, am responsible for the constitution and help out the president generally. I aim to uphold the cracker that is college life whilst ensuring the community is as inclusive and welcoming to everyone. My other big job is to organise Freshers' Week so please get in touch if you have any suggestions there, or just drop me a message with anything to take to college at all at wwwt2!",
         "img": "VicePresident.jpg"
       },
@@ -99,9 +99,9 @@
       "lgbtq":
       {
         "role":"LGBT+",
-        "name": "Christian Suen",
-        "crsid": "cmcs4",
-        "bio":"Heya! I'm Christian (he/ him), currently a first year HSPSer from Hong Kong. As your LGBTQ+ officer, most importantly, I want to be a friendly point of contact, so if you've got any questions or concerns, feel free to reach out via email, insta or whatever platform you prefer. Other than that, I also aim to make your Cambridge experience as fun and inclusive as possible! Keep an eye on the JCR facebook page for updates!",
+        "name": "Emilie Walker",
+        "crsid": "ejw99",
+        "bio":"Hi! I'm Emilie (she/her), a second-year BioNatSci and your LGBT+ Officer! As LGBT+ officer, I am focusing on welfare and events. I will work closely with the welfare officer to offer any help and support, so please don't hesitate to get in touch if you have any questions or concerns! I will also be running events throughout the year, from casual tea afternoons and drinks evenings, to LGBT+ formal swaps with other colleges, to help build a sense of community within the college and the university. My goals is to make sure that everyone feels welcome and safe at John's regardless of their sexuality or gender identity!",
         "img": "LGBTQ.jpg"
       },
     "mentalhealth":
@@ -123,9 +123,9 @@
     "secretary":
       {
         "role":"Secretary",
-        "name": "Sarah Adegbite",
-        "crsid": "oosa2",
-        "bio": "Hey! I'm Sarah, a first-year studying theology, and I'm your JCR secretary this year! When I'm not stuffing my face with Cambridge crepes from the van in town, I love playing college netball, working as a John's student ambassador, and being an active member fo the Cambridge University Poetry and Prose Society. My job as secretary is twofold. I handle the admin side of the JCR: creating agendas and minutes to make sure our meetings run smoothly and there is full transparency between the committee and other members of college. I also liaise between the JCR and CUSU (Cambridge University Student Union) to ensure John's is represented at a university level. I attend CUSU Student Council meetings every two weeks, doing my best to make sure your voice is heard by voting at Council in your best interests. If you have any questions, or just want to chat, don't hesitate to say hello in college or drop me an email whenever!",
+        "name": "Sophie McInerney",
+        "crsid": "sam264",
+        "bio": "Hi I'm Sophie, your JCR secretary. As a third year mathmo I like to give myself a break from numbers and write the agenda and minutes of the JCR meetings, so you lovely people can keep track of what we've been up to. (Meeting minutes are kept on the JCR website). I also represent our JCR at the Cambridge Students Union meetings, so act as a bridge between university and college student initiatives. If you have questions about these, or want us to discuss something at a JCR meeting please drop me an email or stop me around college. As well as spending time helping the JCR provide top quality events, I've a become a lockdown running addict and previously involved in rowing, netball and the Adams society!",
         "img": "Secretary.jpg"
       },
     "services":
