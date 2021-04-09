@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, Blueprint, url_for, flash, get_flashed_messages, current_app, abort
 from website.helper.auth import johnian_access, JCR, is_human, captchapublickey, auth_checker
 from website.content.minutes import get_minutes_dict, get_minutes
+from website.content.transparency import get_transparency_dict, get_transparency
 from website.content.documents import send_constitution
 import datetime
 
@@ -28,6 +29,24 @@ def minutes_page():
     minutes_dict = get_minutes_dict()
     return render_template("yourjcr/minutes.j2.html", crsid=auth_checker(johnian_access),
                            current_page="/yourjcr/minutes", JCR=JCR, minutes_dict=minutes_dict,
+                           sorted=sorted)
+
+
+@yourjcr.route("/transparency")
+@johnian_access
+def transparency_page():
+    if request.args:
+        academicyear = request.args.get("academicyear")  # e.g. 2019/2020
+        term = request.args.get("term")
+        filename = request.args.get("filename")
+        try:
+            return get_minutes(term, academicyear, filename)
+        except Exception as e:
+            print(e)
+            return str(e)
+    transparency_dict = get_transparency_dict()
+    return render_template("yourjcr/transparency.j2.html", crsid=auth_checker(johnian_access),
+                           current_page="/yourjcr/transparency", JCR=JCR, transparency_dict=transparency_dict,
                            sorted=sorted)
 
 

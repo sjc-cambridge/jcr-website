@@ -16,3 +16,4 @@ env_main/
 test/
 .pytest_cache/
 .idea/
+.DS_Store

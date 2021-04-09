@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, send_file, request, redirect, abort
 from website.helper.auth import johnian_access, JCR, auth_checker
 from website.content.minutes import get_minutes
-from website.content.documents import send_transparencydoc
+from website.content.transparency import get_transparency
 from website.content.elections import get_manifesto, election_json, ELECTIONS_ONGOING
 from website.helper.welfaresystem import userhash
 
@@ -15,12 +15,6 @@ currentstudents = Blueprint('currentstudents', __name__, url_prefix='/currentstu
 def current_home():
     user_crsid = johnian_access.principal
     return render_template("currentstudents/home.j2.html", crsid=user_crsid, current_page="/currentstudents", JCR=JCR)
-
-
-@currentstudents.route("/transparency")
-@johnian_access
-def return_transparencydoc():
-    return send_transparencydoc()
 
 
 @currentstudents.route("/elections")
