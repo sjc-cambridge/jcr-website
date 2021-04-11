@@ -40,7 +40,7 @@ def transparency_page():
         term = request.args.get("term")
         filename = request.args.get("filename")
         try:
-            return get_minutes(term, academicyear, filename)
+            return get_transparency(term, academicyear, filename)
         except Exception as e:
             print(e)
             return str(e)
