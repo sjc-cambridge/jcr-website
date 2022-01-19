@@ -128,11 +128,19 @@ def jcr_committee_routing(pagename):
         abort(404)
 
     email+='@sjcjcr.com'
-    role = member["role"]
-    name = member["name"]
-    member_crsid = member["crsid"]
-    bio = member["bio"]
-    img = member["img"]
+
+    if pagename == "president":
+        role = JCR["president"]["role"]
+        name = "{} & {}".format(JCR["president"]["co1"]["name"],JCR["president"]["co2"]["name"])
+        member_crsid = "{} & {}".format(JCR["president"]["co1"]["crsid"], JCR["president"]["co2"]["crsid"])
+        bio = JCR["president"]["bio"]
+        img = JCR["president"]["img"]
+    else:
+        role = member["role"]
+        name = member["name"]
+        member_crsid = member["crsid"]
+        bio = member["bio"]
+        img = member["img"]
 
     return render_template(
         "yourjcr/committee/committeeprofile.j2.html",

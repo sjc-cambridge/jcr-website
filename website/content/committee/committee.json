@@ -3,7 +3,7 @@
   "president":
     {
       "role":"Co-Presidents",
-       "name":"Sarah Adegbite and Maryam Khan",
+       "name":"Sarah Adegbite & Maryam Khan",
        "co1":
            {
              "name": "Sarah Adegbite",
@@ -154,7 +154,7 @@
                 "img": "FWelfare.jpg"
                 }
       },
-    "women":
+    "gender":
       {
         "role":"Gender Equality",
         "name": "Neha Manoj",
