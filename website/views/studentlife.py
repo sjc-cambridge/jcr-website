@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect
 from website.helper.auth import johnian_access, JCR, auth_checker
 from website.content.studentlife import get_clubs_by_category, get_facilities_by_area
-from website.content.documents import send_billsglossary
+from website.content.documents import send_billsglossary, send_financialaid
 
 student_routes = Blueprint('studentlife', __name__, url_prefix="/studentlife")
 
@@ -31,3 +31,8 @@ def facilities():
 @student_routes.route("/billsglossary")
 def billsglossary():
     return send_billsglossary()
+
+
+@student_routes.route("/financialaid")
+def financialaid():
+    return send_financialaid()

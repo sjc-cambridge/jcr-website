@@ -24,36 +24,17 @@ Connection classes to connect to the Lookup/Ibis web service and allow API
 methods to be invoked.
 """
 
-import base64
 from datetime import date
-from http.client import HTTPSConnection
-import socket
-import os
 import urllib.parse
+import warnings
+
+import requests
 
 from .dto import IbisDto, IbisError, IbisResult, IbisResultParser
 
-try:
-    import ssl
-    _have_ssl = True
-except ImportError:
-    print("WARNING: No SSL support - connection may be insecure")
-    _have_ssl = False
-
-# Use the latest TLS protocol supported by both the client and the server.
-# Prior to Python versions 2.7.13 and 3.6, the way to do that was by
-# specifying PROTOCOL_SSLv23. In more recent versions, that is deprecated,
-# and presumably might go away one day. Instead, the new value PROTOCOL_TLS
-# has been added, and is now the recommended way to do it. This is actually
-# the same constant (2). Note that, despite the name, this will never choose
-# insecure SSL v2 or v3 protocols, because those are disabled on the server.
-if hasattr(ssl, 'PROTOCOL_TLS'):
-    _ssl_protocol = ssl.PROTOCOL_TLS
-else:
-    _ssl_protocol = ssl.PROTOCOL_SSLv23
-
 _MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 
 class IbisException(Exception):
     """
@@ -77,102 +58,45 @@ class IbisException(Exception):
         """
         return self.error
 
-class HTTPSValidatingConnection(HTTPSConnection):
-    """
-    Class extending the standard :py:class:`HTTPSConnection` class from
-    :any:`http.client`, so that it checks the server's certificates,
-    validating them against the specified CA certificates.
-
-    .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
-    """
-    def __init__(self, host, port, ca_certs):
-        HTTPSConnection.__init__(self, host, port)
-        self.ca_certs = ca_certs
-
-    def connect(self):
-        """
-        Overridden connect() method to wrap the socket using an SSLSocket,
-        and check the server certificates.
-        """
-        try:
-            self.sock = socket.create_connection((self.host, self.port))
-        except AttributeError:
-            HTTPSConnection.connect(self)
-
-        if not _have_ssl:
-            # No SSL available - insecure connection
-            print("WARNING: No SSL support - connection may be insecure")
-        elif self.ca_certs:
-            # Wrap the socket in an SSLSocket, and tell it to validate
-            # the server certificates. Note that this does not check that
-            # the certificate's host matches, so we must do that ourselves.
-            self.sock = ssl.wrap_socket(self.sock,
-                                        ca_certs = self.ca_certs,
-                                        cert_reqs = ssl.CERT_REQUIRED,
-                                        ssl_version = _ssl_protocol)
-
-            cert = self.sock.getpeercert()
-            cert_hosts = []
-            host_valid = False
-
-            if "subject" in cert:
-                for x in cert["subject"]:
-                    if x[0][0] == "commonName":
-                        cert_hosts.append(x[0][1])
-            if "subjectAltName" in cert:
-                for x in cert["subjectAltName"]:
-                    if x[0] == "dns":
-                        cert_hosts.append(x[1])
-
-            for cert_host in cert_hosts:
-                if self.host.startswith(cert_host):
-                    host_valid = True
-
-            if not host_valid:
-                raise ssl.SSLError("Host name '%s' doesn't match "\
-                                   "certificate host %s"\
-                                   % (self.host, str(cert_hosts)))
-        else:
-            # No CA certificates supplied, so can't validate the server
-            # certificates, but we still wrap the socket in an SSLSocket
-            # so that all data is encrypted.
-            self.sock = ssl.wrap_socket(self.sock,
-                                        ca_certs = None,
-                                        cert_reqs = ssl.CERT_NONE,
-                                        ssl_version = _ssl_protocol)
 
 class IbisClientConnection:
     """
     Class to connect to the Lookup/Ibis server and invoke web service API
     methods.
 
+    If you want to customise behaviour such as TLS verification, pass a custom
+    requests.Session object in via the `session` parameter.
+
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
-    def __init__(self, host, port, url_base, check_certs):
+    def __init__(self, host, port, url_base, check_certs, *, session=None):
         self.host = host
         self.port = port
         self.url_base = url_base
+        self.session = requests.Session() if session is None else session
 
         if not self.url_base.startswith("/"):
             self.url_base = "/%s" % self.url_base
         if not self.url_base.endswith("/"):
             self.url_base = "%s/" % self.url_base
 
-        if check_certs:
-            ibisclient_dir = os.path.realpath(os.path.dirname(__file__))
-            self.ca_certs = os.path.join(ibisclient_dir, "cacerts.txt")
-        else:
-            self.ca_certs = None
+        if not check_certs:
+            self.session.verify = False
+            warnings.warn(
+                "Setting check_certs=False is dangerous and may not be "
+                "supported in a future release of ibisclient.",
+                DeprecationWarning
+            )
 
         self.username = None
         self.password = None
         self.set_username("anonymous")
 
     def _update_authorization(self):
-        credentials = "%s:%s" % (self.username, self.password)
-        credential_bytes = bytes(credentials, "UTF-8")
-        base64_credentials = str(base64.b64encode(credential_bytes), "UTF-8")
-        self.authorization = "Basic %s" % base64_credentials
+        self.session.auth = (
+            self.username if self.username is not None else "anonymous",
+            self.password if self.password is not None else ""
+        )
 
     def set_username(self, username):
         """
@@ -214,10 +138,12 @@ class IbisClientConnection:
         """
         new_params = {}
         for key, value in params.items():
-            if value != None:
+            if value is not None:
                 if isinstance(value, bool):
-                    if value: new_params[key] = "true"
-                    else: new_params[key] = "false"
+                    if value:
+                        new_params[key] = "true"
+                    else:
+                        new_params[key] = "false"
                 elif isinstance(value, date):
                     new_params[key] = "%02d %s %d" % (value.day,
                                                       _MONTHS[value.month-1],
@@ -300,24 +226,24 @@ class IbisClientConnection:
         query_params = self._params_to_strings(query_params)
         form_params = self._params_to_strings(form_params)
 
-        conn = HTTPSValidatingConnection(self.host, self.port, self.ca_certs)
-        url = self._build_url(path, path_params, query_params)
-        headers = {"Accept": "application/xml",
-                   "Authorization": self.authorization}
+        url = "https://%s:%s%s" % (
+            self.host, self.port,
+            self._build_url(path, path_params, query_params)
+        )
+        headers = {"Accept": "application/xml"}
 
-        if form_params:
-            body = urllib.parse.urlencode(form_params)
-            conn.request(method, url, body, headers)
+        if len(form_params) > 0:
+            response = self.session.request(
+                method, url, data=form_params, headers=headers)
         else:
-            conn.request(method, url, headers=headers)
+            response = self.session.request(method, url, headers=headers)
 
-        response = conn.getresponse()
-        content_type = response.getheader("Content-type")
+        content_type = response.headers["Content-type"]
         if content_type != "application/xml":
-            error = IbisError({"status": response.status,
+            error = IbisError({"status": response.status_code,
                                "code": response.reason})
             error.message = "Unexpected result from server"
-            error.details = response.read()
+            error.details = response.text
 
             result = IbisResult()
             result.error = error
@@ -325,10 +251,10 @@ class IbisClientConnection:
             return result
 
         parser = IbisResultParser()
-        result = parser.parse_xml(response.read())
-        conn.close()
+        result = parser.parse_xml(response.content)
 
         return result
+
 
 def createConnection():
     """
@@ -345,10 +271,11 @@ def createConnection():
     """
     return IbisClientConnection("www.lookup.cam.ac.uk", 443, "", True)
 
+
 def createTestConnection():
     """
     Create an IbisClientConnection to the Lookup/Ibis test web service API
-    at https://lookup-test.csx.cam.ac.uk/.
+    at https://lookup-test.srv.uis.cam.ac.uk/.
 
     The connection is initially anonymous, but this may be changed using
     its :any:`set_username() <IbisClientConnection.set_username>` and
@@ -362,7 +289,8 @@ def createTestConnection():
       :any:`IbisClientConnection`
         A new connection to the Lookup test server.
     """
-    return IbisClientConnection("lookup-test.csx.cam.ac.uk", 443, "", True)
+    return IbisClientConnection("lookup-test.srv.uis.cam.ac.uk", 443, "", True)
+
 
 def createLocalConnection():
     """

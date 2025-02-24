@@ -52,7 +52,7 @@ minutes_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['cr
                    JCR['secretary']['crsid'], JCR['computing']['crsid'])
 
 transparency_editors = (JCR['president']['co1']['crsid'], JCR['president']['co2']['crsid'],
-                   JCR['secretary']['crsid'], JCR['computing']['crsid'])
+                   JCR['secretary']['crsid'], JCR['computing']['crsid'], JCR['treasurer']['crsid'])
 
 
 
@@ -110,7 +110,7 @@ def minutes_page():
 def upload_transparency():
     if request.method == 'POST':
         if committee_access.principal not in transparency_editors:
-            flash('Only the Secretary/ Computing officer/ Presidents can add/remove transparency reports!')
+            flash('Only the Secretary / Computing officer/ Presidents / Treasurer can add/remove transparency reports!')
             return redirect(url_for('committee.upload_transparency'))
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -140,9 +140,8 @@ def upload_transparency():
 @committee.route('/delete_transparency')
 @committee_access
 def transparency_page():
-    if committee_access.principal not in (JCR['secretary']['crsid'], JCR['computing']['crsid']):
-        secretary_name, computing_name = JCR['secretary']['name'], JCR['computing']['name']
-        flash('Only the Secretary ({0}) or Computing officer ({1}) can add/remove transparency reports!'.format(secretary_name, computing_name))
+    if committee_access.principal not in transparency_editors:
+        flash('Only the Secretary / Computing officer/ Presidents / Treasurer can add/remove transparency reports!')
         return redirect(url_for('committee.upload_transparency'))
     academicyear = request.args.get("academicyear") # e.g. 2019/2020
     term = request.args.get("term")

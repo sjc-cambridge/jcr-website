@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, Blueprint, url_for, abort
 from website.helper.auth import johnian_access, JCR, auth_checker
+from website.content.documents import send_fresherguide
 
 freshers = Blueprint('freshers', __name__)
 
@@ -8,6 +9,12 @@ freshers = Blueprint('freshers', __name__)
 def freshers_home():
     crsid=auth_checker(johnian_access)
     return render_template("freshers/home.j2.html", JCR=JCR, crsid=crsid, current_page="/freshers")
+
+    
+@freshers.route("/freshers/guide")
+def return_guide():
+    return send_fresherguide()
+
 
 @freshers.route('/freshers/<pagename>')
 def freshers_routing(pagename):

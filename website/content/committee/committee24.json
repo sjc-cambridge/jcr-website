@@ -1,0 +1,144 @@
+{
+  "president": {
+    "role": "Co-Presidents",
+    "name": "Keisha Dowlman (she/her) & Sophie Denny (she/her)",
+    "co1": {
+      "name": "Keisha Dowlman (she/her)",
+      "crsid": "kd513"
+    },
+    "co2": {
+      "name": "Sophie Denny (she/her)",
+      "crsid": "slmad2"
+    },
+    "bio": "Hi we're Sophie and Keisha, your 2024 Co-Presidents. It's our second year on the JCR and we're really excited to help make college a more inclusive place. We've got a great team this year so I'm sure you'll all see a lot of us around! We're always happy for a chat (please distract us from writing our essays!) and we'll do our best to make sure that the student voice is represented within the college systems!",
+    "img": "President24.jpeg"
+  },
+  "vicepresident": {
+    "role": "Vice President",
+    "name": "Jack Murfitt (he/him)",
+    "crsid": "jm2463",
+    "bio": "Hi I’m Jack, and I’m your Vice-President. My main job is planning Fresher’s Week, and you’ll see a lot of me throughout it, progressively becoming more stressed. Besides this, I’m here to help in any way I can, supporting with the planning of JCR events throughout the year. I’m always up for a chat and happy to answer any questions you may have so just drop me a message whenever.",
+    "img": "VicePresident24.jpeg"
+  },
+  "access": {
+    "role": "Access",
+    "name": "Zamry Rizwan (he/him)",
+    "crsid": "zm342",
+    "bio": "Hey! I’m Zamry and I’m a second year law student. I come from the Northwest and benefited a lot from the access work St John’s did! I hope to work with the JCR and outreach events to keep delivering amazing events to inspire applicants from a wide range of backgrounds. My emails are always open, so feel free to reach out!",
+    "img": "Access24.jpg"
+  },
+  "bme": {
+    "role": "Ethnic Minorities",
+    "name": "Tobi Ajibola (he/him)",
+    "crsid": "ofooa2",
+    "bio": "Hey everyone! My name is Tobi, I’m a fourth year Classics student and I’m really excited to be your Ethnic Minorities Officer this year! I’m looking forward to putting on lots of fun events, advocating for the specific needs of BAME students at a college level, and  celebrating the wonderfully diverse range of cultures we have here at John’s. I expect to work closely with the other liberation officers to help make John’s a safer and more welcoming place for all. Make sure to follow @stjohnsbme on Instagram as this is where I’ll be promoting events and sharing resources. Whether it’s to express a specific concern or just for a chat, I hope to be a friendly face around college so please don’t hesitate to contact me or come and say hi!",
+    "img": "BME24.jpeg"
+  },
+  "computing": {
+    "role": "Computing",
+    "name": "Samuel Seyoum (he/him)",
+    "crsid": "ss3074",
+    "bio": "Hey I'm Samuel, a second year CompSci and I'm the Computing officer responsible for this impressive website. I'm a Co-Captain of the basketball team and I also play volleyball. Feel free to reach out if you want to know anything; either reach out by email or have a chat with me in person.",
+    "img": "Computing24.jpg"
+  },
+  "disabilities": {
+    "role": "Disabilities",
+    "name": "Lewis Bryan (he/him)",
+    "crsid": "ljb218",
+    "bio": "Hi, I’m Lewis, I’m a third year studying Engineering and I’m the disabilities officer. If you have any questions or issues relating to disability or anything at all I’m always happy to talk either in person or email me 🙂.",
+    "img": "Disabilities24.jpg"
+  },
+  "ents": {
+    "role": "Ents",
+    "name": "Konrad Warzycha (he/him)",
+    "crsid": "kw578",
+    "bio": "Hey I’m Konrad, I’m a third year lawyer and I’m super excited to be your ents officer this year! Look forward to bigger and better ents 😉",
+    "img": "Ents24.jpeg"
+  },
+  "ethical": {
+    "role": "Environmental and Charitable Affairs ",
+    "name": "Ben Pearce (he/him)",
+    "crsid": "bp489",
+    "bio": "Hiya, I’m Ben, a third-year geographer and I’ll be dealing with all things environmental and charitable in college including running and helping with JCR events and representing you on several important college committees and forums throughout the year. If you have any questions or want to get involved and find out more then please feel free to drop me an email.",
+    "img": "Ethical24.jpeg"
+  },
+  "equalops": {
+    "role": "Class Act",
+    "name": "Suzan Akcora",
+    "crsid": "sdca2",
+    "bio": "Hi guys, I’m Suzan, a third year law student. I’m your current class act officer, and I’ll be busy helping out with JCR events, outreach and hope to be a friendly face you see around college. Drop me an email if you have any questions, or just want to chat 🙂",
+    "img": "ClassAct24.jpeg"
+  },
+  "internationals": {
+    "role": "International Students",
+    "name": "Erik Todd (he/him)",
+    "crsid": "et534",
+    "bio": "Hi everyone! I’m Erik. I’m a second year Nat Sci and I will be the internationals officer for the next year. I am going to do my best to support all international students here at St. John’s in any way that I can. If you have any questions, or just want to have a chat, feel free to contact me in person or to drop me an email.",
+    "img": "Internationals24.jpg"
+  },
+  "lgbtq": {
+    "role": "LGBTQ+",
+    "name": "Isabel Watts (she/they)",
+    "crsid": "iw319",
+    "bio": "It's me, Buzz, your LGBTQ+ officer for the next three terms! I'm a third year engling, and I'm all about queer joy. I can be found at various JCR events, or my spiritual home (the English Faculty Library). I'm always here to help, for LGBTQ+ or unrelated issues, so drop me an email or a text if you need anything or just to chat :)",
+    "img": "LGBTQ24.jpeg"
+  },
+  "mentalhealth": {
+    "role": "Mental Health",
+    "name": "Florrie Baker (she/her)",
+    "crsid": "fcb38",
+    "bio": "Hey, I’m Florrie and I’m a third year linguist. I’m here to help anyone in College who is experiencing mental health difficulties. I can help signpost you to the relevant support available in College, the University, and locally in Cambridge. My emails are always open if you have any mental health-related concerns or questions, and I’m happy to meet with anyone for a coffee or anything like that.",
+    "img": "MentalHealth24.jpg"
+  },
+  "publicity": {
+    "role": "Publicity",
+    "name": "Daniela Jerez Cubillo (she/her)",
+    "crsid": "dj392",
+    "bio": "Hello everyone! I’m Daniela and I am a third year HSPS student. As Publicity Officer I will keep all of you informed of everything that is happening around college, hopefully in an entertaining way!",
+    "img": "Publicity24.jpeg"
+  },
+  "secretary": {
+    "role": "Secretary",
+    "name": "Eimear McElduff",
+    "crsid": "em967",
+    "bio": "Hey everyone! My name is Eimear and I’m a second year english student! My role for the JCR is Secretary which means I organise the agenda, take meeting minutes and correspond with the SU. If anyone has any questions or just wants to chat, feel free to drop me an email 🙂",
+    "img": "Secretary24.jpg"
+  },
+  "services": {
+    "role": "Sports, Services and Societies",
+    "name": "Beth Erskine (she/her)",
+    "crsid": "be298",
+    "bio": "Hi I’m Beth, third year geography.  When I’m not on the football pitch or the tennis courts, I’ll be managing all things sports, societies and services related. Please don’t hesitate to reach out if there’s anything I can help with, or just for a chat.",
+    "img": "Services24.jpg"
+  },
+  "treasurer": {
+    "role": "Treasurer",
+    "name": "Richard Shumilin-Croxton (he/him)",
+    "crsid": "rs2227",
+    "bio": "Hi I’m Richard Shumilin-Croxton(He/Him) and I’m a 3nd-year Natural Sciences student studying physics. Currently I serve as the Treasurer of the JCR, having previously served as access officer. With a commitment to fostering a vibrant and inclusive college community, I aim to actively contribute to the student body's welfare by actions such as facilitating the free prescription scheme.",
+    "img": "Treasurer24.jpg"
+  },
+  "welfare": {
+    "mnb": {
+      "role": "Welfare",
+      "name": "Gabriel Bath (he/him)",
+      "crsid": "gb730",
+      "bio": "Hi everyone! I'm Gabriel, and I'm a second-year historian. As your welfare officer, my top priority is your well-being. So, to help, the welfare team and I organise college welfare events, provide sexual health products anonymously, and simply be another friendly face you can talk to. If you have any questions or issues, please don't hesitate to contact me. I'm always here to help!",
+      "img": "MWelfare24.jpeg"
+    },
+    "fnb": {
+      "role": "Welfare",
+      "name": "Flo Richardson (she/her)",
+      "crsid": "fcar2",
+      "bio": "Hi everyone! My name is Flo and I am a second year biological Natural Sciences student. Being your female and non-binary welfare officer my main goal is to help make college a warm and welcoming place. With the others from the welfare team we do this by organising some fun welfare events and keeping the sexual health supplies stocked in the pidge. If you have a question or just want a chat, either drop me an email or come up to me when you see me around college. See you soon! Flo",
+      "img": "FWelfare24.jpeg"
+    }
+  },
+  "gender": {
+    "role": "Gender Equality",
+    "name": "Scarly Knight (she/her)",
+    "crsid": "sfk33",
+    "bio": "Hi everyone, I’m Scarly, a third year law student, and I’m your Gender Equality Officer 2024. My job is to ensure John’s is a positive, inclusive and diverse space, where all students feel safe and confident! You’ll also see me helping the rest of the JCR run our events throughout the year - particularly behind the bar at ents. I’m always happy to chat or help with any issues anyone has so either pull me aside around college or drop me a message anytime!",
+    "img": "GenderEquality24.jpg"
+  }
+}

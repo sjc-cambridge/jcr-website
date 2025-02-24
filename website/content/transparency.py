@@ -14,9 +14,9 @@ def save_transparency(term, year, file):
     Saves transparency doc pdf in correct directory
     year: int
     term: {'Michaelmas', 'Lent', 'Easter'}
-    file: Minutes pdf to save
+    file: Transparency pdf to save
     """
-    yearpath = os.path.join(curr_dir, 'minutes', year)
+    yearpath = os.path.join(curr_dir, 'transparency', year)
     if not os.path.exists(yearpath):
         os.makedirs(yearpath)
     termpath = os.path.join(yearpath, term)
@@ -35,7 +35,7 @@ def delete_transparency(term, year, filename):
     """
     Deletes a transparency doc from server
     """
-    filepath = os.path.join(curr_dir, 'minutes', year, term, filename)
+    filepath = os.path.join(curr_dir, 'transparency', year, term, filename)
     try:
         os.remove(filepath)
         termpath = os.path.join(curr_dir, 'minutes', year, term)

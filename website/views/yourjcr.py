@@ -2,7 +2,7 @@ from flask import render_template, request, redirect, Blueprint, url_for, flash,
 from website.helper.auth import johnian_access, JCR, is_human, captchapublickey, auth_checker
 from website.content.minutes import get_minutes_dict, get_minutes
 from website.content.transparency import get_transparency_dict, get_transparency
-from website.content.documents import send_constitution
+from website.content.documents import send_constitution, send_financialaid, send_financialaid_spreadsheet
 import datetime
 
 yourjcr = Blueprint("yourjcr", __name__, url_prefix="/yourjcr")
@@ -95,6 +95,17 @@ def contact():
 @johnian_access
 def return_constitution():
     return send_constitution()
+
+
+@yourjcr.route("/financialaid")
+def return_financialaid():
+    return send_financialaid()
+
+    
+
+# @yourjcr.route("/financialaid-spreadsheet")
+# def return_financialaid_spreadsheet():
+#     return send_financialaid_spreadsheet()
 
 
 @yourjcr.route("/<pagename>")
