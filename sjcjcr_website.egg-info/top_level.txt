@@ -1,4 +1,0 @@
-config
-ibisclient
-scripts
-website
