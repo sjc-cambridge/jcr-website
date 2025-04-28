@@ -163,15 +163,6 @@
         "category": "Arts",
         "clubs": [
             {
-                "imageName": "studentlife/clubsandsocieties/st_johns_voices.jpg",
-                "heading": "St John's Voices",
-                "description": [
-                    "St John's Voices is the College's extremely fine mixed-voice choir. Founded in 2013, SJV is one of Cambridge's newest choirs, and is made up of male and female students of the College.",
-                    "Renowned for being friendly and relaxed as well as for its remarkably high musical standards, the choir sings evensong on Mondays in the beautiful College Chapel, as well as concerts, international tours, recordings and other performances. This year the choir will be launching their debut professional recording, on the Naxos label, and will be touring Germany during the Easter vacation.",
-                    "The choir is directed by Graham Walker (ghw2@cam.ac.uk). More about St John's Voices may be found on their <a href=\"https://www.joh.cam.ac.uk/chapel-choir#lps-6\">website</a>."
-                ]
-            },
-            {
                 "imageName": "studentlife/clubsandsocieties/lady_margaret_players.png",
                 "heading": "Lady Margaret Players",
                 "description": [
@@ -227,9 +218,9 @@
                 "heading": "Parsons Society (Engineering)",
                 "description": [
                     "The Parsons Society at St John's offers opportunities for St Johns' Engineers to socialise and further their understanding of the subject through organised events. The society currently has over 90 members. All Engineering undergraduates and graduates studying at St Johns are granted automatic membership. Highlights of the Parsons calendar include...",
-                    "Parsons desserts",
+                    "<h5>Parsons desserts<h5>",
                     "Early in the Michaelmas term a meal is organised to welcome new Engineering students to the College. This is a great opportunity for the Freshers to get to know students from other years within the college and share their experiences of the course and their time at Cambridge.",
-                    "Parsons dinner",
+                    "<h5>Parsons dinner<h5>",
                     "This provides an opportunity for all of the Undergraduates, Graduates and Fellows from St John’s to mix socially. At a previous dinner, a very popular presentation was made by Professor Ian Liddell, an alumni engineering student from the college and designer of the Millenium Dome.",
                     "End of year garden party",
                     "To celebrate the end of year, the Society holds a garden party in the Fellows Garden. This is a popular event with most Engineers from the College attending.",
