@@ -30,26 +30,7 @@
     {% endif %}
   {% endwith %}
   <form action="{{ url_for('yourjcr.contact') }}" method="post" style="padding-top: 15px;padding-bottom: 15px;">
-   <h5>
-    To:
-   </h5>
-   <div class="form-group">
-    <select class="form-control" name="recipient">
-      {% for position in JCR|sort %}
-      {% if 'role' in JCR[position] %}
-        <option value="{{position}}" {{ 'selected' if position == role_str }}>
-         {{JCR[position]['role']}} - {{JCR[position]['name']}}
-        </option>
-      {% else %}
-        {% for subposition in JCR[position] %}
-            <option value="{{subposition}}" {{ 'selected' if subposition == role_str }}>
-             {{JCR[position][subposition]['role']}} - {{JCR[position][subposition]['name']}}
-            </option>
-        {% endfor %}
-      {% endif %}
-      {% endfor %}
-    </select>
-   </div>
+   <input type="hidden" name="recipient" value="secretary">
    <h5>
     From:
    </h5>

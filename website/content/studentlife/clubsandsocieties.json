@@ -98,6 +98,14 @@
                     "For enquiries,  please contact the captain Samuel Seyoum (ss3074)."
                 ]
             },
+	    {
+		"imageName": "studentlife/clubsandsocieties/Climbing.jpg",
+		"heading": "Climbing",
+		"description": [
+		    "St John’s College Climbing Society welcomes climbers of all levels — from complete beginners to seasoned boulderers. We run weekly bouldering sessions at centres around Cambridge (primarily Kelsey Kerridge and Rainbow Rocket), creating a relaxed, supportive space to learn, train, and improve together. Whether you’re climbing for fun or chasing harder grades, there’s room for you here. The society also organises occasional trips and socials, so it’s a great way to meet fellow climbers and stay active during term.",
+		    "If you'd like to join, contact co-captains Daniyaal (dba30) or Tobias (tba29)."
+		]
+	    },
             {
                 "imageName": "studentlife/clubsandsocieties/Netball24.jpeg",
                 "heading": "Netball - SJCNC",
@@ -162,6 +170,16 @@
     {
         "category": "Arts",
         "clubs": [
+	    {
+		"imageName": "studentlife/clubsandsocieties/SJCMS.png",
+		"heading": "St John's College Music Society (SJCMS)",
+		"description": [
+		    "Interested in college music? Look no further, SJCMS is the place for you!",
+		    "SJCMS runs a series of concerts, all free to attend, throughout the year. Each Thursday of term at 1:15pm in the Lightfoot Room sees an instalment our esteemed lunchtime concert series. These are a great way to unwind for roughly 35 minutes in the midst of a busy week. We also hold four “late” concerts a term. These are held either in the chapel or the main lecture theatre in the Old Divinity School. Featuring a range of different music, there’s something here for everyone. We tend to end term with a large scale concert showing off Johns’ musical talent in all its glory. Keep an eye out on our socials to not miss the sign up forms for concerts next term!",
+		    "For more information about our concerts and the society more generally visit our website: https://sjcms.societies.cam.ac.uk",
+		    "If you have any questions, please do be in touch with: sf765@cam.ac.uk"
+		]
+	    },
             {
                 "imageName": "studentlife/clubsandsocieties/lady_margaret_players.png",
                 "heading": "Lady Margaret Players",
