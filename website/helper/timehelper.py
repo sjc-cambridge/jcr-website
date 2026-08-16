@@ -9,9 +9,9 @@ def get_academic_year(month, year):
     The academic year starts in month 9 (September)
     """
     if month >= 9:
-        return str(year)+'-'+str(year+1)
+        return str(year) + "-" + str(year + 1)
     else:
-        return str(year-1)+'-'+str(year)
+        return str(year - 1) + "-" + str(year)
 
 
 def get_current_academic_year():
@@ -31,5 +31,5 @@ def get_year_range(years):
     today = datetime.date.today()
     year = today.year
     month = today.month
-    years_list = [get_academic_year(month, year-i) for i in range(years)]
+    years_list = [get_academic_year(month, year - i) for i in range(years)]
     return years_list

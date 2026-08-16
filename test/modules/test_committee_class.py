@@ -1,4 +1,5 @@
 """Checks committee class working as expected"""
+
 from website.helper.committee import Committee
 from mock import patch
 import pytest
@@ -23,7 +24,7 @@ roles = {
     "internationals",
     "lgbtq",
     "disabilities",
-    "women"
+    "women",
 }
 
 
@@ -34,8 +35,8 @@ def test_committee_instantiation():
         assert role in JCR
 
 
-#TODO: make sure mocked function is called
-@patch('website.helper.committee.email_someone')
+# TODO: make sure mocked function is called
+@patch("website.helper.committee.email_someone")
 def test_email_member(email_someone_patch):
     """Test to make sure can email all committee"""
     JCR = Committee()
@@ -47,7 +48,7 @@ def test_email_member(email_someone_patch):
             raise e
 
 
-@patch('website.helper.committee.email_someone')
+@patch("website.helper.committee.email_someone")
 def test_email_bogus_member(email_someone_patch):
     """Raises ValueError when trying to email non committee"""
     JCR = Committee()
@@ -55,7 +56,7 @@ def test_email_bogus_member(email_someone_patch):
         JCR.email_member("subject", "message", "banter", gmail_pwd)
 
 
-@patch('website.helper.committee.email_people')
+@patch("website.helper.committee.email_people")
 def test_email_committee(email_people_patch):
     JCR = Committee()
     JCR.email_committee("subject", "message", gmail_pwd)

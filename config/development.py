@@ -1,6 +1,6 @@
 """
-    Development mode environment variables
+Development mode environment variables
 """
 
-ENV = 'development'
+ENV = "development"
 DEBUG = True

@@ -27,12 +27,14 @@ methods.
 
 from .connection import IbisException
 
+
 class IbisMethods:
     """
     Common methods for searching for objects in the Lookup/Ibis database.
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, conn):
         self.conn = conn
 
@@ -50,11 +52,13 @@ class IbisMethods:
         path_params = {}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.value
+
 
 class GroupMethods:
     """
@@ -120,12 +124,11 @@ class GroupMethods:
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, conn):
         self.conn = conn
 
-    def allGroups(self,
-                  includeCancelled,
-                  fetch=None):
+    def allGroups(self, includeCancelled, fetch=None):
         """
         Return a list of all groups.
 
@@ -150,18 +153,16 @@ class GroupMethods:
         """
         path = "api/v1/group/all-groups"
         path_params = {}
-        query_params = {"includeCancelled": includeCancelled,
-                        "fetch": fetch}
+        query_params = {"includeCancelled": includeCancelled, "fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.groups
 
-    def listGroups(self,
-                   groupids,
-                   fetch=None):
+    def listGroups(self, groupids, fetch=None):
         """
         Get the groups with the specified IDs or names.
 
@@ -199,23 +200,25 @@ class GroupMethods:
         """
         path = "api/v1/group/list"
         path_params = {}
-        query_params = {"groupids": groupids,
-                        "fetch": fetch}
+        query_params = {"groupids": groupids, "fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.groups
 
-    def search(self,
-               query,
-               approxMatches=None,
-               includeCancelled=None,
-               offset=None,
-               limit=None,
-               orderBy=None,
-               fetch=None):
+    def search(
+        self,
+        query,
+        approxMatches=None,
+        includeCancelled=None,
+        offset=None,
+        limit=None,
+        orderBy=None,
+        fetch=None,
+    ):
         """
         Search for groups using a free text query string. This is the same
         search function that is used in the Lookup web application.
@@ -272,24 +275,24 @@ class GroupMethods:
         """
         path = "api/v1/group/search"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled,
-                        "offset": offset,
-                        "limit": limit,
-                        "orderBy": orderBy,
-                        "fetch": fetch}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+            "offset": offset,
+            "limit": limit,
+            "orderBy": orderBy,
+            "fetch": fetch,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.groups
 
-    def searchCount(self,
-                    query,
-                    approxMatches=None,
-                    includeCancelled=None):
+    def searchCount(self, query, approxMatches=None, includeCancelled=None):
         """
         Count the number of groups that would be returned by a search using
         a free text query string.
@@ -322,19 +325,20 @@ class GroupMethods:
         """
         path = "api/v1/group/search-count"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return int(result.value)
 
-    def getGroup(self,
-                 groupid,
-                 fetch=None):
+    def getGroup(self, groupid, fetch=None):
         """
         Get the group with the specified ID or name.
 
@@ -366,15 +370,14 @@ class GroupMethods:
         path_params = {"groupid": groupid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.group
 
-    def getCancelledMembers(self,
-                            groupid,
-                            fetch=None):
+    def getCancelledMembers(self, groupid, fetch=None):
         """
         Get all the cancelled members of the specified group, including
         cancelled members of groups included by the group, and groups included
@@ -411,15 +414,14 @@ class GroupMethods:
         path_params = {"groupid": groupid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def getDirectMembers(self,
-                         groupid,
-                         fetch=None):
+    def getDirectMembers(self, groupid, fetch=None):
         """
         Get the direct members of the specified group, not including members
         included via groups included by the group.
@@ -449,17 +451,16 @@ class GroupMethods:
         path_params = {"groupid": groupid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def updateDirectMembers(self,
-                            groupid,
-                            addIds=None,
-                            removeIds=None,
-                            commitComment=None):
+    def updateDirectMembers(
+        self, groupid, addIds=None, removeIds=None, commitComment=None
+    ):
         """
         Update the list of people who are direct members of the group. This
         will not affect people who are included in the group due to the
@@ -520,18 +521,19 @@ class GroupMethods:
         path = "api/v1/group/%(groupid)s/direct-members"
         path_params = {"groupid": groupid}
         query_params = {}
-        form_params = {"addIds": addIds,
-                       "removeIds": removeIds,
-                       "commitComment": commitComment}
-        result = self.conn.invoke_method("PUT", path, path_params,
-                                         query_params, form_params)
+        form_params = {
+            "addIds": addIds,
+            "removeIds": removeIds,
+            "commitComment": commitComment,
+        }
+        result = self.conn.invoke_method(
+            "PUT", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def getMembers(self,
-                   groupid,
-                   fetch=None):
+    def getMembers(self, groupid, fetch=None):
         """
         Get all the members of the specified group, including members of
         groups included by the group, and groups included by those groups,
@@ -562,11 +564,13 @@ class GroupMethods:
         path_params = {"groupid": groupid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
+
 
 class InstitutionMethods:
     """
@@ -634,6 +638,7 @@ class InstitutionMethods:
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, conn):
         self.conn = conn
 
@@ -654,15 +659,14 @@ class InstitutionMethods:
         path_params = {}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attributeSchemes
 
-    def allInsts(self,
-                 includeCancelled,
-                 fetch=None):
+    def allInsts(self, includeCancelled, fetch=None):
         """
         Return a list of all institutions.
 
@@ -687,18 +691,16 @@ class InstitutionMethods:
         """
         path = "api/v1/inst/all-insts"
         path_params = {}
-        query_params = {"includeCancelled": includeCancelled,
-                        "fetch": fetch}
+        query_params = {"includeCancelled": includeCancelled, "fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institutions
 
-    def listInsts(self,
-                  instids,
-                  fetch=None):
+    def listInsts(self, instids, fetch=None):
         """
         Get the institutions with the specified IDs.
 
@@ -734,24 +736,26 @@ class InstitutionMethods:
         """
         path = "api/v1/inst/list"
         path_params = {}
-        query_params = {"instids": instids,
-                        "fetch": fetch}
+        query_params = {"instids": instids, "fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institutions
 
-    def search(self,
-               query,
-               approxMatches=None,
-               includeCancelled=None,
-               attributes=None,
-               offset=None,
-               limit=None,
-               orderBy=None,
-               fetch=None):
+    def search(
+        self,
+        query,
+        approxMatches=None,
+        includeCancelled=None,
+        attributes=None,
+        offset=None,
+        limit=None,
+        orderBy=None,
+        fetch=None,
+    ):
         """
         Search for institutions using a free text query string. This is the
         same search function that is used in the Lookup web application.
@@ -814,26 +818,27 @@ class InstitutionMethods:
         """
         path = "api/v1/inst/search"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled,
-                        "attributes": attributes,
-                        "offset": offset,
-                        "limit": limit,
-                        "orderBy": orderBy,
-                        "fetch": fetch}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+            "attributes": attributes,
+            "offset": offset,
+            "limit": limit,
+            "orderBy": orderBy,
+            "fetch": fetch,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institutions
 
-    def searchCount(self,
-                    query,
-                    approxMatches=None,
-                    includeCancelled=None,
-                    attributes=None):
+    def searchCount(
+        self, query, approxMatches=None, includeCancelled=None, attributes=None
+    ):
         """
         Count the number of institutions that would be returned by a search
         using a free text query string.
@@ -872,20 +877,21 @@ class InstitutionMethods:
         """
         path = "api/v1/inst/search-count"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled,
-                        "attributes": attributes}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+            "attributes": attributes,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return int(result.value)
 
-    def getInst(self,
-                instid,
-                fetch=None):
+    def getInst(self, instid, fetch=None):
         """
         Get the institution with the specified ID.
 
@@ -915,18 +921,16 @@ class InstitutionMethods:
         path_params = {"instid": instid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institution
 
-    def addAttribute(self,
-                     instid,
-                     attr,
-                     position=None,
-                     allowDuplicates=None,
-                     commitComment=None):
+    def addAttribute(
+        self, instid, attr, position=None, allowDuplicates=None, commitComment=None
+    ):
         """
         Add an attribute to an institution. By default, this will not add the
         attribute again if it already exists.
@@ -968,19 +972,20 @@ class InstitutionMethods:
         path = "api/v1/inst/%(instid)s/add-attribute"
         path_params = {"instid": instid}
         query_params = {}
-        form_params = {"attr": attr,
-                       "position": position,
-                       "allowDuplicates": allowDuplicates,
-                       "commitComment": commitComment}
-        result = self.conn.invoke_method("POST", path, path_params,
-                                         query_params, form_params)
+        form_params = {
+            "attr": attr,
+            "position": position,
+            "allowDuplicates": allowDuplicates,
+            "commitComment": commitComment,
+        }
+        result = self.conn.invoke_method(
+            "POST", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute
 
-    def getCancelledMembers(self,
-                            instid,
-                            fetch=None):
+    def getCancelledMembers(self, instid, fetch=None):
         """
         Get all the cancelled members of the specified institution.
 
@@ -1015,15 +1020,14 @@ class InstitutionMethods:
         path_params = {"instid": instid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def getContactRows(self,
-                       instid,
-                       fetch=None):
+    def getContactRows(self, instid, fetch=None):
         """
         Get all the contact rows of the specified institution.
 
@@ -1058,15 +1062,14 @@ class InstitutionMethods:
         path_params = {"instid": instid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institution.contactRows
 
-    def getAttributes(self,
-                      instid,
-                      attrs):
+    def getAttributes(self, instid, attrs):
         """
         Get one or more (possibly multi-valued) attributes of an institution.
         The returned attributes are sorted by attribute scheme precedence and
@@ -1092,15 +1095,14 @@ class InstitutionMethods:
         path_params = {"instid": instid}
         query_params = {"attrs": attrs}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attributes
 
-    def getMembers(self,
-                   instid,
-                   fetch=None):
+    def getMembers(self, instid, fetch=None):
         """
         Get all the members of the specified institution.
 
@@ -1129,16 +1131,14 @@ class InstitutionMethods:
         path_params = {"instid": instid}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def deleteAttribute(self,
-                        instid,
-                        attrid,
-                        commitComment=None):
+    def deleteAttribute(self, instid, attrid, commitComment=None):
         """
         Delete an attribute of an institution. It is not an error if the
         attribute does not exist.
@@ -1167,19 +1167,17 @@ class InstitutionMethods:
             :any:`False` if it did not exist.
         """
         path = "api/v1/inst/%(instid)s/%(attrid)s"
-        path_params = {"instid": instid,
-                       "attrid": attrid}
+        path_params = {"instid": instid, "attrid": attrid}
         query_params = {"commitComment": commitComment}
         form_params = {}
-        result = self.conn.invoke_method("DELETE", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "DELETE", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.value and result.value.lower() == "true"
 
-    def getAttribute(self,
-                     instid,
-                     attrid):
+    def getAttribute(self, instid, attrid):
         """
         Get a specific attribute of an institution.
 
@@ -1197,21 +1195,17 @@ class InstitutionMethods:
             The requested attribute.
         """
         path = "api/v1/inst/%(instid)s/%(attrid)s"
-        path_params = {"instid": instid,
-                       "attrid": attrid}
+        path_params = {"instid": instid, "attrid": attrid}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute
 
-    def updateAttribute(self,
-                        instid,
-                        attrid,
-                        attr,
-                        commitComment=None):
+    def updateAttribute(self, instid, attrid, attr, commitComment=None):
         """
         Update an attribute of an institution.
 
@@ -1246,16 +1240,16 @@ class InstitutionMethods:
             The updated attribute.
         """
         path = "api/v1/inst/%(instid)s/%(attrid)s"
-        path_params = {"instid": instid,
-                       "attrid": attrid}
+        path_params = {"instid": instid, "attrid": attrid}
         query_params = {}
-        form_params = {"attr": attr,
-                       "commitComment": commitComment}
-        result = self.conn.invoke_method("PUT", path, path_params,
-                                         query_params, form_params)
+        form_params = {"attr": attr, "commitComment": commitComment}
+        result = self.conn.invoke_method(
+            "PUT", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute
+
 
 class PersonMethods:
     """
@@ -1346,6 +1340,7 @@ class PersonMethods:
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, conn):
         self.conn = conn
 
@@ -1371,17 +1366,14 @@ class PersonMethods:
         path_params = {}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attributeSchemes
 
-    def allPeople(self,
-                  includeCancelled,
-                  identifier=None,
-                  limit=None,
-                  fetch=None):
+    def allPeople(self, includeCancelled, identifier=None, limit=None, fetch=None):
         """
         Return a list of all people (in batches).
 
@@ -1421,20 +1413,21 @@ class PersonMethods:
         """
         path = "api/v1/person/all-people"
         path_params = {}
-        query_params = {"includeCancelled": includeCancelled,
-                        "identifier": identifier,
-                        "limit": limit,
-                        "fetch": fetch}
+        query_params = {
+            "includeCancelled": includeCancelled,
+            "identifier": identifier,
+            "limit": limit,
+            "fetch": fetch,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def listPeople(self,
-                   crsids,
-                   fetch=None):
+    def listPeople(self, crsids, fetch=None):
         """
         Get the people with the specified identifiers (typically CRSids).
 
@@ -1476,25 +1469,27 @@ class PersonMethods:
         """
         path = "api/v1/person/list"
         path_params = {}
-        query_params = {"crsids": crsids,
-                        "fetch": fetch}
+        query_params = {"crsids": crsids, "fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def search(self,
-               query,
-               approxMatches=None,
-               includeCancelled=None,
-               misStatus=None,
-               attributes=None,
-               offset=None,
-               limit=None,
-               orderBy=None,
-               fetch=None):
+    def search(
+        self,
+        query,
+        approxMatches=None,
+        includeCancelled=None,
+        misStatus=None,
+        attributes=None,
+        offset=None,
+        limit=None,
+        orderBy=None,
+        fetch=None,
+    ):
         """
         Search for people using a free text query string. This is the same
         search function that is used in the Lookup web application.
@@ -1574,28 +1569,33 @@ class PersonMethods:
         """
         path = "api/v1/person/search"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled,
-                        "misStatus": misStatus,
-                        "attributes": attributes,
-                        "offset": offset,
-                        "limit": limit,
-                        "orderBy": orderBy,
-                        "fetch": fetch}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+            "misStatus": misStatus,
+            "attributes": attributes,
+            "offset": offset,
+            "limit": limit,
+            "orderBy": orderBy,
+            "fetch": fetch,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.people
 
-    def searchCount(self,
-                    query,
-                    approxMatches=None,
-                    includeCancelled=None,
-                    misStatus=None,
-                    attributes=None):
+    def searchCount(
+        self,
+        query,
+        approxMatches=None,
+        includeCancelled=None,
+        misStatus=None,
+        attributes=None,
+    ):
         """
         Count the number of people that would be returned by a search using
         a free text query string.
@@ -1651,22 +1651,22 @@ class PersonMethods:
         """
         path = "api/v1/person/search-count"
         path_params = {}
-        query_params = {"query": query,
-                        "approxMatches": approxMatches,
-                        "includeCancelled": includeCancelled,
-                        "misStatus": misStatus,
-                        "attributes": attributes}
+        query_params = {
+            "query": query,
+            "approxMatches": approxMatches,
+            "includeCancelled": includeCancelled,
+            "misStatus": misStatus,
+            "attributes": attributes,
+        }
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return int(result.value)
 
-    def getPerson(self,
-                  scheme,
-                  identifier,
-                  fetch=None):
+    def getPerson(self, scheme, identifier, fetch=None):
         """
         Get the person with the specified identifier.
 
@@ -1700,23 +1700,25 @@ class PersonMethods:
             The requested person or :any:`None` if they were not found.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.person
 
-    def addAttribute(self,
-                     scheme,
-                     identifier,
-                     attr,
-                     position=None,
-                     allowDuplicates=None,
-                     commitComment=None):
+    def addAttribute(
+        self,
+        scheme,
+        identifier,
+        attr,
+        position=None,
+        allowDuplicates=None,
+        commitComment=None,
+    ):
         """
         Add an attribute to a person. By default, this will not add the
         attribute again if it already exists.
@@ -1763,23 +1765,22 @@ class PersonMethods:
             The newly created or existing attribute.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/add-attribute"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {}
-        form_params = {"attr": attr,
-                       "position": position,
-                       "allowDuplicates": allowDuplicates,
-                       "commitComment": commitComment}
-        result = self.conn.invoke_method("POST", path, path_params,
-                                         query_params, form_params)
+        form_params = {
+            "attr": attr,
+            "position": position,
+            "allowDuplicates": allowDuplicates,
+            "commitComment": commitComment,
+        }
+        result = self.conn.invoke_method(
+            "POST", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute
 
-    def getAttributes(self,
-                      scheme,
-                      identifier,
-                      attrs):
+    def getAttributes(self, scheme, identifier, attrs):
         """
         Get one or more (possibly multi-valued) attributes of a person. The
         returned attributes are sorted by attribute scheme precedence and
@@ -1809,20 +1810,17 @@ class PersonMethods:
             The requested attributes.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/get-attributes"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"attrs": attrs}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attributes
 
-    def getGroups(self,
-                  scheme,
-                  identifier,
-                  fetch=None):
+    def getGroups(self, scheme, identifier, fetch=None):
         """
         Get all the groups to which the specified person belongs, including
         indirect group memberships, via groups that include other groups.
@@ -1861,20 +1859,17 @@ class PersonMethods:
             The person's groups (in groupid order).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/groups"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.groups
 
-    def getInsts(self,
-                 scheme,
-                 identifier,
-                 fetch=None):
+    def getInsts(self, scheme, identifier, fetch=None):
         """
         Get all the institutions to which the specified person belongs. The
         returned list of institutions is sorted by name.
@@ -1908,20 +1903,17 @@ class PersonMethods:
             The person's institutions (in name order).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/insts"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institutions
 
-    def isMemberOfGroup(self,
-                        scheme,
-                        identifier,
-                        groupid):
+    def isMemberOfGroup(self, scheme, identifier, groupid):
         """
         Test if the specified person is a member of the specified group.
 
@@ -1951,21 +1943,17 @@ class PersonMethods:
             exist).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/is-member-of-group/%(groupid)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier,
-                       "groupid": groupid}
+        path_params = {"scheme": scheme, "identifier": identifier, "groupid": groupid}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.value and result.value.lower() == "true"
 
-    def isMemberOfInst(self,
-                       scheme,
-                       identifier,
-                       instid):
+    def isMemberOfInst(self, scheme, identifier, instid):
         """
         Test if the specified person is a member of the specified institution.
 
@@ -1996,21 +1984,17 @@ class PersonMethods:
             does not exist).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/is-member-of-inst/%(instid)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier,
-                       "instid": instid}
+        path_params = {"scheme": scheme, "identifier": identifier, "instid": instid}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.value and result.value.lower() == "true"
 
-    def getManagedGroups(self,
-                         scheme,
-                         identifier,
-                         fetch=None):
+    def getManagedGroups(self, scheme, identifier, fetch=None):
         """
         Get all the groups that the specified person has persmission to edit.
         The returned list of groups is sorted by groupid.
@@ -2048,20 +2032,17 @@ class PersonMethods:
             The groups that the person manages (in groupid order).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/manages-groups"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.groups
 
-    def getManagedInsts(self,
-                        scheme,
-                        identifier,
-                        fetch=None):
+    def getManagedInsts(self, scheme, identifier, fetch=None):
         """
         Get all the institutions that the specified person has permission to
         edit. The returned list of institutions is sorted by name.
@@ -2099,21 +2080,17 @@ class PersonMethods:
             The institutions that the person manages (in name order).
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/manages-insts"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier}
+        path_params = {"scheme": scheme, "identifier": identifier}
         query_params = {"fetch": fetch}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.institutions
 
-    def deleteAttribute(self,
-                        scheme,
-                        identifier,
-                        attrid,
-                        commitComment=None):
+    def deleteAttribute(self, scheme, identifier, attrid, commitComment=None):
         """
         Delete an attribute of a person. It is not an error if the attribute
         does not exist.
@@ -2149,21 +2126,17 @@ class PersonMethods:
             :any:`False` if it did not exist.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/%(attrid)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier,
-                       "attrid": attrid}
+        path_params = {"scheme": scheme, "identifier": identifier, "attrid": attrid}
         query_params = {"commitComment": commitComment}
         form_params = {}
-        result = self.conn.invoke_method("DELETE", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "DELETE", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.value and result.value.lower() == "true"
 
-    def getAttribute(self,
-                     scheme,
-                     identifier,
-                     attrid):
+    def getAttribute(self, scheme, identifier, attrid):
         """
         Get a specific attribute of a person.
 
@@ -2188,23 +2161,17 @@ class PersonMethods:
             The requested attribute.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/%(attrid)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier,
-                       "attrid": attrid}
+        path_params = {"scheme": scheme, "identifier": identifier, "attrid": attrid}
         query_params = {}
         form_params = {}
-        result = self.conn.invoke_method("GET", path, path_params,
-                                         query_params, form_params)
+        result = self.conn.invoke_method(
+            "GET", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute
 
-    def updateAttribute(self,
-                        scheme,
-                        identifier,
-                        attrid,
-                        attr,
-                        commitComment=None):
+    def updateAttribute(self, scheme, identifier, attrid, attr, commitComment=None):
         """
         Update an attribute of a person.
 
@@ -2246,14 +2213,12 @@ class PersonMethods:
             The updated attribute.
         """
         path = "api/v1/person/%(scheme)s/%(identifier)s/%(attrid)s"
-        path_params = {"scheme": scheme,
-                       "identifier": identifier,
-                       "attrid": attrid}
+        path_params = {"scheme": scheme, "identifier": identifier, "attrid": attrid}
         query_params = {}
-        form_params = {"attr": attr,
-                       "commitComment": commitComment}
-        result = self.conn.invoke_method("PUT", path, path_params,
-                                         query_params, form_params)
+        form_params = {"attr": attr, "commitComment": commitComment}
+        result = self.conn.invoke_method(
+            "PUT", path, path_params, query_params, form_params
+        )
         if result.error:
             raise IbisException(result.error)
         return result.attribute

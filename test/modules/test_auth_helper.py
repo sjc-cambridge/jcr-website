@@ -1,5 +1,7 @@
 """Checks auth helper functions are correct"""
+
 from website.helper.auth import johnian_access, committee_access, johnian_crsids
+
 
 # TODO: Figure out how to test auth decorators
 def test_johnian_access():
@@ -23,5 +25,5 @@ def test_postgrads():
 
 
 def test_fellows():
-    assert "tph1" in johnian_crsids # Hynes
-    assert "hew1001" in johnian_crsids # Watson
+    assert "tph1" in johnian_crsids  # Hynes
+    assert "hew1001" in johnian_crsids  # Watson

@@ -46,15 +46,15 @@
             {
                 "imageName": "studentlife/placeholder.jpg",
                 "heading": "Athletics",
-                "description":[
+                "description": [
                     "The most successful college athletics team in recent history - winning the inter-collegiate Cuppers every single year of the past 3 years.",
-                    "Women's Captains: Marni Lai (mlml5) and Freya John (fj281); Men's Captain: Arnav Sharma (as3200)" 
+                    "Women's Captains: Marni Lai (mlml5) and Freya John (fj281); Men's Captain: Arnav Sharma (as3200)"
                 ]
             },
-                        {
+            {
                 "imageName": "studentlife/placeholder.jpg",
                 "heading": "Padel Tennis",
-                "description":[
+                "description": [
                     "A new society created this year, with the aim of providing an opportunity to enjoy this growing sport to everyone from experienced players to complete novices.",
                     "Contact captain Beth Erskine (be298) for more details."
                 ]
@@ -85,7 +85,7 @@
                 "heading": "Men's Hockey - The Mogs",
                 "description": [
                     "The Men’s Hockey Club, honourably known as ‘The Mogs’, are one of the largest sports teams in college, with over 30 players coming from a wide range of hockey backgrounds. The Mogs have recently merged with the Women’s Hockey Club (The Mags) to create a united St John’s College Hockey Club (SJCHC) that participates in the College Mixed League. Since then, SJCHC has become the largest and most successful college team, with recent accomplishments including coming 1st in the Michaelmas and Lent leagues for 4 years in a row , winning supercuppers against Oxf*rd last year, as well as coming 2nd in this year's annual Cuppers knockout tournament – narrowly losing to Kings by one goal.",
-		    "We have two training sessions a week, open to newcomers as well as those with experience playing hockey, with social events and games also happening on a weekly basis. The club is very welcoming to people who have never played hockey before, providing coaching and support to those picking up a stick for the first time. If you’re interested in getting involved with SJCHC, don't hesitate to contact our Club President Ben Tremblay (bt426@cam.ac.uk) or myself (ca2243@cam.ac.uk).",
+                    "We have two training sessions a week, open to newcomers as well as those with experience playing hockey, with social events and games also happening on a weekly basis. The club is very welcoming to people who have never played hockey before, providing coaching and support to those picking up a stick for the first time. If you’re interested in getting involved with SJCHC, don't hesitate to contact our Club President Ben Tremblay (bt426@cam.ac.uk) or myself (ca2243@cam.ac.uk).",
                     "GBTHC",
                     "Caspar Semler-West – Men’s Captain 2023-24"
                 ]
@@ -98,14 +98,14 @@
                     "For enquiries,  please contact the captain Samuel Seyoum (ss3074)."
                 ]
             },
-	    {
-		"imageName": "studentlife/clubsandsocieties/Climbing.jpg",
-		"heading": "Climbing",
-		"description": [
-		    "St John’s College Climbing Society welcomes climbers of all levels — from complete beginners to seasoned boulderers. We run weekly bouldering sessions at centres around Cambridge (primarily Kelsey Kerridge and Rainbow Rocket), creating a relaxed, supportive space to learn, train, and improve together. Whether you’re climbing for fun or chasing harder grades, there’s room for you here. The society also organises occasional trips and socials, so it’s a great way to meet fellow climbers and stay active during term.",
-		    "If you'd like to join, contact co-captains Daniyaal (dba30) or Tobias (tba29)."
-		]
-	    },
+            {
+                "imageName": "studentlife/clubsandsocieties/Climbing.jpg",
+                "heading": "Climbing",
+                "description": [
+                    "St John’s College Climbing Society welcomes climbers of all levels — from complete beginners to seasoned boulderers. We run weekly bouldering sessions at centres around Cambridge (primarily Kelsey Kerridge and Rainbow Rocket), creating a relaxed, supportive space to learn, train, and improve together. Whether you’re climbing for fun or chasing harder grades, there’s room for you here. The society also organises occasional trips and socials, so it’s a great way to meet fellow climbers and stay active during term.",
+                    "If you'd like to join, contact co-captains Daniyaal (dba30) or Tobias (tba29)."
+                ]
+            },
             {
                 "imageName": "studentlife/clubsandsocieties/Netball24.jpeg",
                 "heading": "Netball - SJCNC",
@@ -170,16 +170,16 @@
     {
         "category": "Arts",
         "clubs": [
-	    {
-		"imageName": "studentlife/clubsandsocieties/SJCMS.png",
-		"heading": "St John's College Music Society (SJCMS)",
-		"description": [
-		    "Interested in college music? Look no further, SJCMS is the place for you!",
-		    "SJCMS runs a series of concerts, all free to attend, throughout the year. Each Thursday of term at 1:15pm in the Lightfoot Room sees an instalment our esteemed lunchtime concert series. These are a great way to unwind for roughly 35 minutes in the midst of a busy week. We also hold four “late” concerts a term. These are held either in the chapel or the main lecture theatre in the Old Divinity School. Featuring a range of different music, there’s something here for everyone. We tend to end term with a large scale concert showing off Johns’ musical talent in all its glory. Keep an eye out on our socials to not miss the sign up forms for concerts next term!",
-		    "For more information about our concerts and the society more generally visit our website: https://sjcms.societies.cam.ac.uk",
-		    "If you have any questions, please do be in touch with: sf765@cam.ac.uk"
-		]
-	    },
+            {
+                "imageName": "studentlife/clubsandsocieties/SJCMS.png",
+                "heading": "St John's College Music Society (SJCMS)",
+                "description": [
+                    "Interested in college music? Look no further, SJCMS is the place for you!",
+                    "SJCMS runs a series of concerts, all free to attend, throughout the year. Each Thursday of term at 1:15pm in the Lightfoot Room sees an instalment our esteemed lunchtime concert series. These are a great way to unwind for roughly 35 minutes in the midst of a busy week. We also hold four “late” concerts a term. These are held either in the chapel or the main lecture theatre in the Old Divinity School. Featuring a range of different music, there’s something here for everyone. We tend to end term with a large scale concert showing off Johns’ musical talent in all its glory. Keep an eye out on our socials to not miss the sign up forms for concerts next term!",
+                    "For more information about our concerts and the society more generally visit our website: https://sjcms.societies.cam.ac.uk",
+                    "If you have any questions, please do be in touch with: sf765@cam.ac.uk"
+                ]
+            },
             {
                 "imageName": "studentlife/clubsandsocieties/lady_margaret_players.png",
                 "heading": "Lady Margaret Players",

@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import shutil
 
+
 class HTMLParser:
     """
     Class can be used to bulk edit the html files created by exporting with
@@ -65,7 +66,7 @@ class HTMLParser:
 
 def file_recurse(func, directory_path):
     """Function for recursively operating on all files
-        in a directory w/ exceptions.
+    in a directory w/ exceptions.
     """
     path = Path(directory_path)
     for filepath_obj in path.iterdir():
@@ -82,17 +83,20 @@ def file_recurse(func, directory_path):
 
 
 def file_is_exempt(filepath):
-    """Check if file is static content or jinja stuff
-    """
-    if ".DS_Store" in filepath or "assets" in filepath or "shared" in filepath or "j2.html" in filepath:
+    """Check if file is static content or jinja stuff"""
+    if (
+        ".DS_Store" in filepath
+        or "assets" in filepath
+        or "shared" in filepath
+        or "j2.html" in filepath
+    ):
         return True
     else:
         return False
 
 
 def jinjafy_html(filepath):
-    """Jinjafies html file to extend from shared/_layout.j2.html
-    """
+    """Jinjafies html file to extend from shared/_layout.j2.html"""
     if ".html" in filepath and ".j2.html" not in filepath:  # If
         html_parser = HTMLParser(filepath)
         html_parser.modify_template()
@@ -102,8 +106,7 @@ def jinjafy_html(filepath):
 
 
 def get_file_array(dir, regex_pattern):
-    """Return an array of filepaths within a directory that match given pattern
-    """
+    """Return an array of filepaths within a directory that match given pattern"""
     files = []
     files_generator = Path(dir).glob(regex_pattern)
     for file in files_generator:
@@ -122,8 +125,7 @@ def copy_over_only_new_files(src_dir, dst_dir, regex_pattern="**/*.*"):
         potential_dst_file = src_file.replace(src_dir, dst_dir, 1)
 
         if potential_dst_file not in dst_files:
-            print("Copying new file:\n {} >> {}\n".format(
-                src_file, potential_dst_file))
+            print("Copying new file:\n {} >> {}\n".format(src_file, potential_dst_file))
             shutil.copy(src_file, potential_dst_file)
         else:
             # file exists already >> skip

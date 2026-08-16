@@ -1,5 +1,6 @@
 """Unit test file for yourjcr routes
 Simple checks whether the pages can be rendered correctly"""
+
 from mock import patch
 
 

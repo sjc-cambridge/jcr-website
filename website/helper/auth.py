@@ -28,8 +28,7 @@ from website.content.retrieve import retrieveJson
 # This decorator restricts pages to Johnians
 # Max life measured in seconds before session expires
 johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
-    max_life=60*60*24*3,
-    require_principal=retrieve_johnian_crsids()
+    max_life=60 * 60 * 24 * 3, require_principal=retrieve_johnian_crsids()
 )
 
 app_pwd = os.getenv("gmailkey")
@@ -41,24 +40,25 @@ JCR = Committee()
 
 # Committee access decorator restricts access to just committee members
 committee_access = ucam_webauth.raven.flask_glue.AuthDecorator(
-    max_life=60*60*24*3,
-    require_principal=JCR.committee_crsids
+    max_life=60 * 60 * 24 * 3, require_principal=JCR.committee_crsids
 )
 
+
 def auth_checker(access_decorator):
-    """ If user is authorised under current scheme return crsid else None"""
+    """If user is authorised under current scheme return crsid else None"""
     if access_decorator.principal in retrieve_johnian_crsids():
         return access_decorator.principal
     else:
         return None
 
+
 def is_human(captcha_response, captchaprivatekey):
-    """ Validating recaptcha response from google server.
-        Returns True captcha test passed for the submitted form
-        else returns False. Used in contact us form.
+    """Validating recaptcha response from google server.
+    Returns True captcha test passed for the submitted form
+    else returns False. Used in contact us form.
     """
     secret = captchaprivatekey
-    payload = {'response':captcha_response, 'secret':secret}
+    payload = {"response": captcha_response, "secret": secret}
     response = requests.post("https://www.google.com/recaptcha/api/siteverify", payload)
     response_text = json.loads(response.text)
-    return response_text['success']
+    return response_text["success"]

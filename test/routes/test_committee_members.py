@@ -21,13 +21,12 @@ def test_committee_members(client):
         "internationals",
         "lgbtq",
         "disabilities",
-        "women"
+        "women",
     }
 
     for role in roles:
         response = client.get("/yourjcr/committee/{}".format(role))
         assert response.status_code == 200
-
 
 
 def test_404(client):

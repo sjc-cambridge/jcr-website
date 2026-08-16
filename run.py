@@ -9,12 +9,16 @@ from argparse import ArgumentParser
 """
 
 parser = ArgumentParser()
-parser.add_argument("-d", "--development",action="store_true",
-                    help="Run app with development config", )
+parser.add_argument(
+    "-d",
+    "--development",
+    action="store_true",
+    help="Run app with development config",
+)
 
 
 curr_dir = os.path.dirname(__file__)
-instancepath = os.path.join(curr_dir, 'instance')
+instancepath = os.path.join(curr_dir, "instance")
 if not os.path.exists(instancepath):
     """Create instance folder as reminder to make config.py inside"""
     os.makedirs(instancepath)
@@ -22,7 +26,7 @@ if not os.path.exists(instancepath):
 if __name__ == "__main__":
     args = parser.parse_args()
     if args.development:
-        app = create_site(config='development')
+        app = create_site(config="development")
     else:
-        app = create_site(config='production')
+        app = create_site(config="production")
     app.run()

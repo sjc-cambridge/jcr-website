@@ -35,11 +35,25 @@ from datetime import date
 from xml.parsers import expat
 
 import sys
+
 if sys.hexversion < 0x02040000:
     from sets import Set as set
 
-_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+_MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+]
+
 
 class IbisDto(object):
     """
@@ -47,6 +61,7 @@ class IbisDto(object):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     # All properties
     __slots__ = []
 
@@ -77,7 +92,8 @@ class IbisDto(object):
         child collections can be populated.
         """
         if tagname in self.__class__.xml_arrays:
-            if getattr(self, tagname) == None: setattr(self, tagname, [])
+            if getattr(self, tagname) == None:
+                setattr(self, tagname, [])
             return getattr(self, tagname)
         return None
 
@@ -91,6 +107,7 @@ class IbisDto(object):
         if tagname in self.__class__.xml_elems:
             setattr(self, tagname, data)
 
+
 # --------------------------------------------------------------------------
 # IbisPerson: see uk.ac.cam.ucs.ibis.dto.IbisPerson.java
 # --------------------------------------------------------------------------
@@ -102,55 +119,47 @@ class IbisPerson(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "cancelled":
-            """
+        "cancelled": """
             bool
               Flag indicating if the person is cancelled.
             """,
-        "identifier":
-            """
+        "identifier": """
             :any:`IbisIdentifier`
               The person's primary identifier (typically their CRSid).
             """,
-        "displayName":
-            """
+        "displayName": """
             str
               The person's display name (if visible).
             """,
-        "registeredName":
-            """
+        "registeredName": """
             str
               The person's registered name (if visible).
             """,
-        "surname":
-            """
+        "surname": """
             str
               The person's surname (if visible).
             """,
-        "visibleName":
-            """
+        "visibleName": """
             str
               The person's display name if that is visible, otherwise their
               registered name if that is visible, otherwise their surname if
               that is visible, otherwise the value of their primary identifier
               (typically their CRSid) which is always visible.
             """,
-        "misAffiliation":
-            """
+        "misAffiliation": """
             str
               The person's MIS status (``"staff"``, ``"student"``,
               ``"staff,student"`` or ``""``).
             """,
-        "identifiers":
-            """
+        "identifiers": """
             list of :any:`IbisIdentifier`
               A list of the person's identifiers. This will only be populated
               if the `fetch` parameter included the ``"all_identifiers"``
               option.
             """,
-        "attributes":
-            """
+        "attributes": """
             list of :any:`IbisAttribute`
               A list of the person's attributes. This will only be populated
               if the `fetch` parameter includes the ``"all_attrs"`` option, or
@@ -158,60 +167,63 @@ class IbisPerson(IbisDto):
               ``"title"``, or the special pseudo-attribute scheme
               ``"phone_numbers"``.
             """,
-        "institutions":
-            """
+        "institutions": """
             list of :any:`IbisInstitution`
               A list of all the institution's to which the person belongs.
               This will only be populated if the `fetch` parameter includes
               the ``"all_insts"`` option.
             """,
-        "groups":
-            """
+        "groups": """
             list of :any:`IbisGroup`
               A list of all the groups to which the person belongs, including
               indirect group memberships, via groups that include other
               groups. This will only be populated if the `fetch` parameter
               includes the ``"all_groups"`` option.
             """,
-        "directGroups":
-            """
+        "directGroups": """
             list of :any:`IbisGroup`
               A list of all the groups that the person directly belongs to.
               This does not include indirect group memberships - i.e., groups
               that include these groups. This will only be populated if the
               `fetch` parameter includes the ``"direct_groups"`` option.
             """,
-        "id":
-            """
+        "id": """
             str
               An ID that can uniquely identify this person within the returned
               XML/JSON document. This is only used in the flattened XML/JSON
               representation (if the "flatten" parameter is specified).
             """,
-        "ref":
-            """
+        "ref": """
             str
               A reference (by id) to a person element in the XML/JSON
               document. This is only used in the flattened XML/JSON
               representation (if the "flatten" parameter is specified).
             """,
-        "unflattened":
-            """
+        "unflattened": """
             bool
               Flag to prevent infinite recursion due to circular references.
-            """
+            """,
     }
 
     xml_attrs = set(["cancelled", "id", "ref"])
 
-    xml_elems = set(["identifier", "displayName", "registeredName",
-                     "surname", "visibleName", "misAffiliation"])
+    xml_elems = set(
+        [
+            "identifier",
+            "displayName",
+            "registeredName",
+            "surname",
+            "visibleName",
+            "misAffiliation",
+        ]
+    )
 
-    xml_arrays = set(["identifiers", "attributes", "institutions",
-                      "groups", "directGroups"])
+    xml_arrays = set(
+        ["identifiers", "attributes", "institutions", "groups", "directGroups"]
+    )
 
     def __init__(self, attrs={}):
-        """ Create an IbisPerson from the attributes of an XML node. """
+        """Create an IbisPerson from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.cancelled != None:
             self.cancelled = self.cancelled.lower() == "true"
@@ -225,8 +237,7 @@ class IbisPerson(IbisDto):
         ``"staff,student"`` since some members of staff will have a blank
         misAffiliation.
         """
-        return self.misAffiliation == None or\
-               self.misAffiliation != "student";
+        return self.misAffiliation == None or self.misAffiliation != "student"
 
     def is_student(self):
         """
@@ -235,11 +246,10 @@ class IbisPerson(IbisDto):
         This tests for an misAffiliation of ``"student"`` or
         ``"staff,student"``.
         """
-        return self.misAffiliation != None and\
-               self.misAffiliation.find("student") != -1;
+        return self.misAffiliation != None and self.misAffiliation.find("student") != -1
 
     def unflatten(self, em):
-        """ Unflatten a single IbisPerson. """
+        """Unflatten a single IbisPerson."""
         if self.ref:
             person = em.get_person(self.ref)
             if not person.unflattened:
@@ -250,11 +260,13 @@ class IbisPerson(IbisDto):
             return person
         return self
 
+
 def unflatten_people(em, people):
-    """ Unflatten a list of IbisPerson objects (done in place). """
+    """Unflatten a list of IbisPerson objects (done in place)."""
     if people:
         for idx, person in enumerate(people):
             people[idx] = person.unflatten(em)
+
 
 # --------------------------------------------------------------------------
 # IbisInstitution: see uk.ac.cam.ucs.ibis.dto.IbisInstitution.java
@@ -265,29 +277,25 @@ class IbisInstitution(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "cancelled":
-            """
+        "cancelled": """
             bool
               Flag indicating if the institution is cancelled.
             """,
-        "instid":
-            """
+        "instid": """
             str
               The institution's unique ID (e.g., ``"CS"``).
             """,
-        "name":
-            """
+        "name": """
             str
               The institution's name.
             """,
-        "acronym":
-            """
+        "acronym": """
             str
               The institution's acronym, if set (e.g., ``"UCS"``).
             """,
-        "attributes":
-            """
+        "attributes": """
             list of :any:`IbisAttribute`
               A list of the institution's attributes. This will only be
               populated if the `fetch` parameter includes the ``"all_attrs"``
@@ -295,21 +303,18 @@ class IbisInstitution(IbisDto):
               ``"address"``, or the special pseudo-attribute scheme
               ``"phone_numbers"``.
             """,
-        "contactRows":
-            """
+        "contactRows": """
             list of :any:`IbisContactRow`
               A list of the institution's contact rows. This will only be
               populated if the `fetch` parameter includes the
               ``"contact_rows"`` option.
             """,
-        "members":
-            """
+        "members": """
             list of :any:`IbisPerson`
               A list of the institution's members. This will only be populated
               if the `fetch` parameter includes the ``"all_members"`` option.
             """,
-        "parentInsts":
-            """
+        "parentInsts": """
             list of :any:`IbisInstitution`
               A list of the institution's parent institutions. This will only
               be populated if the `fetch` parameter includes the
@@ -319,73 +324,75 @@ class IbisInstitution(IbisDto):
                 Currently all institutions have one parent, but in the future
                 institutions may have multiple parents.
             """,
-        "childInsts":
-            """
+        "childInsts": """
             list of :any:`IbisInstitution`
               A list of the institution's child institutions. This will only
               be populated if the `fetch` parameter includes the
               ``"child_insts"`` option.
             """,
-        "groups":
-            """
+        "groups": """
             list of :any:`IbisGroup`
               A list of all the groups that belong to the institution. This
               will only be populated if the `fetch` parameter includes the
               ``"inst_groups"`` option.
             """,
-        "membersGroups":
-            """
+        "membersGroups": """
             list of :any:`IbisGroup`
               A list of the groups that form the institution's membership.
               This will only be populated if the `fetch` parameter includes
               the ``"members_groups"`` option.
             """,
-        "managedByGroups":
-            """
+        "managedByGroups": """
             list of :any:`IbisGroup`
               A list of the groups that manage this institution. This will
               only be populated if the `fetch` parameter includes the
               ``"managed_by_groups"`` option.
             """,
-        "id":
-            """
+        "id": """
             str
               An ID that can uniquely identify this institution within the
               returned XML/JSON document. This is only used in the flattened
               XML/JSON representation (if the "flatten" parameter is
               specified).
             """,
-        "ref":
-            """
+        "ref": """
             str
               A reference (by id) to an institution element in the XML/JSON
               document. This is only used in the flattened XML/JSON
               representation (if the "flatten" parameter is specified).
             """,
-        "unflattened":
-            """
+        "unflattened": """
             bool
               Flag to prevent infinite recursion due to circular references.
-            """
+            """,
     }
 
     xml_attrs = set(["cancelled", "instid", "id", "ref"])
 
     xml_elems = set(["name", "acronym"])
 
-    xml_arrays = set(["attributes", "contactRows", "members",
-                      "parentInsts", "childInsts", "groups",
-                      "membersGroups", "managedByGroups"])
+    xml_arrays = set(
+        [
+            "attributes",
+            "contactRows",
+            "members",
+            "parentInsts",
+            "childInsts",
+            "groups",
+            "membersGroups",
+            "managedByGroups",
+        ]
+    )
 
     def __init__(self, attrs={}):
-        """ Create an IbisInstitution from the attributes of an XML node. """
+        """Create an IbisInstitution from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.cancelled != None:
             self.cancelled = self.cancelled.lower() == "true"
         self.unflattened = False
 
     def unflatten(self, em):
-        """ Unflatten a single IbisInstitution. """
+        """Unflatten a single IbisInstitution."""
         if self.ref:
             inst = em.get_institution(self.ref)
             if not inst.unflattened:
@@ -400,11 +407,13 @@ class IbisInstitution(IbisDto):
             return inst
         return self
 
+
 def unflatten_insts(em, insts):
-    """ Unflatten a list of IbisInstitution objects (done in place). """
+    """Unflatten a list of IbisInstitution objects (done in place)."""
     if insts:
         for idx, inst in enumerate(insts):
             insts[idx] = inst.unflatten(em)
+
 
 # --------------------------------------------------------------------------
 # IbisGroup: see uk.ac.cam.ucs.ibis.dto.IbisGroup.java
@@ -415,90 +424,77 @@ class IbisGroup(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "cancelled":
-            """
+        "cancelled": """
             bool
               Flag indicating if the group is cancelled.
             """,
-        "groupid":
-            """
+        "groupid": """
             str
               The group's numeric ID (actually a string e.g., ``"100656"``).
             """,
-        "name":
-            """
+        "name": """
             str
               The group's unique name (e.g., ``"cs-editors"``).
             """,
-        "title":
-            """
+        "title": """
             str
               The group's title.
             """,
-        "description":
-            """
+        "description": """
             str
               The more detailed description of the group.
             """,
-        "email":
-            """
+        "email": """
             str
               The group's email address.
             """,
-        "membersOfInst":
-            """
+        "membersOfInst": """
             :any:`IbisInstitution`
               The details of the institution for which this group forms all
               or part of the membership. This will only be set for groups that
               are membership groups of institutions if the `fetch` parameter
               includes the ``"members_of_inst"`` option.
             """,
-        "members":
-            """
+        "members": """
             list of :any:`IbisPerson`
               A list of the group's members, including (recursively) any
               members of any included groups. This will only be populated if
               the `fetch` parameter includes the ``"all_members"`` option.
             """,
-        "directMembers":
-            """
+        "directMembers": """
             list of :any:`IbisPerson`
               A list of the group's direct members, not including any members
               included via groups included by this group. This will only be
               populated if the `fetch` parameter includes the
               ``"direct_members"`` option.
             """,
-        "owningInsts":
-            """
+        "owningInsts": """
             list of :any:`IbisInstitution`
               A list of the institutions to which this group belongs. This
               will only be populated if the `fetch` parameter includes the
               ``"owning_insts"`` option.
             """,
-        "managesInsts":
-            """
+        "managesInsts": """
             list of :any:`IbisInstitution`
               A list of the institutions managed by this group. This will only
               be populated if the `fetch` parameter includes the
               ``"manages_insts"`` option.
             """,
-        "managesGroups":
-            """
+        "managesGroups": """
             list of :any:`IbisGroup`
               A list of the groups managed by this group. This will only be
               populated if the `fetch` parameter includes the
               ``"manages_groups"`` option.
             """,
-        "managedByGroups":
-            """
+        "managedByGroups": """
             list of :any:`IbisGroup`
               A list of the groups that manage this group. This will only be
               populated if the `fetch` parameter includes the
               ``"managed_by_groups"`` option.
             """,
-        "readsGroups":
-            """
+        "readsGroups": """
             list of :any:`IbisGroup`
               A list of the groups that this group has privileged access to.
               Members of this group will be able to read the members of any of
@@ -506,8 +502,7 @@ class IbisGroup(IbisDto):
               will only be populated if the `fetch` parameter includes the
               ``"reads_groups"`` option.
             """,
-        "readByGroups":
-            """
+        "readByGroups": """
             list of :any:`IbisGroup`
               A list of the groups that have privileged access to this group.
               Members of those groups will be able to read the members of this
@@ -515,8 +510,7 @@ class IbisGroup(IbisDto):
               be populated if the `fetch` parameter includes the
               ``"read_by_groups"`` option.
             """,
-        "includesGroups":
-            """
+        "includesGroups": """
             list of :any:`IbisGroup`
               A list of the groups directly included in this group. Any
               members of the included groups (and recursively any groups that
@@ -524,8 +518,7 @@ class IbisGroup(IbisDto):
               will only be populated if the `fetch` parameter includes the
               ``"includes_groups"`` option.
             """,
-        "includedByGroups":
-            """
+        "includedByGroups": """
             list of :any:`IbisGroup`
               A list of the groups that directly include this group. Any
               members of this group will automatically be included in those
@@ -533,47 +526,52 @@ class IbisGroup(IbisDto):
               groups). This will only be populated if the `fetch` parameter
               includes the ``"included_by_groups"`` option.
             """,
-        "id":
-            """
+        "id": """
             str
               An ID that can uniquely identify this group within the returned
               XML/JSON document. This is only used in the flattened XML/JSON
               representation (if the "flatten" parameter is specified).
             """,
-        "ref":
-            """
+        "ref": """
             str
               A reference (by id) to a group element in the XML/JSON document.
               This is only used in the flattened XML/JSON representation (if
               the "flatten" parameter is specified).
             """,
-        "unflattened":
-            """
+        "unflattened": """
             bool
               Flag to prevent infinite recursion due to circular references.
-            """
+            """,
     }
 
     xml_attrs = set(["cancelled", "groupid", "id", "ref"])
 
-    xml_elems = set(["name", "title", "description", "emails",
-                     "membersOfInst"])
+    xml_elems = set(["name", "title", "description", "emails", "membersOfInst"])
 
-    xml_arrays = set(["members", "directMembers",
-                      "owningInsts", "managesInsts",
-                      "managesGroups", "managedByGroups",
-                      "readsGroups", "readByGroups",
-                      "includesGroups", "includedByGroups"])
+    xml_arrays = set(
+        [
+            "members",
+            "directMembers",
+            "owningInsts",
+            "managesInsts",
+            "managesGroups",
+            "managedByGroups",
+            "readsGroups",
+            "readByGroups",
+            "includesGroups",
+            "includedByGroups",
+        ]
+    )
 
     def __init__(self, attrs={}):
-        """ Create an IbisGroup from the attributes of an XML node. """
+        """Create an IbisGroup from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.cancelled != None:
             self.cancelled = self.cancelled.lower() == "true"
         self.unflattened = False
 
     def unflatten(self, em):
-        """ Unflatten a single IbisGroup. """
+        """Unflatten a single IbisGroup."""
         if self.ref:
             group = em.get_group(self.ref)
             if not group.unflattened:
@@ -593,11 +591,13 @@ class IbisGroup(IbisDto):
             return group
         return self
 
+
 def unflatten_groups(em, groups):
-    """ Unflatten a list of IbisGroup objects (done in place). """
+    """Unflatten a list of IbisGroup objects (done in place)."""
     if groups:
         for idx, group in enumerate(groups):
             groups[idx] = group.unflatten(em)
+
 
 # --------------------------------------------------------------------------
 # IbisIdentifier: see uk.ac.cam.ucs.ibis.dto.IbisIdentifier.java
@@ -609,21 +609,21 @@ class IbisIdentifier(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "scheme":
-            """
+        "scheme": """
             str
               The identifier's scheme (e.g., ``"crsid"``).
             """,
-        "value":
-            """
+        "value": """
             str
               The identifier's value in that scheme (e.g., a specific CRSid
               value).
-            """
+            """,
     }
 
     xml_attrs = set(["scheme"])
+
 
 # --------------------------------------------------------------------------
 # IbisAttribute: see uk.ac.cam.ucs.ibis.dto.IbisAttribute.java
@@ -639,73 +639,73 @@ class IbisAttribute(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "attrid":
-            """
+        "attrid": """
             int
               The unique internal identifier of the attribute.
             """,
-        "scheme":
-            """
+        "scheme": """
             str
               The attribute's scheme.
             """,
-        "value":
-            """
+        "value": """
             str
               The attribute's value (except for binary attributes).
             """,
-        "binaryData":
-            """
+        "binaryData": """
             bytes
               The binary data held in the attribute (e.g., a JPEG photo).
             """,
-        "comment":
-            """
+        "comment": """
             str
               Any comment associated with the attribute.
             """,
-        "instid":
-            """
+        "instid": """
             str
               For a person attribute, the optional institution that the
               attribute is associated with. This will not be set for
               institution attributes.
             """,
-        "visibility":
-            """
+        "visibility": """
             str
               For a person attribute, it's visibility (``"private"``,
               ``"institution"``, ``"university"`` or ``"world"``). This will
               not be set for institution attributes.
             """,
-        "effectiveFrom":
-            """
+        "effectiveFrom": """
             date
               For time-limited attributes, the date from which it takes
               effect.
             """,
-        "effectiveTo":
-            """
+        "effectiveTo": """
             date
               For time-limited attributes, the date after which it is no
               longer effective.
             """,
-        "owningGroupid":
-            """
+        "owningGroupid": """
             str
               For a person attribute, the ID of the group that owns it
               (typically the user agent group that created it).
-            """
+            """,
     }
 
-    xml_attrs = set(["attrid", "scheme", "instid", "visibility",
-                     "effectiveFrom", "effectiveTo", "owningGroupid"])
+    xml_attrs = set(
+        [
+            "attrid",
+            "scheme",
+            "instid",
+            "visibility",
+            "effectiveFrom",
+            "effectiveTo",
+            "owningGroupid",
+        ]
+    )
 
     xml_elems = set(["value", "binaryData", "comment"])
 
     def __init__(self, attrs={}):
-        """ Create an IbisAttribute from the attributes of an XML node. """
+        """Create an IbisAttribute from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.attrid != None:
             self.attrid = int(self.attrid)
@@ -748,38 +748,40 @@ class IbisAttribute(IbisDto):
         if self.value != None:
             result = "%s,value:%s" % (result, base64.b64encode(self.value))
         if self.binaryData != None:
-            result = "%s,binaryData:%s" %\
-                     (result, base64.b64encode(self.binaryData))
+            result = "%s,binaryData:%s" % (result, base64.b64encode(self.binaryData))
         if self.comment != None:
-            result = "%s,comment:%s" %\
-                     (result, base64.b64encode(self.comment))
+            result = "%s,comment:%s" % (result, base64.b64encode(self.comment))
         if self.instid != None:
-            result = "%s,instid:%s" %\
-                     (result, base64.b64encode(self.instid))
+            result = "%s,instid:%s" % (result, base64.b64encode(self.instid))
         if self.visibility != None:
-            result = "%s,visibility:%s" %\
-                     (result, base64.b64encode(self.visibility))
+            result = "%s,visibility:%s" % (result, base64.b64encode(self.visibility))
         if self.effectiveFrom != None:
-            result = "%s,effectiveFrom:%02d %s %d" %\
-                     (result,
-                      self.effectiveFrom.day,
-                      _MONTHS[self.effectiveFrom.month-1],
-                      self.effectiveFrom.year)
+            result = "%s,effectiveFrom:%02d %s %d" % (
+                result,
+                self.effectiveFrom.day,
+                _MONTHS[self.effectiveFrom.month - 1],
+                self.effectiveFrom.year,
+            )
         if self.effectiveTo != None:
-            result = "%s,effectiveTo:%02d %s %d" %\
-                     (result,
-                      self.effectiveTo.day,
-                      _MONTHS[self.effectiveTo.month-1],
-                      self.effectiveTo.year)
+            result = "%s,effectiveTo:%02d %s %d" % (
+                result,
+                self.effectiveTo.day,
+                _MONTHS[self.effectiveTo.month - 1],
+                self.effectiveTo.year,
+            )
         if self.owningGroupid != None:
-            result = "%s,owningGroupid:%s" %\
-                     (result, base64.b64encode(self.owningGroupid))
+            result = "%s,owningGroupid:%s" % (
+                result,
+                base64.b64encode(self.owningGroupid),
+            )
         return result
 
+
 def parse_date(s):
-    """ Parse a date string from XML. """
+    """Parse a date string from XML."""
     s = s.strip()
     return date(int(s[:4]), int(s[5:7]), int(s[8:10]))
+
 
 # --------------------------------------------------------------------------
 # IbisError: see uk.ac.cam.ucs.ibis.dto.IbisError.java
@@ -790,28 +792,25 @@ class IbisError(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "status":
-            """
+        "status": """
             int
               The HTTP error status code.
             """,
-        "code":
-            """
+        "code": """
             str
               A short textual description of the error status code.
             """,
-        "message":
-            """
+        "message": """
             str
               A short textual description of the error message (typically one
               line).
             """,
-        "details":
-            """
+        "details": """
             str
               The full details of the error (e.g., a Java stack trace).
-            """
+            """,
     }
 
     xml_attrs = set(["status"])
@@ -819,10 +818,11 @@ class IbisError(IbisDto):
     xml_elems = set(["code", "message", "details"])
 
     def __init__(self, attrs={}):
-        """ Create an IbisError from the attributes of an XML node. """
+        """Create an IbisError from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.status != None:
             self.status = int(self.status)
+
 
 # --------------------------------------------------------------------------
 # IbisAttributeScheme: see uk.ac.cam.ucs.ibis.dto.IbisAttributeScheme.java
@@ -834,64 +834,57 @@ class IbisAttributeScheme(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "schemeid":
-            """
+        "schemeid": """
             str
               The unique identifier of the attribute scheme.
             """,
-        "precedence":
-            """
+        "precedence": """
             int
               The attribute scheme's precedence. Methods that return or
               display attributes sort the results primarily in order of
               increasing values of attribute scheme precedence.
             """,
-        "ldapName":
-            """
+        "ldapName": """
             str
               The name of the attribute scheme in LDAP, if it is exported to
               LDAP. Note that many attributes are not exported to LDAP, in
               which case this name is typically just equal to the scheme's ID.
             """,
-        "displayName":
-            """
+        "displayName": """
             str
               The display name for labelling attributes in this scheme.
             """,
-        "dataType":
-            """
+        "dataType": """
             str
               The attribute scheme's datatype.
             """,
-        "multiValued":
-            """
+        "multiValued": """
             bool
               Flag indicating whether attributes in this scheme can be
               multi-valued.
             """,
-        "multiLined":
-            """
+        "multiLined": """
             bool
               Flag for textual attributes schemes indicating whether they are
               multi-lined.
             """,
-        "searchable":
-            """
+        "searchable": """
             bool
               Flag indicating whether attributes of this scheme are searched
               by the default search functionality.
             """,
-        "regexp":
-            """
+        "regexp": """
             str
               For textual attributes, an optional regular expression that all
               attributes in this scheme match.
-            """
+            """,
     }
 
-    xml_attrs = set(["schemeid", "precedence", "multiValued", "multiLined",
-                     "searchable"])
+    xml_attrs = set(
+        ["schemeid", "precedence", "multiValued", "multiLined", "searchable"]
+    )
 
     xml_elems = set(["ldapName", "displayName", "dataType", "regexp"])
 
@@ -909,6 +902,7 @@ class IbisAttributeScheme(IbisDto):
         if self.searchable != None:
             self.searchable = self.searchable.lower() == "true"
 
+
 # --------------------------------------------------------------------------
 # IbisContactRow: see uk.ac.cam.ucs.ibis.dto.IbisContactRow.java
 # --------------------------------------------------------------------------
@@ -919,70 +913,61 @@ class IbisContactRow(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "description":
-            """
+        "description": """
             str
               The contact row's text.
             """,
-        "bold":
-            """
+        "bold": """
             bool
               Flag indicating if the contact row's text is normally displayed
               in bold.
             """,
-        "italic":
-            """
+        "italic": """
             bool
               Flag indicating if the contact row's text is normally displayed
               in italics.
             """,
-        "addresses":
-            """
+        "addresses": """
             list of str
               A list of the contact row's addresses. This will never be
               :any:`None`, but it may be an empty list.
             """,
-        "emails":
-            """
+        "emails": """
             list of str
               A list of the contact row's email addresses. This will never be
               :any:`None`, but it may be an empty list.
             """,
-        "people":
-            """
+        "people": """
             list of :any:`IbisPerson`
               A list of the people referred to by the contact row. This will
               never by :any:`None`, but it may be an empty list.
             """,
-        "phoneNumbers":
-            """
+        "phoneNumbers": """
             list of :any:`IbisContactPhoneNumber`
               A list of the contact row's phone numbers. This will never be
               :any:`None`, but it may be an empty list.
             """,
-        "webPages":
-            """
+        "webPages": """
             list of :any:`IbisContactWebPage`
               A list of the contact row's web pages. This will never be
               :any:`None`, but it may be an empty list.
             """,
-        "unflattened":
-            """
+        "unflattened": """
             bool
               Flag to prevent infinite recursion due to circular references.
-            """
+            """,
     }
 
     xml_attrs = set(["bold", "italic"])
 
     xml_elems = set(["description"])
 
-    xml_arrays = set(["addresses", "emails", "people", "phoneNumbers",
-                      "webPages"])
+    xml_arrays = set(["addresses", "emails", "people", "phoneNumbers", "webPages"])
 
     def __init__(self, attrs={}):
-        """ Create an IbisContactRow from the attributes of an XML node. """
+        """Create an IbisContactRow from the attributes of an XML node."""
         IbisDto.__init__(self, attrs)
         if self.bold != None:
             self.bold = self.bold.lower() == "true"
@@ -991,17 +976,19 @@ class IbisContactRow(IbisDto):
         self.unflattened = False
 
     def unflatten(self, em):
-        """ Unflatten a single IbisContactRow. """
+        """Unflatten a single IbisContactRow."""
         if not self.unflattened:
             self.unflattened = True
             unflatten_people(em, self.people)
         return self
 
+
 def unflatten_contact_rows(em, contact_rows):
-    """ Unflatten a list of IbisContactRow objects (done in place). """
+    """Unflatten a list of IbisContactRow objects (done in place)."""
     if contact_rows:
         for idx, contact_row in enumerate(contact_rows):
             contact_rows[idx] = contact_row.unflatten(em)
+
 
 # --------------------------------------------------------------------------
 # IbisContactPhoneNumber:
@@ -1014,27 +1001,26 @@ class IbisContactPhoneNumber(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "phoneType":
-            """
+        "phoneType": """
             str
               The phone number's type.
             """,
-        "number":
-            """
+        "number": """
             str
               The phone number.
             """,
-        "comment":
-            """
+        "comment": """
             str
               Any comment associated with the phone number.
-            """
+            """,
     }
 
     xml_attrs = set(["phoneType"])
 
     xml_elems = set(["number", "comment"])
+
 
 # --------------------------------------------------------------------------
 # IbisContactWebPage: see uk.ac.cam.ucs.ibis.dto.IbisContactWebPage.java
@@ -1046,20 +1032,20 @@ class IbisContactWebPage(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "url":
-            """
+        "url": """
             str
               The web page's URL.
             """,
-        "label":
-            """
+        "label": """
             str
               The web page's label (link text) if set.
-            """
+            """,
     }
 
     xml_elems = set(["url", "label"])
+
 
 # --------------------------------------------------------------------------
 # IbisResult: see uk.ac.cam.ucs.ibis.dto.IbisResult.java
@@ -1073,20 +1059,18 @@ class IbisResult(IbisDto):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     __slots__ = {
-        "version":
-            """
+        "version": """
             str
               The web service API version number.
             """,
-        "value":
-            """
+        "value": """
             str
               The value returned by methods that return a simple textual
               value.
             """,
-        "person":
-            """
+        "person": """
             :any:`IbisPerson`
               The person returned by methods that return a single person.
 
@@ -1094,8 +1078,7 @@ class IbisResult(IbisDto):
               use the :any:`people <IbisResult.people>` field, even if only
               one person was returned.
             """,
-        "institution":
-            """
+        "institution": """
             :any:`IbisInstitution`
               The institution returned by methods that return a single
               institution.
@@ -1104,8 +1087,7 @@ class IbisResult(IbisDto):
               always use the :any:`institutions <IbisResult.institutions>`
               field, even if only one institution was returned.
             """,
-        "group":
-            """
+        "group": """
             :any:`IbisGroup`
               The group returned by methods that return a single group.
 
@@ -1113,56 +1095,47 @@ class IbisResult(IbisDto):
               use the :any:`groups <IbisResult.groups>` field, even if only
               one group was returned.
             """,
-        "identifier":
-            """
+        "identifier": """
             :any:`IbisIdentifier`
               The identifier returned by methods that return a single
               identifier.
             """,
-        "attribute":
-            """
+        "attribute": """
             :any:`IbisAttribute`
               The person or institution attribute returned by methods that
               return a single attribute.
             """,
-        "error":
-            """
+        "error": """
             :any:`IbisError`
               If the method failed, details of the error.
             """,
-        "people":
-            """
+        "people": """
             list of :any:`IbisPerson`
               The list of people returned by methods that may return multiple
               people. This may be empty, or contain one or more people.
             """,
-        "institutions":
-            """
+        "institutions": """
             list of :any:`IbisInstitution`
               The list of institutions returned by methods that may return
               multiple institutions. This may be empty, or contain one or more
               institutions.
             """,
-        "groups":
-            """
+        "groups": """
             list of :any:`IbisGroup`
               The list of groups returned by methods that may return multiple
               groups. This may be empty, or contain one or more groups.
             """,
-        "attributes":
-            """
+        "attributes": """
             list of :any:`IbisAttribute`
               The list of attributes returned by methods that return lists of
               person/institution attributes.
             """,
-        "attributeSchemes":
-            """
+        "attributeSchemes": """
             list of :any:`IbisAttributeScheme`
               The list of attribute schemes returned by methods that return
               lists of person/institution attribute schemes.
             """,
-        "entities":
-            """
+        "entities": """
             :any:`IbisResult.Entities`
               In the flattened XML/JSON representation, all the unique
               entities returned by the method.
@@ -1170,16 +1143,27 @@ class IbisResult(IbisDto):
               .. note::
                 This will be :any:`None` unless the "flatten" parameter is
                 :any:`True`.
-            """
+            """,
     }
 
     xml_attrs = set(["version"])
 
-    xml_elems = set(["value", "person", "institution", "group",
-                     "identifier", "attribute", "error", "entities"])
+    xml_elems = set(
+        [
+            "value",
+            "person",
+            "institution",
+            "group",
+            "identifier",
+            "attribute",
+            "error",
+            "entities",
+        ]
+    )
 
-    xml_arrays = set(["people", "institutions", "groups",
-                      "attributes", "attributeSchemes"])
+    xml_arrays = set(
+        ["people", "institutions", "groups", "attributes", "attributeSchemes"]
+    )
 
     class Entities(IbisDto):
         """
@@ -1194,17 +1178,16 @@ class IbisResult(IbisDto):
 
         .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
         """
+
         __slots__ = {
-            "people":
-                """
+            "people": """
                 list of :any:`IbisPerson`
                   A list of all the unique people returned by the method. This
                   may include additional people returned as a result of the
                   `fetch` parameter, so this list may contain more entries
                   than the corresponding field on the enclosing class.
                 """,
-            "institutions":
-                """
+            "institutions": """
                 list of :any:`IbisInstitution`
                   A list of all the unique institutions returned by the
                   method. This may include additional institutions returned as
@@ -1212,14 +1195,13 @@ class IbisResult(IbisDto):
                   more entries than the corresponding field on the enclosing
                   class.
                 """,
-            "groups":
-                """
+            "groups": """
                 list of :any:`IbisGroup`
                   A list of all the unique groups returned by the method. This
                   may include additional groups returned as a result of the
                   `fetch` parameter, so this list may contain more entries
                   than the corresponding field on the enclosing class.
-                """
+                """,
         }
 
         xml_arrays = set(["people", "institutions", "groups"])
@@ -1231,6 +1213,7 @@ class IbisResult(IbisDto):
 
         .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
         """
+
         def __init__(self, result):
             """
             Construct an entity map from a flattened IbisResult.
@@ -1300,6 +1283,7 @@ class IbisResult(IbisDto):
 
         return self
 
+
 # --------------------------------------------------------------------------
 # IbisResultParser: unmarshaller for IbisResult objects
 # --------------------------------------------------------------------------
@@ -1309,6 +1293,7 @@ class IbisResultParser:
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self):
         self.result = None
         self.node_stack = []
@@ -1346,8 +1331,7 @@ class IbisResultParser:
                 element = IbisResult.Entities(attrs)
             else:
                 parent = self.node_stack[-1]
-                if (not isinstance(parent, list)) and\
-                   (not isinstance(parent, dict)):
+                if (not isinstance(parent, list)) and (not isinstance(parent, dict)):
                     element = parent.start_child_element(tagname)
             if element == None:
                 element = {"tagname": tagname}
@@ -1382,11 +1366,15 @@ class IbisResultParser:
         if self.node_stack:
             element = self.node_stack[-1]
             if isinstance(element, IbisIdentifier):
-                if element.value != None: element.value += data
-                else: element.value = data
+                if element.value != None:
+                    element.value += data
+                else:
+                    element.value = data
             elif isinstance(element, dict):
-                if "data" in element: element["data"] += data
-                else: element["data"] = data
+                if "data" in element:
+                    element["data"] += data
+                else:
+                    element["data"] = data
 
     def parse_xml(self, data):
         """

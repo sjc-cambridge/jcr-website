@@ -1,4 +1,5 @@
 """Checks welfare system helper functions are correct"""
+
 from website.helper.welfaresystem import userhash
 
 

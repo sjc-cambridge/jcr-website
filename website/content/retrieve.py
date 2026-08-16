@@ -10,7 +10,7 @@ def retrieveJson(filepath):
     the .json suffix is optional
     e.g. filepath='studentlife/glossary'
     """
-    filepath = str(filepath).replace(".json", "") # remove json if present
+    filepath = str(filepath).replace(".json", "")  # remove json if present
     path = os.path.join(script_dir, filepath + ".json")
     with open(path, "r") as json_file:
         json_object = json.load(json_file)

@@ -32,8 +32,20 @@ import requests
 
 from .dto import IbisDto, IbisError, IbisResult, IbisResultParser
 
-_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+_MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+]
 
 
 class IbisException(Exception):
@@ -44,6 +56,7 @@ class IbisException(Exception):
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, error):
         Exception.__init__(self, error.message)
         self.error = error
@@ -69,6 +82,7 @@ class IbisClientConnection:
 
     .. codeauthor:: Dean Rasheed (dev-group@ucs.cam.ac.uk)
     """
+
     def __init__(self, host, port, url_base, check_certs, *, session=None):
         self.host = host
         self.port = port
@@ -85,7 +99,7 @@ class IbisClientConnection:
             warnings.warn(
                 "Setting check_certs=False is dangerous and may not be "
                 "supported in a future release of ibisclient.",
-                DeprecationWarning
+                DeprecationWarning,
             )
 
         self.username = None
@@ -95,7 +109,7 @@ class IbisClientConnection:
     def _update_authorization(self):
         self.session.auth = (
             self.username if self.username is not None else "anonymous",
-            self.password if self.password is not None else ""
+            self.password if self.password is not None else "",
         )
 
     def set_username(self, username):
@@ -145,9 +159,11 @@ class IbisClientConnection:
                     else:
                         new_params[key] = "false"
                 elif isinstance(value, date):
-                    new_params[key] = "%02d %s %d" % (value.day,
-                                                      _MONTHS[value.month-1],
-                                                      value.year)
+                    new_params[key] = "%02d %s %d" % (
+                        value.day,
+                        _MONTHS[value.month - 1],
+                        value.year,
+                    )
                 elif isinstance(value, list) or isinstance(value, tuple):
                     new_params[key] = ",".join(value)
                 elif isinstance(value, IbisDto):
@@ -189,8 +205,9 @@ class IbisClientConnection:
             return "%s%s" % (self.url_base, path[1:])
         return "%s%s" % (self.url_base, path)
 
-    def invoke_method(self, method, path, path_params={},
-                      query_params={}, form_params={}):
+    def invoke_method(
+        self, method, path, path_params={}, query_params={}, form_params={}
+    ):
         """
         Invoke a web service GET, POST, PUT or DELETE method.
 
@@ -227,21 +244,22 @@ class IbisClientConnection:
         form_params = self._params_to_strings(form_params)
 
         url = "https://%s:%s%s" % (
-            self.host, self.port,
-            self._build_url(path, path_params, query_params)
+            self.host,
+            self.port,
+            self._build_url(path, path_params, query_params),
         )
         headers = {"Accept": "application/xml"}
 
         if len(form_params) > 0:
             response = self.session.request(
-                method, url, data=form_params, headers=headers)
+                method, url, data=form_params, headers=headers
+            )
         else:
             response = self.session.request(method, url, headers=headers)
 
         content_type = response.headers["Content-type"]
         if content_type != "application/xml":
-            error = IbisError({"status": response.status_code,
-                               "code": response.reason})
+            error = IbisError({"status": response.status_code, "code": response.reason})
             error.message = "Unexpected result from server"
             error.details = response.text
 

@@ -1,4 +1,5 @@
 """Module for retrieving committee related data"""
+
 from website.content.retrieve import retrieveJson
 
 

@@ -16,13 +16,14 @@ curr_dir = os.path.dirname(__file__)
 ELECTIONS_ONGOING = False
 
 if ELECTIONS_ONGOING:
-    json_path = 'elections/candidates'
+    json_path = "elections/candidates"
 else:
-    json_path = 'elections/elected'
+    json_path = "elections/elected"
 
 election_json = retrieveJson(json_path)
 
+
 def get_manifesto(filename):
     """Sends manifesto as attachment"""
-    filepath = os.path.join(curr_dir, 'elections/manifestos', filename)
+    filepath = os.path.join(curr_dir, "elections/manifestos", filename)
     return send_file(filepath, as_attachment=True)

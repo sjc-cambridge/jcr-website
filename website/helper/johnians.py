@@ -3,14 +3,14 @@ from website.content.retrieve import retrieveJson
 from pathlib import Path
 from ibisclient import createConnection, GroupMethods, PersonMethods, InstitutionMethods
 
-''' File connects to UIS to get CRSids of all Johnians known for website access.
+""" File connects to UIS to get CRSids of all Johnians known for website access.
 Stores all CRSids in txt file. Idea is this file is run periodically, say once a day,
 so we're not making loads of unneccesary requests to UIS server.
 Has to be run from behind the Uni firewall i.e. on the Uni network e.g. eduroam
 or via the Cambridge VPN
-'''
+"""
 
-'''This commented out section shows how I got the group names for various types of
+"""This commented out section shows how I got the group names for various types of
 members of St. John's.
 
 
@@ -34,11 +34,12 @@ print('Brian groups')
 for group in brian:
     print(group.groupid, group.description)
     print(group.name)
-'''
+"""
 
 script_dir = os.path.dirname(__file__)
 parent_dir = str(Path(script_dir).parent)
 johnian_dump = os.path.join(parent_dir, "content/config/johnians.txt")
+
 
 def get_johnian_crsids():
     """Make request to UIS to retrieve all johnians
@@ -49,9 +50,9 @@ def get_johnian_crsids():
     conn = createConnection()
     im = InstitutionMethods(conn)
 
-    ug_johnians = [johnian.identifier.value for johnian in im.getMembers('JOHNSUG')]
-    pg_johnians = [johnian.identifier.value for johnian in im.getMembers('JOHNSPG')]
-    johnian_crsids = [johnian.identifier.value for johnian in im.getMembers('JOHNS')]
+    ug_johnians = [johnian.identifier.value for johnian in im.getMembers("JOHNSUG")]
+    pg_johnians = [johnian.identifier.value for johnian in im.getMembers("JOHNSPG")]
+    johnian_crsids = [johnian.identifier.value for johnian in im.getMembers("JOHNS")]
     other_no = len(johnian_crsids)
     johnian_crsids += ug_johnians
     johnian_crsids += pg_johnians
@@ -61,9 +62,12 @@ def get_johnian_crsids():
     johnian_crsids = set(johnian_crsids)  # Remove repeats
     total = len(johnian_crsids)
 
-    print_str = "Found {0} Unique Johnians! {1} in Undergraduates, {2} in Post-Graduates " \
-                "{3} in General, {4} in Exceptions".format(total, len(ug_johnians),
-                                                     len(pg_johnians), other_no, len(exception_crsids))
+    print_str = (
+        "Found {0} Unique Johnians! {1} in Undergraduates, {2} in Post-Graduates "
+        "{3} in General, {4} in Exceptions".format(
+            total, len(ug_johnians), len(pg_johnians), other_no, len(exception_crsids)
+        )
+    )
 
     return johnian_crsids, print_str
 
@@ -76,7 +80,7 @@ def update_johnian_crsids():
 
     johnian_crsids, print_str = get_johnian_crsids()
 
-    with open(johnian_dump, "w") as file:   # Writing crsids to file
+    with open(johnian_dump, "w") as file:  # Writing crsids to file
         for crsid in johnian_crsids:
             file.write("%s\n" % crsid)
 
@@ -85,8 +89,8 @@ def update_johnian_crsids():
 
 def retrieve_johnian_crsids():
     """Returns the most up to date set of all johnian crsids.
-        Any exceptions such as Johnians not found by the UIS service should
-        be listed in the exceptions JSON."""
+    Any exceptions such as Johnians not found by the UIS service should
+    be listed in the exceptions JSON."""
     try:
         with open(johnian_dump, "r") as file:
             johnian_crsids = file.readlines()
