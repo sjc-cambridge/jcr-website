@@ -1,4 +1,4 @@
-## Project Structure
+# Project Structure
 
 The bulk of the functionality is contained within the website directory.
 The sub-directories are organised as follows:
@@ -24,7 +24,7 @@ The sub-directories are organised as follows:
 - `views`
     - This contains all routing logic. Each file defines the routing information for each subsection of the website (e.g. studentlife)
 
-# Other directories:
+## Other directories:
 
 - `ibisclient`
     - This is not our own. It's an API that can query Cambridge's lookup service (lookup.cam.ac.uk) to determine who is or is not a Johnian. It can be wrong in cases like PhD students who might not show up as members of John's and might need manually adding!
@@ -39,9 +39,8 @@ The sub-directories are organised as follows:
 - `gunicorn`
     - This directory contains shell scripts for running the app under a Gunicorn proxy for use in production. Scripts should be run from the root directory e.g.
 
-    ```
-    $ ./gunicorn/start
-    will start the website wrapped in a Gunicorn proxy.
+    ```shell
+    ./gunicorn/restart
     ```
 
 - `config`
@@ -53,17 +52,22 @@ The sub-directories are organised as follows:
 - `scripts`
     - Website related scripts. See it's README for an explanation.
 
-## Running the site locally.
+# Running
 
-After cloning the website run `python3 run.py` from the website root.
+This project uses `Python 3.05`.
+
+```shell
+git clone git@github.com:sjccomputing/website.git && cd website/
+python3 run.py
+```
 
 ## Testing with venv
 
 For testing and development it is best to use a python virtual environment, to create one use:
 
-```
-$ python3 -m venv .venv
-$ source .venv/bin/activate
+```shell
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 This creates a `.venv` directory that contains a local virtual python environment. The second command activates the venv.
@@ -72,18 +76,18 @@ It will prepend `(.venv)` to the start of the line - you can quit out using `$ d
 
 To install all required packages simply run the following command in the root directory.
 
-```
-$ pip install -r requirements.txt
+```shell
+pip install -r requirements.txt
 ```
 
 To make sure you can use absolute imports you must install the whole directory in editable state. This allows you to use absolute imports of the website and test directories. To do this run:
 
-```
-$ pip install -e .
+```shell
+pip install -e .
 ```
 
 Now running tests becomes as easy as:
 
-```
-$ pytest
+```shell
+pytest
 ```
