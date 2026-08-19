@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>JCRweb_master</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300i,400,400i,500,500i,600,600i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="/assets/css/Collapsible-sidebar-left-or-right--Content-overlay.css">
+    <link rel="stylesheet" href="/assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="/assets/css/JohnianHeader.css">
+    <link rel="stylesheet" href="/assets/css/JohnianNavbar.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+<title>St. John's College JCR</title>
+</head>
+
+<body>
+    <div>
+        <div class="overlay"></div>
+        <div id="sidebar" class="sidebar-right" style="background-color: rgba(118,187,239,0.17);">
+            <div class="sidebar-header">
+                <div id="close-sidebar"><i class="fa fa-chevron-left" id="closemenu"></i></div>
+                <h2></h2>
+            </div>
+            <ul>
+                <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/yourjcr/home"><i class="fa fa-user"></i>&nbsp;Your JCR</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#yourjcrmenu" aria-expanded="false" aria-controls="yourjcrmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                    <ul
+                        class="list-unstyled collapse" id="yourjcrmenu" aria-expanded="false">
+                        <li id="sublink"> <a href="/yourjcr/committee"><i class="fa fa-group"></i>&nbsp; Committee</a></li>
+                        <li id="sublink"> <a href="/yourjcr/academicaffairs"><i class="fa fa-book"></i>&nbsp; Academic Affairs</a></li>
+                        <li id="sublink"> <a href="/yourjcr/access"><i class="fa fa-key"></i>&nbsp; Access</a></li>
+                        <li id="sublink"> <a href="/yourjcr/consentjohns"><i class="fa fa-intersex"></i>&nbsp; Consent John's</a></li>
+                        <li id="sublink"> <a href="/yourjcr/ents"><i class="fas fa-glass-cheers"></i>&nbsp; Ents</a></li>
+                        <li id="sublink"> </li>
+            </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/studentlife/home"><i class="fa fa-user"></i>&nbsp; Student Life</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#slifemenu" aria-expanded="false" aria-controls="slifemenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="slifemenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/studentlife/atcambridge"><i class="fa fa-mortar-board"></i>&nbsp; Life in Cambridge</a></li>
+                    <li id="sublink"> <a href="/studentlife/clubsandsocieties"><i class="fa fa-soccer-ball-o"></i>&nbsp; Clubs &amp; Societies</a></li>
+                    <li id="sublink"> <a href="/studentlife/facilities"><i class="fa fa-university"></i>&nbsp; Facilities</a></li>
+                    <li id="sublink"> </li>
+                    </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/freshers/home"><i class="fa fa-user"></i>&nbsp; Freshers</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#freshersmenu" aria-expanded="false" aria-controls="freshersmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="freshersmenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/freshers/yourfirstday"><i class="fa fa-info-circle"></i>&nbsp; Your First Day</a></li>
+                    <li id="sublink"> <a href="/freshers/whattobring"><i class="fa fa-suitcase"></i> What to bring</a></li>
+                    <li id="sublink"> <a href="/freshers/vpwelcome"><i class="fa fa-star"></i> Welcome from the VP</a></li>
+                    <li id="sublink"> <a href="/freshers/usefulcontacts"><i class="fas fa-link"></i> Useful Contacts</a></li>
+                    <li id="sublink"> <a href="/freshers/glossary"><i class="fa fa-question"></i>&nbsp; Glossary of Terms</a></li>
+                    </ul>
+            </li>
+            <li><span class="d-flex menuwrapper" style="width: 100%;"><a class="menuname" href="/currentstudents/home"><i class="fa fa-user"></i>&nbsp; Current Students</a><a class="text-center d-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center menudropdown" role="button" href="#cstudentsmenu" aria-expanded="false" aria-controls="cstudentsmenu" data-toggle="collapse"><i class="fa fa-caret-down d-lg-flex"></i></a></span>
+                <ul
+                    class="list-unstyled collapse" id="cstudentsmenu" aria-expanded="false">
+                    <li id="sublink"> <a href="/currentstudents/welfare"><i class="fa fa-star"></i>&nbsp; Welfare Supplies</a></li>
+                    <li id="sublink"> <a href="/currentstudents/feedback"><i class="fa fa-wpforms"></i>&nbsp; Facilities Feedback</a></li>
+                    <li id="sublink"> <a href="/currentstudents/elections"><i class="fa fa-info-circle"></i>&nbsp; JCR Elections</a></li>
+                    </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-light navbar-expand fixed-top" style="overflow-x: hidden;">
+        <div class="container-fluid"><a class="navbar-brand" id="logo" href="/" style="color: rgba(255,255,255,0.9);font-family: Montserrat, sans-serif;font-weight: 600;font-style: semi-bold;min-width: none;">ST JOHN'S JCR</a>
+            <div class="collapse navbar-collapse" id="navcol-1" style="min-width: none;">
+                <div class="btn-group ml-auto" role="group"><a class="btn btn-primary ml-auto pull-right" role="button" id="raven" href="/login" style="margin: 0px 0px;margin-left: 0px;background-color: rgba(0,123,255,0);border-color: transparent;min-width: none;"><i class="fas fa-crow"></i>&nbsp; Login</a>
+                    <button
+                        class="btn btn-primary ml-auto pull-right open-sidebar" id="navmenu" type="button" style="margin: 0px 0px;margin-left: 0px;background-color: transparent;border-color: transparent;min-width: none;"><i class="fa fa-navicon"></i>&nbsp;Menu</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section id="navbarheading" class="clean-block features" style="background-position: center;background-size: cover;background-repeat: no-repeat;filter: brightness(100%) contrast(100%) saturate(100%);padding-bottom: 0px;width: 100%;background-image: url(&quot;/assets/img/110614.jpg&quot;);padding-top: 100px;">
+        <div class="container class=&quot;col-sm col-md-10 col-lg-10&quot;" id="headerbox" style="padding: 0px;">
+            <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+                <h1 class="text-center headershrink" id="pageheading">Clubs and Societies</h1>
+                <p class="text-center" id="pageparagraph" style="margin: 0px;">There is a wealth of clubs and societies to join at John's. This is a little catalogue to see if anything tickles your fancy. Please note these are just John's societies there are plenty of others that are university wide.</p>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="container" style="margin-top: 16px;">
+            <div>
+                <ul class="nav nav-tabs card-header">
+                    <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2">Music</a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3">Dining</a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-4">Academic</a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-5">Misc</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="tab-1">
+                        <div class="card">
+                            <div class="card-body" style="padding: 20;padding-top: 0;padding-bottom: 0;">
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/studentlife/sjcafc.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Football - SJCAFC</h4>
+                                                <p>The most magnificent team of them all. With 3 men's teams and 1 women's team, there is fun for all the family.</p>
+                                                <p>Men's Captain: Dan Osborne (do318)</p>
+                                                <p>Women's Captains: &nbsp;Lucy Carson (lmc83) &amp; Mikayla Thorsden (?)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-left" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Rugby - SJCRUFC<br></h4>
+                                                <p>Affectionately termed the redboys. SJCRUFC is known as one of the best rugby teams in Cambridge.<br></p>
+                                                <p>Captain: Will Saunter (wrms2)</p>
+                                                <p>Vice Captain: James Laudage (?)</p>
+                                            </div>
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/studentlife/scjrufc.jpg" style="margin-right: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Hockey</h4>
+                                                <p>It's not quite football or rugby but it'll do. The men's team are the Nogs and the women the Nags. Don't ask me why.</p>
+                                                <p>Men's Captain: ?</p>
+                                                <p>Women's Captain: ?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-left" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Rowing - LMBC</h4>
+                                                <p>Lady Margaret Boat Club is love. Lady Margaret Boat Club is life. I don't think I can summarise any better.</p>
+                                                <p>Captain: Aidan Williams (aw768)</p>
+                                            </div>
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Cricket</h4>
+                                                <p>A summer sport. If you like standing around in the sun working on your tan and occasionally throwing a ball, this one's for you.</p>
+                                                <p>Captain: TBC (it could be you)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-left" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Ultimate Frisbee</h4>
+                                                <p>It's like american football but with a frisbee... and fewer wipeouts.</p>
+                                                <p>Captain: ?</p>
+                                                <p></p>
+                                            </div>
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Cheerleading</h4>
+                                                <p>The newly formed John's Jaguars won cheer cuppers in their first year. Let's keep up the momentum.</p>
+                                                <p>#letsgogirls</p>
+                                                <p>#roar</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>St John's Voices</h4>
+                                                <p>You can add a description</p>
+                                                <p>Oh look another one.</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-left" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>The Gents of St John's</h4>
+                                                <p>You can add a description</p>
+                                                <p>Oh look another one</p>
+                                            </div>
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Title</h4>
+                                                <p>You can add a description</p>
+                                                <p>Oh look another one.</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Title</h4>
+                                                <p>You can add a description</p>
+                                                <p>Oh look another one.</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col" data-aos="fade-left" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Title</h4>
+                                                <p>You can add a description</p>
+                                                <p>Oh look another one</p>
+                                            </div>
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Parson's Society</h4>
+                                                <p>This one's for the engineers.</p>
+                                                <p>President: Zenga Nyirenda (zrjn2)</p>
+                                                <p>Not president: Ollie Barnard (ojrb2)</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card col" data-aos="fade-right" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+                                    <div class="card-body">
+                                        <div class="row d-lg-flex align-items-lg-center">
+                                            <div class="col-md-5 d-md-flex align-items-md-center col-sm col-lg-4" style="margin-bottom: 10px;margin-top: 10px;"><img class="img-fluid border rounded mr-3" src="/assets/img/110614_16574.jpg" style="margin-right: 0px;"></div>
+                                            <div class="col-md-7 col-lg-8">
+                                                <h4>Rubix Cube Soc</h4>
+                                                <p>It's Lit</p>
+                                                <p></p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer dark" style="overflow-x: hidden;width: 100%;background-color: rgb(255,255,255);">
+        <div class="container">
+            <div class="row">
+                <div class="col text-right align-self-center" data-aos="fade-right"><a href="https://www.facebook.com/stjohnscollegejcr"><i class="fa fa-facebook-square" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+                <div class="col text-center" data-aos="fade"><a class="stretched-link" href="https://www.instagram.com/stjohnsjcr/"><i class="fa fa-instagram" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+                <div class="col text-left" data-aos="fade-left"><a href="https://www.snapchat.com/add/sjcjcr"><i class="fa fa-snapchat-ghost" style="font-size: 60px;color: rgb(145,145,145);padding: 2px;"></i></a></div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© St. John's JCR Committee 2019</p>
+        </div>
+    </footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="/assets/js/Collapsible-sidebar-left-or-right--Content-overlay.js"></script>
+    <script src="/assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="/assets/js/navbartransition.js"></script>
+</body>
+
+</html>

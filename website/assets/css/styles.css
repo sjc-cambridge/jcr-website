@@ -1,0 +1,161 @@
+html, body
+{
+    max-width: 100%
+    overflow-x: hidden;
+}
+
+/* CAN USE TO DEBUG CSS!*/
+/** {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+}
+
+#navcol-1 {
+  align-items: end;
+}
+
+@media (min-width: 576px) {
+  .clean-block .block-heading h1, .clean-block .block-heading h2, .clean-block .block-heading h3 {
+    font-size: large;
+  }
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: none;
+}
+
+.navbar.navbar-light.navbar-expand-lg {
+  background-color: transparent;
+}
+
+@media (min-width: 1200px) {
+  #colbutton {
+    /*min-width: 450px!important;*/
+    /*max-width: 500px;*/
+  }
+}
+
+#colbutton {
+  min-width: 300px;
+  max-width: 350px;
+  margin: 25px;
+  /*color: #0056b3;*/
+}
+
+#textlink:hover {
+  text-decoration: none !important;
+}
+
+#menubutton {
+  color: #3b99e0!important;
+}
+
+#textlink {
+  color: #3b99e0!important;
+}
+
+#colbutton:hover {
+  background-color: #f1f1f1!important;
+}
+
+#footer {
+  border-radius: 0px;
+  overflow-x: hidden!important;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #logo {
+    font-size: 32px;
+  }
+}
+
+#footerlist {
+  font-size: 20px;
+}
+
+#main {
+  padding: 30px;
+}
+
+.navbar.navbar-light.navbar-expand.fixed-top {
+  background-color: rgba(90,135,194,0.1);
+  transition: background-color 500ms linear;
+}
+
+.navbar.navbar-light.navbar-expand.fixed-top.scrolled {
+  background-color: #5a87c2;
+  transition: background-color 500ms linear;
+}
+
+#decoratedbox {
+  /*padding: 15px;*/
+  padding-top: 20px;
+  background-color: #f8f8f8;
+  border-radius: 25px!important;
+}
+
+#backlink {
+  font-size: 24px;
+}
+
+#textlink:hover {
+  /*color: white!important;*/
+  text-decoration: none!important;
+}
+
+@media (max-width: 350px) {
+  .headershrink {
+    font-size: 36px;
+  }
+}

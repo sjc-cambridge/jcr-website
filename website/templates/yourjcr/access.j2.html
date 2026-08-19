@@ -1,0 +1,274 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center" id="pageheading" style="padding-top: 10px;">
+   Access
+   <br/>
+  </h1>
+  <p class="text-center" id="pageparagraph" style="padding: 0px;">
+   Cambridge is surrounded by many myths and stereotypes, often perpetuated by the media. The primary aim of Access work is to get across the fact that these just aren’t true – Cambridge is made up of an amazing mix of people from all
+                    sorts of backgrounds. Where you’ve come from, what your parents do for a living, the type of school you went to, your social and cultural background: these things cease to be important when you get here. It’s not all work, work, work,
+                    either. With an endless range of activities on offer, from the nightlife to the societies, the sports to the music, Cambridge is full of opportunities to enjoy yourself.
+   <br/>
+  </p>
+ </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main>
+ <div class="container">
+  <div style="padding-top: 20px;">
+   <ul class="nav nav-tabs card-header">
+    <li class="nav-item">
+     <a class="nav-link" data-toggle="tab" href="#tab-1" role="tab">
+      St. John's
+     </a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" data-toggle="tab" href="#tab-2" role="tab">
+      University Wide
+     </a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link active" data-toggle="tab" href="#tab-3" role="tab">
+      Get Involved
+     </a>
+    </li>
+   </ul>
+   <div class="tab-content">
+    <div class="tab-pane" id="tab-1" role="tabpanel">
+     <div class="row">
+      <div class="col-xl-6" style="padding-top: 20px;">
+       <h4 class="text-center">
+        School Visits
+       </h4>
+       <p class="text-center">
+        St John’s runs and hosts a wide range of school visits and subject-specific taster days throughout the year. If you sign up to the Access mailing list, these will be the main things you get involved in. You can take part
+                                    in Question and Answer sessions and give tours of the college, as well as a wide variety of other activities. These visits are crucial to Access work because for many students, it may be the first time they’ve ever
+                                    visited Cambridge before. They’re really good fun, and you’re usually only required for a 45 minute slot, so it’s low commitment. You also get given a buttery meal voucher for every event you help out with (yay, free
+                                    food!!). For more information on schools visits, click
+        <a href="http://www.joh.cam.ac.uk/schools">
+         here
+        </a>
+        for the information college’s website.
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col" style="padding-top: 20px;">
+       <h4 class="text-center">
+        College and University Open Days
+       </h4>
+       <p class="text-center">
+        The college runs its own Open Days around 3 or 4 times a year, for applicants who are interested in finding out specifically about St John’s. We’re always looking for people doing a wide range of subjects, so we can run
+                                    a subject stand for as many subjects as possible, and also people to help out with tours of the college. Volunteers are also needed for University-wide Open Days (annually at the beginning of July) to show potential
+                                    students what we as a college have to offer! Watch out for information about these from the weekly JCR email and the Access mailing list.
+        <br/>
+       </p>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-xl-5" style="padding-top: 20px;">
+       <h4 class="text-center">
+        CUSU Shadowing Scheme
+       </h4>
+       <p class="text-center">
+        In January every year, hundreds of Year 12 students from state schools in the UK stay in Cambridge for a weekend to experience what the University has to offer, under the careful guidance of a personal mentor – a bona fide
+                                    Cambridge student. You could be a mentor! You’ll take a “shadow” under your wing for a few days, show them the ropes of day-to-day life in Cambridge, and by the end of it they’ll be rethinking the preconceived ideas
+                                    about the “typical” Cambridge student they may have had when they arrived. You’ll be an integral part of showing them that there is no such thing as the “typical” Cambridge student! Watch out for information about this
+                                    being circulated during the Michaelmas term every year.
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col-xl-4" style="padding-top: 20px;">
+       <h4 class="text-center">
+        Access Tour
+       </h4>
+       <p class="text-center">
+        In March 2016, St John’s is going to be running an Access Tour to North-West England following the success of the 2015 bus. The aim of this is to get round as many secondary schools as possible in just three days. This
+                                    will involve teams of undergraduates working with graduate students/fellows to give talks and presentations to raise aspirations of those who may one day apply to Cambridge or another university. Like the JCR Access
+                                    Facebook page for updates on when you can sign-up!
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col" style="padding-top: 20px;">
+       <h4 class="text-center">
+        Alternative Prospectus
+       </h4>
+       <p class="text-center">
+        New for Lent 2016, the Alternative Prospectus will soon be available online and in print! If you have any photos of you and your friends involved in college life that you think would be an addition to this publication,
+                                    then send them in to {{ JCR['access']['name'].split()[0] }} at access@sjcjcr.com.
+        <br/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="tab-pane" id="tab-2" role="tabpanel">
+     <div class="row">
+      <div class="col-xl-5" style="padding-top: 20px;">
+       <h4 class="text-center">
+        CAMbassadors
+       </h4>
+       <p class="text-center">
+        If you’re a second year or above, apply to be an ambassador for Access on behalf of the University as a whole! You’ll be employed by the Cambridge Admissions Office and used for all their centrally-run Access and Recruitment
+                                    events. You’ll get paid, and you could even get involved in the Sutton Trust residential Summer Schools, which is a highly rewarding experience. Deadline for applications usually in the first half of November annually.
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col" style="padding-top: 20px;">
+       <h4 class="text-center">
+        Target Schools
+       </h4>
+       <p class="text-center">
+        Many students from state schools don’t even consider applying to Cambridge. Sign up to the Target Schools scheme as a volunteer and you could visit your old school, other schools in your home area, or schools further afield
+                                    if you wish, to clear the mist that shrouds the Cambridge applications procedure. Your stories and personal experiences can help to convince students that Cambridge is both a great place to study and a fun place to
+                                    live. If you would like to volunteer, contact {{ JCR['access']['name'].split()[0] }} to find out more, or get started by signing up straightaway to the Target website
+        <a href="http://www.target.cusu.co.uk/">
+         here
+        </a>
+        . There’s loads of resources on
+                                    the website to help you run a successful session, and the CUSU Access Officer runs various Target Schools workshops throughout the year.
+        <br/>
+       </p>
+      </div>
+     </div>
+     <div class="row">
+      <div class="col-xl-5" style="padding-top: 20px;">
+       <h4 class="text-center">
+        GEEMA
+       </h4>
+       <p class="text-center">
+        Ethnic minority students are still under-represented at Cambridge, which desperately needs rectifying. The
+        <strong>
+         GEEMA
+        </strong>
+        (
+        <strong>
+         G
+        </strong>
+        roup to
+        <strong>
+         E
+        </strong>
+        ncourage
+        <strong>
+         E
+        </strong>
+        thnic
+        <br/>
+        <strong>
+         M
+        </strong>
+        inority
+        <strong>
+         A
+        </strong>
+        pplications)
+                                    scheme is similar to the Target Schools Scheme, but with a keen emphasis on ethnic minority areas. They also provide support to ethnic minority undergrads. Just give {{ JCR['access']['name'].split()[0] }} a shout if you fancy getting involved. Find out
+                                    more information
+        <a href="http://www.becambridge.com/events/black-asian-and-minority-ethnic-students/">
+         here.
+        </a>
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col-xl-4" style="padding-top: 20px;">
+       <h4 class="text-center">
+        #cambtweet
+       </h4>
+       <p class="text-center">
+        What’s life really like as a Cambridge student? Follow our CambTweeters as they tweet daily to show you, and ask questions. Check out the latest tweets from our CamTweeters
+        <a href="https://twitter.com/cambtweetcusu?lang=en">
+         here
+        </a>
+        .
+                                    If you fancy becoming a CamTweeter yourself, drop {{ JCR['access']['name'].split()[0] }} a line – we’re always looking for more students to get tweeting!
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col" style="padding-top: 20px;">
+       <h4 class="text-center">
+        Cambridge Alternative Prospectus
+       </h4>
+       <p class="text-center">
+        Currently in the process of being revamped. View it
+        <a href="http://www.applytocambridge.com/">
+         here
+        </a>
+        . If you’d like to get involved in rewriting some of the CUSU Alternative Prospectus, or have any ideas, {{ JCR['access']['name'].split()[0] }} would
+                                    be interested to here from you.
+        <br/>
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="tab-pane active" id="tab-3" role="tabpanel">
+     <div class="row">
+      <div class="col-xl-6" style="padding-top: 20px;">
+       <p class="text-left">
+        If you care about making sure no one is put off from applying to Cambridge then GET INVOLVED. You could be part of helping others to realise what a fantastic place John’s is to live and study. There are a number of initiatives
+                                    throughout the College and the University that aim to diversify our community and generally heighten educational aspirations. It doesn’t matter what kind of background you yourself come from either – anyone can get
+                                    involved in Access work if they have the passion and enthusiasm to encourage students to apply. {{ JCR['access']['name'].split()[0] }}, your JCR Access Officer is keen to hear from anybody who wants to help out, or anyone with new ideas.
+        <br/>
+       </p>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div class="col" style="padding-top: 20px;">
+       <h5 class="text-left">
+        How to get involved:
+       </h5>
+       <ul>
+        <li>
+         Sign up at the John’s Fresher’s Fair
+         <br/>
+        </li>
+        <li>
+         Sign up to the John’s Access mailing list by emailing Megan, the college’s employed Access Officer on accessofficer@joh.cam.ac.uk
+         <br/>
+        </li>
+        <li>
+         Contact {{ JCR['access']['name'].split()[0] }} for more information on access@sjcjcr.com
+         <br/>
+        </li>
+        <li>
+         Check out the
+         <a href="https://www.facebook.com/sjcjcraccessofficer?ref=hl">
+          John’s JCR Access Facebook page
+         </a>
+         ! Give us a like as well. Shameless self-promotion
+         <br/>
+        </li>
+        <li>
+         Run for Access Officer on the JCR committee! Elections at the end of the Lent term annually
+         <br/>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</main>
+{% endblock %}

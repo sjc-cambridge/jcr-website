@@ -1,0 +1,62 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center" id="pageheading">
+   Contact Us
+  </h1>
+  <p class="text-center" id="pageparagraph" style="margin: 0px;">
+   The JCR Committee is here for you! If you have any questions or concerns about what we do or life at John's generally, feel free to ask us via the form below.
+  </p>
+ </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main class="features-boxed">
+ <div class="container" style="padding: 15px;">
+   {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action="{{ url_for('yourjcr.contact') }}" method="post" style="padding-top: 15px;padding-bottom: 15px;">
+   <input type="hidden" name="recipient" value="secretary">
+   <h5>
+    From:
+   </h5>
+   <div class="form-group">
+    <input class="form-control" name="senderName" placeholder="Name" required="" type="text"/>
+   </div>
+   <div class="form-group">
+    <input class="form-control" name="senderEmail" placeholder="Email" required="" type="email"/>
+   </div>
+   <h5>
+    Message:
+   </h5>
+   <div class="form-group">
+    <input class="form-control" name="subject" placeholder="Subject" required="" type="text"/>
+   </div>
+   <div class="form-group">
+    <textarea class="form-control" name="message" placeholder="Message" required="" rows="14"></textarea>
+   </div>
+   <div class="g-recaptcha form-group" required="" data-sitekey="{{ sitekey }}">
+   </div>
+   <div class="form-group">
+    <button class="btn btn-primary" type="submit">
+     Send
+    </button>
+   </div>
+  </form>
+ </div>
+</main>
+{% endblock %}

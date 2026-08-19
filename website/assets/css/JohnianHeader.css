@@ -1,0 +1,33 @@
+.open-sidebar {
+  cursor: pointer;
+}
+
+.btn-group, .btn-group-vertical {
+  background: transparent;
+}
+
+.container {
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  #raven {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  #navmenu {
+    font-size: 30px;
+  }
+}
+
+#navcol-1 {
+  align-items: end;
+}
+
+#navbarheading {
+  max-width:100%;
+  overflow-x: hidden;
+  padding-top: 120px;
+}

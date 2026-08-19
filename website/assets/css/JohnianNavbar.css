@@ -1,0 +1,53 @@
+.open-sidebar {
+  cursor: pointer;
+}
+
+.btn-group, .btn-group-vertical {
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  #raven {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  #navmenu {
+    font-size: 30px;
+  }
+}
+
+.open-sidebar {
+  cursor: pointer;
+}
+
+.btn-group, .btn-group-vertical {
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  #raven {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  #navmenu {
+    font-size: 30px;
+  }
+}
+
+#navcol-1 {
+  align-items: end;
+}
+
+#navcol-1 {
+  align-items: end;
+}
+
+@media (min-width: 768px) {
+  #logo {
+    font-size: 32px;
+  }
+}

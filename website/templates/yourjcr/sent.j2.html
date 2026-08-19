@@ -1,0 +1,120 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center" id="pageheading">
+   Contact Us
+  </h1>
+  <p class="text-center" id="pageparagraph" style="margin: 0px;">
+   The JCR Committee is here for you! If you have any questions or concerns about what we do or life at John's generally, feel free to ask us via the form below.
+  </p>
+ </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main class="features-boxed">
+ <div class="container" style="padding-top: 15px;padding-bottom: 15px;">
+  <div class="row">
+   <div class="col">
+    <p>
+     Your message has been sent! If you would like to send another message, fill in the form below.
+    </p>
+   </div>
+  </div>
+  <form action="{{ url_for('yourjcr.contact') }}" method="post">
+   <h5>
+    To:
+   </h5>
+   <div class="form-group">
+    <select class="form-control" name="recipient">
+     <option value="president">
+      {{JCR['president']['name']}} - Co-Presidents
+     </option>
+     <option selected="" value="vicepresident">
+      {{JCR['vicepresident']['name']}} - Vice President
+     </option>
+     <option selected="" value="access">
+      {{JCR['access']['name']}} - Access
+     </option>
+     <option selected="" value="computing">
+      {{JCR['computing']['name']}} - Computing
+     </option>
+     <option selected="" value="ents">
+      {{JCR['ents']['name']}} - Ents
+     </option>
+     <option selected="" value="equalops">
+      {{JCR['equalops']['name']}} - Equal Opportunities
+     </option>
+     <option selected="" value="ethical">
+      {{JCR['ethical']['name']}} - Ethical and Charitable Affairs
+     </option>
+     <option selected="" value="facilities">
+      {{JCR['facilities']['name']}} - Facilities
+     </option>
+     <option selected="" value="secretary">
+      {{JCR['secretary']['name']}} - Secretary, Publicity and External Affairs
+     </option>
+     <option selected="" value="services">
+      {{JCR['services']['name']}} - Sports, Services and Societies
+     </option>
+     <option selected="" value="treasurer">
+      {{JCR['treasurer']['name']}} - Treasurer
+     </option>
+     <option selected="" value="welfare">
+      {{JCR['welfare']['fnb']['name']}} - Female and Non-Binary Welfare
+     </option>
+     <option selected="" value="welfare">
+      {{JCR['welfare']['mnb']['name']}} - Male and Non-Binary Welfare
+     </option>
+     <option selected="" value="bme">
+      {{JCR['bme']['name']}} - BME
+     </option>
+     <option selected="" value="international">
+      {{JCR['internationals']['name']}} - Internationals'
+     </option>
+     <option selected="" value="lgbtq">
+      {{JCR['lgbtq']['name']}} - LGBT+
+     </option>
+     <option selected="" value="disabilities">
+      {{JCR['disabilities']['name']}} - Disabilities
+     </option>
+     <option selected="" value="gender">
+      {{JCR['gender']['name']}} - Gender Equality
+     </option>
+    </select>
+   </div>
+   <h5>
+    From:
+   </h5>
+   <div class="form-group">
+    <input class="form-control" name="senderName" placeholder="Name" required="" type="text"/>
+   </div>
+   <div class="form-group">
+    <input class="form-control" name="senderEmail" placeholder="Email" required="" type="email"/>
+   </div>
+   <h5>
+    Message:
+   </h5>
+   <div class="form-group">
+    <input class="form-control" name="subject" placeholder="Subject" required="" type="text"/>
+   </div>
+   <div class="form-group">
+    <textarea class="form-control" name="message" placeholder="Message" required="" rows="14"></textarea>
+   </div>
+   <div class="form-group">
+    <button class="btn btn-primary" type="submit">
+     send
+    </button>
+   </div>
+  </form>
+ </div>
+</main>
+{% endblock %}

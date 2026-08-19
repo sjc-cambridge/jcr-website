@@ -1,0 +1,45 @@
+<!--
+obj: {
+    imageName: string
+    heading: string
+    description: string[]
+}
+-->
+
+<!-- only difference is flex-row-reverse and fade-left or fade-right -->
+
+{% macro left(obj) -%}
+<div class="card col" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+    <div class="card-body">
+        <div class="row align-items-center">
+            <div class="align-items-center col-sm col-md col-lg-4" >
+                <img class="img-fluid border rounded mr-3" src="{{'/assets/img/' + obj.imageName}}" />
+            </div>
+            <div class="col-lg-8">
+                <h4 style="margin-top: 10px;">{{obj.heading}}</h4>
+                {% for paragraph in obj.description %}
+                <p>{{paragraph | safe}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}
+
+{% macro right(obj) -%}
+<div class="card col" style="margin-top: 20px;margin-bottom: 20px;padding: 0;">
+    <div class="card-body">
+        <div class="row flex-row-reverse align-items-center">
+            <div class="align-items-center col-sm col-md col-lg-4">
+                <img class="img-fluid border rounded mr-3" src="{{'/assets/img/' + obj.imageName}}" />
+            </div>
+            <div class="col-lg-8">
+                <h4 style="margin-top: 10px;">{{obj.heading}}</h4>
+                {% for paragraph in obj.description %}
+                <p>{{paragraph | safe}}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}

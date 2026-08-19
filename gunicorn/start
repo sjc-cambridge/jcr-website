@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Select port number to start server:"
+read PORT
+INIT_CMD=$(sg sjcjcr -c "gunicorn -w=3 --bind 127.0.0.1:$PORT wsgi:app")
+FLAG=$(pgrep -f "$INIT_CMD")
+if [ -z "$FLAG" ]
+then
+    echo "Starting gunicorn server on port $PORT..."
+    $INIT_CMD &
+else
+    echo "Server already running on port $PORT"
+fi
+

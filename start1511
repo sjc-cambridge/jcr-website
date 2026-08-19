@@ -1,0 +1,16 @@
+#!/bin/sh
+INIT_CMD="gunicorn -w=3 --bind 127.0.0.1:1511 wsgi:app"
+FLAG=$(pgrep -f "$INIT_CMD")
+if [ -z "$FLAG" ]
+then
+    echo "Starting gunicorn server on port 1511..."
+    . /home/jjd61/sjcjcr/website/env_jjd61/bin/activate
+    cd /home/jjd61/sjcjcr/website/
+    python -V
+    com_output=`gunicorn -w=3 --bind 127.0.0.1:1511 wsgi:app &`
+    echo "Startup failed"
+    #$INIT_CMD &
+else
+    echo "Server already running on port 1511"
+fi
+

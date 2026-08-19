@@ -1,0 +1,516 @@
+{% extends 'shared/_layout.j2.html' %}
+{% import 'shared/_card_link.j2.html' as link %}
+
+{% block title %}
+<title>
+	Life at Cambridge
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+	<div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+		<h1 class="text-center headershrink" id="pageheading">
+			Life at Cambridge
+		</h1>
+		<p class="text-center" id="pageparagraph" style="margin: 0px;">
+			Cambridge might seem like an alien world at first, but very soon you'll learn to call it home. Here's a
+			handy guide to get you on your way.
+		</p>
+	</div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main>
+	<div class="container" style="margin-top:10px">
+		<div class="row col">
+			<h5>
+				<a href="/studentlife">
+					<< Back to Student Life Home</a>
+			</h5>
+		</div>
+		<div class="row justify-content-around align-content-around">
+			{{
+			link.card(
+			href="#dress-codes",
+			text="Dress Codes",
+			icon="fa-graduation-cap"
+			)
+			}}
+			{{
+			link.card(
+			href="#entertainment",
+			text="Entertainment",
+			icon="fa-music"
+			)
+			}}
+			{{
+			link.card(
+			href="#money-matters",
+			text="Money Matters",
+			icon="fa-money"
+			)
+			}}
+			{{
+			link.card(
+			href="#useful-contacts",
+			text="Useful Contacts",
+			icon="fa-phone"
+			)
+			}}
+		</div>
+
+		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
+			<div class="card-header">
+				<h4>
+					<a class="anchor" name="dress-codes">
+						Dress Codes
+					</a>
+				</h4>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						<h5>
+							Formal Hall
+						</h5>
+						<p>
+							As a Cambridge student you must wear your gown to hall. Underneath the gown, lots of people
+							like (and tend) to dress up, especially if it’s a special occasion, but you don’t have to.
+							<br />
+						</p>
+						<p>
+							Guests from other colleges are also expected to wear their respective gown. The dress code
+							for non-university guests is formal attire. Other college halls may have different dress
+							codes,
+							<br />
+						</p>
+						<p>
+							At John’s just turn up looking reasonable and you’ll be fine.  Flip-flops, shorts and
+							sportswear aren’t considered appropriate. Other than that as long as you’re rocking your
+							gown, you’ll be fine.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row d-md-flex align-items-md-center">
+					<div class="col">
+						<h5>
+							Black Tie
+							<br />
+						</h5>
+						<p>
+							This is the most formal dress code you are likely to encounter in Cambridge. Gents wear a
+							dinner jacket with trousers, white shirt and a bow tie (aka a tuxedo). Ladies wear evening
+							dresses. These may be specified long depending
+							on the strictness of the event. This is the usual dress code for a May Ball.
+							<br />
+						</p>
+						<p>
+							Expect to see lots of black tie pictures around May Week.
+							<br />
+						</p>
+					</div>
+					<div class="col-md-5">
+						<img class="rounded img-fluid" src="/assets/img/studentlife/black-tie.jpg"
+							style="margin-bottom: 15px;" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h5>
+							White Tie
+							<br />
+						</h5>
+						<p>
+							The absolute pinnacle of fanciness. Only Magdalene and Peterhouse May Balls require this
+							dress code. For chaps this is a black tail coat, trousers, white shirt, white waistcoat and
+							white bow-tie. Ladies wear full-length
+							dresses and elbow-length gloves.
+							<br />
+						</p>
+						<p>
+							You really won’t come across this unless you do venture to the Peterhouse or Magdalene May.
+							A word of warning though, it is rather expensive to rent a full white tie and they do go
+							quite quick so make sure you get in early.
+							<br />
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
+			<div class="card-header">
+				<h4>
+					<a class="anchor" name="entertainment">
+						Entertainment
+					</a>
+				</h4>
+			</div>
+			<div class="card-body">
+				<div class="row d-md-flex align-items-md-center">
+					<div class="col">
+						<h5>
+							College Bars
+							<br />
+						</h5>
+						<p>
+							College bars are great, 'nuff said. Each college has their own and you simply must visit as
+							many as you can.
+							<br />
+						</p>
+						<p>
+							John's bar has a lovely pub vibe and is great fun all day long. It also offers a range of
+							snacks and food so you can get a light dinner if you miss the Buttery.
+							<br />
+						</p>
+						<p>
+							College bars aren’t alco-centric, either. You can quite happily go to the bar every evening
+							without boozing – many people discover a love of borrowing the bar’s Scrabble or Monopoly
+							games!
+							<br />
+						</p>
+					</div>
+					<div class="col-md-5">
+						<img class="rounded img-fluid" src="/assets/img/studentlife/facilities/bar.jpg"
+							style="margin-bottom: 15px;" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h5>
+							Cinema
+							<br />
+						</h5>
+						<p>
+							As with theatre, Cambridge is rich in cinema. The Vue at the Grafton Centre provides all the
+							usual popcorn-munching blockbuster fare for those who like their cinema mainstream. As does
+							the multiplex next to
+							<br />
+							the Junction
+							on Hills Road.
+							<br />
+						</p>
+						<p>
+							The Arts Picturehouse (above the Wetherspoon’s) shows new world and independent cinema as
+							well as classics from the archives. They have various film festivals which tour there as
+							well. Check out their
+							<a href="http://www.picturehouses.co.uk/">
+								website
+							</a>
+							for
+							details of what’s on at the moment.
+							<br />
+						</p>
+						<p>
+							What’s more, College film societies provide massive variety. The St John's Picturehouse is
+							the most popular (of course!), showing films on Thursdays and Sundays in the Fisher
+							Building.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row d-md-flex align-items-md-center">
+					<div class="col-md-5">
+						<img class="rounded img-fluid" src="/assets/img/studentlife/adc.jpg"
+							style="margin-bottom: 15px;" />
+					</div>
+					<div class="col">
+						<h5>
+							Theatre
+						</h5>
+						<p>
+							From serious drama to improvised comedy, new writing to Shakespeare, there’s a huge variety
+							of things to see.
+						</p>
+						<p>
+							The ADC Theatre on Park Street is the students’ own theatre.  The standard of the theatre is
+							really high, and there are shows on every night, with both a main show and late show each
+							week as well as one-night
+							shows. Going to see one of your friends if they get into a show is always good fun.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<h5>
+							Music
+						</h5>
+						<p>
+							Cambridge is justifiably famous for classical music of every kind. You can go and hear
+							world-famous choirs at Evensong, join or watch one of the many student orchestras, go to
+							lunchtime recitals and hear chamber groups play
+							at many Colleges. Varsity and The Cambridge Student carry listings of these events.
+						</p>
+						<p>
+							For those who prefer their music to have more bass, the Junction and the Corn Exchange host
+							the UK’s biggest acts (Bloc Party, Dizzee Rascal, Pigeon Detectives and Kate Nash have
+							played here recently), while the Graduate pub
+							is Cambridge’s Barfly, where you can check out the best up-and-coming talent (Robots in
+							Disguise, Lightspeed Champion and Yo Yo Yo Litvenenko have been to Cambridge recently).
+							Cambridge Indie Soc is worth joining for all
+							the latest gig details and discounted entry.
+						</p>
+					</div>
+				</div>
+				<div class="row d-md-flex align-items-md-center">
+					<div class="col">
+						<h5>
+							Clubbing
+							<br />
+						</h5>
+						<p>
+							Whether you prefer cheesey song/snog fests or edgy indie nights, it’s nice to get out of
+							College sometimes! Here’s the JCR’s low-down on the clubs that Cambridge has to offer:
+							<br />
+						</p>
+						<p>
+							<strong>
+								Fez
+							</strong>
+							<em>
+								- Best night: Saturdays I'm in Love
+							</em>
+							<br />
+							One of the smaller clubs but incredible indie rock tunes. You always have a great time at
+							Fez (provided you can bear the heat).
+							<br />
+						</p>
+						<p>
+							<strong>
+								Cindies
+							</strong>
+							<em>
+								- Best night: Wednesday Rumboogie
+							</em>
+							<br />
+							The staple of Cambridge nightlife. Always full of cheesy tunes and familiar faces. An
+							absolute must.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<p>
+							<strong>
+								Vinyl
+							</strong>
+							<em>
+								- Best night: Sunday Life
+							</em>
+							<br />
+							The kuda is dead. Long live the kuda. Vinyl is the a revamp of the kuda of old. Sadly, they
+							seem to have removed much of the kuda magic of old. Nevertheless,
+							if a light-up dancefloor and the wheel of fortune are for you, go ahead.
+						</p>
+						<p>
+							<strong>
+								LolaLo's
+							</strong>
+							<em>
+								- Best night: Thursday Lolas
+							</em>
+							<br />
+							In a word: vertical. Lolas has three floors, two for dance and one absolutely gorgeous
+							rooftop terrace. With terrific deals on Jager-Bombs, Lolas is a reliable
+							friend indeed.
+						</p>
+						<p>
+							<strong>
+								The Regal
+							</strong>
+							<em>
+								- Best night: DangerSpoons
+							</em>
+							<br />
+							The magnificent Regal Wetherspoon's turns into a completely different place on Fridays and
+							Saturdays. A word of warning though: it's called DangerSpoons
+							for a reason.
+						</p>
+						<p>
+							<strong>
+								Revolution
+							</strong>
+							<em>
+								- Best night: special event
+							</em>
+							<br />
+							Revs has perhaps the best venue in central Cambridge. Nevertheless, its student events are
+							few and far between. Keep your eyes out for the odd Grandma
+							Groove at Revs, they are always terrific.
+						</p>
+						<p>
+							<strong>
+								Junction
+							</strong>
+							<em>
+								- Best night: Special event
+							</em>
+							<br />
+							As far as the venue is concerned, Junction is the undisputed king of Cambridge. The only
+							issue is that it is quite far out (you'll need an Uber or a suitable
+							beer jacket). We definitely recommend braving the bass at least once in your time here.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card" data-aos="fade-up" style="margin-top: 20px;margin-bottom: 20px;">
+			<div class="card-header">
+				<h4>
+					<a class="anchor" name="money-matters">
+						Money Matters
+					</a>
+				</h4>
+			</div>
+			<div class="card-body">
+				<div class="row d-lg-flex justify-content-lg-center">
+					<div class="col">
+						<h4>
+							Tuition Fees
+						</h4>
+						<p>
+							Like all other universities in England, Cambridge tuition fees for “home” students
+							are £9,250 per year for all undergraduate courses.
+							<br />
+						</p>
+						<p>
+							BUT (and it's a big but) you don’t have to pay these whilst you are a student. You can take
+							out a loan which is
+							<br />
+							repaid in small instalments once you are earning over £21,000. Who doesn't like "free"
+							money? For more info
+							see:
+							<a href="https://www.gov.uk/government/organisations/student-loans-company">
+								Student Loans Company (SLC)
+							</a>
+							.
+						</p>
+						<p>
+							If you are from outside the UK and don't have settled or pre-settled status you will be
+							classified as an overseas student. Fees for
+							overseas students are somewhat higher :( For more info see
+							<a
+								href="https://www.undergraduate.study.cam.ac.uk/international-students/international-fees-and-costs">
+								Overseas Tuition Fees
+							</a>
+							.
+						</p>
+					</div>
+				</div>
+				<div class="row d-lg-flex justify-content-lg-center">
+					<div class="col">
+						<h4>
+							Cambridge Bursary
+							<br />
+						</h4>
+						<p>
+							The Cambridge Bursary (or Newton Trust Bursary) is a means-tested grant of up to £3,500
+							(as of 2016) for each year of your degree if your household income falls bellow £42,600.
+							Unlike a loan, you will not have to pay this
+							back. You will receive information about  the bursary in your first couple of weeks.
+							<br />
+						</p>
+						<p>
+							For more info see:
+							<a href="http://www.study.cam.ac.uk/undergraduate/finance/support.html">
+								Undergraduate Financial Support
+							</a>
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row d-lg-flex justify-content-lg-center">
+					<div class="col">
+						<h4>
+							College Bills
+							<br />
+						</h4>
+						<p>
+							College bills are payed termly. You can do this by cash, debit card, cheque or direct
+							transfer. If you need to wait for your maintenance loan to come through before paying the
+							bill, you will just need to show your student
+							finance paperwork and fill out a late payment form.
+							<br>
+							<br />
+							If you envisage any other difficulties
+							in paying your bill, get advice from the Accounts Office ASAP (+44 (0) 1223339357 /
+							Accounts@joh.cam.ac.uk). 
+							<br>
+							<br />
+							For a glossary of items that college bills
+							typically contain, including accommodation costs, click
+							<a href="/studentlife/billsglossary">here</a>.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row d-lg-flex justify-content-lg-center">
+					<div class="col">
+						<h4>
+							Financial Aid
+							<br />
+						</h4>
+						<p>
+							There are various sources of financial aid available to students
+							of St John's, a list of which is available
+							<a href="/studentlife/financialaid">here</a>.
+							<br />
+						</p>
+					</div>
+				</div>
+				<div class="row d-lg-flex justify-content-lg-center">
+					<div class="col">
+						<h4>
+							Sports funds
+							<br />
+						</h4>
+						<p>
+
+							St John’s College also offers a Beard and University Blues Fund, which is designed to
+							support students with the additional costs of competing in sport at a university level.
+							This will help fund subscription fees of all University Sports Clubs (up to a maximum of £50
+							per person per academic year)
+							from the Paul Beard Fund).
+							<br>
+							<br />
+
+							Please follow <a
+								href="https://www.joh.cam.ac.uk/sites/default/files/documents/Beard%20and%20Blues%20Expense%20Form%202019-2020_3.pdf">this
+								link</a>. for the application form and more details.
+
+							<br />
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card" style="margin-top: 20px;margin-bottom: 20px;">
+			<div class="card-header">
+				<h4>
+					<a class="anchor" name="useful-contacts">
+						Useful Contacts
+					</a>
+				</h4>
+			</div>
+			<div class="card-body">
+				<p class="card-text">
+					For a list of useful contacts please refer to the Freshers section
+					<a href="/freshers/usefulcontacts">
+						Useful Contacts
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
+<style>
+	.anchor:target {
+		padding-top: 120px;
+		margin-top: -120px;
+	}
+</style>
+{% endblock %}

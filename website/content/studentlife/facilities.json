@@ -1,0 +1,157 @@
+[
+    {
+        "area": "First Court",
+        "facilities": [
+            {
+                "imageName": "studentlife/facilities/formal.jpg",
+                "heading": "Formal Hall",
+                "description": [
+                    "Located just in between First and Second Court, hall is one of college's prized possessions.",
+                    "You can book tickets on UPay for a very reasonable price. Ordinarily, Johnians are allowed to purchase 2 additional guest tickets. If you want to bring more guests you can either seek dean approval or just ask a few mates to come with you."
+                ]
+            },
+            {
+                "imageName": "studentlife/facilities/old_music_room.jpg",
+                "heading": "Old Music Room",
+                "description": [
+                    "Hosts a few choice events. The annual wine tasting takes place in the old music room and is not one to miss.",
+                    "To book for your own event please email: publicrooms@joh.cam.ac.uk"
+                ]
+            }
+        ]
+    },
+    {
+        "area": "Second Court",
+        "facilities": [
+            {
+                "imageName": "studentlife/facilities/Bar24.JPG",
+                "heading": "The Bar",
+                "description": [
+                    "Pubs in Cambridge are expensive. There are however two exceptions: 'Spoons and college bars. John's Bar is a student favourite thanks to its cosy atmosphere, social events and excellent choice of beer, cider, wine and spirits.",
+                    "If pints aren't your cup of tea, there are in fact also teas and other non-alcoholic refreshments, and an assortment of snacks."
+                ]
+            },
+            {
+                "imageName": "studentlife/facilities/Buttery24.JPG",
+                "heading": "The Buttery & Cafe",
+                "description": [
+                    "The Buttery and Café, along with the Bar, are the social hub of College life. Stylish, bright and welcoming, they opened in 2023 for the John’s community to meet, study, relax, and enjoy great food and drinks.",
+                    "If you have neither the desire nor the ability to cook, The Buttery has you covered. This spectacular space with its green living wall serves lunch and dinner every day plus a cooked breakfast on Wednesdays. There’s a fan-favourite brunch on Saturdays and a roast on Sundays. The Café serves barista coffee and you can grab sandwiches, cakes and snacks to fuel you through the day."
+                ]
+            }
+        ]
+    },
+    {
+        "area": "Chapel Court",
+        "facilities": [
+            {
+                "imageName": "studentlife/facilities/library.jpg",
+                "heading": "The Library",
+                "description": [
+                    "Does what is says on the tin.",
+                    "Lots of books, very fast wifi and plenty of work to be getting on with - what more could you want? (Don't answer that.)",
+                    "As well as the modern library, there is also the old library. This is that strange building you've never been into on the side of third court that overlooks the river. Few venture inside but it is oh so beautiful and home to our most prized books."
+                ]
+            },
+            {
+                "imageName": "studentlife/facilities/chapel.jpg",
+                "heading": "The Chapel",
+                "description": [
+                    "An absolutely gorgeous area of college. The chapel is always a place for reflection or admiration.",
+                    "A little known fact is that Johnians are allowed to ascend to the roof of the chapel when the weather is dry. Inquire at Forecourt plodge. The views are absolutely worth it. After all it is the tallest building in Cambridge."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Forecourt Bike Shed",
+                "description": [
+                    "Though not in Chapel Court, this is right nextdoor to chapel court separated only by the plodge.",
+                    "Forecourt is home to one of our two bike storage locations. The other is underneath Cripps.",
+                    "Keep your bike in whichever is most convenient but remember to register it with the porters first."
+                ]
+            }
+        ]
+    },
+    {
+        "area": "Fisher Building",
+        "facilities": [
+            {
+                "imageName": "studentlife/facilities/JCR24.jpg",
+                "heading": "The JCR",
+                "description": [
+                    "Short for the Junior Combination Room, this is the one room in college dedicated exclusively to undergraduate students.",
+                    "Come here for a big TV with BT Sport, Mario Kart and Fifa - to name but a few. If that isn't your cup of tea, you can also play with some pool, ping pong, darts or even a bit of table football"
+                ]
+            },
+            {
+                "imageName": "studentlife/facilities/palmerston.jpg",
+                "heading": "The Palmerston Room",
+                "description": [
+                    "One of the most miscellaneous but best rooms in college. It is a fully-sized badminton court but also has a stage and removable seating.",
+                    "The Palmerston room also houses our famous Super Ents. Watch out for those."
+                ]
+            },
+            {
+                "imageName": "studentlife/facilities/fisher_foyer.jpg",
+                "heading": "The Fisher Foyer",
+                "description": [
+                    "Hosts various events over the course of the year. However, it is best known as the OG Ent location.",
+                    "Much fun has been had in the Fisher Foyer."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Computer Room",
+                "description": [
+                    "A well-kept secret. On the top floor of the Fisher Building is a computer room housing various computers and some printers.",
+                    "Just next to Cripps, it's handy when you need to print things but don't want to trek to the library."
+                ]
+            }
+        ]
+    },
+    {
+        "area": "Cripps Basement",
+        "facilities": [
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Cripps Bike Shed",
+                "description": [
+                    "Much like it's counterpart in Forecourt you can keep your bike here. Pick whichever is most convenient.",
+                    "Once again, remember to register your bike with the porters."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "The Fitness Centre",
+                "description": [
+                    "In it, there is a wide range of cardio equipment, including treadmills, bikes, rowing machines and cross trainers, plus fixed weight machines, a lat pull down and a matted area for core work.",
+                    "Overall, it's a great room to workout."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "The Free Weights Room",
+                "description": [
+                    "The weights room offers a huge range of dumb bells, plus kettle bells, resistance bands, a couple of benches, a squat rack and a Smith machine. It is really relaxed and is open to gym junkies and newbies alike.",
+                    "If you are unsure about using it or feel a bit out of your depth as you aren't a frequent gym goer, there really is no need to worry. Bear in mind that you will need to be inducted before using both gyms."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "The Snooker Room",
+                "description": [
+                    "A very underrated room in college. This houses a fully sized snooker table.",
+                    "Sign out the keys from Cripps plodge and go get your 147s."
+                ]
+            },
+            {
+                "imageName": "studentlife/placeholder.jpg",
+                "heading": "Band Practice Room",
+                "description": [
+                    "Also underneath Cripps, this room is wonderfully noise-insulated and has all the equipment you could possibly need to jam out.",
+                    "In the immortal words of Jeremy Osborne: \"Big Beats are the Best\"."
+                ]
+            }
+        ]
+    }
+]

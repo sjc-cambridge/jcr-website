@@ -1,0 +1,52 @@
+{% extends 'shared/_layout.j2.html' %}
+
+{% block title %}
+<title>
+ St. John's JCR
+</title>
+{% endblock %}
+
+{% block header %}
+<div class='container class="col-sm col-md-10 col-lg-10"' id="headerbox" style="padding: 0px;">
+ <div class="jumbotron" style="background-color: rgba(233,236,239,0.6);margin: 35px;padding: 25px;margin-top: 0px;">
+  <h1 class="text-center" id="pageheading">
+   Minutes of meetings
+  </h1>
+  <p class="text-center" id="pageparagraph" style="margin: 0px;">
+   The minutes of JCR meetings from the past year can be found below. If
+   <br/>
+   you require any clarification of any of the details found therein, or
+   <br/>
+   believe there to be an error, please
+   <a href="mailto:secretary@sjcjcr.com">
+    contact {{JCR['secretary']['name'].split()[0]}}
+   </a>, the JCR secretary.
+  </p>
+ </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<main style="padding: 20px;">
+{% for academic_year in sorted(minutes_dict)[::-1] %}
+{% for term in ['Easter', 'Lent', 'Michaelmas'] %}
+{% if term in minutes_dict[academic_year] %}
+ <section style="padding: 20px;">
+  <h1>
+   {{term}} Term {{academic_year}}
+  </h1>
+  <ul class="list-group">
+    {% for minutes in sorted(minutes_dict[academic_year][term])[::-1] %}
+   <li class="list-group-item">
+    <span>
+      <a href="/yourjcr/minutes?term={{term}}&academicyear={{academic_year}}&filename={{minutes}}">{{minutes}}</a>
+    </span>
+   </li>
+   {% endfor %}
+  </ul>
+ </section>
+{% endif %}
+{% endfor %}
+{% endfor %}
+</main>
+{% endblock %}
