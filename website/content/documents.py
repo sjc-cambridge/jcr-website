@@ -3,6 +3,7 @@
 import os
 from flask import send_file
 from website.helper.johnians import update_johnian_crsids
+from website.paths import PRIV_DIR
 
 curr_dir = os.path.dirname(__file__)
 
@@ -17,7 +18,7 @@ def send_helpdoc():
 
 def send_constitution():
     """Sends constitution doc as pdf attachment"""
-    filepath = os.path.join(curr_dir, "documents/Constitution.pdf")
+    filepath = os.path.join(PRIV_DIR, "documents/Constitution.pdf")
     return send_file(
         filepath, as_attachment=False, attachment_filename="JCRConstitution.pdf"
     )
@@ -51,7 +52,7 @@ def send_financialaid_spreadsheet():
 
 def send_johnianlist():
     # update_johnian_crsids()
-    filepath = os.path.join(curr_dir, "config/johnians.txt")
+    filepath = os.path.join(PRIV_DIR, "config/johnians.txt")
     return send_file(
         filepath, as_attachment=True, attachment_filename="JohnianList.txt"
     )

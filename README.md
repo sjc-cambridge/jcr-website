@@ -9,7 +9,7 @@ The sub-directories are organised as follows:
 - `content`
     - Display and content are for the most part separated. This directory contains info needed to populate various pages.
     - The preferred method for this is to define a `.json` file for a particularly content heavy but repetitive page (e.g. facilities, meet the committee etc). This json can then be read by the `retrieve.py` file and passed to a jinja template and rendered accordingly.
-    - This directory also contains static docs for viewing such as JCR minutes in pdf format etc
+    - Private/gated content (JCR minutes, transparency reports, elections data etc) lives outside this directory, in `private` (see below).
 - `helper`
     - Contains miscellaneous helper functions.
     - If you are unsure where to put a file, here is probably the right place.
@@ -32,9 +32,10 @@ The sub-directories are organised as follows:
 - `config`
     - See the folder's README for explanation.
 
-- `instance`
-    - This is created upon trying to run the app locally. It is in the gitignore since it contains sensitive information such as API keys.
-      Upon cloning the repo you should make an instance folder in the root and create a config.py file, the computing officer (past or present) should be able to help you with this.
+- `private`
+    - This holds all private/sensitive data: minutes, transparency reports, elections data, `config/exceptions.json`, `config/johnians.txt`. It is in the gitignore.
+      Upon cloning the repo you should create this folder (or point `PRIV_DIR` at wherever it lives, e.g. via a `.env` file - see `.env.example`); the computing officer (past or present) should be able to help you with this.
+      Secret keys (`SECRET_KEY`, `GMAIL_KEY`, `CAPTCHA_PUBLIC`, `CAPTCHA_PRIVATE`) are separate - copy `.env.example` to `.env` and fill them in there.
 
 - `gunicorn`
     - This directory contains shell scripts for running the app under a Gunicorn proxy for use in production. Scripts should be run from the root directory e.g.

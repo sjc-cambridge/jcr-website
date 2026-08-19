@@ -1,0 +1,130 @@
+{
+  "president": {
+    "role": "Co-Presidents",
+    "name": "Julia Sychta (she/her) & Hannah Scott (she/her)",
+    "co1": {
+      "name": "Julia Sychta (she/her)",
+      "crsid": "js2949"
+    },
+    "co2": {
+      "name": "Hannah Scott (she/her)",
+      "crsid": "hes78"
+    },
+    "bio": "We're Julia and Hannah - your JCR Co-Presidents for 2026! If there's anything you want changed, improved or just talked through, come to us. We're here to listen, make sure that your voice is represented and foster an inclusive environment with the help of our wonderful committee:)",
+    "img": "2-President26.webp"
+  },
+  "vicepresident": {
+    "role": "Vice President",
+    "name": "Siffrin Wiegandt (she/they)",
+    "crsid": "jw2524",
+    "bio": "Heyy, I'm Siffrin, your JCR VP. Alongside supporting the presidents and the rest of the committee in achieving the best and enacting their manifestos; my main job is to orchestrate freshers' week. Please do contact me if you have any questions or if you just want to yap - I'm always up for a yap.",
+    "img": "2-VicePresident26.webp"
+  },
+  "access": {
+    "role": "Access",
+    "name": "Daniyaal Anawar (he/him)",
+    "crsid": "dba30",
+    "bio": "",
+    "img": "2-Access26.webp"
+  },
+  "bme": {
+    "role": "Ethnic Minorities",
+    "name": "Mahisa Abdul Begum (she/her)",
+    "crsid": "ma2255",
+    "bio": "",
+    "img": "placeholders/Minorities.jpeg"
+  },
+  "computing": {
+    "role": "Computing",
+    "name": "Ethan Kuai (he/him)",
+    "crsid": "eekk2",
+    "bio": "Hello Johnians! I'm Ethan, a second year Computer Science student, and I am excited to be your Computing Officer this year! Over the next year, I will be maintaining and improving the JCR website, and working with other officers to bring about greater convenience and outreach to you guys. Feel free to drop me a message if you have any ideas, feedback, or requests!",
+    "img": "2-Computing26.webp"
+  },
+  "ents": {
+    "role": "Ents",
+    "name": "Finlay Lerpiniere (he/him)",
+    "crsid": "fl466",
+    "bio": "Hey! I'm Finlay, your JCR Ents Officer. Among other responsibilities, my primary job is to throw Ents, so that you never have to go 3 weeks without a night to remember - also practically haunt the buttery so feel free to come up to me if you have any Qs or just to chat!",
+    "img": "2-Ents26.webp"
+  },
+  "ethical": {
+    "role": "Environmental and Charitable Affairs",
+    "name": "Katelyn Hornagold (she/her)",
+    "crsid": "kh843",
+    "bio": "",
+    "img": "placeholders/Ethical.jpeg"
+  },
+  "equalops": {
+    "role": "Class Act",
+    "name": "Hannah Scothern (she/her)",
+    "crsid": "hjs84",
+    "bio": "I'm Hannah, a third year NatSci and your Class Act Officer. My job is to signpost resources regarding finances and access and help spread awareness and tackle the causes of the difficulties that arise from identifying with class act criteria. If you have eny questions concerning finances or would just like to chat, feel free to drop me an email or stop by in person.",
+    "img": "2-ClassAct26.webp"
+  },
+  "internationals": {
+    "role": "International Students",
+    "name": "Zac Erasmus (he/him)",
+    "crsid": "ze224",
+    "bio": "As international student officer, I'll be representing the needs and voices of international students in college. I'm here to offer support, share useful information, and help make sure the international community feels welcomed and included. I'll also be working closely with the vice-president to help organise international freshers week events. If you ever have questions, need a bit of help, or just feel like having a chat, please don't hesitate to reach out. I'm always happy to help!",
+    "img": "2-Internationals26.webp"
+  },
+  "lgbtq": {
+    "role": "LGBTQ+",
+    "name": "Finley Hettrick (he/him)",
+    "crsid": "fjh40",
+    "bio": "YO! I'm Finley, a second year mml student and your LGBTQ+ officer for 2026. My role is basically to represent and protect the lgbtqia+ community at the college. This takes lots of different forms, e.g. challenging discriminatory attitudes or providing a gender expression fund. My fav part is throwing a myraid of events, from drag karaoke to a garden party, to bring the community together. I love to chat, so if you ever have any queries, concerns or simply want to natter please feel free to reach out via email, text or in person ❤️.",
+    "img": "2-LGBTQ26.webp"
+  },
+  "mentalhealth": {
+    "role": "Mental Health",
+    "name": "Emilia Payne (she/her)",
+    "crsid": "ep785",
+    "bio": "Hi everyone, I'm Emilia, a second year PBS student and your mental health officer this year. Alongside the two welfare officers I am here to organise welfare events throughout the term. I am always around for a chat if your struggling with anything or have any questions or worries. I am also more then happy to direct you to anyone round college or the university. My goal is to make sure everyone feels safe and supported and am always happy to help!!",
+    "img": "2-MentalHealth26.webp"
+  },
+  "publicity": {
+    "role": "Publicity",
+    "name": "Alicia Yau (she/her)",
+    "crsid": "yhy27",
+    "bio": "I'm Alicia and I will be publicity officer until I'm deposed. This my day job. As a side gig, I do second-year HSPS. Email me if you want something on the bulletin or the JCR instagram.",
+    "img": "2-Publicity26.webp"
+  },
+  "secretary": {
+    "role": "Secretary",
+    "name": "Cian Dervan (he/him)",
+    "crsid": "cd912",
+    "bio": "Hi I'm Cian, a second year studying Spanish and German. As your ICR Secretary I am responsible for managing weekly JCR meetings. This involves creating the agenda, typing up the minutes, and formatting them to be included in the weekly JR bulletin. Definitely email me if there is anything that you want to be discussed at JCR meetings. Feel free to drop me a message if you have any suggestions, feedback, or just want to have a chat.",
+    "img": "2-Secretary26.webp"
+  },
+  "treasurer": {
+    "role": "Treasurer",
+    "name": "Zihan Tian (he/him)",
+    "crsid": "zt273",
+    "bio": "This is Zihan he is the treasurer for the JCR. He manages the budget and works with everyone else to run events. Contact him if you have any further questions",
+    "img": "2-Treasurer26.webp"
+  },
+  "welfare": {
+    "mnb": {
+      "role": "Welfare",
+      "name": "Timothee Dusserre-Cordonier (he/him)",
+      "crsid": "tgld2",
+      "bio": "",
+      "img": "placeholders/MWelfare.jpeg"
+    },
+    "fnb": {
+      "role": "Welfare",
+      "name": "Leah Spackman (she/her)",
+      "crsid": "ls2110",
+      "bio": "Hi everyone! I'm leah, a second year education student and I'll be your female and non-binary welfare officer for 2026. I am excited to work with the welfare team this year to ensure that the college feels like a supportive community. I hope you will find the welfare events helpful, and most importantly fun! I will be sure to keep the sexual health supplies stocked in the pidge. I'm always happy to have a chat, so please reach out if you need anything, or stop me if you see we around.",
+      "img": "2-FWelfare26.webp"
+    }
+  },
+  "gender": {
+    "role": "Gender Equality",
+    "name": "Tilda Hardman (she/her)",
+    "crsid": "mrhh3",
+    "bio": "",
+    "img": "2-GenderEquality26.webp"
+  }
+}

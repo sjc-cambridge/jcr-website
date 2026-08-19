@@ -1,6 +1,6 @@
 import os
-from website.content.retrieve import retrieveJson
-from pathlib import Path
+from website.content.retrieve import retrievePrivateJson
+from website.paths import PRIV_DIR
 from ibisclient import createConnection, GroupMethods, PersonMethods, InstitutionMethods
 
 """ File connects to UIS to get CRSids of all Johnians known for website access.
@@ -36,9 +36,7 @@ for group in brian:
     print(group.name)
 """
 
-script_dir = os.path.dirname(__file__)
-parent_dir = str(Path(script_dir).parent)
-johnian_dump = os.path.join(parent_dir, "content/config/johnians.txt")
+johnian_dump = os.path.join(PRIV_DIR, "config/johnians.txt")
 
 
 def get_johnian_crsids():
@@ -57,7 +55,7 @@ def get_johnian_crsids():
     johnian_crsids += ug_johnians
     johnian_crsids += pg_johnians
 
-    exception_crsids = list(retrieveJson("config/exceptions")["users"].keys())
+    exception_crsids = list(retrievePrivateJson("config/exceptions")["users"].keys())
     johnian_crsids += exception_crsids
     johnian_crsids = set(johnian_crsids)  # Remove repeats
     total = len(johnian_crsids)

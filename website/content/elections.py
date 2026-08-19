@@ -1,8 +1,7 @@
 import os
 from flask import send_file
-from website.content.retrieve import retrieveJson
-
-curr_dir = os.path.dirname(__file__)
+from website.content.retrieve import retrievePrivateJson
+from website.paths import PRIV_DIR
 
 """
     ELECTIONS_ONGOING variable allows switching between two slightly different
@@ -20,10 +19,10 @@ if ELECTIONS_ONGOING:
 else:
     json_path = "elections/elected"
 
-election_json = retrieveJson(json_path)
+election_json = retrievePrivateJson(json_path)
 
 
 def get_manifesto(filename):
     """Sends manifesto as attachment"""
-    filepath = os.path.join(curr_dir, "elections/manifestos", filename)
+    filepath = os.path.join(PRIV_DIR, "elections/manifestos", filename)
     return send_file(filepath, as_attachment=True)

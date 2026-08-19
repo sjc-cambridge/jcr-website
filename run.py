@@ -1,5 +1,4 @@
 from website import create_site
-import os
 from argparse import ArgumentParser
 
 
@@ -16,12 +15,6 @@ parser.add_argument(
     help="Run app with development config",
 )
 
-
-curr_dir = os.path.dirname(__file__)
-instancepath = os.path.join(curr_dir, "instance")
-if not os.path.exists(instancepath):
-    """Create instance folder as reminder to make config.py inside"""
-    os.makedirs(instancepath)
 
 if __name__ == "__main__":
     args = parser.parse_args()

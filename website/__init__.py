@@ -35,7 +35,7 @@ class Request(flask.Request):
 
 def create_site(config="production"):
     """Create Flask app, specify folder containing static content e.g. imgs, CSS"""
-    app = Flask(__name__, instance_relative_config=True, static_folder="assets")
+    app = Flask(__name__, static_folder="assets")
 
     try:
         app.config.from_object("config." + config)
@@ -44,14 +44,15 @@ def create_site(config="production"):
         print("Defaulting to production config")
         app.config.from_object("config.production")
 
-    # Load the configuration from the instance folder
-    try:
-        app.config.from_pyfile("config.py")
-    except FileNotFoundError as e:
-        print(e)
+    # Load secure keys from the environment (see .env.example)
+    app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+    app.config["GMAIL_KEY"] = os.environ.get("GMAIL_KEY")
+    app.config["CAPTCHA_PUBLIC"] = os.environ.get("CAPTCHA_PUBLIC")
+    app.config["CAPTCHA_PRIVATE"] = os.environ.get("CAPTCHA_PRIVATE")
+    if not app.config["SECRET_KEY"]:
         print(
-            "You need to create the instance/config.py file for secure keys!\n"
-            "Make sure the file permissions are chmod 700 if on your own domain.\n"
+            "Missing secrets! Copy .env.example to .env and fill in SECRET_KEY, "
+            "GMAIL_KEY, CAPTCHA_PUBLIC and CAPTCHA_PRIVATE.\n"
             "If unsure contact the Computing officer."
         )
         sys.exit()

@@ -31,9 +31,10 @@ johnian_access = ucam_webauth.raven.flask_glue.AuthDecorator(
     max_life=60 * 60 * 24 * 3, require_principal=retrieve_johnian_crsids()
 )
 
-app_pwd = os.getenv("gmailkey")
-captchapublickey = os.getenv("captchapublickey")
-captchaprivatekey = os.getenv("captchaprivatekey")
+app_pwd = os.getenv("GMAIL_KEY")
+captchapublickey = os.getenv("CAPTCHA_PUBLIC")
+captchaprivatekey = os.getenv("CAPTCHA_PRIVATE")
+welfare_sheet_url = os.getenv("WELFARE_SHEET_URL")
 
 # JCR object to be exported
 JCR = Committee()

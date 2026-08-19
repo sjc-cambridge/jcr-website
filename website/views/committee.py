@@ -60,9 +60,7 @@ def committee_home():
 @committee.route("/welfare")
 @committee_access
 def committee_welfare():
-    return redirect(
-        "https://docs.google.com/spreadsheets/d/***REMOVED***/edit?usp=sharing"
-    )
+    return redirect(welfare_sheet_url)
 
 
 @committee.route("/get_johnians")
